@@ -79,10 +79,6 @@
             font-weight: 700;
         }
         
-        .icon {
-            font-size: 2.5em;
-        }
-        
         /* Metrics Grid */
         .metrics-grid {
             display: grid;
@@ -163,14 +159,6 @@
         .winner {
             background: #e6f7e1 !important;
             font-weight: 700;
-            position: relative;
-        }
-        
-        .winner::after {
-            content: "🏆";
-            position: absolute;
-            right: 20px;
-            font-size: 1.5em;
         }
         
         /* Insights */
@@ -265,33 +253,6 @@
             line-height: 1.7;
         }
         
-        /* Priority Badge */
-        .priority-high {
-            background: #f44336;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-left: 10px;
-        }
-        
-        .priority-medium {
-            background: #ffa726;
-            color: white;
-            padding: 5px 12px;
-            border-radius: 20px;
-            font-size: 0.75em;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 1px;
-            display: inline-block;
-            margin-left: 10px;
-        }
-        
         /* Action Items */
         .action-section {
             background: linear-gradient(135deg, #3ead28 0%, #2d8a1e 100%);
@@ -375,14 +336,13 @@
         <!-- Executive Summary -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">📊</span>
                 <h2>Executive Summary</h2>
             </div>
             
             <div class="success-box">
-                <h3>✅ Key Wins</h3>
+                <h3>What's Working</h3>
                 <ul>
-                    <li><strong>Meeting Targets:</strong> Generated 110 leads in 30 days (~37 leads/month) — exceeding the 20 signups/month breakeven requirement by 85%</li>
+                    <li><strong>Meeting Targets:</strong> Generated 110 leads in 30 days (approximately 37 leads/month) — exceeding the 20 signups/month breakeven requirement by 85%</li>
                     <li><strong>Broad Audience Dominance:</strong> BROAD targeting outperforms Interest Stack by 22% (£15.29 vs £19.68 CPL)</li>
                     <li><strong>Healthy Ad Fatigue Levels:</strong> Frequency at 2.04-2.64 indicates room for scale without diminishing returns</li>
                     <li><strong>Strong Video Performance:</strong> Video ads driving 84% of total leads at competitive £16.52 CPL</li>
@@ -416,7 +376,6 @@
         <!-- Campaign Performance Breakdown -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">🎯</span>
                 <h2>Campaign Performance Deep Dive</h2>
             </div>
 
@@ -457,12 +416,12 @@
             </table>
 
             <div class="insight-box">
-                <h3>💡 Key Insight: Broad Targeting is Your Winner</h3>
+                <h3>Key Insight: Broad Targeting is Your Winner</h3>
                 <ul>
                     <li><strong>22% lower CPL</strong> than Interest Stack (£15.29 vs £19.68)</li>
                     <li><strong>25% more leads</strong> generated (61 vs 49) with less spend</li>
-                    <li><strong>Lower frequency</strong> (2.04 vs 2.64) = less ad fatigue and more room to scale</li>
-                    <li><strong>Lower CPM</strong> (£28.15 vs £40.62) = more efficient reach</li>
+                    <li><strong>Lower frequency</strong> (2.04 vs 2.64) means less ad fatigue and more room to scale</li>
+                    <li><strong>Lower CPM</strong> (£28.15 vs £40.62) means more efficient reach</li>
                     <li><strong>Recommendation:</strong> Shift budget allocation to favor BROAD 70/30 or consider testing BROAD-only with increased budget</li>
                 </ul>
             </div>
@@ -509,11 +468,11 @@
             </table>
 
             <div class="insight-box">
-                <h3>💡 Creative Performance Insights</h3>
+                <h3>Creative Performance Notes</h3>
                 <ul>
                     <li><strong>Video is the workhorse:</strong> Driving 84% of all leads with competitive CPL</li>
-                    <li><strong>Carousel shows promise:</strong> Ultra-low £2.93 CPL but needs more budget to validate (only 1 conversion)</li>
-                    <li><strong>Static images underperforming:</strong> £17.55 CPL, consider refreshing or testing new angles</li>
+                    <li><strong>Carousel shows promise:</strong> Ultra-low £2.93 CPL but needs more budget to validate (only 1 conversion so far)</li>
+                    <li><strong>Static images underperforming:</strong> £17.55 CPL, might be worth refreshing or testing new angles</li>
                     <li><strong>Top performing ad:</strong> "YMP - VID4 DYCOPY" with £9.62 CPL and 18 leads</li>
                 </ul>
             </div>
@@ -522,11 +481,10 @@
         <!-- Top & Bottom Performers -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">🏆</span>
                 <h2>Ad-Level Performance Analysis</h2>
             </div>
 
-            <h3 style="margin: 20px 0; font-size: 1.5em; color: #3ead28;">Top 5 Performing Ads (Lowest CPL)</h3>
+            <h3 style="margin: 20px 0; font-size: 1.5em; color: #3ead28;">Top 5 Performing Ads (by CPL)</h3>
             
             <table class="comparison-table">
                 <thead>
@@ -584,11 +542,11 @@
             </table>
 
             <div class="success-box">
-                <h3>✅ Scale These Winners</h3>
+                <h3>Recommended: Scale These Winners</h3>
                 <ul>
-                    <li><strong>VID4 DYCOPY:</strong> Clear winner with £9.62 CPL and 18 leads. Allocate more budget here</li>
-                    <li><strong>CAROUSEL1:</strong> Test with more budget to validate the £2.93 CPL</li>
-                    <li><strong>IMG1 DYCOPY:</strong> Performing at £14.82 CPL despite "Below Average" quality ranking — good signal</li>
+                    <li><strong>VID4 DYCOPY:</strong> Clear winner with £9.62 CPL and 18 leads. Worth allocating more budget here</li>
+                    <li><strong>CAROUSEL1:</strong> Test with more budget to validate the £2.93 CPL performance</li>
+                    <li><strong>IMG1 DYCOPY:</strong> Performing at £14.82 CPL despite "Below Average" quality ranking — this is a good signal</li>
                 </ul>
             </div>
 
@@ -630,11 +588,11 @@
             </table>
 
             <div class="warning-box">
-                <h3>⚠️ Immediate Actions Required</h3>
+                <h3>Immediate Actions Required</h3>
                 <ul>
                     <li><strong>Pause underperformers:</strong> IMG1 variant (£37.89 CPL) and VID3 variant (£28.03 CPL) are wasting budget</li>
-                    <li><strong>Refresh creative angles:</strong> Multiple IMG1 and VID3 variants are performing poorly — time for new concepts</li>
-                    <li><strong>Quality ranking issues:</strong> Several top performers have "Below Average" quality — may indicate audience mismatch or creative relevance issues</li>
+                    <li><strong>Refresh creative angles:</strong> Multiple IMG1 and VID3 variants performing poorly — time for new concepts</li>
+                    <li><strong>Quality ranking issues:</strong> Several top performers have "Below Average" quality scores — may indicate audience mismatch or creative relevance issues</li>
                 </ul>
             </div>
         </div>
@@ -642,24 +600,25 @@
         <!-- Strategic Opportunities -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">💡</span>
                 <h2>Strategic Growth Opportunities</h2>
             </div>
 
             <div class="recommendation-grid">
                 <div class="recommendation-card">
-                    <h3>🎯 1. Audience Expansion <span class="priority-high">HIGH PRIORITY</span></h3>
+                    <h3>1. Audience Expansion</h3>
+                    <p style="margin-bottom: 15px;"><em>Priority: Immediate</em></p>
                     <ul>
-                        <li><strong>Scale BROAD targeting:</strong> Increase daily budget from £25 to £40-50 since it's your clear winner</li>
+                        <li><strong>Scale BROAD targeting:</strong> Increase daily budget from £25 to £40-50 since it's clearly the winner</li>
                         <li><strong>Test Lookalike audiences:</strong> Create 1% LAL from past attendees/leads (if pixel data available)</li>
                         <li><strong>Geographic expansion:</strong> Test campaigns in Ireland, Australia, New Zealand (English-speaking Forex markets)</li>
-                        <li><strong>Interest layering:</strong> Test "Cryptocurrency + Financial Independence", "Side Hustles + Investing", "Stock Market + Real Estate"</li>
-                        <li><strong>Age bracket testing:</strong> Currently 18-65+. Test 25-45 separately (prime earning years)</li>
+                        <li><strong>Interest layering:</strong> Test combinations like "Cryptocurrency + Financial Independence", "Side Hustles + Investing", "Stock Market + Real Estate"</li>
+                        <li><strong>Age bracket testing:</strong> Currently 18-65+. Consider testing 25-45 separately (prime earning years)</li>
                     </ul>
                 </div>
 
                 <div class="recommendation-card">
-                    <h3>🎥 2. Creative Innovation <span class="priority-high">HIGH PRIORITY</span></h3>
+                    <h3>2. Creative Innovation</h3>
+                    <p style="margin-bottom: 15px;"><em>Priority: Immediate</em></p>
                     <ul>
                         <li><strong>Scale carousel ads:</strong> Test 3-5 new carousel concepts immediately given the £2.93 CPL success</li>
                         <li><strong>Video angles to test:</strong>
@@ -670,89 +629,74 @@
                                 <li>"Trade from your phone anywhere" (mobile convenience)</li>
                             </ul>
                         </li>
-                        <li><strong>UGC-style content:</strong> Film Georgia or Martin explaining why SimpleFX is different (authentic, founder-led)</li>
+                        <li><strong>UGC-style content:</strong> Film Georgia or Martin explaining why SimpleFX is different (authentic, founder-led approach)</li>
                         <li><strong>Pattern interrupts:</strong> Test bold text overlays, chart animations, profit/loss visualizations</li>
                         <li><strong>Event-specific creatives:</strong> Per the handover notes, create dedicated visuals for each workshop type (Is Forex For Me, Frustrated Trader, Trading for Tradesmen)</li>
                     </ul>
                 </div>
 
                 <div class="recommendation-card">
-                    <h3>🧪 3. Funnel Optimization <span class="priority-medium">MEDIUM PRIORITY</span></h3>
+                    <h3>3. Funnel Optimization</h3>
                     <ul>
                         <li><strong>Test native lead forms:</strong> Reduce friction vs landing page redirect — could lower CPL by 15-30%</li>
                         <li><strong>Pre-qualification quiz:</strong> "What type of trader are you?" quiz funnel to segment and personalize</li>
                         <li><strong>Workshop countdown timers:</strong> Add urgency with "Only 12 spots left for Tuesday's event"</li>
-                        <li><strong>Retargeting sequence:</strong> Build campaigns for:
-                            <ul style="margin-left: 20px; margin-top: 10px;">
-                                <li>Video viewers (25%, 50%, 75%)</li>
-                                <li>Landing page visitors who didn't convert</li>
-                                <li>Past leads who haven't attended yet</li>
-                            </ul>
-                        </li>
+                        <li><strong>Retargeting sequence:</strong> Build campaigns for video viewers (25%, 50%, 75%), landing page visitors who didn't convert, and past leads who haven't attended yet</li>
                         <li><strong>Lead magnet test:</strong> "7-Day Forex Trading Plan PDF" as incentive to register</li>
                     </ul>
                 </div>
 
                 <div class="recommendation-card">
-                    <h3>💎 4. Offer Stack Enhancement <span class="priority-medium">MEDIUM PRIORITY</span></h3>
+                    <h3>4. Offer Stack Enhancement</h3>
                     <ul>
                         <li><strong>Add bonuses:</strong> "Register today and get our £97 Trading Starter Pack free"</li>
                         <li><strong>Early bird pricing:</strong> "First 10 registrants get exclusive Q&A access"</li>
                         <li><strong>Social proof overlay:</strong> "Join 500+ traders who've attended SimpleFX events"</li>
-                        <li><strong>Scarcity messaging:</strong> "Tuesday's workshop is 80% full" (if true)</li>
-                        <li><strong>Risk reversal:</strong> "100% free to attend, no strings attached" (emphasize zero-risk)</li>
+                        <li><strong>Scarcity messaging:</strong> "Tuesday's workshop is 80% full" (if accurate)</li>
+                        <li><strong>Risk reversal:</strong> Emphasize "100% free to attend, no strings attached"</li>
                     </ul>
                 </div>
 
                 <div class="recommendation-card">
-                    <h3>📊 5. Budget Reallocation Plan <span class="priority-high">HIGH PRIORITY</span></h3>
+                    <h3>5. Budget Reallocation Plan</h3>
+                    <p style="margin-bottom: 15px;"><em>Priority: Immediate</em></p>
                     <ul>
                         <li><strong>Current:</strong> £50/day split 50/50 between BROAD and Interest Stack</li>
                         <li><strong>Recommended:</strong> £70/day split 70/30 (£49 BROAD, £21 Interest Stack)</li>
-                        <li><strong>Test phase:</strong> Run this for 14 days, monitor CPL</li>
-                        <li><strong>If BROAD maintains <£17 CPL:</strong> Scale to £100/day BROAD-only</li>
+                        <li><strong>Test phase:</strong> Run this for 14 days, monitor CPL closely</li>
+                        <li><strong>If BROAD maintains sub-£17 CPL:</strong> Scale to £100/day BROAD-only</li>
                         <li><strong>Kill the losers:</strong> Pause IMG1 variant and VID3 variant immediately</li>
                         <li><strong>Projected impact:</strong> Could increase monthly leads from 110 to 150-180 with optimized allocation</li>
                     </ul>
                 </div>
 
                 <div class="recommendation-card">
-                    <h3>🎨 6. Creative Testing Protocol <span class="priority-high">HIGH PRIORITY</span></h3>
-                    <p style="margin-bottom: 15px;"><strong>Launch these 5 concepts immediately:</strong></p>
+                    <h3>6. New Creative Concepts to Test</h3>
+                    <p style="margin-bottom: 15px;">Launch these 5 concepts in the next week:</p>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 8px; margin-bottom: 12px;">
-                        <strong>Concept A: "Escape the 9-5"</strong><br>
-                        <small style="color: #666;">Format: Video (30s Reels-style)</small><br>
-                        <small style="color: #666;">Hook: "Still trading hours for money? There's a better way..."</small><br>
-                        <small style="color: #666;">Audience: BROAD, 25-45</small>
+                        <strong>"Escape the 9-5"</strong><br>
+                        <small style="color: #666;">Video (30s Reels-style) | Hook: "Still trading hours for money? There's a better way..." | Audience: BROAD, 25-45</small>
                     </div>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 8px; margin-bottom: 12px;">
-                        <strong>Concept B: "Be Your Own Bank"</strong><br>
-                        <small style="color: #666;">Format: Carousel (5 slides)</small><br>
-                        <small style="color: #666;">Hook: "What if you could trade currencies like the big banks?"</small><br>
-                        <small style="color: #666;">Audience: Interests (Financial Independence + Cryptocurrency)</small>
+                        <strong>"Be Your Own Bank"</strong><br>
+                        <small style="color: #666;">Carousel (5 slides) | Hook: "What if you could trade currencies like the big banks?" | Audience: Financial Independence + Cryptocurrency interests</small>
                     </div>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 8px; margin-bottom: 12px;">
-                        <strong>Concept C: "Trader Testimonial"</strong><br>
-                        <small style="color: #666;">Format: Video (UGC-style, 45s)</small><br>
-                        <small style="color: #666;">Hook: Real member shares their first profitable month</small><br>
-                        <small style="color: #666;">Audience: BROAD</small>
+                        <strong>"Trader Testimonial"</strong><br>
+                        <small style="color: #666;">Video (UGC-style, 45s) | Real member shares their first profitable month | Audience: BROAD</small>
                     </div>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 8px; margin-bottom: 12px;">
-                        <strong>Concept D: "3 Mistakes New Traders Make"</strong><br>
-                        <small style="color: #666;">Format: Carousel (educational)</small><br>
-                        <small style="color: #666;">Hook: Pain point + solution framework</small><br>
-                        <small style="color: #666;">Audience: BROAD</small>
+                        <strong>"3 Mistakes New Traders Make"</strong><br>
+                        <small style="color: #666;">Carousel (educational) | Pain point + solution framework | Audience: BROAD</small>
                     </div>
                     
                     <div style="background: #f8f8f8; padding: 15px; border-radius: 8px;">
-                        <strong>Concept E: "Trade from Anywhere"</strong><br>
-                        <small style="color: #666;">Format: Video (lifestyle showcase)</small><br>
-                        <small style="color: #666;">Hook: Mobile trading app, freedom-focused</small><br>
-                        <small style="color: #666;">Audience: BROAD, 30-55</small>
+                        <strong>"Trade from Anywhere"</strong><br>
+                        <small style="color: #666;">Video (lifestyle showcase) | Mobile trading app, freedom-focused | Audience: BROAD, 30-55</small>
                     </div>
                 </div>
             </div>
@@ -760,37 +704,37 @@
 
         <!-- Immediate Action Plan -->
         <div class="action-section">
-            <h2>🚀 Immediate Action Plan (Next 7 Days)</h2>
+            <h2>Immediate Action Plan</h2>
             
             <div class="action-grid">
                 <div class="action-card">
-                    <h3>This Week (Days 1-3)</h3>
+                    <h3>This Week</h3>
                     <ol>
                         <li><strong>Pause underperformers:</strong> Kill IMG1 variant (£37.89 CPL) and VID3 variant (£28.03 CPL)</li>
                         <li><strong>Budget reallocation:</strong> Shift to 70/30 split favoring BROAD audience (£49/£21 daily)</li>
-                        <li><strong>Scale winners:</strong> Increase budget on VID4 DYCOPY (£9.62 CPL performer)</li>
+                        <li><strong>Scale winners:</strong> Increase budget on VID4 DYCOPY (the £9.62 CPL performer)</li>
                         <li><strong>Launch carousel tests:</strong> Create 3 new carousel ad concepts based on success of CAROUSEL1</li>
                     </ol>
                 </div>
 
                 <div class="action-card">
-                    <h3>Next Week (Days 4-7)</h3>
+                    <h3>Next 7-14 Days</h3>
                     <ol>
-                        <li><strong>Deploy 5 new creative concepts:</strong> As outlined in testing protocol above</li>
+                        <li><strong>Deploy 5 new creative concepts:</strong> As outlined in testing section</li>
                         <li><strong>Set up retargeting:</strong> Build audience segments for video viewers and landing page visitors</li>
                         <li><strong>Test native lead forms:</strong> A/B test vs current landing page setup</li>
-                        <li><strong>Event-specific campaigns:</strong> Create separate campaigns for each workshop type (per handover notes)</li>
+                        <li><strong>Event-specific campaigns:</strong> Create separate campaigns for each workshop type (mentioned in handover notes)</li>
                     </ol>
                 </div>
 
                 <div class="action-card">
-                    <h3>This Month (Days 8-30)</h3>
+                    <h3>This Month</h3>
                     <ol>
                         <li><strong>Geographic expansion:</strong> Test Ireland & Australia markets with BROAD targeting</li>
                         <li><strong>LAL audience build:</strong> Create 1% lookalike from lead database</li>
                         <li><strong>UGC production:</strong> Film Georgia/Martin testimonial-style content</li>
                         <li><strong>Scale to £100/day:</strong> If BROAD maintains sub-£17 CPL, increase daily budget</li>
-                        <li><strong>Monthly check-in:</strong> Review lead quality with client (as per handover notes: every Monday or Friday morning)</li>
+                        <li><strong>Weekly check-ins:</strong> Review lead quality with Georgia every Monday or Friday morning (per handover notes)</li>
                     </ol>
                 </div>
             </div>
@@ -799,21 +743,20 @@
         <!-- Technical Recommendations -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">⚙️</span>
                 <h2>Technical & Account Health</h2>
             </div>
 
             <div class="insight-box">
-                <h3>💡 Pixel & Tracking Observations</h3>
+                <h3>Pixel & Tracking Observations</h3>
                 <ul>
                     <li><strong>Pixel health:</strong> Dataset shows active error on isforexforme.co.uk domain (detected 20 Jul 2025) — needs resolution</li>
                     <li><strong>Lead tracking:</strong> Working correctly on main campaign, but older campaigns show no lead data</li>
-                    <li><strong>Recommendation:</strong> Review domain allowlist and ensure pixel is firing on all event landing pages</li>
+                    <li><strong>Next step:</strong> Review domain allowlist and ensure pixel is firing on all event landing pages</li>
                 </ul>
             </div>
 
             <div class="success-box">
-                <h3>✅ Account Strengths</h3>
+                <h3>Account Strengths</h3>
                 <ul>
                     <li><strong>Special Ad Category compliance:</strong> Correctly configured for financial services</li>
                     <li><strong>Frequency management:</strong> Healthy levels (2.04-2.64) with no ad fatigue</li>
@@ -823,46 +766,11 @@
             </div>
 
             <div class="warning-box">
-                <h3>⚠️ Areas for Improvement</h3>
+                <h3>Areas for Improvement</h3>
                 <ul>
-                    <li><strong>Quality rankings:</strong> Several ads marked "Below Average" — review creative relevance and landing page experience</li>
+                    <li><strong>Quality rankings:</strong> Several ads marked "Below Average" — worth reviewing creative relevance and landing page experience</li>
                     <li><strong>Landing page view rate:</strong> Not all clicks convert to landing page views — check page load speed and mobile experience</li>
-                    <li><strong>Ad fatigue monitoring:</strong> Set up automated rules to pause ads when frequency exceeds 3.5</li>
-                </ul>
-            </div>
-        </div>
-
-        <!-- Client Communication Guidelines -->
-        <div class="section">
-            <div class="section-header">
-                <span class="icon">💬</span>
-                <h2>Client Communication Best Practices</h2>
-            </div>
-
-            <div class="insight-box">
-                <h3>💡 Client Profile (from Handover Notes)</h3>
-                <ul>
-                    <li><strong>Communication style:</strong> High-touch, expects fast responses (aim for 1-hour turnaround in mornings)</li>
-                    <li><strong>Key contacts:</strong>
-                        <ul style="margin-left: 20px; margin-top: 10px;">
-                            <li><strong>Georgia:</strong> Social media manager, decent ads knowledge, main operational contact</li>
-                            <li><strong>Martin:</strong> Owner, asks lots of questions, needs simplified explanations (no jargon)</li>
-                            <li><strong>Helen:</strong> Finance, minimal interaction</li>
-                        </ul>
-                    </li>
-                    <li><strong>Reporting cadence:</strong> Request lead quality updates every Monday or Friday morning</li>
-                    <li><strong>Breakeven goal:</strong> 20 new signups/month (currently exceeding at 37/month)</li>
-                </ul>
-            </div>
-
-            <div class="success-box">
-                <h3>✅ Recommended Communication Flow</h3>
-                <ul>
-                    <li><strong>Weekly update (Monday AM):</strong> "Last week: X leads at £X CPL. Testing: [new creative]. This week: [planned changes]"</li>
-                    <li><strong>Mid-week check-in (Wednesday):</strong> Quick performance snapshot and any urgent optimizations</li>
-                    <li><strong>Monthly deep dive:</strong> Full performance review with this level of detail, strategic recommendations</li>
-                    <li><strong>For Martin:</strong> Use plain language. Example: "We're putting more money into the ads that cost less per signup" vs "Reallocating budget to lower-CPL ad sets"</li>
-                    <li><strong>Proactive updates:</strong> Alert immediately if CPL spikes >£25 or lead volume drops >30% week-over-week</li>
+                    <li><strong>Ad fatigue monitoring:</strong> Consider setting up automated rules to pause ads when frequency exceeds 3.5</li>
                 </ul>
             </div>
         </div>
@@ -870,7 +778,6 @@
         <!-- Projected Impact -->
         <div class="section">
             <div class="section-header">
-                <span class="icon">📈</span>
                 <h2>Projected Impact of Recommendations</h2>
             </div>
 
@@ -954,19 +861,19 @@
             </div>
 
             <div class="success-box" style="margin-top: 30px;">
-                <h3>✅ Path to 10x Breakeven</h3>
-                <p style="margin-bottom: 15px;">Client's breakeven is 20 signups/month. You're currently at 110 leads/month (assuming ~33% show rate = ~37 actual attendees).</p>
+                <h3>Path to Exceeding Breakeven Goals</h3>
+                <p style="margin-bottom: 15px;">Client's breakeven is 20 signups/month. Currently at 110 leads/month (assuming approximately 33% show rate = approximately 37 actual attendees).</p>
                 <ul>
-                    <li><strong>Conservative scenario:</strong> 140-160 leads/month = 47-53 attendees = <strong>2.4-2.7x breakeven</strong></li>
-                    <li><strong>Aggressive scenario:</strong> 200-250 leads/month = 66-83 attendees = <strong>3.3-4.2x breakeven</strong></li>
-                    <li><strong>Recommendation:</strong> Focus on lead quality monitoring with Georgia every Monday/Friday to ensure conversion rate holds as volume scales</li>
+                    <li><strong>Conservative scenario:</strong> 140-160 leads/month = 47-53 attendees = 2.4-2.7x breakeven</li>
+                    <li><strong>Aggressive scenario:</strong> 200-250 leads/month = 66-83 attendees = 3.3-4.2x breakeven</li>
+                    <li><strong>Important note:</strong> Focus on lead quality monitoring with Georgia every Monday/Friday to ensure conversion rate holds as volume scales</li>
                 </ul>
             </div>
         </div>
 
         <!-- Footer -->
         <div class="footer">
-            <p style="font-size: 1.1em; color: #3ead28; font-weight: 600;">SimpleFX - Trading Made Simple 📈</p>
+            <p style="font-size: 1.1em; color: #3ead28; font-weight: 600;">SimpleFX - Trading Made Simple</p>
             <p style="margin-top: 10px;">Generated on 30 September 2025</p>
             <p style="margin-top: 5px; font-size: 0.9em;">For questions or clarifications, contact your account manager</p>
         </div>
