@@ -1,0 +1,1103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SimpleFX Google Ads Strategy & Launch Plan</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Inter', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: #fffffe;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 20px;
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, #ffffff 0%, #f5f5f5 100%);
+            color: #1a1a1a;
+            padding: 80px 40px;
+            text-align: center;
+            border-radius: 20px;
+            margin-bottom: 40px;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+            border: 2px solid #3ead28;
+        }
+        
+        .logo {
+            width: 200px;
+            margin-bottom: 30px;
+        }
+        
+        .hero h1 {
+            font-size: 3em;
+            font-weight: 800;
+            margin-bottom: 15px;
+            color: #1a1a1a;
+        }
+        
+        .hero p {
+            font-size: 1.3em;
+            opacity: 0.8;
+            color: #333;
+        }
+        
+        .section {
+            background: white;
+            padding: 50px 40px;
+            margin-bottom: 30px;
+            border-radius: 16px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.08);
+        }
+        
+        .section-header {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin-bottom: 30px;
+            border-bottom: 3px solid #3ead28;
+            padding-bottom: 15px;
+        }
+        
+        .section-header h2 {
+            font-size: 2.2em;
+            color: #1a1a1a;
+            font-weight: 700;
+        }
+        
+        .metrics-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+            gap: 25px;
+            margin: 30px 0;
+        }
+        
+        .metric-card {
+            background: linear-gradient(135deg, #f8f8f8 0%, #ffffff 100%);
+            padding: 30px;
+            border-radius: 12px;
+            border-left: 5px solid #3ead28;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+        }
+        
+        .metric-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 20px rgba(62, 173, 40, 0.15);
+        }
+        
+        .metric-label {
+            font-size: 0.9em;
+            color: #666;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            font-weight: 600;
+            margin-bottom: 8px;
+        }
+        
+        .metric-value {
+            font-size: 2.5em;
+            font-weight: 800;
+            color: #3ead28;
+            line-height: 1;
+        }
+        
+        .metric-subtext {
+            font-size: 0.85em;
+            color: #888;
+            margin-top: 8px;
+        }
+        
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 25px 0;
+            background: white;
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+        }
+        
+        .comparison-table thead {
+            background: #3ead28;
+            color: white;
+        }
+        
+        .comparison-table th, .comparison-table td {
+            padding: 18px;
+            text-align: left;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        .comparison-table th {
+            font-weight: 700;
+            text-transform: uppercase;
+            font-size: 0.9em;
+            letter-spacing: 1px;
+        }
+        
+        .comparison-table tbody tr:hover {
+            background: #f8fff6;
+        }
+        
+        .winner {
+            background: #e6f7e1 !important;
+            font-weight: 700;
+        }
+        
+        .insight-box {
+            background: linear-gradient(135deg, #fffbf0 0%, #fff8e1 100%);
+            border-left: 5px solid #ffa726;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .insight-box h3 {
+            color: #e65100;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .insight-box ul {
+            margin-left: 20px;
+        }
+        
+        .insight-box li {
+            margin: 10px 0;
+            color: #444;
+        }
+        
+        .warning-box {
+            background: linear-gradient(135deg, #ffebee 0%, #ffcdd2 100%);
+            border-left: 5px solid #f44336;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .warning-box h3 {
+            color: #c62828;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .success-box {
+            background: linear-gradient(135deg, #e6f7e1 0%, #d4f1c5 100%);
+            border-left: 5px solid #3ead28;
+            padding: 25px;
+            margin: 25px 0;
+            border-radius: 8px;
+        }
+        
+        .success-box h3 {
+            color: #2d8a1e;
+            margin-bottom: 15px;
+            font-size: 1.3em;
+        }
+        
+        .recommendation-grid {
+            display: grid;
+            gap: 20px;
+            margin: 30px 0;
+        }
+        
+        .recommendation-card {
+            background: white;
+            border: 2px solid #e0e0e0;
+            border-radius: 12px;
+            padding: 30px;
+            transition: all 0.3s ease;
+        }
+        
+        .recommendation-card:hover {
+            border-color: #3ead28;
+            box-shadow: 0 6px 20px rgba(62, 173, 40, 0.15);
+        }
+        
+        .recommendation-card h3 {
+            color: #3ead28;
+            font-size: 1.5em;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+            gap: 10px;
+        }
+        
+        .recommendation-card ul {
+            margin-left: 20px;
+        }
+        
+        .recommendation-card li {
+            margin: 12px 0;
+            line-height: 1.7;
+        }
+        
+        .action-section {
+            background: linear-gradient(135deg, #3ead28 0%, #2d8a1e 100%);
+            color: white;
+            padding: 60px 40px;
+            border-radius: 16px;
+            margin: 40px 0;
+        }
+        
+        .action-section h2 {
+            font-size: 2.5em;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .action-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 25px;
+            margin-top: 30px;
+        }
+        
+        .action-card {
+            background: rgba(255, 255, 255, 0.95);
+            color: #1a1a1a;
+            padding: 30px;
+            border-radius: 12px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+        }
+        
+        .action-card h3 {
+            color: #3ead28;
+            font-size: 1.4em;
+            margin-bottom: 15px;
+        }
+        
+        .action-card ol {
+            margin-left: 20px;
+        }
+        
+        .action-card li {
+            margin: 12px 0;
+            line-height: 1.6;
+        }
+        
+        .footer {
+            text-align: center;
+            padding: 40px;
+            color: #666;
+            border-top: 2px solid #e0e0e0;
+            margin-top: 60px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero h1 {
+                font-size: 2em;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .metrics-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="hero">
+            <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="Simple FX Logo" class="logo">
+            <h1>Google Ads Strategy & Launch Plan</h1>
+            <p>Complete Research, Projections & Campaign Structure</p>
+            <p style="font-size: 0.9em; margin-top: 10px; opacity: 0.7;">Prepared for: Simple FX | Date: November 8, 2025</p>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Executive Summary</h2>
+            </div>
+            
+            <div class="success-box">
+                <h3>Why Google Ads Now</h3>
+                <ul>
+                    <li><strong>Diversify Lead Sources:</strong> Reduce dependency on Meta by adding high-intent search traffic from people actively looking for forex education</li>
+                    <li><strong>Capture Bottom-Funnel Intent:</strong> Target people searching terms like "forex trading course" and "learn forex trading uk" — these are ready-to-register prospects</li>
+                    <li><strong>Proven Market Opportunity:</strong> 9,340 monthly searches across 40+ high-intent keywords with blended CPC of £2.84</li>
+                    <li><strong>Competitor Validation:</strong> Trading212, Forex.com, and other major players are actively bidding on education keywords — proof the channel works</li>
+                    <li><strong>ROI Potential:</strong> Projected 1,255% ROAS in Month 1, improving to 1,730% by Month 3</li>
+                </ul>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Month 1 Projected Spend</div>
+                    <div class="metric-value">£1,594</div>
+                    <div class="metric-subtext">£53/day budget</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Month 1 Projected Leads</div>
+                    <div class="metric-value">28</div>
+                    <div class="metric-subtext">£57 CPL</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Month 3 Projected Leads</div>
+                    <div class="metric-value">55</div>
+                    <div class="metric-subtext">£46 CPL (improving)</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Projected ROAS</div>
+                    <div class="metric-value">1,255%</div>
+                    <div class="metric-subtext">Month 1 return</div>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Pain Point Research: What We Learned</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">We analyzed the emotional and practical pain points driving people to search for forex education. This informs our ad copy, landing page messaging, and keyword targeting.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Life-Altering & Urgent Pains</h3>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3>Fear of Financial Loss</h3>
+                    <ul>
+                        <li>"I've lost a large chunk of my savings because I tried to trade without proper guidance"</li>
+                        <li>"What if I blow my account and have to go back to relying on someone else's paycheque"</li>
+                        <li><strong>How We Address:</strong> Emphasize risk management training, free education to test fit before investing, proven track record since 2010</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Fear of Failure</h3>
+                    <ul>
+                        <li>"If I don't become profitable soon, this will just be another failed side project"</li>
+                        <li>"I told myself I'd use trading as the ticket out of the rat race, but I'm more stressed than ever"</li>
+                        <strong>How We Address:</strong> Highlight structured learning path, mentorship support, realistic expectations setting</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Fear of Inadequacy</h3>
+                    <ul>
+                        <li>"Everyone else knows how to read charts and I'm clueless"</li>
+                        <li>"I feel like an imposter when I open the trading platform"</li>
+                        <li><strong>How We Address:</strong> Beginner-friendly messaging, "Is Forex For Me" entry point, no judgment language</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Uncertainty & Overwhelm</h3>
+                    <ul>
+                        <li>"There are so many courses and hype, how can I trust one"</li>
+                        <li>"One guru says one thing, another says the opposite — who do I trust"</li>
+                        <li><strong>How We Address:</strong> Awards, 15+ years experience, free trial events, transparent approach</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>Key Takeaway for Ad Copy</h3>
+                <ul>
+                    <li>Lead with <strong>problem awareness</strong> (the pain they're feeling right now)</li>
+                    <li>Address the <strong>fear of wasting money</strong> on yet another course that doesn't deliver</li>
+                    <li>Emphasize <strong>credibility markers</strong>: 15+ years, award-winning, structured path</li>
+                    <li>Use <strong>risk-reversal</strong>: Free events to test fit before committing</li>
+                    <li>Speak to <strong>aspiration</strong>: Freedom, financial independence, second income</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Keyword Strategy: 40+ High-Intent Terms</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">We identified 40 keywords across education, training, and beginner segments with 9,340 total monthly searches and a blended CPC of £2.84.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Top 10 Most Valuable Keywords (Volume + Intent)</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Monthly Searches</th>
+                        <th>Competition</th>
+                        <th>Suggested Bid</th>
+                        <th>Max Monthly Cost</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="winner">
+                        <td><strong>forex trading for beginners</strong></td>
+                        <td>1,300</td>
+                        <td>High</td>
+                        <td>£4.45</td>
+                        <td>£5,782</td>
+                    </tr>
+                    <tr>
+                        <td>forex trade training courses</td>
+                        <td>1,000</td>
+                        <td>Medium</td>
+                        <td>£2.12</td>
+                        <td>£2,117</td>
+                    </tr>
+                    <tr>
+                        <td>forex trading course</td>
+                        <td>1,000</td>
+                        <td>Medium</td>
+                        <td>£2.12</td>
+                        <td>£2,117</td>
+                    </tr>
+                    <tr>
+                        <td>forex trading training</td>
+                        <td>1,000</td>
+                        <td>Medium</td>
+                        <td>£2.12</td>
+                        <td>£2,117</td>
+                    </tr>
+                    <tr>
+                        <td>learn forex trading</td>
+                        <td>720</td>
+                        <td>Medium</td>
+                        <td>£3.00</td>
+                        <td>£2,160</td>
+                    </tr>
+                    <tr>
+                        <td>demo forex account</td>
+                        <td>590</td>
+                        <td>Medium</td>
+                        <td>£7.61</td>
+                        <td>£4,489</td>
+                    </tr>
+                    <tr>
+                        <td>day trading courses</td>
+                        <td>480</td>
+                        <td>Medium</td>
+                        <td>£2.16</td>
+                        <td>£1,036</td>
+                    </tr>
+                    <tr>
+                        <td>forex course</td>
+                        <td>320</td>
+                        <td>Medium</td>
+                        <td>£2.36</td>
+                        <td>£755</td>
+                    </tr>
+                    <tr>
+                        <td>how to trade forex for beginners</td>
+                        <td>260</td>
+                        <td>Medium</td>
+                        <td>£4.05</td>
+                        <td>£1,053</td>
+                    </tr>
+                    <tr>
+                        <td>how to start forex trading</td>
+                        <td>260</td>
+                        <td>Medium</td>
+                        <td>£7.49</td>
+                        <td>£1,946</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <h3 style="margin: 40px 0 20px 0; font-size: 1.5em;">High-Value Low-CPC Keywords (Best ROI Opportunities)</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Keyword</th>
+                        <th>Monthly Searches</th>
+                        <th>Competition</th>
+                        <th>Suggested Bid</th>
+                        <th>Strategic Value</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr class="winner">
+                        <td><strong>best forex training course</strong></td>
+                        <td>10</td>
+                        <td>Low</td>
+                        <td>£1.29</td>
+                        <td>Ultra-high intent, direct comparison</td>
+                    </tr>
+                    <tr>
+                        <td>forex education</td>
+                        <td>110</td>
+                        <td>Low</td>
+                        <td>£2.05</td>
+                        <td>Broad match opportunity, low competition</td>
+                    </tr>
+                    <tr>
+                        <td>forex trading courses uk</td>
+                        <td>170</td>
+                        <td>Medium</td>
+                        <td>£2.17</td>
+                        <td>Geographic qualifier = high intent</td>
+                    </tr>
+                    <tr>
+                        <td>forex trading mentor</td>
+                        <td>90</td>
+                        <td>Low</td>
+                        <td>£2.15</td>
+                        <td>Signals desire for 1:1 support</td>
+                    </tr>
+                    <tr>
+                        <td>learn forex trading uk</td>
+                        <td>90</td>
+                        <td>Low</td>
+                        <td>£2.38</td>
+                        <td>Geographic + education intent</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <h3>Keyword Strategy Breakdown</h3>
+                <ul>
+                    <li><strong>Tier 1 (High Volume, Medium CPC):</strong> "forex trading for beginners", "learn forex trading" — broad reach at reasonable cost</li>
+                    <li><strong>Tier 2 (Medium Volume, Low CPC):</strong> "forex trading course uk", "forex mentor" — excellent ROI potential</li>
+                    <li><strong>Tier 3 (Low Volume, Ultra High Intent):</strong> "best forex training course" — small volume but ready-to-buy traffic</li>
+                    <li><strong>Defensive:</strong> Brand terms to protect against competitor bidding</li>
+                    <li><strong>Negative Keywords:</strong> "jobs", "salary", "free", "robot", "signals", "software" (bots/automation seekers, not education)</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Competitor Intelligence</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">We analyzed competitors actively bidding on forex education keywords to understand market dynamics and identify opportunities.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Active Competitors on Education Keywords</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Competitor</th>
+                        <th>Type</th>
+                        <th>Keywords Ranking</th>
+                        <th>Positioning</th>
+                        <th>Our Advantage</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Trading212.com</strong></td>
+                        <td>Broker</td>
+                        <td>25+ terms</td>
+                        <td>Platform + basic education</td>
+                        <td>We focus on structured mentorship vs self-serve</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Plus500.com</strong></td>
+                        <td>Broker</td>
+                        <td>30+ terms</td>
+                        <td>Demo accounts, free trials</td>
+                        <td>We provide ongoing support, not just a demo</td>
+                    </tr>
+                    <tr>
+                        <td><strong>IG.com</strong></td>
+                        <td>Broker</td>
+                        <td>40+ terms</td>
+                        <td>Educational content + trading</td>
+                        <td>15+ years specialized education vs generalist</td>
+                    </tr>
+                    <tr>
+                        <td><strong>LearnToTradeGroup.com</strong></td>
+                        <td>Education</td>
+                        <td>15+ terms</td>
+                        <td>Direct competitor in training</td>
+                        <td>Free trial events vs upfront commitment</td>
+                    </tr>
+                    <tr>
+                        <td><strong>TradingCollege.co.uk</strong></td>
+                        <td>Education</td>
+                        <td>10+ terms</td>
+                        <td>UK-focused training</td>
+                        <td>Award-winning pedigree, live mentoring</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="insight-box">
+                <h3>Competitive Gaps We Can Exploit</h3>
+                <ul>
+                    <li><strong>Most competitors lead with "demo accounts" or "free trading"</strong> — we lead with structured education path</li>
+                    <li><strong>Brokers push platforms first, education second</strong> — we're education-first, platform-agnostic</li>
+                    <li><strong>Few emphasize ongoing mentorship</strong> — this is our differentiator (daily live sessions, 1:1 support)</li>
+                    <li><strong>Limited use of "Is Forex For Me" positioning</strong> — beginner-friendly entry point is underutilized</li>
+                    <li><strong>Weak social proof in ads</strong> — we can lean on 15+ years, awards, community</li>
+                </ul>
+            </div>
+
+            <h3 style="margin: 40px 0 20px 0; font-size: 1.5em;">Competitor Ad Copy Patterns (What to Learn From)</h3>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3>Common Hooks</h3>
+                    <ul>
+                        <li>"Learn to trade from home"</li>
+                        <li>"Free demo account"</li>
+                        <li>"Start with £100"</li>
+                        <li>"Trade on your phone"</li>
+                        <li>"Copy professional traders"</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Our Counter-Positioning</h3>
+                    <ul>
+                        <li>"Award-winning forex education since 2010"</li>
+                        <li>"Free events — test before you invest"</li>
+                        <li>"15+ years experience, daily mentoring"</li>
+                        <li>"Structured learning path, not random tips"</li>
+                        <li>"Real traders teaching real strategies"</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Campaign Structure & Budget Allocation</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">We've built a 4-campaign structure to capture different stages of buyer intent, from brand protection to top-of-funnel awareness.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Recommended Campaign Architecture</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Campaign</th>
+                        <th>Objective</th>
+                        <th>Daily Budget</th>
+                        <th>Monthly Budget</th>
+                        <th>Keyword Examples</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Campaign 1: Brand Protection</strong></td>
+                        <td>Capture people searching "Simple FX"</td>
+                        <td>£5</td>
+                        <td>£150</td>
+                        <td>"simple fx", "simplefx", "simple fx training"</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>Campaign 2: High-Intent Education</strong></td>
+                        <td>Ready-to-buy traffic</td>
+                        <td>£25</td>
+                        <td>£750</td>
+                        <td>"forex trading course", "forex mentor", "forex training courses uk"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campaign 3: Beginner & How-To</strong></td>
+                        <td>Top-of-funnel awareness</td>
+                        <td>£15</td>
+                        <td>£450</td>
+                        <td>"how to learn forex", "forex for beginners", "is forex for me"</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Campaign 4: Performance Max</strong></td>
+                        <td>AI-driven across all placements</td>
+                        <td>£8</td>
+                        <td>£244</td>
+                        <td>AI-selected audiences</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <p style="margin-top: 30px; font-size: 1.05em;"><strong>Total Starting Budget: £53/day (£1,594/month)</strong></p>
+
+            <div class="insight-box">
+                <h3>Why This Structure Works</h3>
+                <ul>
+                    <li><strong>Brand Protection:</strong> Prevents competitors from stealing traffic searching for Simple FX directly</li>
+                    <li><strong>High-Intent First:</strong> 47% of budget goes to people actively searching for courses/mentors (highest conversion potential)</li>
+                    <li><strong>Beginner Funnel:</strong> 28% of budget captures people in research phase ("how to", "for beginners")</li>
+                    <li><strong>Performance Max Test:</strong> 15% of budget lets Google's AI find additional opportunities we might miss</li>
+                    <li><strong>Scalable:</strong> Easy to shift budget to winners after 2-4 weeks of data</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Ad Copy Framework & Examples</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">We've developed Responsive Search Ads (RSAs) with 15 headline variations and 4 description variations per campaign, optimized for different intents.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Campaign 2: High-Intent Education (Example RSAs)</h3>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3>Headline Set A: Credibility-Focused</h3>
+                    <ul>
+                        <li>Award-Winning Forex Education</li>
+                        <li>15+ Years Teaching Forex Trading</li>
+                        <li>Structured Learning Path to Profitable Trading</li>
+                        <li>Mentorship from Real Traders Since 2010</li>
+                        <li>Forex Course | 1:1 Support Included</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Headline Set B: Pain-Point Focused</h3>
+                    <ul>
+                        <li>Frustrated with Losing Trades?</li>
+                        <li>Stop Wasting Money on Hype Courses</li>
+                        <li>Learn Forex the Right Way | No Gimmicks</li>
+                        <li>Master Forex with Proven Strategies</li>
+                        <li>Build Trading Confidence Step-by-Step</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Headline Set C: Risk-Reversal Focused</h3>
+                    <ul>
+                        <li>Free Event — Test Before You Commit</li>
+                        <li>Try Our Training Risk-Free</li>
+                        <li>Join Free Webinar This Week</li>
+                        <li>No Pressure, Just Great Education</li>
+                        <li>Register for Free Forex Training Event</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="recommendation-card" style="margin-top: 30px;">
+                <h3>Description Variations (All Campaigns)</h3>
+                <ul>
+                    <li><strong>Description 1:</strong> "Simple FX has been delivering award-winning forex education since 2010. Learn from traders with 15+ years experience through structured programmes and daily live mentoring sessions."</li>
+                    <li><strong>Description 2:</strong> "Join hundreds of traders who've built consistency through our proven approach. Free events every week to test fit. No hype, just clarity and support."</li>
+                    <li><strong>Description 3:</strong> "Whether you're completely new or a frustrated trader looking for structure, Simple FX provides the training, tools, and mentorship to trade with confidence."</li>
+                    <li><strong>Description 4:</strong> "Award-winning curriculum, daily live sessions, and 1:1 support included. Start with our free events — no commitment, just great education."</li>
+                </ul>
+            </div>
+
+            <h3 style="margin: 40px 0 20px 0; font-size: 1.5em;">Campaign 3: Beginner & How-To (Example RSAs)</h3>
+            
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3>Beginner-Friendly Headlines</h3>
+                    <ul>
+                        <li>Is Forex For Me? Find Out Free</li>
+                        <li>Learn Forex Trading From Scratch</li>
+                        <li>Beginner Forex Course | UK-Based</li>
+                        <li>Never Traded Before? Start Here</li>
+                        <li>Forex Education for Complete Beginners</li>
+                        <li>Step-by-Step Forex Training Programme</li>
+                        <li>Demystify Forex | Award-Winning Course</li>
+                        <li>No Experience? No Problem | Simple FX</li>
+                        <li>Learn Forex the Simple Way</li>
+                        <li>Forex Made Clear | Not Complicated</li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Performance Projections & ROI</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Based on keyword research, competitor benchmarks, and conservative conversion rate assumptions, here are our 90-day projections.</p>
+
+            <h3 style="margin: 30px 0 20px 0; font-size: 1.5em;">Month-by-Month Forecast</h3>
+            
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Metric</th>
+                        <th>Month 1</th>
+                        <th>Month 2</th>
+                        <th>Month 3</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Daily Budget</strong></td>
+                        <td>£53</td>
+                        <td>£68</td>
+                        <td>£85</td>
+                        <td>Scale based on performance</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Monthly Spend</strong></td>
+                        <td>£1,594</td>
+                        <td>£2,029</td>
+                        <td>£2,544</td>
+                        <td>Assuming 30-day month</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Estimated Clicks</strong></td>
+                        <td>560</td>
+                        <td>595</td>
+                        <td>745</td>
+                        <td>Improving CTR over time</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Avg CPC</strong></td>
+                        <td>£2.84</td>
+                        <td>£3.00</td>
+                        <td>£3.41</td>
+                        <td>Increases as we scale to higher intent terms</td>
+                    </tr>
+                    <tr>
+                        <td><strong>CTR</strong></td>
+                        <td>10.0%</td>
+                        <td>11.5%</td>
+                        <td>13.3%</td>
+                        <td>Improves as ad copy is optimized</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>Conversion Rate</strong></td>
+                        <td>5.0%</td>
+                        <td>6.0%</td>
+                        <td>7.5%</td>
+                        <td>Landing page optimization + retargeting</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>Total Leads</strong></td>
+                        <td>28</td>
+                        <td>36</td>
+                        <td>55</td>
+                        <td>Growing as campaigns mature</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>Cost Per Lead</strong></td>
+                        <td>£56.92</td>
+                        <td>£56.36</td>
+                        <td>£46.25</td>
+                        <td>Improving efficiency</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Expected Sales (20% close rate)</strong></td>
+                        <td>5</td>
+                        <td>7</td>
+                        <td>11</td>
+                        <td>Assumes 1 in 5 leads convert to paid</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Revenue (£4k LTV per sale)</strong></td>
+                        <td>£20,000</td>
+                        <td>£28,000</td>
+                        <td>£44,000</td>
+                        <td>Based on average course value</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>ROAS</strong></td>
+                        <td>1,255%</td>
+                        <td>1,380%</td>
+                        <td>1,730%</td>
+                        <td>Return on ad spend</td>
+                    </tr>
+                    <tr class="winner">
+                        <td><strong>Profit (60% margin)</strong></td>
+                        <td>£10,406</td>
+                        <td>£14,829</td>
+                        <td>£23,856</td>
+                        <td>After ad spend deducted</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <div class="success-box">
+                <h3>Key Assumptions & Validation</h3>
+                <ul>
+                    <li><strong>5% Conversion Rate in Month 1:</strong> Conservative estimate based on warm traffic from search intent. Industry benchmark for education offers is 3-8%.</li>
+                    <li><strong>20% Lead-to-Sale Close Rate:</strong> Assumes 1 in 5 event attendees convert to paid programmes. You'll need to validate this from current Meta data.</li>
+                    <li><strong>£4,000 Average LTV:</strong> Based on your course pricing. Adjust if needed.</li>
+                    <li><strong>Improving Metrics Over Time:</strong> As we optimize ad copy, landing pages, and negative keywords, performance should improve 15-30% from Month 1 to Month 3.</li>
+                </ul>
+            </div>
+
+            <div class="warning-box">
+                <h3>Risk Factors to Monitor</h3>
+                <ul>
+                    <li><strong>If CPL exceeds £70:</strong> Pause underperforming keywords, tighten match types, improve landing page conversion</li>
+                    <li><strong>If CTR drops below 8%:</strong> Ad copy isn't resonating, test new hooks and value props</li>
+                    <li><strong>If lead quality is poor:</strong> Add negative keywords, refine audience signals, adjust messaging</li>
+                    <li><strong>First 2 weeks will be learning phase:</strong> Don't panic if performance is rocky initially, Google needs data to optimize</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Landing Page & Funnel Strategy</h2>
+            </div>
+
+            <p style="font-size: 1.1em; margin-bottom: 20px;">Search traffic has different expectations than social traffic. Here's how we adapt the funnel for Google Ads visitors.</p>
+
+            <div class="recommendation-grid">
+                <div class="recommendation-card">
+                    <h3>Option 1: Direct to Event Registration (Recommended for Launch)</h3>
+                    <ul>
+                        <li><strong>Pro:</strong> Shortest path to conversion, mirrors Meta setup</li>
+                        <li><strong>Pro:</strong> Consistent experience across channels</li>
+                        <li><strong>Pro:</strong> Easy to set up and track</li>
+                        <li><strong>Con:</strong> May miss opportunity to educate searchers who need more context</li>
+                        <li><strong>Best For:</strong> High-intent keywords like "forex trading course"</li>
+                    </ul>
+                </div>
+
+                <div class="recommendation-card">
+                    <h3>Option 2: Dedicated Google Ads Landing Page (Test After Launch)</h3>
+                    <ul>
+                        <li><strong>Pro:</strong> Can tailor messaging to search intent (pain points they searched for)</li>
+                        <li><strong>Pro:</strong> Build credibility before asking for registration</li>
+                        <li><strong>Pro:</strong> Can segment messaging by keyword (beginners vs frustrated traders)</li>
+                        <li><strong>Con:</strong> Extra step in funnel = potential drop-off</li>
+                        <li><strong>Best For:</strong> Broad keywords like "learn forex trading"</li>
+                    </ul>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>Recommended Approach</h3>
+                <ul>
+                    <li><strong>Week 1-2:</strong> Send all traffic directly to Zoom registration page (same as Meta). Keep it simple for launch.</li>
+                    <li><strong>Week 3-4:</strong> Once we have baseline data, build dedicated Google Ads landing page with dynamic content based on keyword groups</li>
+                    <li><strong>Week 5+:</strong> A/B test direct registration vs intermediate landing page to see which converts better</li>
+                    <li><strong>Critical:</strong> Ensure UTM parameters are set up properly to track which keywords drive registrations and which drive sales</li>
+                </ul>
+            </div>
+
+            <h3 style="margin: 40px 0 20px 0; font-size: 1.5em;">Tracking & Conversion Setup</h3>
+            
+            <div class="recommendation-card">
+                <h3>What Needs to Be Implemented</h3>
+                <ol style="margin-left: 20px;">
+                    <li><strong>Google Ads Conversion Tracking:</strong> Fire pixel when someone completes Zoom registration</li>
+                    <li><strong>Google Analytics 4:</strong> Link to Google Ads account for deeper insights</li>
+                    <li><strong>UTM Parameters:</strong> Track source (Google), medium (cpc), campaign name, and keyword</li>
+                    <li><strong>Offline Conversion Import:</strong> When someone buys a course, upload that conversion back to Google Ads with the original click ID</li>
+                    <li><strong>Call Tracking (Optional):</strong> If you get phone calls from ads, use call tracking number</li>
+                </ol>
+            </div>
+        </div>
+
+        <div class="action-section">
+            <h2>Launch Checklist & Next Steps</h2>
+            
+            <div class="action-grid">
+                <div class="action-card">
+                    <h3>Pre-Launch (This Week)</h3>
+                    <ol>
+                        <li>Get final approval on budget (£53/day starting)</li>
+                        <li>Confirm Google Ads account access or create new account</li>
+                        <li>Set up conversion tracking on Zoom registration page</li>
+                        <li>Link Google Analytics 4 to Google Ads</li>
+                        <li>Add credit card to Google Ads account</li>
+                        <li>Review and approve ad copy examples</li>
+                    </ol>
+                </div>
+
+                <div class="action-card">
+                    <h3>Week 1-2 (Learning Phase)</h3>
+                    <ol>
+                        <li>Launch all 4 campaigns with conservative bids</li>
+                        <li>Monitor daily for disapprovals or policy issues</li>
+                        <li>Track which keywords drive clicks (but don't optimize yet)</li>
+                        <li>Let Google's algorithm gather data</li>
+                        <li>Weekly check-in on spend pacing and initial lead quality</li>
+                    </ol>
+                </div>
+
+                <div class="action-card">
+                    <h3>Week 3-4 (Optimization Phase)</h3>
+                    <ol>
+                        <li>Pause keywords with 0 conversions and high spend</li>
+                        <li>Increase bids on top performers</li>
+                        <li>Add negative keywords based on search term report</li>
+                        <li>Test new ad copy variations</li>
+                        <li>Begin scaling budget on winning campaigns</li>
+                        <li>Consider building dedicated landing page</li>
+                    </ol>
+                </div>
+
+                <div class="action-card">
+                    <h3>Month 2+ (Scaling Phase)</h3>
+                    <ol>
+                        <li>Scale daily budget to £70-85 on proven campaigns</li>
+                        <li>Launch remarketing campaigns for site visitors</li>
+                        <li>Test display campaigns for awareness</li>
+                        <li>Implement offline conversion tracking for course sales</li>
+                        <li>Expand keyword list based on winning themes</li>
+                        <li>Monthly performance review and strategy refinement</li>
+                    </ol>
+                </div>
+            </div>
+        </div>
+
+        <div class="section">
+            <div class="section-header">
+                <h2>Investment Summary</h2>
+            </div>
+
+            <div class="metrics-grid">
+                <div class="metric-card">
+                    <div class="metric-label">Starting Investment</div>
+                    <div class="metric-value">£1,594</div>
+                    <div class="metric-subtext">Month 1 budget</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Expected Leads</div>
+                    <div class="metric-value">28</div>
+                    <div class="metric-subtext">Month 1 projection</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Expected Revenue</div>
+                    <div class="metric-value">£20k</div>
+                    <div class="metric-subtext">Based on 5 sales</div>
+                </div>
+                <div class="metric-card">
+                    <div class="metric-label">Profit</div>
+                    <div class="metric-value">£10.4k</div>
+                    <div class="metric-subtext">60% margin assumed</div>
+                </div>
+            </div>
+
+            <div class="success-box">
+                <h3>Bottom Line</h3>
+                <p style="font-size: 1.1em; margin-bottom: 15px;">For every £1 spent on Google Ads in Month 1, we project a return of £12.55 in revenue.</p>
+                <p style="font-size: 1.05em;">This is based on conservative assumptions. As we optimize over Months 2-3, ROAS should improve to £15-17 per £1 spent.</p>
+            </div>
+
+            <div class="insight-box">
+                <h3>Why This Makes Sense Right Now</h3>
+                <ul>
+                    <li><strong>Meta CPL is climbing:</strong> Current Meta CPL at £20 means Google's projected £57 CPL isn't as far off as it seems, especially considering search intent is higher</li>
+                    <li><strong>Diversification:</strong> Meta dependency is risky. Google provides backup channel if Meta performance continues to fluctuate</li>
+                    <li><strong>Seasonality:</strong> Launching now (November) captures end-of-year "new year new me" momentum building into January</li>
+                    <li><strong>Proven Market:</strong> Competitors are actively spending — validation that the channel works</li>
+                    <li><strong>Manageable Risk:</strong> £53/day is testable. If it doesn't work after 30 days, we pause and regroup. If it works, we scale aggressively.</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="footer">
+            <p style="font-size: 1.1em; color: #3ead28; font-weight: 600;">SimpleFX Google Ads Strategy</p>
+            <p style="margin-top: 10px;">Prepared by Charles Piper</p>
+            <p style="margin-top: 5px; font-size: 0.9em;">Questions? Let's discuss implementation timeline and get this launched.</p>
+        </div>
+    </div>
+</body>
+</html>
