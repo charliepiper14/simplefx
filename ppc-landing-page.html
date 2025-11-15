@@ -1,0 +1,2210 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Join SimpleFX's free online Zoom events. Learn professional forex trading from Richard Williams. Choose from beginner, intermediate, or advanced sessions.">
+    <title>Free Forex Trading Events Online | SimpleFX Live Zoom Sessions</title>
+    
+    <!-- Preconnect for performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    
+    <style>
+        /* Google Font Import */
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+        
+        /* CSS Variables */
+        :root {
+            --brand-1: #6CC24A;
+            --brand-2: #2D5016;
+            --brand-3: #F0F9EC;
+            --brand-4: #1A1A1A;
+            --accent: #FFB800;
+            --white: #FFFFFF;
+            --gray-50: #F9FAFB;
+            --gray-100: #F3F4F6;
+            --gray-200: #E5E7EB;
+            --gray-300: #D1D5DB;
+            --gray-400: #9CA3AF;
+            --gray-600: #4B5563;
+            --gray-700: #374151;
+            --gray-800: #1F2937;
+            --success: #10B981;
+            --error: #EF4444;
+            
+            --gradient-brand: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+            --gradient-accent: linear-gradient(135deg, #FFB800 0%, #F59E0B 100%);
+            
+            --font-base: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+            
+            --shadow-sm: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+            --shadow-md: 0 4px 6px -1px rgba(0, 0, 0, 0.1), 0 2px 4px -1px rgba(0, 0, 0, 0.06);
+            --shadow-lg: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+            --shadow-xl: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+            
+            --radius-sm: 0.375rem;
+            --radius-md: 0.5rem;
+            --radius-lg: 0.75rem;
+            --radius-xl: 1rem;
+            
+            --container-max: 1280px;
+            --container-padding: 1.5rem;
+        }
+        
+        /* Reset & Base */
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        
+        html {
+            scroll-behavior: smooth;
+        }
+        
+        body {
+            font-family: var(--font-base);
+            font-size: 16px;
+            line-height: 1.6;
+            color: var(--gray-800);
+            background: var(--white);
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        a {
+            color: var(--brand-1);
+            text-decoration: none;
+            transition: color 0.2s ease;
+        }
+        
+        a:hover {
+            color: var(--brand-2);
+        }
+        
+        /* Container */
+        .container {
+            max-width: var(--container-max);
+            margin: 0 auto;
+            padding: 0 var(--container-padding);
+        }
+        
+        /* Grid System */
+        .grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        .grid-2 {
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+        }
+        
+        .grid-3 {
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        }
+        
+        @media (min-width: 768px) {
+            .grid-2-fixed {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .grid-3-fixed {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+        
+        /* Typography */
+        h1, h2, h3, h4, h5, h6 {
+            font-weight: 700;
+            line-height: 1.2;
+            color: var(--brand-2);
+            margin-bottom: 1rem;
+        }
+        
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 800;
+        }
+        
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+        }
+        
+        h3 {
+            font-size: clamp(1.25rem, 3vw, 1.75rem);
+        }
+        
+        p {
+            margin-bottom: 1rem;
+        }
+        
+        .text-large {
+            font-size: 1.125rem;
+            line-height: 1.7;
+        }
+        
+        .text-small {
+            font-size: 0.875rem;
+        }
+        
+        .text-center {
+            text-align: center;
+        }
+        
+        /* Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 48px;
+            padding: 0.875rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            border: none;
+            border-radius: var(--radius-lg);
+            cursor: pointer;
+            transition: all 0.3s ease;
+            text-decoration: none;
+            font-family: var(--font-base);
+            gap: 0.5rem;
+        }
+        
+        .btn:focus-visible {
+            outline: 3px solid var(--brand-1);
+            outline-offset: 2px;
+        }
+        
+        .btn-primary {
+            background: var(--gradient-brand);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+        
+        .btn-primary:active {
+            transform: translateY(0);
+        }
+        
+        .btn-accent {
+            background: var(--gradient-accent);
+            color: var(--white);
+            box-shadow: var(--shadow-md);
+        }
+        
+        .btn-accent:hover {
+            transform: translateY(-2px);
+            box-shadow: var(--shadow-lg);
+            color: var(--white);
+        }
+        
+        .btn-secondary {
+            background: var(--white);
+            color: var(--brand-2);
+            border: 2px solid var(--brand-1);
+        }
+        
+        .btn-secondary:hover {
+            background: var(--brand-3);
+            color: var(--brand-2);
+        }
+        
+        .btn-ghost {
+            background: transparent;
+            color: var(--brand-2);
+            border: 1px solid var(--gray-300);
+        }
+        
+        .btn-ghost:hover {
+            background: var(--gray-50);
+            color: var(--brand-2);
+        }
+        
+        .btn-sm {
+            min-height: 40px;
+            padding: 0.5rem 1.25rem;
+            font-size: 0.875rem;
+        }
+        
+        /* Top Bar */
+        .top-bar {
+            background: var(--gradient-brand);
+            color: var(--white);
+            padding: 0.75rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            font-weight: 600;
+        }
+        
+        .top-bar .countdown {
+            display: inline-block;
+            margin-left: 0.5rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        /* Header */
+        .header {
+            background: var(--white);
+            padding: 1.5rem 0;
+            border-bottom: 1px solid var(--gray-200);
+            position: relative;
+            z-index: 100;
+            transition: all 0.3s ease;
+        }
+        
+        .header.sticky {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            box-shadow: var(--shadow-md);
+            padding: 1rem 0;
+        }
+        
+        .header-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .logo {
+            height: 56px;
+            width: auto;
+        }
+        
+        .header.sticky .logo {
+            height: 44px;
+        }
+        
+        .header-cta {
+            display: none;
+        }
+        
+        .header.sticky .header-cta {
+            display: block;
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--brand-3) 0%, var(--white) 100%);
+            padding: 4rem 0 5rem;
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            right: 0;
+            width: 50%;
+            height: 100%;
+            background: radial-gradient(circle at top right, rgba(0, 180, 140, 0.1) 0%, transparent 70%);
+            pointer-events: none;
+        }
+        
+        .hero-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: start;
+        }
+        
+        @media (min-width: 968px) {
+            .hero-grid {
+                grid-template-columns: 1.2fr 1fr;
+            }
+        }
+        
+        .hero-content {
+            position: relative;
+            z-index: 2;
+        }
+        
+        .hero h1 {
+            margin-bottom: 1.5rem;
+        }
+        
+        .hero-subheadline {
+            font-size: 1.25rem;
+            color: var(--gray-700);
+            margin-bottom: 2rem;
+            line-height: 1.6;
+        }
+        
+        .hero-benefits {
+            list-style: none;
+            margin-bottom: 2.5rem;
+        }
+        
+        .hero-benefits li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 1rem;
+            font-size: 1.0625rem;
+            color: var(--gray-700);
+        }
+        
+        .hero-benefits li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 24px;
+            height: 24px;
+            background: var(--brand-1);
+            color: var(--white);
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 0.875rem;
+        }
+        
+        .hero-ctas {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 1rem;
+        }
+        
+        /* Trust Bar - UPDATED */
+        .trust-bar {
+            margin-top: 3rem;
+            padding-top: 2rem;
+            border-top: 1px solid var(--gray-200);
+            text-align: center;
+            max-width: 100%;
+            width: 100%;
+        }
+        
+        .trust-bar-label {
+            font-size: 1.25rem;
+            color: var(--brand-2);
+            margin-bottom: 0.75rem;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+        }
+        
+        .trust-bar-stars {
+            font-size: 2rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+        
+        .trust-bar-rating {
+            font-size: 1.125rem;
+            color: var(--gray-700);
+            font-weight: 600;
+            margin-bottom: 1.5rem;
+        }
+        
+        .trust-bar img {
+            display: block;
+            margin: 0 auto;
+        }
+        
+        /* Event Cards (Hero) */
+        .event-cards-stack {
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .event-card-mini {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            padding: 1.25rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+        }
+        
+        .event-card-mini:hover {
+            box-shadow: var(--shadow-md);
+            border-color: var(--brand-1);
+        }
+        
+        .event-card-mini-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: start;
+            margin-bottom: 0.75rem;
+        }
+        
+        .event-card-mini h4 {
+            font-size: 1.125rem;
+            color: var(--brand-2);
+            margin: 0;
+        }
+        
+        .event-card-mini-date {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card-mini-location {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            display: flex;
+            align-items: center;
+            gap: 0.375rem;
+            margin-bottom: 1rem;
+        }
+        
+        .seats-meter {
+            margin-bottom: 1rem;
+        }
+        
+        .seats-label {
+            font-size: 0.75rem;
+            font-weight: 600;
+            color: var(--gray-600);
+            margin-bottom: 0.375rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        
+        .seats-bar {
+            height: 6px;
+            background: var(--gray-200);
+            border-radius: 3px;
+            overflow: hidden;
+        }
+        
+        .seats-fill {
+            height: 100%;
+            background: var(--gradient-accent);
+            border-radius: 3px;
+            transition: width 0.5s ease;
+        }
+        
+        .seats-fill.limited {
+            background: var(--gradient-brand);
+        }
+        
+        .seats-fill.filling {
+            background: linear-gradient(135deg, var(--accent) 0%, var(--brand-1) 100%);
+        }
+        
+        /* Section Spacing */
+        section {
+            padding: 5rem 0;
+        }
+        
+        section:nth-child(even) {
+            background: var(--gray-50);
+        }
+        
+        .section-header {
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+        
+        .section-header h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .section-header p {
+            font-size: 1.125rem;
+            color: var(--gray-600);
+            max-width: 700px;
+            margin: 0 auto;
+        }
+        
+        /* Value Cards */
+        .value-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+            box-shadow: var(--shadow-sm);
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+        }
+        
+        .value-card:hover {
+            box-shadow: var(--shadow-lg);
+            transform: translateY(-4px);
+            border-color: var(--brand-1);
+        }
+        
+        .value-icon {
+            width: 56px;
+            height: 56px;
+            background: var(--gradient-brand);
+            border-radius: var(--radius-lg);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 1.5rem;
+            margin-bottom: 1.25rem;
+        }
+        
+        .value-card h3 {
+            margin-bottom: 0.75rem;
+            font-size: 1.375rem;
+        }
+        
+        .value-card p {
+            color: var(--gray-600);
+            margin: 0;
+        }
+        
+        /* Live Events Carousel */
+        .live-events-carousel {
+            position: relative;
+            overflow: hidden;
+            margin: 0 auto;
+            max-width: 100%;
+        }
+        
+        .carousel-track {
+            display: flex;
+            gap: 1.5rem;
+            animation: scroll-carousel 30s linear infinite;
+            will-change: transform;
+        }
+        
+        .carousel-track:hover {
+            animation-play-state: paused;
+        }
+        
+        @keyframes scroll-carousel {
+            0% {
+                transform: translateX(0);
+            }
+            100% {
+                transform: translateX(-50%);
+            }
+        }
+        
+        .carousel-item {
+            flex: 0 0 400px;
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            background: var(--gray-200);
+        }
+        
+        .carousel-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Trustpilot Section */
+        .trustpilot-showcase {
+            background: var(--white);
+            padding: 5rem 0;
+        }
+        
+        .trustpilot-header-centered {
+            text-align: center;
+            margin-bottom: 3rem;
+            max-width: 900px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .trustpilot-logo-large {
+            height: 50px;
+            margin: 0 auto 1.5rem;
+            display: block;
+        }
+        
+        .trustpilot-stars-large {
+            font-size: 3rem;
+            color: #00B67A;
+            margin-bottom: 0.5rem;
+        }
+        
+        .trustpilot-rating-large {
+            font-size: 1.5rem;
+            color: var(--brand-2);
+            font-weight: 700;
+            margin-bottom: 2rem;
+        }
+        
+        .trustpilot-images-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+        
+        .trustpilot-image-item {
+            aspect-ratio: 4/3;
+            border-radius: var(--radius-xl);
+            overflow: hidden;
+            box-shadow: var(--shadow-md);
+            transition: all 0.3s ease;
+        }
+        
+        .trustpilot-image-item:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+        }
+        
+        .trustpilot-image-item img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        /* Event Agenda */
+        .agenda-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 968px) {
+            .agenda-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .agenda-list {
+            list-style: none;
+        }
+        
+        .agenda-list li {
+            padding-left: 2rem;
+            position: relative;
+            margin-bottom: 1.25rem;
+            color: var(--gray-700);
+        }
+        
+        .agenda-list li::before {
+            content: '▸';
+            position: absolute;
+            left: 0;
+            color: var(--brand-1);
+            font-weight: 700;
+            font-size: 1.25rem;
+        }
+        
+        .who-section {
+            background: var(--brand-3);
+            border-radius: var(--radius-xl);
+            padding: 2rem;
+        }
+        
+        .who-section h3 {
+            margin-bottom: 1.5rem;
+            color: var(--brand-2);
+        }
+        
+        .who-grid {
+            display: grid;
+            gap: 2rem;
+        }
+        
+        @media (min-width: 640px) {
+            .who-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+        
+        .who-list {
+            list-style: none;
+        }
+        
+        .who-list li {
+            margin-bottom: 0.75rem;
+            padding-left: 1.75rem;
+            position: relative;
+            color: var(--gray-700);
+        }
+        
+        .who-list.for li::before {
+            content: '✓';
+            position: absolute;
+            left: 0;
+            color: var(--success);
+            font-weight: 700;
+        }
+        
+        .who-list.not li::before {
+            content: '✗';
+            position: absolute;
+            left: 0;
+            color: var(--error);
+            font-weight: 700;
+        }
+        
+        /* Event Cards Section */
+        .event-cards-grid {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 2rem;
+            justify-items: center;
+        }
+        
+        .event-card {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            box-shadow: var(--shadow-sm);
+            overflow: hidden;
+            transition: all 0.3s ease;
+            border: 1px solid var(--gray-200);
+            width: 100%;
+            max-width: 420px;
+        }
+        
+        .event-card:hover {
+            box-shadow: var(--shadow-xl);
+            transform: translateY(-4px);
+            border-color: var(--brand-1);
+        }
+        
+        .event-card-badge {
+            background: var(--gradient-accent);
+            color: var(--white);
+            padding: 0.5rem 1rem;
+            font-size: 0.75rem;
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+            text-align: center;
+        }
+        
+        .event-card-body {
+            padding: 1.75rem;
+        }
+        
+        .event-card-city {
+            font-size: 1.5rem;
+            font-weight: 700;
+            color: var(--brand-2);
+            margin-bottom: 0.5rem;
+        }
+        
+        .event-card-date {
+            color: var(--gray-600);
+            margin-bottom: 0.375rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-card-venue {
+            color: var(--gray-600);
+            font-size: 0.875rem;
+            margin-bottom: 1.25rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        
+        .event-card-tag {
+            display: inline-block;
+            background: var(--brand-3);
+            color: var(--brand-2);
+            padding: 0.375rem 0.75rem;
+            border-radius: var(--radius-sm);
+            font-size: 0.75rem;
+            font-weight: 600;
+            margin-bottom: 1.25rem;
+        }
+        
+        /* Sticky Proof Strip */
+        .proof-strip {
+            background: var(--white);
+            border-top: 1px solid var(--gray-200);
+            border-bottom: 1px solid var(--gray-200);
+            padding: 1.5rem 0;
+        }
+        
+        .proof-strip-centered {
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .proof-rating {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            font-size: 1.25rem;
+            color: var(--gray-700);
+            font-weight: 600;
+        }
+        
+        .proof-stars {
+            color: var(--accent);
+            font-size: 1.75rem;
+        }
+        
+        /* Lead Capture */
+        .lead-capture {
+            background: linear-gradient(135deg, var(--brand-2) 0%, var(--brand-1) 100%);
+            color: var(--white);
+        }
+        
+        .lead-capture-grid {
+            display: grid;
+            gap: 3rem;
+            align-items: center;
+        }
+        
+        @media (min-width: 968px) {
+            .lead-capture-grid {
+                grid-template-columns: 0.8fr 1.2fr;
+            }
+        }
+        
+        .lead-capture h2,
+        .lead-capture p {
+            color: var(--white);
+        }
+        
+        .lead-capture-info h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .lead-capture-info p {
+            font-size: 1.125rem;
+            margin-bottom: 2rem;
+        }
+        
+        .lead-reassurance {
+            list-style: none;
+            margin-bottom: 1.5rem;
+        }
+        
+        .lead-reassurance li {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+            margin-bottom: 0.875rem;
+            color: rgba(255, 255, 255, 0.95);
+        }
+        
+        .lead-reassurance li::before {
+            content: '✓';
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 50%;
+            flex-shrink: 0;
+            font-weight: 700;
+            font-size: 0.75rem;
+        }
+        
+        .privacy-note {
+            font-size: 0.875rem;
+            color: rgba(255, 255, 255, 0.8);
+        }
+        
+        /* Form */
+        .form-container {
+            background: var(--white);
+            border-radius: var(--radius-xl);
+            padding: 2.5rem;
+            box-shadow: var(--shadow-xl);
+        }
+        
+        .form-visual-placeholder {
+            min-height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--gray-50);
+            border: 2px dashed var(--brand-1);
+            border-radius: var(--radius-lg);
+            padding: 2rem;
+        }
+        
+        .form-placeholder-content {
+            text-align: center;
+            max-width: 500px;
+            width: 100%;
+        }
+        
+        .form-placeholder-title {
+            font-size: 1.25rem;
+            color: var(--brand-2);
+            margin-bottom: 1.5rem;
+            font-weight: 700;
+        }
+        
+        .form-placeholder-note {
+            font-size: 0.875rem;
+            color: var(--gray-600);
+            margin-bottom: 2rem;
+        }
+        
+        .form-preview-fields {
+            text-align: left;
+            display: grid;
+            gap: 1rem;
+        }
+        
+        .form-preview-field {
+            background: var(--white);
+            border: 1px solid var(--gray-300);
+            border-radius: var(--radius-md);
+            padding: 0.75rem 1rem;
+            min-height: 48px;
+            display: flex;
+            align-items: center;
+            color: var(--gray-400);
+        }
+        
+        .form-preview-field-label {
+            font-size: 0.875rem;
+            font-weight: 600;
+            color: var(--brand-2);
+            margin-bottom: 0.375rem;
+        }
+        
+        .form-preview-button {
+            background: var(--gradient-accent);
+            color: var(--white);
+            border: none;
+            border-radius: var(--radius-lg);
+            padding: 1rem 2rem;
+            font-size: 1rem;
+            font-weight: 600;
+            width: 100%;
+            margin-top: 0.5rem;
+            cursor: not-allowed;
+            opacity: 0.7;
+        }
+        
+        /* FAQ */
+        .faq-list {
+            max-width: 900px;
+            margin: 0 auto;
+        }
+        
+        .faq-item {
+            background: var(--white);
+            border: 1px solid var(--gray-200);
+            border-radius: var(--radius-lg);
+            margin-bottom: 1rem;
+            overflow: hidden;
+        }
+        
+        .faq-question {
+            width: 100%;
+            background: none;
+            border: none;
+            padding: 1.5rem;
+            text-align: left;
+            font-size: 1.0625rem;
+            font-weight: 600;
+            color: var(--brand-2);
+            cursor: pointer;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            font-family: var(--font-base);
+            transition: background 0.2s ease;
+        }
+        
+        .faq-question:hover {
+            background: var(--gray-50);
+        }
+        
+        .faq-question:focus-visible {
+            outline: 2px solid var(--brand-1);
+            outline-offset: -2px;
+        }
+        
+        .faq-icon {
+            font-size: 1.25rem;
+            color: var(--brand-1);
+            transition: transform 0.3s ease;
+            flex-shrink: 0;
+        }
+        
+        .faq-item.active .faq-icon {
+            transform: rotate(180deg);
+        }
+        
+        .faq-answer {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.3s ease, padding 0.3s ease;
+        }
+        
+        .faq-item.active .faq-answer {
+            max-height: 500px;
+            padding: 0 1.5rem 1.5rem;
+        }
+        
+        .faq-answer p {
+            color: var(--gray-700);
+            margin: 0;
+        }
+        
+        /* Risk Block */
+        .risk-block {
+            background: var(--gray-800);
+            color: var(--white);
+            padding: 3rem 0;
+        }
+        
+        .risk-content {
+            max-width: 900px;
+            margin: 0 auto;
+            text-align: center;
+        }
+        
+        .risk-content p {
+            color: rgba(255, 255, 255, 0.9);
+            margin-bottom: 1.5rem;
+        }
+        
+        .risk-links {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            flex-wrap: wrap;
+        }
+        
+        .risk-links a {
+            color: var(--brand-1);
+            text-decoration: underline;
+        }
+        
+        /* Footer */
+        .footer {
+            background: var(--brand-2);
+            color: rgba(255, 255, 255, 0.8);
+            padding: 3rem 0 1.5rem;
+        }
+        
+        .footer-grid {
+            display: grid;
+            gap: 2rem;
+            margin-bottom: 2rem;
+        }
+        
+        @media (min-width: 768px) {
+            .footer-grid {
+                grid-template-columns: 1.5fr 1fr 1fr;
+            }
+        }
+        
+        .footer-logo {
+            height: 36px;
+            width: auto;
+            margin-bottom: 1rem;
+        }
+        
+        .footer h4 {
+            color: var(--white);
+            font-size: 1rem;
+            margin-bottom: 1rem;
+        }
+        
+        .footer-nav {
+            list-style: none;
+        }
+        
+        .footer-nav li {
+            margin-bottom: 0.625rem;
+        }
+        
+        .footer-nav a {
+            color: rgba(255, 255, 255, 0.8);
+            text-decoration: none;
+            font-size: 0.9375rem;
+            transition: color 0.2s ease;
+        }
+        
+        .footer-nav a:hover {
+            color: var(--brand-1);
+        }
+        
+        .footer-bottom {
+            border-top: 1px solid rgba(255, 255, 255, 0.1);
+            padding-top: 1.5rem;
+            text-align: center;
+            font-size: 0.875rem;
+        }
+        
+        /* Sticky Bottom CTA */
+        .sticky-cta {
+            position: fixed;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: var(--gradient-brand);
+            color: var(--white);
+            padding: 1rem 0;
+            box-shadow: 0 -4px 12px rgba(0, 0, 0, 0.15);
+            transform: translateY(100%);
+            transition: transform 0.3s ease;
+            z-index: 99;
+        }
+        
+        .sticky-cta.visible {
+            transform: translateY(0);
+        }
+        
+        .sticky-cta-inner {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            gap: 1rem;
+            flex-wrap: wrap;
+        }
+        
+        .sticky-cta-text {
+            font-weight: 600;
+            font-size: 0.9375rem;
+        }
+        
+        .sticky-cta-countdown {
+            font-weight: 700;
+            margin-left: 0.5rem;
+        }
+        
+        /* SVG Icons */
+        .icon {
+            width: 24px;
+            height: 24px;
+            fill: currentColor;
+            flex-shrink: 0;
+        }
+        
+        .icon-sm {
+            width: 20px;
+            height: 20px;
+        }
+        
+        .icon-lg {
+            width: 32px;
+            height: 32px;
+        }
+        
+        .icon-xl {
+            width: 48px;
+            height: 48px;
+        }
+        
+        /* Utility Classes */
+        .hidden {
+            display: none !important;
+        }
+        
+        /* Accessibility */
+        .sr-only {
+            position: absolute;
+            width: 1px;
+            height: 1px;
+            padding: 0;
+            margin: -1px;
+            overflow: hidden;
+            clip: rect(0, 0, 0, 0);
+            white-space: nowrap;
+            border-width: 0;
+        }
+        
+        /* Mobile Responsive */
+        @media (max-width: 968px) {
+            .carousel-item {
+                flex: 0 0 300px;
+            }
+            
+            .event-cards-grid {
+                grid-template-columns: 1fr;
+                gap: 1.5rem;
+            }
+            
+            .lead-capture-grid {
+                grid-template-columns: 1fr;
+                gap: 2rem;
+            }
+            
+            .hero-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (min-width: 969px) and (max-width: 1100px) {
+            .event-cards-grid {
+                gap: 1.5rem;
+            }
+            
+            .event-card {
+                max-width: 380px;
+            }
+        }
+        
+        @media (max-width: 640px) {
+            :root {
+                --container-padding: 1rem;
+            }
+            
+            section {
+                padding: 3rem 0;
+            }
+            
+            .hero {
+                padding: 3rem 0 4rem;
+            }
+            
+            .btn {
+                width: 100%;
+            }
+            
+            .hero-ctas .btn {
+                width: 100%;
+            }
+            
+            .carousel-item {
+                flex: 0 0 280px;
+            }
+            
+            .trustpilot-images-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .trustpilot-stars-large {
+                font-size: 2rem;
+            }
+            
+            .trustpilot-rating-large {
+                font-size: 1.25rem;
+            }
+            
+            h1 {
+                font-size: 2rem;
+            }
+            
+            h2 {
+                font-size: 1.75rem;
+            }
+            
+            .lead-capture-grid {
+                grid-template-columns: 1fr;
+            }
+            
+            .lead-capture-info img {
+                max-width: 100% !important;
+            }
+            
+            .hero-grid > div:last-child {
+                order: -1;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+    <!-- SVG Icon Library (Hidden) -->
+    <svg style="display: none;" xmlns="http://www.w3.org/2000/svg">
+        <defs>
+            <!-- Check Icon -->
+            <symbol id="icon-check" viewBox="0 0 24 24">
+                <path d="M20 6L9 17l-5-5"/>
+            </symbol>
+            
+            <!-- Star Icon -->
+            <symbol id="icon-star" viewBox="0 0 24 24">
+                <path d="M12 2l3.09 6.26L22 9.27l-5 4.87 1.18 6.88L12 17.77l-6.18 3.25L7 14.14 2 9.27l6.91-1.01L12 2z"/>
+            </symbol>
+            
+            <!-- Calendar Icon -->
+            <symbol id="icon-calendar" viewBox="0 0 24 24">
+                <rect x="3" y="4" width="18" height="18" rx="2" ry="2"/>
+                <line x1="16" y1="2" x2="16" y2="6"/>
+                <line x1="8" y1="2" x2="8" y2="6"/>
+                <line x1="3" y1="10" x2="21" y2="10"/>
+            </symbol>
+            
+            <!-- Video Icon -->
+            <symbol id="icon-video" viewBox="0 0 24 24">
+                <polygon points="23 7 16 12 23 17 23 7"/>
+                <rect x="2" y="5" width="14" height="14" rx="2" ry="2"/>
+            </symbol>
+            
+            <!-- Location Icon -->
+            <symbol id="icon-location" viewBox="0 0 24 24">
+                <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z"/>
+                <circle cx="12" cy="10" r="3"/>
+            </symbol>
+            
+            <!-- Shield Icon -->
+            <symbol id="icon-shield" viewBox="0 0 24 24">
+                <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z"/>
+            </symbol>
+            
+            <!-- Book Icon -->
+            <symbol id="icon-book" viewBox="0 0 24 24">
+                <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"/>
+                <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"/>
+            </symbol>
+            
+            <!-- Users Icon -->
+            <symbol id="icon-users" viewBox="0 0 24 24">
+                <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2"/>
+                <circle cx="9" cy="7" r="4"/>
+                <path d="M23 21v-2a4 4 0 0 0-3-3.87"/>
+                <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
+            </symbol>
+            
+            <!-- Trending Up Icon -->
+            <symbol id="icon-trending" viewBox="0 0 24 24">
+                <polyline points="23 6 13.5 15.5 8.5 10.5 1 18"/>
+                <polyline points="17 6 23 6 23 12"/>
+            </symbol>
+            
+            <!-- Alert Circle Icon -->
+            <symbol id="icon-alert" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <line x1="12" y1="8" x2="12" y2="12"/>
+                <line x1="12" y1="16" x2="12.01" y2="16"/>
+            </symbol>
+            
+            <!-- Zap Icon -->
+            <symbol id="icon-zap" viewBox="0 0 24 24">
+                <polygon points="13 2 3 14 12 14 11 22 21 10 12 10 13 2"/>
+            </symbol>
+            
+            <!-- Target Icon -->
+            <symbol id="icon-target" viewBox="0 0 24 24">
+                <circle cx="12" cy="12" r="10"/>
+                <circle cx="12" cy="12" r="6"/>
+                <circle cx="12" cy="12" r="2"/>
+            </symbol>
+        </defs>
+    </svg>
+    
+    <!-- Top Bar -->
+    <div class="top-bar">
+        <div class="container">
+            Free online event this week - join from anywhere
+            <span class="countdown" id="topCountdown">Loading...</span>
+        </div>
+    </div>
+    
+    <!-- Header -->
+    <header class="header" id="header">
+        <div class="container">
+            <div class="header-inner">
+                <a href="https://simple-fx.net/" aria-label="SimpleFX Home">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="SimpleFX Logo" class="logo">
+                </a>
+                <div class="header-cta">
+                    <a href="#form" class="btn btn-primary btn-sm">Get Free Access →</a>
+                </div>
+            </div>
+        </div>
+    </header>
+    
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <div class="hero-grid">
+                <div class="hero-content">
+                    <h1>Learn Professional Forex Trading: Free Online Events Every Week</h1>
+                    <p class="hero-subheadline">Join our award-winning live Zoom sessions. No cost, no commitment. Just clarity, structure, and expert guidance.</p>
+                    
+                    <ul class="hero-benefits">
+                        <li>100% free live Zoom sessions with no hidden costs</li>
+                        <li>Join from anywhere - all you need is internet</li>
+                        <li>Interactive Q&A with Richard Williams</li>
+                        <li>All experience levels welcome</li>
+                    </ul>
+                    
+                    <div class="hero-ctas">
+                        <a href="#form" class="btn btn-primary" style="font-size: 1.0625rem; padding: 1rem 2.5rem;">
+                            <svg class="icon" style="fill: white; margin-right: 0.5rem;"><use href="#icon-zap"/></svg>
+                            Claim Your Free Spot Now
+                        </a>
+                        <a href="#agenda" class="btn btn-secondary">See What You'll Learn</a>
+                    </div>
+                </div>
+                
+                <div style="display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div style="border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-xl);">
+                        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209720/Screenshot-2022-09-25-at-22.41.05-scaled_v62q7e.png" alt="SimpleFX Live Events" style="width: 100%; height: auto;">
+                    </div>
+                    
+                    <div class="event-cards-stack" id="heroEventCards">
+                        <!-- Populated by JavaScript -->
+                    </div>
+                </div>
+            </div>
+            
+            <!-- TRUST BAR - NOW CENTERED ACROSS FULL WIDTH -->
+            <div class="trust-bar">
+                <div class="trust-bar-label">⭐ Trusted by Traders Across the UK ⭐</div>
+                <div class="trust-bar-stars">★★★★★</div>
+                <div class="trust-bar-rating">4.9/5 from 1,200+ attendees</div>
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209437/Finance-Awards-logo_dukykj.png" alt="Finance Awards Winner" style="height: 60px; width: auto; opacity: 0.85;">
+            </div>
+        </div>
+    </section>
+    
+    <!-- Why SimpleFX -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Why SimpleFX Events Stand Out</h2>
+                <p>Professional education that prioritizes your safety and long-term success</p>
+            </div>
+            
+            <div class="grid grid-3">
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg class="icon-xl" style="fill: white;"><use href="#icon-shield"/></svg>
+                    </div>
+                    <h3>Risk-First Teaching</h3>
+                    <p>Learn how to protect your capital before chasing profits. We teach proper stop-loss placement, position sizing, and risk management from day one.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg class="icon-xl" style="fill: white;"><use href="#icon-book"/></svg>
+                    </div>
+                    <h3>Repeatable Playbook</h3>
+                    <p>No guesswork. You'll get clear entry criteria, exit rules, and a structured approach you can follow consistently.</p>
+                </div>
+                
+                <div class="value-card">
+                    <div class="value-icon">
+                        <svg class="icon-xl" style="fill: white;"><use href="#icon-users"/></svg>
+                    </div>
+                    <h3>Live Coaching & Support</h3>
+                    <p>Direct guidance from traders with 15+ years of experience, plus access to our supportive community and ongoing resources.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Meet Your Mentor -->
+    <section style="background: var(--gray-50);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Meet Your Mentor</h2>
+                <p>Learn from a professional trader with over 12 years of experience</p>
+            </div>
+            
+            <div style="display: grid; gap: 3rem; align-items: center; max-width: 1000px; margin: 0 auto;" class="grid-2-fixed">
+                <div>
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207072/Screenshot-2022-09-19-at-23.18.11_sdexfh.png" alt="Richard Williams - SimpleFX Founder" style="width: 100%; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+                </div>
+                <div>
+                    <div style="display: inline-block; background: var(--brand-1); color: var(--white); padding: 0.5rem 1rem; border-radius: var(--radius-md); font-size: 0.875rem; font-weight: 600; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                        Professional Trader & Specialist Teacher
+                    </div>
+                    <h3 style="font-size: 2rem; margin-bottom: 0.5rem; color: var(--brand-2);">Richard Williams</h3>
+                    <p style="font-size: 1.125rem; color: var(--brand-1); font-weight: 600; margin-bottom: 1.5rem;">Founder & Mentor - SimpleFX</p>
+                    
+                    <p style="color: var(--gray-700); line-height: 1.7; margin-bottom: 1rem;">
+                        SimpleFX was founded by Richard Williams, a professional Forex trader for over 12 years. Throughout his career, Richard's success never went unnoticed and he was soon inundated with requests from family and close friends to teach them how to trade too.
+                    </p>
+                    
+                    <p style="color: var(--gray-700); line-height: 1.7; margin-bottom: 1.5rem;">
+                        Starting simply at first with only a few students, Richard went through basic chart analysis and explained how the markets worked. He very quickly realised his passion for teaching and established SimpleFX in 2016 to share his knowledge with larger groups.
+                    </p>
+                    
+                    <div style="background: var(--brand-3); border-left: 4px solid var(--brand-1); padding: 1.25rem; border-radius: var(--radius-md); margin-bottom: 1.5rem;">
+                        <p style="margin: 0; font-style: italic; color: var(--brand-2); font-weight: 500;">
+                            "Our mission is to train our students in methods that, if followed properly, will lead to years of sustainable and successful trading."
+                        </p>
+                    </div>
+                    
+                    <a href="https://simple-fx.net/meet-your-mentor/" class="btn btn-secondary">
+                        Learn More About Richard →
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Video Section -->
+    <section style="background: var(--brand-2);">
+        <div class="container">
+            <div class="section-header">
+                <h2 style="color: var(--white);">See What Happens in Our Live Events</h2>
+                <p style="color: rgba(255, 255, 255, 0.9);">Real sessions, real traders, real results. Watch a preview of what you'll experience</p>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; background: var(--gray-800); border-radius: var(--radius-xl); box-shadow: var(--shadow-xl);">
+                    <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; display: flex; align-items: center; justify-content: center; flex-direction: column; gap: 1rem; color: var(--white);">
+                        <div style="width: 80px; height: 80px; background: var(--gradient-brand); border-radius: 50%; display: flex; align-items: center; justify-content: center; font-size: 2rem; cursor: pointer;">
+                            ▶
+                        </div>
+                        <p style="margin: 0; opacity: 0.8; font-size: 0.875rem;">Video Placeholder - Add your YouTube/Vimeo embed here</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Inside Our Live Events - CAROUSEL -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Inside Our Live Events</h2>
+                <p>Real screenshots from our Zoom sessions with traders worldwide</p>
+            </div>
+            
+            <div class="live-events-carousel">
+                <div class="carousel-track" id="eventsCarousel">
+                    <!-- Populated by JavaScript -->
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Hear From Our Attendees - TRUSTPILOT -->
+    <section class="trustpilot-showcase">
+        <div class="container">
+            <div class="trustpilot-header-centered">
+                <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" alt="Trustpilot" class="trustpilot-logo-large">
+                <div class="trustpilot-stars-large">★★★★★</div>
+                <div class="trustpilot-rating-large">4.9 out of 5 from 1,200+ attendees</div>
+                <h2 style="margin-bottom: 0.5rem;">Hear From Our Attendees</h2>
+                <p style="color: var(--gray-600); margin-bottom: 2rem;">Real feedback from people who've attended SimpleFX events</p>
+            </div>
+            
+            <div class="trustpilot-images-grid">
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207623/Screenshot_2025-11-15_at_18.53.23_zznfdy.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.53.09_ux7swp.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.25_jncism.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.36_goqee2.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.16_uly4z5.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.01_rhgsfy.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.47_emmcas.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+                <div class="trustpilot-image-item">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207626/Screenshot_2025-11-15_at_18.53.00_wlzq5n.png" alt="SimpleFX Trustpilot Review" loading="lazy">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="https://www.trustpilot.com/review/simple-fx.net" target="_blank" rel="noopener" class="btn btn-secondary">
+                    Read All Reviews on Trustpilot
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Event Agenda -->
+    <section id="agenda">
+        <div class="container">
+            <div class="section-header">
+                <h2>What You'll Learn</h2>
+                <p>A comprehensive curriculum designed to give you a solid foundation</p>
+            </div>
+            
+            <div class="agenda-grid">
+                <div>
+                    <h3>Event Modules</h3>
+                    <ul class="agenda-list">
+                        <li><strong>Trading Foundations:</strong> Understanding markets, currency pairs, and how forex works</li>
+                        <li><strong>Risk Management:</strong> Position sizing, stop-loss strategies, and capital preservation</li>
+                        <li><strong>Core Setups:</strong> High-probability patterns and entry/exit criteria</li>
+                        <li><strong>Live Trade Reviews:</strong> See real setups analyzed in real-time</li>
+                        <li><strong>Trading Psychology:</strong> Managing emotions and building discipline</li>
+                        <li><strong>Q&A Sessions:</strong> Get your specific questions answered by expert coaches</li>
+                    </ul>
+                </div>
+                
+                <div class="who-section">
+                    <h3>Who This Is For (And Who It's Not)</h3>
+                    
+                    <div class="who-grid">
+                        <div>
+                            <h4 style="font-size: 1.0625rem; margin-bottom: 1rem; color: var(--brand-2);">✓ This is for you if:</h4>
+                            <ul class="who-list for">
+                                <li>You want to learn a safe, structured approach</li>
+                                <li>You're willing to commit time to practice</li>
+                                <li>You value risk management over quick wins</li>
+                                <li>You're serious about trading long-term</li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 style="font-size: 1.0625rem; margin-bottom: 1rem; color: var(--brand-2);">✗ This isn't for you if:</h4>
+                            <ul class="who-list not">
+                                <li>You're looking for get-rich-quick schemes</li>
+                                <li>You want guaranteed returns (we don't promise that)</li>
+                                <li>You're not willing to put in the work</li>
+                                <li>You want a passive income with no effort</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Individual Session Previews -->
+    <section style="background: var(--brand-3);">
+        <div class="container">
+            <div class="section-header">
+                <h2>Each Event is Tailored to Your Experience Level</h2>
+                <p>Different sessions for different stages of your trading journey</p>
+            </div>
+            
+            <div style="display: grid; gap: 3rem;">
+                <!-- Is Forex For Me Session -->
+                <div style="display: grid; gap: 2rem; align-items: center;" class="grid-2-fixed">
+                    <div>
+                        <div style="display: inline-block; background: var(--brand-1); color: var(--white); padding: 0.375rem 0.875rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Beginner
+                        </div>
+                        <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--brand-2);">Is Forex For Me?</h3>
+                        <p style="color: var(--gray-700); margin-bottom: 1.5rem;">Perfect for complete beginners and those who've tried trading but couldn't make it work. We'll show you what's possible and if forex is the right fit for your goals.</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>Understanding forex basics without overwhelm</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>Realistic expectations about time and commitment</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>How to start safely with minimal risk</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div>
+                        <div style="aspect-ratio: 16/10; background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--gray-300);">
+                            <div style="text-align: center; padding: 2rem; color: var(--gray-600);">
+                                <svg class="icon-xl" style="fill: var(--brand-1); margin: 0 auto 1rem;"><use href="#icon-book"/></svg>
+                                <p style="margin: 0; font-size: 1rem; font-weight: 600;">Is Forex For Me?</p>
+                                <p style="margin: 0.5rem 0 0; font-size: 0.875rem; opacity: 0.7;">Session Screenshot Placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                
+                <!-- The Frustrated Trader Session -->
+                <div style="display: grid; gap: 2rem; align-items: center;" class="grid-2-fixed">
+                    <div style="order: 2;">
+                        <div style="display: inline-block; background: var(--accent); color: var(--white); padding: 0.375rem 0.875rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 700; margin-bottom: 1rem; text-transform: uppercase; letter-spacing: 0.5px;">
+                            Intermediate - Advanced
+                        </div>
+                        <h3 style="font-size: 1.75rem; margin-bottom: 1rem; color: var(--brand-2);">The Frustrated Trader</h3>
+                        <p style="color: var(--gray-700); margin-bottom: 1.5rem;">For traders who know the basics but keep losing money. We'll identify what's going wrong and show you the simple fix to stop the cycle of losses.</p>
+                        <ul style="list-style: none; padding: 0; margin: 0;">
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>Why most strategies fail and how to fix them</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>The psychology of consistent losing trades</span>
+                            </li>
+                            <li style="display: flex; align-items: start; gap: 0.75rem; margin-bottom: 0.75rem; color: var(--gray-700);">
+                                <span style="color: var(--brand-1); font-weight: 700; flex-shrink: 0;">✓</span>
+                                <span>Proven framework to turn things around</span>
+                            </li>
+                        </ul>
+                    </div>
+                    <div style="order: 1;">
+                        <div style="aspect-ratio: 16/10; background: var(--white); border-radius: var(--radius-xl); overflow: hidden; box-shadow: var(--shadow-lg); display: flex; align-items: center; justify-content: center; border: 2px dashed var(--gray-300);">
+                            <div style="text-align: center; padding: 2rem; color: var(--gray-600);">
+                                <svg class="icon-xl" style="fill: var(--brand-1); margin: 0 auto 1rem;"><use href="#icon-target"/></svg>
+                                <p style="margin: 0; font-size: 1rem; font-weight: 600;">The Frustrated Trader</p>
+                                <p style="margin: 0.5rem 0 0; font-size: 0.875rem; opacity: 0.7;">Session Screenshot Placeholder</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 3rem;">
+                <a href="#form" class="btn btn-primary" style="font-size: 1.125rem; padding: 1.125rem 2.5rem;">
+                    <svg class="icon-lg" style="fill: white; margin-right: 0.5rem;"><use href="#icon-zap"/></svg>
+                    Yes! I Want Free Access →
+                </a>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Upcoming Events -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Choose Your Free Online Event</h2>
+                <p>All sessions are live on Zoom. Pick the one that matches where you are on your trading journey</p>
+            </div>
+            
+            <div style="max-width: 900px; margin: 0 auto;">
+                <div class="event-cards-grid" id="allEventCards">
+                    <!-- Populated by JavaScript -->
+                </div>
+                
+                <div style="text-align: center; margin-top: 2.5rem;">
+                    <a href="https://www.facebook.com/groups/simplefxtrading/" target="_blank" class="btn btn-secondary" style="display: inline-flex; align-items: center; gap: 0.5rem;">
+                        <svg class="icon" style="fill: currentColor;"><use href="#icon-users"/></svg>
+                        Join Our Traders Community
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Proof Strip -->
+    <div class="proof-strip">
+        <div class="container">
+            <div class="proof-strip-centered">
+                <div class="proof-rating">
+                    <span class="proof-stars">★★★★★</span>
+                    <span>4.9/5 from 1,200+ attendees</span>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Lead Capture Form -->
+    <section class="lead-capture" id="form">
+        <div class="container">
+            <div class="lead-capture-grid">
+                <div class="lead-capture-info">
+                    <h2>Save Your Spot - 100% Free</h2>
+                    <p>Join traders worldwide learning the SimpleFX method. Get instant Zoom access with no payment required.</p>
+                    
+                    <div style="margin: 2rem 0;">
+                        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209452/Screenshot-2022-09-19-at-22.05.38-1024x1015_rkyxwj.png" alt="SimpleFX Training Preview" style="width: 100%; max-width: 400px; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); margin: 0 auto; display: block;">
+                    </div>
+                    
+                    <ul class="lead-reassurance">
+                        <li>100% free with no hidden costs or upsells</li>
+                        <li>Instant Zoom link sent to your email</li>
+                        <li>Join from anywhere in the world</li>
+                        <li>Q&A with Richard Williams included</li>
+                    </ul>
+                    
+                    <p class="privacy-note">We respect your privacy. No spam. Unsubscribe anytime.</p>
+                </div>
+                
+                <div>
+                    <div class="form-container">
+                        <div class="form-visual-placeholder">
+                            <div class="form-placeholder-content">
+                                <div class="form-placeholder-title">📝 Registration Form</div>
+                                <div class="form-placeholder-note">Replace this placeholder with your actual form embed code</div>
+                                
+                                <div class="form-preview-fields">
+                                    <div>
+                                        <div class="form-preview-field-label">Full Name *</div>
+                                        <div class="form-preview-field">John Smith</div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="form-preview-field-label">Email Address *</div>
+                                        <div class="form-preview-field">john@example.com</div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="form-preview-field-label">Phone Number *</div>
+                                        <div class="form-preview-field">+44 7700 900000</div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="form-preview-field-label">Trading Experience *</div>
+                                        <div class="form-preview-field">Select your level</div>
+                                    </div>
+                                    
+                                    <div>
+                                        <div class="form-preview-field-label">Preferred Event *</div>
+                                        <div class="form-preview-field">Choose an event</div>
+                                    </div>
+                                    
+                                    <button class="form-preview-button">
+                                        <svg class="icon" style="fill: white; margin-right: 0.5rem; display: inline-block; vertical-align: middle;"><use href="#icon-zap"/></svg>
+                                        Get My Free Zoom Link →
+                                    </button>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- FAQ -->
+    <section>
+        <div class="container">
+            <div class="section-header">
+                <h2>Frequently Asked Questions</h2>
+            </div>
+            
+            <div class="faq-list">
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq1">
+                        <span>Is this beginner friendly?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq1">
+                        <p>Absolutely. "Is Forex For Me?" is specifically designed for complete beginners with zero trading experience. We start with the fundamentals and explain everything in simple terms. Many of our most successful students came to us knowing nothing about trading.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq2">
+                        <span>Are these events really free?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq2">
+                        <p>Yes, 100% free. No hidden costs, no payment required, no upsells during the event. We provide genuine value in these sessions because we believe in building trust through education. You'll get your Zoom link immediately after registration.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq3">
+                        <span>What do I need to join?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq3">
+                        <p>Just a computer, tablet, or smartphone with internet access. We'll send you a Zoom link after you register. You can join with or without video, it's up to you. We recommend having a notepad handy to jot down key points.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq4">
+                        <span>Which event should I choose?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq4">
+                        <p>Choose based on your experience: "Is Forex For Me?" for complete beginners, "The Frustrated Trader" if you've tried trading but keep losing money. When in doubt, start with "Is Forex For Me?"</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq5">
+                        <span>What if I can't attend the time I registered for?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq5">
+                        <p>No problem. These events run regularly throughout the week. Simply register for a different session that fits your schedule. You can also reach out to our team and we'll help you find the best time.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq6">
+                        <span>How is this different from watching YouTube videos?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq6">
+                        <p>Live events provide interactive learning you can't get from pre-recorded videos. You can ask Richard questions in real-time, see live chart analysis, and get immediate clarification on anything you don't understand. Plus, you'll connect with other traders at your level.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq7">
+                        <span>Do you guarantee profits?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq7">
+                        <p>No. We're an education provider, not an investment advisor. Trading involves significant risk, and we cannot guarantee profits. What we do provide is professional education, a structured methodology, and risk management principles to help you trade more safely and make informed decisions.</p>
+                    </div>
+                </div>
+                
+                <div class="faq-item">
+                    <button class="faq-question" aria-expanded="false" aria-controls="faq8">
+                        <span>What happens after the event?</span>
+                        <span class="faq-icon">▼</span>
+                    </button>
+                    <div class="faq-answer" id="faq8">
+                        <p>After the free event, you'll have the option to join our community and explore our paid training programmes if you want to go deeper. There's no pressure. The free event provides real value on its own. Many attendees join our Facebook trading community to stay connected and continue learning.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Risk & Compliance -->
+    <div class="risk-block">
+        <div class="container">
+            <div class="risk-content">
+                <p><strong>Important Disclosure:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex and other financial instruments involves substantial risk and may not be suitable for all investors. Past performance is not indicative of future results.</p>
+                <div class="risk-links">
+                    <a href="https://simple-fx.net/terms/">Terms of Service</a>
+                    <a href="https://simple-fx.net/privacy/">Privacy Policy</a>
+                    <a href="https://simple-fx.net/risk-disclosure/">Risk Disclosure</a>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-grid">
+                <div>
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="SimpleFX Logo" class="footer-logo">
+                    <p>Professional forex trading education for everyday people.</p>
+                </div>
+                
+                <div>
+                    <h4>Quick Links</h4>
+                    <ul class="footer-nav">
+                        <li><a href="https://simple-fx.net/about-2/">About Us</a></li>
+                        <li><a href="https://simple-fx.net/upcoming-events/">All Events</a></li>
+                        <li><a href="https://simple-fx.net/simple-20/">Courses</a></li>
+                        <li><a href="https://simple-fx.net/contact-us/">Contact</a></li>
+                    </ul>
+                </div>
+                
+                <div>
+                    <h4>Community</h4>
+                    <ul class="footer-nav">
+                        <li><a href="https://www.facebook.com/groups/simplefxtrading/" target="_blank">Facebook Traders Group</a></li>
+                        <li><a href="https://simple-fx.net/meet-your-mentor/">Meet Richard Williams</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="footer-bottom">
+                <p>&copy; <span id="copyrightYear">2025</span> SimpleFX. All rights reserved.</p>
+            </div>
+        </div>
+    </footer>
+    
+    <!-- Sticky Bottom CTA -->
+    <div class="sticky-cta" id="stickyCta">
+        <div class="container">
+            <div class="sticky-cta-inner">
+                <div class="sticky-cta-text">
+                    🔥 Next Free Event Starts
+                    <span class="sticky-cta-countdown" id="stickyCountdown">Loading...</span>
+                </div>
+                <a href="#form" class="btn btn-accent btn-sm">Secure My Free Spot →</a>
+            </div>
+        </div>
+    </div>
+    
+    <!-- JavaScript -->
+    <script>
+        // Events Data
+        const EVENTS = [
+            { 
+                id: 'ev1', 
+                name: 'Is Forex For Me?', 
+                dateISO: '2025-11-19T19:00:00',
+                day: 'Tuesday',
+                time: '19:00 GMT',
+                venue: 'Online Zoom Session', 
+                description: 'Perfect for complete beginners. Learn if forex trading is right for you and how to get started safely.',
+                level: 'Beginner',
+                seatsRemaining: 'Limited',
+                seatsPercent: 75
+            },
+            { 
+                id: 'ev2', 
+                name: 'The Frustrated Trader', 
+                dateISO: '2025-11-20T19:00:00',
+                day: 'Wednesday',
+                time: '19:00 GMT',
+                venue: 'Online Zoom Session', 
+                description: 'For traders who know the basics but keep losing money. Discover the simple fix to stop the bleeding.',
+                level: 'Intermediate - Advanced',
+                seatsRemaining: 'Filling Fast',
+                seatsPercent: 65
+            }
+        ];
+        
+        const STOCK_IMAGES = [
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_q5bbj3.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_1_x2p2mp.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_2_zmnvpu.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209101/download_2_qvo6a5.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209115/download_gwkb0t.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_q5bbj3.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_1_x2p2mp.jpg',
+            'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209100/images_2_zmnvpu.jpg'
+        ];
+        
+        function getCountdown(targetDate) {
+            const now = new Date().getTime();
+            const target = new Date(targetDate).getTime();
+            const distance = target - now;
+            
+            if (distance < 0) return 'Event Started';
+            
+            const days = Math.floor(distance / (1000 * 60 * 60 * 24));
+            const hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+            const minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+            
+            if (days > 0) {
+                return `${days}d ${hours}h ${minutes}m`;
+            } else {
+                return `${hours}h ${minutes}m`;
+            }
+        }
+        
+        function updateCountdowns() {
+            const nextEvent = EVENTS[0];
+            const countdown = getCountdown(nextEvent.dateISO);
+            
+            document.getElementById('topCountdown').textContent = countdown;
+            document.getElementById('stickyCountdown').textContent = countdown;
+        }
+        
+        function populateHeroEventCards() {
+            const container = document.getElementById('heroEventCards');
+            
+            container.innerHTML = EVENTS.map(event => `
+                <div class="event-card-mini">
+                    <div class="event-card-mini-header">
+                        <h4>${event.name}</h4>
+                    </div>
+                    <div class="event-card-mini-date">${event.day} • ${event.time}</div>
+                    <div class="event-card-mini-location"><svg class="icon-sm" style="display: inline; vertical-align: middle; margin-right: 0.375rem;"><use href="#icon-video"/></svg>${event.venue}</div>
+                    <div style="display: inline-block; background: var(--brand-3); color: var(--brand-2); padding: 0.25rem 0.625rem; border-radius: var(--radius-sm); font-size: 0.75rem; font-weight: 600; margin-bottom: 1rem;">
+                        ${event.level} • FREE
+                    </div>
+                    <div class="seats-meter">
+                        <div class="seats-label">${event.seatsRemaining}</div>
+                        <div class="seats-bar">
+                            <div class="seats-fill ${event.seatsRemaining.toLowerCase().replace(' ', '')}" style="width: ${event.seatsPercent}%"></div>
+                        </div>
+                    </div>
+                    <a href="#form" class="btn btn-primary btn-sm" style="width: 100%;">Save My Spot →</a>
+                </div>
+            `).join('');
+        }
+        
+        function populateAllEventCards() {
+            const container = document.getElementById('allEventCards');
+            
+            container.innerHTML = EVENTS.map(event => `
+                <div class="event-card">
+                    <div class="event-card-badge">FREE • ${event.level}</div>
+                    <div class="event-card-body">
+                        <div class="event-card-city">${event.name}</div>
+                        <div class="event-card-date"><svg class="icon-sm" style="display: inline; vertical-align: middle; margin-right: 0.375rem;"><use href="#icon-calendar"/></svg>${event.day} • ${event.time}</div>
+                        <div class="event-card-venue"><svg class="icon-sm" style="display: inline; vertical-align: middle; margin-right: 0.375rem;"><use href="#icon-video"/></svg>${event.venue}</div>
+                        <p style="font-size: 0.875rem; color: var(--gray-600); margin-bottom: 1rem; line-height: 1.5;">${event.description}</p>
+                        <a href="#form" class="btn btn-primary btn-sm" style="width: 100%;">Claim Free Access →</a>
+                    </div>
+                </div>
+            `).join('');
+        }
+        
+        function populateEventsCarousel() {
+            const track = document.getElementById('eventsCarousel');
+            if (!track) return;
+            
+            const carouselHTML = STOCK_IMAGES.map((img, index) => `
+                <div class="carousel-item">
+                    <img src="${img}" alt="Live Trading Event ${index + 1}" loading="lazy">
+                </div>
+            `).join('');
+            
+            track.innerHTML = carouselHTML + carouselHTML;
+        }
+        
+        function handleStickyHeader() {
+            const header = document.getElementById('header');
+            const stickyCta = document.getElementById('stickyCta');
+            
+            if (window.scrollY > 80) {
+                header.classList.add('sticky');
+            } else {
+                header.classList.remove('sticky');
+            }
+            
+            if (window.scrollY > window.innerHeight) {
+                stickyCta.classList.add('visible');
+            } else {
+                stickyCta.classList.remove('visible');
+            }
+        }
+        
+        function initFAQ() {
+            const faqButtons = document.querySelectorAll('.faq-question');
+            
+            faqButtons.forEach(button => {
+                button.addEventListener('click', () => {
+                    const item = button.parentElement;
+                    const isActive = item.classList.contains('active');
+                    
+                    document.querySelectorAll('.faq-item').forEach(i => {
+                        i.classList.remove('active');
+                        i.querySelector('.faq-question').setAttribute('aria-expanded', 'false');
+                    });
+                    
+                    if (!isActive) {
+                        item.classList.add('active');
+                        button.setAttribute('aria-expanded', 'true');
+                    }
+                });
+            });
+        }
+        
+        function initSmoothScroll() {
+            document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+                anchor.addEventListener('click', function (e) {
+                    const href = this.getAttribute('href');
+                    if (href === '#' || !href) return;
+                    
+                    e.preventDefault();
+                    const element = document.querySelector(href);
+                    if (element) {
+                        const headerOffset = 80;
+                        const elementPosition = element.getBoundingClientRect().top;
+                        const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
+                        
+                        window.scrollTo({
+                            top: offsetPosition,
+                            behavior: 'smooth'
+                        });
+                    }
+                });
+            });
+        }
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            populateHeroEventCards();
+            populateAllEventCards();
+            populateEventsCarousel();
+            initFAQ();
+            initSmoothScroll();
+            
+            updateCountdowns();
+            setInterval(updateCountdowns, 60000);
+            
+            window.addEventListener('scroll', handleStickyHeader);
+            
+            document.getElementById('copyrightYear').textContent = new Date().getFullYear();
+        });
+    </script>
+</body>
+</html>
