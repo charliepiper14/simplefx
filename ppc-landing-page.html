@@ -280,12 +280,13 @@
         }
         
         .logo {
-            height: 56px;
-            width: auto;
+            height: 100px;
+            width: 100px;
         }
         
         .header.sticky .logo {
-            height: 44px;
+            height: 70px;
+            width: 70px;
         }
         
         .header-cta {
@@ -1803,7 +1804,7 @@
                     <p>Join traders worldwide learning the SimpleFX method. Get instant Zoom access with no payment required.</p>
                     
                     <div style="margin: 2rem 0;">
-                        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209452/Screenshot-2022-09-19-at-22.05.38-1024x1015_rkyxwj.png" alt="SimpleFX Training Preview" style="width: 100%; max-width: 400px; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); margin: 0 auto; display: block;">
+                        <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209452/Screenshot-2022-09-19-at-22.05.38-1024x1015_rkyxwj.png" alt="SimpleFX Training Preview" style="width: 100%; height: auto; border-radius: var(--radius-xl); box-shadow: var(--shadow-xl); display: block;">
                     </div>
                     
                     <ul class="lead-reassurance">
@@ -1831,7 +1832,7 @@
                                     
                                     <div>
                                         <div class="form-preview-field-label">Email Address *</div>
-                                        <div class="form-preview-field">john@example.com</div>
+                                        <div class="form-preview-field"><a href="/cdn-cgi/l/email-protection" class="__cf_email__" data-cfemail="5f353037311f3a273e322f333a713c3032">[email&#160;protected]</a></div>
                                     </div>
                                     
                                     <div>
@@ -2015,7 +2016,7 @@
     </div>
     
     <!-- JavaScript -->
-    <script>
+    <script data-cfasync="false" src="/cdn-cgi/scripts/5c5dd728/cloudflare-static/email-decode.min.js"></script><script>
         // Events Data
         const EVENTS = [
             { 
@@ -2204,11 +2205,3 @@
             
             updateCountdowns();
             setInterval(updateCountdowns, 60000);
-            
-            window.addEventListener('scroll', handleStickyHeader);
-            
-            document.getElementById('copyrightYear').textContent = new Date().getFullYear();
-        });
-    </script>
-</body>
-</html>
