@@ -218,40 +218,76 @@
 .sfx-trust-badges {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
-    gap: 1rem;
-    padding: 1.5rem 0;
+    gap: 1.25rem;
+    padding: 2rem 0;
     border-top: 1px solid #E5E7EB;
     margin-top: 2rem;
 }
 @media (min-width: 768px) {
     .sfx-trust-badges {
         display: flex;
-        align-items: center;
+        align-items: stretch;
         justify-content: center;
-        gap: 2rem;
-        flex-wrap: wrap;
+        gap: 0;
+        flex-wrap: nowrap;
+        padding: 2.5rem 0;
     }
 }
 .sfx-trust-badge {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
+    text-align: center;
     gap: 0.5rem;
-    font-size: 0.8125rem;
+    font-size: 0.875rem;
     color: #4B5563;
     font-weight: 500;
+    padding: 1rem;
+    min-height: 100px;
+}
+@media (min-width: 768px) {
+    .sfx-trust-badge {
+        flex-direction: row;
+        gap: 0.75rem;
+        padding: 1.25rem 2rem;
+        border-right: 1px solid #E5E7EB;
+        min-height: auto;
+        font-size: 1rem;
+    }
+    .sfx-trust-badge:last-child {
+        border-right: none;
+    }
 }
 .sfx-trust-badge strong {
     color: #2D5016;
+    font-size: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-trust-badge strong {
+        font-size: 1.125rem;
+    }
 }
 .sfx-badge-icon {
-    width: 18px;
-    height: 18px;
+    width: 28px;
+    height: 28px;
     flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .sfx-badge-icon {
+        width: 32px;
+        height: 32px;
+    }
 }
 .sfx-stars {
     color: #FFB800;
-    font-size: 0.875rem;
-    letter-spacing: 1px;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+    .sfx-stars {
+        font-size: 1.5rem;
+    }
 }
 </style>
 
@@ -437,8 +473,20 @@
 }
 @media (min-width: 1024px) {
     .sfx-why-grid {
-        grid-template-columns: repeat(3, 1fr);
-        gap: 2rem;
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+.sfx-why-bottom-row {
+    display: none;
+}
+@media (min-width: 1024px) {
+    .sfx-why-bottom-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 640px;
+        margin: 1.5rem auto 0;
     }
 }
 .sfx-value-card {
@@ -503,6 +551,14 @@
     line-height: 1.6;
     font-size: 0.9375rem;
 }
+.sfx-hide-desktop {
+    display: block;
+}
+@media (min-width: 1024px) {
+    .sfx-hide-desktop {
+        display: none;
+    }
+}
 </style>
 
 <div class="sfx-why">
@@ -558,6 +614,32 @@
                 <p>Direct guidance from traders with 15+ years of experience. Get your trades reviewed.</p>
             </div>
             
+            <!-- These two show in the grid on mobile/tablet -->
+            <div class="sfx-value-card sfx-hide-desktop">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Honest About The Reality</h3>
+                <p>No get-rich-quick promises. We tell you the truth about what it takes to succeed.</p>
+            </div>
+            
+            <div class="sfx-value-card sfx-hide-desktop">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2"/>
+                        <path d="M23 21V19C23 17.1362 21.7252 15.5701 20 15.126M16 3.12598C17.7252 3.56984 19 5.13616 19 6.99998C19 8.8638 17.7252 10.4301 16 10.874" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Supportive Community</h3>
+                <p>Join hundreds of traders who understand exactly what you are going through.</p>
+            </div>
+        </div>
+        
+        <!-- Bottom row centered for desktop pyramid -->
+        <div class="sfx-why-bottom-row">
             <div class="sfx-value-card">
                 <div class="sfx-value-icon">
                     <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -1637,10 +1719,93 @@
 </div>
 
 
-<!-- ============================================
-     SECTION 9: REGISTRATION FORM
-     ============================================ -->
 <style>
+.sfx-form-urgency-header {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-header {
+        padding: 2rem 1.5rem;
+    }
+}
+.sfx-form-urgency-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sfx-form-urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-badge {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+}
+.sfx-form-urgency-badge svg {
+    width: 16px;
+    height: 16px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.sfx-form-urgency-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.sfx-form-urgency-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.9);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-subtitle {
+        margin-bottom: 1.25rem;
+    }
+}
+.sfx-form-urgency-points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-points {
+        gap: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+.sfx-form-urgency-point {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.sfx-form-urgency-point svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
 .sfx-lead-section {
     background: #1F2937;
     padding: 3rem 0;
@@ -1895,6 +2060,36 @@
     flex: 1;
 }
 </style>
+
+<!-- ============================================
+     SECTION 9: URGENCY HEADER + REGISTRATION FORM
+     ============================================ -->
+
+<!-- Urgency Header -->
+<div class="sfx-form-urgency-header">
+    <div class="sfx-form-urgency-container">
+        <div class="sfx-form-urgency-badge">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FFFFFF"/><circle cx="12" cy="12" r="4" fill="#DC2626"/></svg>
+            <span>Live This Thursday</span>
+        </div>
+        <h2 class="sfx-form-urgency-title">Spaces Are Filling Fast</h2>
+        <p class="sfx-form-urgency-subtitle">Only 20 spots available per session. Secure yours now before they are gone.</p>
+        <div class="sfx-form-urgency-points">
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Instant Confirmation</span>
+            </div>
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>No Payment Required</span>
+            </div>
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Zoom Link Sent Immediately</span>
+            </div>
+        </div>
+    </div>
+</div>
 
 <div id="register" class="sfx-lead-section">
     <div class="sfx-lead-container">
