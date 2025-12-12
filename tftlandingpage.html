@@ -1,0 +1,2364 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>The Frustrated Trader | Free Live Event | SimpleFX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        *, *::before, *::after {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #FFFFFF;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        img {
+            max-width: 100%;
+            height: auto;
+            display: block;
+        }
+        a {
+            text-decoration: none;
+        }
+    </style>
+</head>
+<body>
+
+<!-- ============================================
+     SECTION 1: HERO
+     ============================================ -->
+<style>
+.sfx-hero {
+    background: #FFFFFF;
+    padding: 0 0 4rem 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+.sfx-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+.sfx-hero-topbar {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    color: #FFFFFF;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.sfx-hero-topbar svg {
+    width: 16px;
+    height: 16px;
+    flex-shrink: 0;
+}
+.sfx-hero-main-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 968px) {
+    .sfx-hero-main-grid {
+        grid-template-columns: 1fr 1.2fr;
+        gap: 3rem;
+    }
+    .sfx-hero-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-hero h1 {
+    font-size: clamp(1.75rem, 5vw, 3.25rem);
+    font-weight: 800;
+    line-height: 1.15;
+    color: #1F2937;
+    margin-bottom: 1rem;
+}
+.sfx-hero h1 .sfx-highlight {
+    color: #DC2626;
+}
+.sfx-hero-subheadline {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+    line-height: 1.6;
+}
+.sfx-pain-box {
+    background: #FEF2F2;
+    border-left: 4px solid #DC2626;
+    padding: 1rem 1.25rem;
+    margin-bottom: 1.5rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+}
+.sfx-pain-item {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.625rem;
+    margin-bottom: 0.5rem;
+    font-size: 0.9375rem;
+    color: #991B1B;
+    font-weight: 500;
+}
+.sfx-pain-item:last-child {
+    margin-bottom: 0;
+}
+.sfx-pain-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+    margin-top: 2px;
+}
+.sfx-hero-benefits {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.sfx-hero-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 0.75rem;
+    font-size: 0.9375rem;
+    color: #374151;
+}
+.sfx-check-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background: #6CC24A;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+}
+.sfx-check-icon svg {
+    width: 12px;
+    height: 12px;
+}
+.sfx-hero-cta-box {
+    background: linear-gradient(135deg, #F0F9EC 0%, #E8F5E3 100%);
+    border: 2px solid #6CC24A;
+    border-radius: 1rem;
+    padding: 1.25rem;
+    text-align: center;
+}
+.sfx-hero-cta-info {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+    margin-bottom: 1rem;
+    font-size: 0.875rem;
+    color: #2D5016;
+    font-weight: 600;
+}
+.sfx-hero-cta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.sfx-cta-icon {
+    width: 18px;
+    height: 18px;
+}
+.sfx-btn {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    text-decoration: none;
+    gap: 0.5rem;
+}
+.sfx-btn-primary {
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    color: #FFFFFF;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    width: 100%;
+}
+.sfx-btn-primary:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.sfx-hero-image {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+    order: -1;
+}
+@media (min-width: 968px) {
+    .sfx-hero-image {
+        order: 0;
+    }
+}
+.sfx-trust-badges {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #E5E7EB;
+    margin-top: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-trust-badges {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        gap: 2rem;
+        flex-wrap: wrap;
+    }
+}
+.sfx-trust-badge {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    font-size: 0.8125rem;
+    color: #4B5563;
+    font-weight: 500;
+}
+.sfx-trust-badge strong {
+    color: #2D5016;
+}
+.sfx-badge-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+.sfx-stars {
+    color: #FFB800;
+    font-size: 0.875rem;
+    letter-spacing: 1px;
+}
+</style>
+
+<div class="sfx-hero">
+    <div class="sfx-hero-topbar">
+        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+            <circle cx="12" cy="12" r="10" fill="#FFFFFF"/>
+            <circle cx="12" cy="12" r="4" fill="#DC2626"/>
+        </svg>
+        <span>Free Live Session Every Thursday at 7pm UK Time | Limited to 20 Attendees</span>
+    </div>
+    
+    <div class="sfx-hero-container">
+        <div class="sfx-hero-main-grid">
+            
+            <div class="sfx-hero-image">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763366694/Simple-FX-Man-Trading-Image-843x1024_udnmtk.jpg" alt="SimpleFX Professional Trader">
+            </div>
+            
+            <div class="sfx-hero-content">
+                <h1>Frustrated With <span class="sfx-highlight">Losing Trades?</span> You Are Not Alone.</h1>
+                
+                <p class="sfx-hero-subheadline">Join our free live session and finally understand why you keep losing and what to do about it. Every Thursday at 7pm UK time.</p>
+                
+                <div class="sfx-pain-box">
+                    <div class="sfx-pain-item">
+                        <svg class="sfx-pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#991B1B" stroke-width="2"/>
+                            <path d="M15 9L9 15M9 9L15 15" stroke="#991B1B" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Tried multiple strategies but nothing sticks?</span>
+                    </div>
+                    <div class="sfx-pain-item">
+                        <svg class="sfx-pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#991B1B" stroke-width="2"/>
+                            <path d="M15 9L9 15M9 9L15 15" stroke="#991B1B" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Watch profits disappear due to emotional decisions?</span>
+                    </div>
+                    <div class="sfx-pain-item">
+                        <svg class="sfx-pain-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="#991B1B" stroke-width="2"/>
+                            <path d="M15 9L9 15M9 9L15 15" stroke="#991B1B" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Feel like you are going in circles with no progress?</span>
+                    </div>
+                </div>
+                
+                <ul class="sfx-hero-benefits">
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Discover the 5 mistakes keeping you stuck</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Learn why psychology beats strategy every time</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Get a clear, simple framework that actually works</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Live Q&A with mentors who have 15+ years experience</span>
+                    </li>
+                </ul>
+                
+                <div class="sfx-hero-cta-box">
+                    <div class="sfx-hero-cta-info">
+                        <div class="sfx-hero-cta-item">
+                            <svg class="sfx-cta-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="3" y="4" width="18" height="18" rx="2" stroke="#2D5016" stroke-width="2"/>
+                                <path d="M16 2V6M8 2V6M3 10H21" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Every Thursday 7pm UK</span>
+                        </div>
+                        <div class="sfx-hero-cta-item">
+                            <svg class="sfx-cta-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <rect x="2" y="3" width="20" height="14" rx="2" stroke="#2D5016" stroke-width="2"/>
+                                <path d="M8 21H16M12 17V21" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Via Zoom</span>
+                        </div>
+                        <div class="sfx-hero-cta-item">
+                            <svg class="sfx-cta-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                                <path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" stroke="#2D5016" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            </svg>
+                            <span>100% Free</span>
+                        </div>
+                    </div>
+                    <a href="#register" class="sfx-btn sfx-btn-primary">Reserve My Free Spot</a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="sfx-trust-badges">
+            <div class="sfx-trust-badge">
+                <span class="sfx-stars">★★★★★</span>
+                <span><strong>Excellent</strong> Trustpilot</span>
+            </div>
+            <div class="sfx-trust-badge">
+                <svg class="sfx-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" fill="#FFB800"/>
+                    <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="#FFB800" stroke-width="2"/>
+                </svg>
+                <span><strong>5x Award</strong> Winner</span>
+            </div>
+            <div class="sfx-trust-badge">
+                <svg class="sfx-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="#2D5016" stroke-width="2"/>
+                    <path d="M23 21V19C23 17.1362 21.7252 15.5701 20 15.126" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span><strong>500+</strong> Traders</span>
+            </div>
+            <div class="sfx-trust-badge">
+                <svg class="sfx-badge-icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="#2D5016" stroke-width="2"/>
+                    <circle cx="12" cy="10" r="3" stroke="#2D5016" stroke-width="2"/>
+                </svg>
+                <span><strong>UK</strong> Based</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 2: WHY STRUGGLING TRADERS CHOOSE US
+     ============================================ -->
+<style>
+.sfx-why {
+    padding: 3rem 0;
+    background: #F9FAFB;
+}
+@media (min-width: 768px) {
+    .sfx-why {
+        padding: 5rem 0;
+    }
+}
+.sfx-why-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-why-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-why-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-why-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-why h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-why-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.sfx-why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 640px) {
+    .sfx-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-why-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 2rem;
+    }
+}
+.sfx-value-card {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-value-card {
+        padding: 2rem;
+    }
+}
+.sfx-value-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    border-color: #6CC24A;
+}
+.sfx-value-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-value-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.25rem;
+    }
+}
+.sfx-value-icon svg {
+    width: 24px;
+    height: 24px;
+}
+@media (min-width: 768px) {
+    .sfx-value-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+.sfx-value-card h3 {
+    font-size: 1.125rem;
+    color: #1F2937;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+    .sfx-value-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+}
+.sfx-value-card p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+</style>
+
+<div class="sfx-why">
+    <div class="sfx-why-container">
+        <div class="sfx-why-header">
+            <h2>Why Struggling Traders Choose Us</h2>
+            <p>We focus on fixing what is actually broken, not just teaching another strategy</p>
+        </div>
+        
+        <div class="sfx-why-grid">
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 22C17.5228 22 22 17.5228 22 12C22 6.47715 17.5228 2 12 2C6.47715 2 2 6.47715 2 12C2 17.5228 6.47715 22 12 22Z" stroke="white" stroke-width="2"/>
+                        <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Psychology First Approach</h3>
+                <p>Most courses teach strategies. We fix the mental errors causing 80% of your losses.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Risk Management Focus</h3>
+                <p>Learn to protect your capital before chasing profits. Proper position sizing from day one.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Simple Repeatable System</h3>
+                <p>No guesswork. Clear entry criteria, exit rules, and a structured approach you can follow.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2"/>
+                        <path d="M3 20C3 16.6863 5.68629 14 9 14C12.3137 14 15 16.6863 15 20" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="17" cy="10" r="3" stroke="white" stroke-width="2"/>
+                        <path d="M15 20C15 17.7909 16.7909 16 19 16" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>1:1 Mentoring Access</h3>
+                <p>Direct guidance from traders with 15+ years of experience. Get your trades reviewed.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Honest About The Reality</h3>
+                <p>No get-rich-quick promises. We tell you the truth about what it takes to succeed.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2"/>
+                        <path d="M23 21V19C23 17.1362 21.7252 15.5701 20 15.126M16 3.12598C17.7252 3.56984 19 5.13616 19 6.99998C19 8.8638 17.7252 10.4301 16 10.874" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Supportive Community</h3>
+                <p>Join hundreds of traders who understand exactly what you are going through.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 3: MEET YOUR MENTOR
+     ============================================ -->
+<style>
+.sfx-mentor {
+    background: #FFFFFF;
+    padding: 3rem 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-mentor {
+        padding: 5rem 0;
+    }
+}
+.sfx-mentor-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-mentor-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-mentor h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+.sfx-mentor-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-mentor-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+.sfx-mentor-image {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.sfx-mentor-quote {
+    background: #FEF2F2;
+    border-left: 4px solid #DC2626;
+    padding: 1rem 1.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1.5rem;
+}
+.sfx-mentor-quote p {
+    margin: 0;
+    font-style: italic;
+    color: #991B1B;
+    font-weight: 500;
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+.sfx-mentor-badge {
+    display: inline-block;
+    background: #6CC24A;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-mentor-name {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.25rem;
+    color: #1F2937;
+    font-weight: 700;
+}
+.sfx-mentor-title {
+    font-size: 1rem;
+    color: #6CC24A;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.sfx-mentor-bio {
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+.sfx-mentor-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.sfx-mentor-stat {
+    text-align: center;
+}
+.sfx-mentor-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #6CC24A;
+    display: block;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-stat-value {
+        font-size: 2rem;
+    }
+}
+.sfx-mentor-stat-label {
+    font-size: 0.75rem;
+    color: #6B7280;
+}
+</style>
+
+<div class="sfx-mentor">
+    <div class="sfx-mentor-container">
+        <div class="sfx-mentor-header">
+            <h2>Meet Your Mentor</h2>
+            <p>Learn from someone who has been where you are now</p>
+        </div>
+        
+        <div class="sfx-mentor-grid">
+            <div class="sfx-mentor-image">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207072/Screenshot-2022-09-19-at-23.18.11_sdexfh.png" alt="Richard Williams">
+            </div>
+            <div>
+                <span class="sfx-mentor-badge">Professional Trader & Specialist Teacher</span>
+                <h3 class="sfx-mentor-name">Richard Williams</h3>
+                <p class="sfx-mentor-title">Founder & Mentor at SimpleFX</p>
+                
+                <div class="sfx-mentor-quote">
+                    <p>"I have worked with hundreds of frustrated traders. Most are not bad traders. They just never learned properly. They have picked up bits from YouTube, bits from courses, but never built a solid foundation. That is what we fix."</p>
+                </div>
+                
+                <p class="sfx-mentor-bio">
+                    Richard founded SimpleFX in 2010 after seeing too many traders lose money to overcomplicated systems and empty promises. His approach is simple: honest education, real support, and no fluff.
+                </p>
+                
+                <div class="sfx-mentor-stats">
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">15+</span>
+                        <span class="sfx-mentor-stat-label">Years Trading</span>
+                    </div>
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">500+</span>
+                        <span class="sfx-mentor-stat-label">Traders Mentored</span>
+                    </div>
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">5x</span>
+                        <span class="sfx-mentor-stat-label">Award Winner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 4: EXPERIENCE A LIVE SESSION (VIDEO)
+     ============================================ -->
+<style>
+.sfx-video {
+    background: #2D5016;
+    color: #FFFFFF;
+    padding: 3rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-video {
+        padding: 5rem 0;
+    }
+}
+.sfx-video-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-video-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-video-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-video-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-video h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #FFFFFF;
+    margin-bottom: 0.75rem;
+}
+.sfx-video-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: rgba(255, 255, 255, 0.9);
+}
+.sfx-video-wrapper {
+    max-width: 900px;
+    margin: 0 auto;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+.sfx-video-wrapper iframe {
+    display: block;
+    width: 100%;
+    height: auto;
+    aspect-ratio: 16 / 9;
+}
+</style>
+
+<div class="sfx-video">
+    <div class="sfx-video-container">
+        <div class="sfx-video-header">
+            <h2>See What a Session Looks Like</h2>
+            <p>Watch real traders share how they overcame the same frustrations you are facing</p>
+        </div>
+        
+        <div class="sfx-video-wrapper">
+            <iframe src="https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=copy_F6F8FCFA-ECAF-4BDF-AF9C-5C9EEB74C9FD_1_patwx3&profile=cld-default" width="640" height="360" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 5: INSIDE OUR LIVE EVENTS (CAROUSEL)
+     ============================================ -->
+<style>
+.sfx-carousel-section {
+    padding: 3rem 0;
+    background: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-section {
+        padding: 5rem 0;
+    }
+}
+.sfx-carousel-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-carousel-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-carousel-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-carousel-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-live-events-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.sfx-carousel-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-track {
+        gap: 1.5rem;
+    }
+}
+.sfx-carousel-item {
+    flex: 0 0 280px;
+    aspect-ratio: 4/3;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+    .sfx-carousel-item {
+        flex: 0 0 400px;
+        border-radius: 1rem;
+    }
+}
+.sfx-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+</style>
+
+<div class="sfx-carousel-section">
+    <div class="sfx-carousel-container">
+        <div class="sfx-carousel-header">
+            <h2>Inside Our Live Events</h2>
+            <p>Real screenshots from our Zoom sessions with traders across the UK</p>
+        </div>
+        
+        <div class="sfx-live-events-carousel" id="carouselWrapper">
+            <div class="sfx-carousel-track" id="eventsCarousel"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var CAROUSEL_IMAGES = [
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763378314/66a7fc2f755bfe9b5541e0efe0310f48_nqdtnf.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763378595/IMG_9001_wuo76y.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763378612/IMG_9214_sxuhjw.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1763378309/518fab88b0190c0f7f7c008445693667_hjkajg.jpg'
+    ];
+    
+    function initCarousel() {
+        var track = document.getElementById('eventsCarousel');
+        if (!track) return;
+        
+        var imageHTML = '';
+        for (var i = 0; i < CAROUSEL_IMAGES.length; i++) {
+            imageHTML += '<div class="sfx-carousel-item"><img src="' + CAROUSEL_IMAGES[i] + '" alt="Live Trading Event ' + (i + 1) + '" loading="lazy"></div>';
+        }
+        
+        track.innerHTML = imageHTML + imageHTML + imageHTML;
+        
+        var position = 0;
+        var speed = 0.5;
+        var itemWidth = window.innerWidth < 768 ? 280 + 16 : 400 + 24;
+        var totalWidth = CAROUSEL_IMAGES.length * itemWidth;
+        
+        function animate() {
+            position -= speed;
+            if (Math.abs(position) >= totalWidth) {
+                position = 0;
+            }
+            track.style.transform = 'translateX(' + position + 'px)';
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    } else {
+        initCarousel();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 6: WHAT YOU WILL LEARN
+     ============================================ -->
+<style>
+.sfx-agenda {
+    padding: 3rem 0;
+    background: #F9FAFB;
+}
+@media (min-width: 768px) {
+    .sfx-agenda {
+        padding: 5rem 0;
+    }
+}
+.sfx-agenda-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-agenda-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-agenda h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-agenda-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-agenda-grid {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 968px) {
+    .sfx-agenda-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.sfx-agenda h3 {
+    font-size: 1.25rem;
+    color: #1F2937;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+.sfx-agenda-list {
+    list-style: none;
+}
+.sfx-agenda-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+    color: #374151;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+.sfx-agenda-list-icon {
+    width: 20px;
+    height: 20px;
+    min-width: 20px;
+    color: #6CC24A;
+    margin-top: 3px;
+}
+.sfx-who-section {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 2px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-who-section {
+        padding: 2rem;
+    }
+}
+.sfx-who-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 640px) {
+    .sfx-who-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+.sfx-who-list {
+    list-style: none;
+}
+.sfx-who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+    color: #374151;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+.sfx-who-icon-yes {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    color: #10B981;
+    margin-top: 2px;
+}
+.sfx-who-icon-no {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    color: #EF4444;
+    margin-top: 2px;
+}
+.sfx-who-title-yes {
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+    color: #10B981;
+    font-weight: 600;
+}
+.sfx-who-title-no {
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+    color: #EF4444;
+    font-weight: 600;
+}
+</style>
+
+<div class="sfx-agenda" id="agenda">
+    <div class="sfx-agenda-container">
+        <div class="sfx-agenda-header">
+            <h2>What You Will Discover</h2>
+            <p>In 90 minutes, you will learn more about why you are struggling than years of YouTube tutorials</p>
+        </div>
+        
+        <div class="sfx-agenda-grid">
+            <div>
+                <h3>Session Breakdown</h3>
+                <ul class="sfx-agenda-list">
+                    <li>
+                        <svg class="sfx-agenda-list-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+                        <span><strong>Why You Keep Losing:</strong> The 5 most common mistakes frustrated traders make</span>
+                    </li>
+                    <li>
+                        <svg class="sfx-agenda-list-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+                        <span><strong>The Psychology Shift:</strong> Why 80% of trading success is mindset</span>
+                    </li>
+                    <li>
+                        <svg class="sfx-agenda-list-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+                        <span><strong>Risk Management Reality:</strong> How to stop blowing accounts</span>
+                    </li>
+                    <li>
+                        <svg class="sfx-agenda-list-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+                        <span><strong>A Simple Path Forward:</strong> One clear, structured approach</span>
+                    </li>
+                    <li>
+                        <svg class="sfx-agenda-list-icon" viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="currentColor"/></svg>
+                        <span><strong>Live Q&A:</strong> Get your specific questions answered by Richard</span>
+                    </li>
+                </ul>
+            </div>
+            
+            <div class="sfx-who-section">
+                <h3 style="font-size: 1.125rem; color: #1F2937; font-weight: 700; margin-bottom: 1.25rem;">Who This Is For (And Who It Is Not)</h3>
+                
+                <div class="sfx-who-grid">
+                    <div>
+                        <h4 class="sfx-who-title-yes">This is for you if:</h4>
+                        <ul class="sfx-who-list">
+                            <li>
+                                <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>You have been trading but losing money</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>You know something is wrong but not what</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>You are willing to change your approach</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>You want honest feedback, not hype</span>
+                            </li>
+                        </ul>
+                    </div>
+                    
+                    <div>
+                        <h4 class="sfx-who-title-no">This is not for you if:</h4>
+                        <ul class="sfx-who-list">
+                            <li>
+                                <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                <span>You want get-rich-quick schemes</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                <span>You expect guaranteed returns</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                <span>You are not willing to put in work</span>
+                            </li>
+                            <li>
+                                <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                <span>You blame the market for losses</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 7: HEAR FROM ATTENDEES (VIDEOS + REVIEWS)
+     ============================================ -->
+<style>
+.sfx-trustpilot {
+    background: #FFF;
+    padding: 3rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot {
+        padding: 5rem 0;
+    }
+}
+.sfx-trustpilot-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-trustpilot-header-centered {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-header-centered {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-trustpilot-logo-small {
+    height: 24px;
+    width: auto;
+    max-width: 120px;
+    margin: 0 auto 0.75rem;
+    display: block;
+    object-fit: contain;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-logo-small {
+        height: 28px;
+        max-width: 140px;
+        margin-bottom: 1rem;
+    }
+}
+.sfx-trustpilot-stars-large {
+    font-size: 1.5rem;
+    color: #00B67A;
+    margin-bottom: 0.375rem;
+    letter-spacing: 0.25rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-stars-large {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+.sfx-trustpilot-rating-large {
+    font-size: 1rem;
+    color: #1F2937;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-rating-large {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+}
+.sfx-trustpilot h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.375rem;
+}
+.sfx-trustpilot-header-centered > p {
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-header-centered > p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+}
+.sfx-videos-section {
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-videos-section {
+        margin-bottom: 4rem;
+    }
+}
+.sfx-videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (min-width: 640px) {
+    .sfx-videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-videos-grid {
+        gap: 2rem;
+    }
+}
+.sfx-video-item {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: #000;
+    aspect-ratio: 16/9;
+    position: relative;
+}
+@media (min-width: 768px) {
+    .sfx-video-item {
+        border-radius: 1rem;
+    }
+}
+.sfx-video-item:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+.sfx-video-logo-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    cursor: pointer;
+    z-index: 5;
+}
+.sfx-video-logo-thumb img {
+    width: 50%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+.sfx-video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(108, 194, 74, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+}
+@media (min-width: 768px) {
+    .sfx-video-play-btn {
+        width: 70px;
+        height: 70px;
+    }
+}
+.sfx-video-play-btn:hover {
+    background: #6CC24A;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.sfx-video-play-btn svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+}
+@media (min-width: 768px) {
+    .sfx-video-play-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+.sfx-video-logo-thumb.hidden {
+    display: none;
+}
+.sfx-video-item iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+.sfx-trustpilot-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (min-width: 640px) {
+    .sfx-trustpilot-images-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-trustpilot-images-grid {
+        gap: 1.5rem;
+    }
+}
+.sfx-trustpilot-image-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: #FFF;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-image-item {
+        border-radius: 1rem;
+    }
+}
+.sfx-trustpilot-image-item:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+.sfx-trustpilot-image-item img {
+    width: 100%;
+    height: auto;
+}
+</style>
+
+<div class="sfx-trustpilot">
+    <div class="sfx-trustpilot-container">
+        <div class="sfx-trustpilot-header-centered">
+            <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" alt="Trustpilot" class="sfx-trustpilot-logo-small">
+            <div class="sfx-trustpilot-stars-large">★★★★★</div>
+            <div class="sfx-trustpilot-rating-large">Rated Excellent | 4.9 out of 5</div>
+            <h2>Hear From Traders Who Were In Your Position</h2>
+            <p>Real feedback from frustrated traders who finally found clarity</p>
+        </div>
+        
+        <div class="sfx-videos-section">
+            <div class="sfx-videos-grid" id="videoGallery">
+                <!-- Videos will be populated by JS -->
+            </div>
+        </div>
+        
+        <div>
+            <div class="sfx-trustpilot-images-grid">
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207623/Screenshot_2025-11-15_at_18.53.23_zznfdy.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.53.09_ux7swp.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.25_jncism.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.36_goqee2.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.16_uly4z5.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.01_rhgsfy.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.47_emmcas.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207626/Screenshot_2025-11-15_at_18.53.00_wlzq5n.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763398015/Screenshot_2025-11-17_at_23.46.37_papraz.png" alt="Review" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var VIDEO_SOURCES = [
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=adacf845c72b2d3a205f5f8a78f93b07_stm4jb&profile=cld-default&autoplay=true',
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=104b2c5b850564ef0a3718c9cbd9a08d_mv1i5p&profile=cld-default&autoplay=true',
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=copy_C2F6EA73-835E-41AF-B977-AFE1A55F4DA5_rlbop2&profile=cld-default&autoplay=true',
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=copy_4CF56B47-F76F-4FB9-A562-B0B21CD71EAF_ag5wck&profile=cld-default&autoplay=true',
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=20200914T155717820.att.1205052246529549_gnj7gt&profile=cld-default&autoplay=true',
+        'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=copy_58261639-573A-4BB4-B519-191F785E0334_bwn36j&profile=cld-default&autoplay=true'
+    ];
+    
+    var LOGO_URL = 'https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png';
+    
+    var currentPlayingItem = null;
+    
+    function initVideoGallery() {
+        var gallery = document.getElementById('videoGallery');
+        if (!gallery) return;
+        
+        var html = '';
+        for (var i = 0; i < VIDEO_SOURCES.length; i++) {
+            html += '<div class="sfx-video-item" data-video-index="' + i + '">' +
+                '<div class="sfx-video-logo-thumb">' +
+                    '<img src="' + LOGO_URL + '" alt="SimpleFX">' +
+                    '<div class="sfx-video-play-btn">' +
+                        '<svg viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg>' +
+                    '</div>' +
+                '</div>' +
+                '<iframe src="" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>' +
+            '</div>';
+        }
+        gallery.innerHTML = html;
+        
+        var videoItems = gallery.querySelectorAll('.sfx-video-item');
+        
+        for (var j = 0; j < videoItems.length; j++) {
+            (function(item) {
+                var thumb = item.querySelector('.sfx-video-logo-thumb');
+                var iframe = item.querySelector('iframe');
+                var index = parseInt(item.getAttribute('data-video-index'), 10);
+                
+                thumb.addEventListener('click', function(e) {
+                    e.preventDefault();
+                    e.stopPropagation();
+                    
+                    // Stop currently playing video if different
+                    if (currentPlayingItem && currentPlayingItem !== item) {
+                        var oldThumb = currentPlayingItem.querySelector('.sfx-video-logo-thumb');
+                        var oldIframe = currentPlayingItem.querySelector('iframe');
+                        oldThumb.classList.remove('hidden');
+                        oldIframe.src = '';
+                    }
+                    
+                    // Play this video
+                    iframe.src = VIDEO_SOURCES[index];
+                    thumb.classList.add('hidden');
+                    currentPlayingItem = item;
+                });
+            })(videoItems[j]);
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoGallery);
+    } else {
+        initVideoGallery();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 8: SOCIAL PROOF BANNER
+     ============================================ -->
+<style>
+.sfx-proof {
+    background: linear-gradient(135deg, #2D5016 0%, #1F3A0D 100%);
+    padding: 1.25rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-proof {
+        padding: 2rem 0;
+    }
+}
+.sfx-proof-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-proof-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-proof-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    .sfx-proof-grid {
+        gap: 3rem;
+    }
+}
+.sfx-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFFFF;
+}
+.sfx-proof-icon {
+    width: 20px;
+    height: 20px;
+}
+@media (min-width: 768px) {
+    .sfx-proof-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+.sfx-proof-text {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+@media (min-width: 768px) {
+    .sfx-proof-text {
+        font-size: 1rem;
+    }
+}
+.sfx-proof-stars {
+    color: #FFB800;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+    .sfx-proof-stars {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<div class="sfx-proof">
+    <div class="sfx-proof-container">
+        <div class="sfx-proof-grid">
+            <div class="sfx-proof-item">
+                <span class="sfx-proof-stars">★★★★★</span>
+                <span class="sfx-proof-text">Trustpilot</span>
+            </div>
+            <div class="sfx-proof-item">
+                <svg class="sfx-proof-icon" viewBox="0 0 24 24" fill="none"><path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" fill="#FFB800"/><path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="#FFB800" stroke-width="2"/></svg>
+                <span class="sfx-proof-text">5x Award Winner</span>
+            </div>
+            <div class="sfx-proof-item">
+                <svg class="sfx-proof-icon" viewBox="0 0 24 24" fill="none"><path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#FFFFFF" stroke-width="2"/></svg>
+                <span class="sfx-proof-text">500+ Traders</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 9: REGISTRATION FORM
+     ============================================ -->
+<style>
+.sfx-lead-section {
+    background: #1F2937;
+    padding: 3rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-lead-section {
+        padding: 5rem 0;
+    }
+}
+.sfx-lead-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-lead-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-lead-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+@media (min-width: 768px) {
+    .sfx-lead-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+.sfx-lead-left h2 {
+    color: #FFFFFF;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+.sfx-lead-left > p {
+    color: #D1D5DB;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    margin-bottom: 1.5rem;
+    text-align: center;
+}
+.sfx-lead-image {
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.sfx-lead-reassurance {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.sfx-lead-reassurance li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+}
+.sfx-lead-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    background: rgba(108, 194, 74, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sfx-lead-check svg {
+    width: 10px;
+    height: 10px;
+}
+.sfx-lead-privacy {
+    font-size: 0.8125rem;
+    opacity: 0.6;
+    text-align: center;
+    color: #D1D5DB;
+}
+.sfx-form-box {
+    background: #374151;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+    .sfx-form-box {
+        padding: 2rem;
+    }
+}
+.sfx-form-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    color: #1F2937;
+    text-align: center;
+    background: #FFB800;
+}
+.sfx-host-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+    .sfx-host-header {
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+.sfx-host-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 3px solid #6CC24A;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .sfx-host-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+.sfx-host-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sfx-host-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.125rem;
+}
+.sfx-host-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+@media (min-width: 768px) {
+    .sfx-host-name {
+        font-size: 1.75rem;
+    }
+}
+.sfx-form-disclaimer {
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.5;
+}
+
+/* HubSpot Form Styling */
+.sfx-form-box .hs-form-field {
+    margin-bottom: 1rem;
+}
+.sfx-form-box .hs-form-field label {
+    display: block;
+    font-size: 0.875rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.375rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+}
+.sfx-form-box .hs-input,
+.sfx-form-box input[type="text"],
+.sfx-form-box input[type="email"],
+.sfx-form-box input[type="tel"],
+.sfx-form-box select {
+    width: 100% !important;
+    min-height: 44px;
+    padding: 0.625rem 0.875rem;
+    font-size: 1rem;
+    border: 1px solid #555555;
+    border-radius: 0.5rem;
+    background: #FFFFFF;
+    color: #1F2937;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    box-sizing: border-box;
+}
+.sfx-form-box .hs-input:focus,
+.sfx-form-box input:focus,
+.sfx-form-box select:focus {
+    border-color: #6CC24A;
+    box-shadow: 0 0 0 3px rgba(108, 194, 74, 0.2);
+    outline: none;
+}
+.sfx-form-box .hs-submit .hs-button,
+.sfx-form-box input[type="submit"],
+.sfx-form-box button[type="submit"] {
+    width: 100%;
+    min-height: 48px;
+    padding: 0.875rem 1.5rem;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    border: none;
+    border-radius: 0.5rem;
+    cursor: pointer;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-form-box .hs-submit .hs-button:hover,
+.sfx-form-box input[type="submit"]:hover,
+.sfx-form-box button[type="submit"]:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+}
+.sfx-form-box .hs-error-msg,
+.sfx-form-box .hs-error-msgs {
+    color: #FF6B6B;
+    font-size: 0.8125rem;
+    margin-top: 0.25rem;
+}
+.sfx-form-box .hs-form-required {
+    color: #FF6B6B;
+}
+.sfx-form-box .legal-consent-container {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    margin-top: 1rem;
+}
+.sfx-form-box .legal-consent-container a {
+    color: #6CC24A;
+}
+/* Phone field fix */
+.sfx-form-box .hs-fieldtype-phonenumber .input {
+    display: flex;
+    gap: 0.5rem;
+}
+.sfx-form-box .hs-fieldtype-phonenumber .hs-input {
+    flex: 1;
+}
+</style>
+
+<div id="register" class="sfx-lead-section">
+    <div class="sfx-lead-container">
+        <div class="sfx-lead-grid">
+            <div class="sfx-lead-left">
+                <div style="text-align: center; margin-bottom: 0.75rem;">
+                    <span class="sfx-form-badge">FREE | INTERMEDIATE & ADVANCED</span>
+                </div>
+                <h2>The Frustrated Trader<br>Reserve Your Spot</h2>
+                <p>For traders who know the basics but keep losing money. Discover the simple fix to stop the bleeding and start winning.</p>
+                
+                <div class="sfx-lead-image">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763378612/IMG_9214_sxuhjw.jpg" alt="Frustrated Trader">
+                </div>
+                
+                <ul class="sfx-lead-reassurance">
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>100% free with no hidden costs or upsells</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Instant Zoom link sent to your email</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Join from anywhere in the UK</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Q&A with Richard Williams included</span>
+                    </li>
+                </ul>
+                
+                <p class="sfx-lead-privacy">We respect your privacy. No spam. Unsubscribe anytime.</p>
+            </div>
+            
+            <div class="sfx-form-box">
+                <div class="sfx-host-header">
+                    <div class="sfx-host-photo">
+                        <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
+                    </div>
+                    <div>
+                        <div class="sfx-host-label">Hosted by</div>
+                        <div class="sfx-host-name">Richard Williams</div>
+                    </div>
+                </div>
+                
+                <!-- HubSpot Form Embed -->
+                <script charset="utf-8" type="text/javascript" src="//js.hsforms.net/forms/embed/v2.js"></script>
+                <script>
+                    hbspt.forms.create({
+                        region: "na1",
+                        portalId: "6361252",
+                        formId: "29c6754a-9811-456c-b968-8ddd0f638f9d"
+                    });
+                </script>
+                
+                <div class="sfx-form-disclaimer">
+                    <strong>Important Disclosure:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex involves substantial risk and may not be suitable for all investors.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 10: FAQ
+     ============================================ -->
+<style>
+.sfx-faq {
+    padding: 3rem 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-faq {
+        padding: 5rem 0;
+    }
+}
+.sfx-faq-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-faq-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-faq h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+}
+.sfx-faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sfx-faq-item {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.sfx-faq-item:hover {
+    border-color: #6CC24A;
+}
+.sfx-faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1F2937;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background 0.2s ease;
+}
+@media (min-width: 768px) {
+    .sfx-faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.0625rem;
+    }
+}
+.sfx-faq-question:hover {
+    background: rgba(108, 194, 74, 0.05);
+}
+.sfx-faq-icon {
+    font-size: 1rem;
+    color: #6CC24A;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .sfx-faq-icon {
+        font-size: 1.25rem;
+    }
+}
+.sfx-faq-item.active .sfx-faq-icon {
+    transform: rotate(180deg);
+}
+.sfx-faq-item.active {
+    background: #FFFFFF;
+    border-color: #6CC24A;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.sfx-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+}
+.sfx-faq-item.active .sfx-faq-answer {
+    grid-template-rows: 1fr;
+}
+.sfx-faq-answer-inner {
+    overflow: hidden;
+}
+.sfx-faq-answer-content {
+    padding: 0 1.25rem 1.25rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-answer-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+}
+.sfx-faq-answer p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+</style>
+
+<div class="sfx-faq">
+    <div class="sfx-faq-container">
+        <div class="sfx-faq-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="sfx-faq-list">
+            <div class="sfx-faq-item active">
+                <button class="sfx-faq-question">
+                    <span>Is this really free? What is the catch?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Yes, 100% free. No card required, no hidden costs. We run these sessions because many attendees later choose to continue learning with us. But there is zero pressure. Many people just come for the free education and that is completely fine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>I have tried other courses that did not work. How is this different?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Most courses teach strategies without addressing WHY you are losing. We start by helping you understand your specific mistakes and psychology first. A new strategy will not help if you keep making the same mental errors.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>I am embarrassed about how much I have lost. Will I feel judged?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Absolutely not. Most of our attendees have lost money. That is exactly why they are here. Richard and the team have seen it all and lost money themselves when they started. No judgment, just help.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>Do I need to be in the Midlands to attend?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>No. All sessions are online via Zoom. Join from anywhere in the UK. We have a strong community of traders from Birmingham, Nottingham, Leicester and Derby, but you are welcome wherever you are based.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What if I cannot make it on Thursday?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Register anyway and we will send you the recording. We also run sessions every week, so you can join the next one that works for your schedule.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>How long is the session?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Around 90 minutes including live Q&A at the end. You can ask Richard questions directly during the session.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>Do you guarantee profits?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>No. We are an education provider, not an investment advisor. Trading involves significant risk. What we provide is professional education and risk management principles that help you make better decisions.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What happens after the event?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>You will have the option to join our community and explore our paid training programmes if you want to go deeper. There is no pressure. Many people just attend the free events and that is perfectly fine.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initFAQ() {
+        var buttons = document.querySelectorAll('.sfx-faq-question');
+        
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+                
+                var allItems = document.querySelectorAll('.sfx-faq-item');
+                for (var j = 0; j < allItems.length; j++) {
+                    allItems[j].classList.remove('active');
+                }
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+        initFAQ();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 11: FOOTER DISCLAIMER
+     ============================================ -->
+<style>
+.sfx-risk {
+    background: #111827;
+    color: #FFFFFF;
+    padding: 2rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-risk {
+        padding: 3rem 0;
+    }
+}
+.sfx-risk-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-risk-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.sfx-risk-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.8125rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-content p {
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+.sfx-risk-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    .sfx-risk-links {
+        gap: 1.5rem;
+    }
+}
+.sfx-risk-links a {
+    color: #6CC24A;
+    text-decoration: underline;
+    font-size: 0.8125rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-links a {
+        font-size: 0.875rem;
+    }
+}
+.sfx-risk-links a:hover {
+    color: #5CB85C;
+}
+.sfx-risk-copyright {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 768px) {
+    .sfx-risk-copyright {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+}
+</style>
+
+<div class="sfx-risk">
+    <div class="sfx-risk-container">
+        <div class="sfx-risk-content">
+            <p><strong>Important Disclosure:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex and other financial instruments involves substantial risk and may not be suitable for all investors. Past performance is not indicative of future results. You should carefully consider your investment objectives, level of experience, and risk appetite before trading.</p>
+            <div class="sfx-risk-links">
+                <a href="https://simple-fx.net/terms/">Terms of Service</a>
+                <a href="https://simple-fx.net/privacy/">Privacy Policy</a>
+                <a href="https://simple-fx.net/risk-disclosure/">Risk Disclosure</a>
+            </div>
+            <div class="sfx-risk-copyright">
+                2024 SimpleFX. All rights reserved. Registered in England & Wales.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SMOOTH SCROLL SCRIPT
+     ============================================ -->
+<script>
+(function() {
+    var anchors = document.querySelectorAll('a[href^="#"]');
+    for (var i = 0; i < anchors.length; i++) {
+        anchors[i].addEventListener('click', function(e) {
+            e.preventDefault();
+            var target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                var offset = 60;
+                var position = target.getBoundingClientRect().top + window.pageYOffset - offset;
+                window.scrollTo({
+                    top: position,
+                    behavior: 'smooth'
+                });
+            }
+        });
+    }
+})();
+</script>
+
+</body>
+</html>
