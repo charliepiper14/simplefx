@@ -1777,7 +1777,6 @@
                     e.preventDefault();
                     e.stopPropagation();
                     
-                    // Stop currently playing video if different
                     if (currentPlayingItem && currentPlayingItem !== item) {
                         var oldThumb = currentPlayingItem.querySelector('.sfx-video-logo-thumb');
                         var oldIframe = currentPlayingItem.querySelector('iframe');
@@ -1785,7 +1784,6 @@
                         oldIframe.src = '';
                     }
                     
-                    // Play this video
                     var publicId = VIDEO_SOURCES[index].id;
                     iframe.src = 'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=' + encodeURIComponent(publicId) + '&profile=cld-default&autoplay=true';
                     thumb.classList.add('hidden');
@@ -2168,7 +2166,6 @@
      SECTION 9: URGENCY HEADER + REGISTRATION FORM
      ============================================ -->
 
-<!-- Urgency Header -->
 <div class="sfx-form-urgency-header">
     <div class="sfx-form-urgency-container">
         <div class="sfx-form-urgency-badge">
@@ -2241,7 +2238,6 @@
                     </div>
                 </div>
                 
-                <!-- Countdown above form -->
                 <div class="sfx-countdown-form" id="sfxCountdownForm">
                     <div class="sfx-countdown-label">
                         <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
@@ -2270,7 +2266,6 @@
                     </div>
                 </div>
                 
-                <!-- Zoho Form Embed -->
                 <div class="sfx-zoho-form-wrapper">
                     <iframe aria-label='Join ISFX4ME' frameborder="0" style="height:850px;width:99%;border:none;" src='https://forms.zohopublic.eu/helensimp1/form/JoinISFX4MEQualifying/formperma/UgMFjQYD2weWyiFzWYPl_lYTrq2NCh5Tgys5ymTLOKQ'></iframe>
                 </div>
@@ -2664,18 +2659,10 @@
      ============================================ -->
 <script>
 (function() {
-    // Get the next Wednesday 7:30pm UK time as a UTC Date.
-    // Uses the Intl API to detect whether the UK is currently on BST or GMT,
-    // so the countdown stays correct year-round without hardcoded DST dates.
     function getNextSessionUTC() {
         var now = new Date();
-        
-        // Build a candidate "Wednesday 7:30pm UK" by reading the parts of "now" in UK time.
-        // Loop forward day-by-day until we find the next Wednesday 7:30pm UK that is in the future.
         for (var addDays = 0; addDays < 14; addDays++) {
             var probe = new Date(now.getTime() + addDays * 24 * 60 * 60 * 1000);
-            
-            // Get the UK weekday/date for this probe
             var fmt = new Intl.DateTimeFormat('en-GB', {
                 timeZone: 'Europe/London',
                 weekday: 'short',
@@ -2685,16 +2672,8 @@
             });
             var parts = {};
             fmt.formatToParts(probe).forEach(function(p) { parts[p.type] = p.value; });
-            
-            // Wednesday only
             if (parts.weekday !== 'Wed') continue;
-            
-            // Build the UK-time target: that date at 19:30:00
-            var ukDateString = parts.year + '-' + parts.month + '-' + parts.day + 'T19:30:00';
-            
-            // Convert that UK wall-clock time to a real UTC instant by computing the offset
             var targetUTC = ukWallTimeToUTC(parts.year, parts.month, parts.day, 19, 30, 0);
-            
             if (targetUTC.getTime() > now.getTime()) {
                 return targetUTC;
             }
@@ -2702,25 +2681,17 @@
         return null;
     }
     
-    // Convert a UK wall-clock time (Y, M, D, h, m, s) into the correct UTC Date,
-    // accounting for whether that moment falls inside GMT or BST.
     function ukWallTimeToUTC(year, month, day, hour, minute, second) {
-        // Start with the naive UTC interpretation of the wall-clock values
         var naiveUTC = Date.UTC(parseInt(year, 10), parseInt(month, 10) - 1, parseInt(day, 10), hour, minute, second);
-        
-        // Find what time that UTC instant looks like in UK time, then take the difference
-        // to discover the offset that applied at that wall-clock moment.
         var ukParts = new Intl.DateTimeFormat('en-GB', {
             timeZone: 'Europe/London',
             year: 'numeric', month: '2-digit', day: '2-digit',
             hour: '2-digit', minute: '2-digit', second: '2-digit',
             hour12: false
         }).formatToParts(new Date(naiveUTC));
-        
         var ukVals = {};
         ukParts.forEach(function(p) { ukVals[p.type] = p.value; });
         if (ukVals.hour === '24') ukVals.hour = '00';
-        
         var ukAsUTC = Date.UTC(
             parseInt(ukVals.year, 10),
             parseInt(ukVals.month, 10) - 1,
@@ -2729,9 +2700,7 @@
             parseInt(ukVals.minute, 10),
             parseInt(ukVals.second, 10)
         );
-        
         var offset = ukAsUTC - naiveUTC;
-        // The real UTC instant is the naive value minus the offset
         return new Date(naiveUTC - offset);
     }
     
@@ -2742,11 +2711,8 @@
     function renderCountdown(target) {
         var containers = document.querySelectorAll('#sfxCountdownHero, #sfxCountdownForm');
         if (!containers.length) return;
-        
         var now = new Date();
         var diff = target.getTime() - now.getTime();
-        
-        // Live window: show "Live now" for 90 minutes after start
         var sessionLengthMs = 90 * 60 * 1000;
         if (diff <= 0 && Math.abs(diff) < sessionLengthMs) {
             for (var i = 0; i < containers.length; i++) {
@@ -2756,8 +2722,6 @@
             }
             return;
         }
-        
-        // Past the live window: recalculate target
         if (diff <= 0) {
             var newTarget = getNextSessionUTC();
             if (newTarget) {
@@ -2765,12 +2729,10 @@
                 diff = target.getTime() - now.getTime();
             }
         }
-        
         var days = Math.floor(diff / (1000 * 60 * 60 * 24));
         var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
         var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
         var secs = Math.floor((diff % (1000 * 60)) / 1000);
-        
         for (var j = 0; j < containers.length; j++) {
             var cont = containers[j];
             var d = cont.querySelector('[data-cd-days]');
@@ -2782,19 +2744,15 @@
             if (m) m.textContent = pad(mins);
             if (s) s.textContent = pad(secs);
         }
-        
         return target;
     }
     
     function startCountdown() {
         var target = getNextSessionUTC();
         if (!target) return;
-        
         var current = renderCountdown(target) || target;
-        
         setInterval(function() {
             var diff = current.getTime() - new Date().getTime();
-            // After session ends, recompute target for following Wednesday
             if (diff < -90 * 60 * 1000) {
                 current = getNextSessionUTC() || current;
             }
@@ -2812,7 +2770,9 @@
 
 
 <!-- ============================================
-     SMOOTH SCROLL SCRIPT
+     SMOOTH SCROLL SCRIPT (iframe-aware)
+     If standalone: scrolls within this page.
+     If inside iframe: posts message to parent for it to scroll.
      ============================================ -->
 <script>
 (function() {
@@ -2820,16 +2780,69 @@
     for (var i = 0; i < anchors.length; i++) {
         anchors[i].addEventListener('click', function(e) {
             e.preventDefault();
-            var target = document.querySelector(this.getAttribute('href'));
-            if (target) {
+            var targetId = this.getAttribute('href').replace('#', '');
+            if (!targetId) return;
+            var target = document.getElementById(targetId);
+            if (!target) return;
+            
+            var inIframe = (window.parent !== window);
+            var formTop = target.getBoundingClientRect().top + window.pageYOffset;
+            
+            if (inIframe) {
+                window.parent.postMessage({
+                    sfxScrollToForm: true,
+                    formOffsetInIframe: formTop
+                }, '*');
+            } else {
                 var offset = 60;
-                var position = target.getBoundingClientRect().top + window.pageYOffset - offset;
                 window.scrollTo({
-                    top: position,
+                    top: formTop - offset,
                     behavior: 'smooth'
                 });
             }
         });
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     HEIGHT REPORTER (iframe auto-size)
+     If standalone: does nothing.
+     If inside iframe: reports actual page height to parent
+     so the wrapper can resize precisely with no whitespace gap.
+     ============================================ -->
+<script>
+(function() {
+    if (window.parent === window) return;
+    
+    function reportHeight() {
+        var h = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+        );
+        window.parent.postMessage({ sfxFrameHeight: h }, '*');
+    }
+    
+    if (document.readyState === 'complete') {
+        reportHeight();
+    } else {
+        window.addEventListener('load', reportHeight);
+    }
+    
+    var attempts = 0;
+    var interval = setInterval(function() {
+        reportHeight();
+        if (attempts++ > 20) clearInterval(interval);
+    }, 500);
+    
+    window.addEventListener('resize', reportHeight);
+    if (window.ResizeObserver) {
+        try {
+            new ResizeObserver(reportHeight).observe(document.body);
+        } catch (e) {}
     }
 })();
 </script>
