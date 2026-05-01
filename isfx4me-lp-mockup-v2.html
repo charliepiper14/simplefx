@@ -2166,7 +2166,7 @@
      SECTION 9: URGENCY HEADER + REGISTRATION FORM
      ============================================ -->
 
-<div id="register" class="sfx-form-urgency-header">
+<div class="sfx-form-urgency-header">
     <div class="sfx-form-urgency-container">
         <div class="sfx-form-urgency-badge">
             <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FFFFFF"/><circle cx="12" cy="12" r="4" fill="#6CC24A"/></svg>
@@ -2191,7 +2191,7 @@
     </div>
 </div>
 
-<div class="sfx-lead-section">
+<div id="register" class="sfx-lead-section">
     <div class="sfx-lead-container">
         <div class="sfx-lead-grid">
             <div class="sfx-lead-left">
@@ -2776,17 +2776,25 @@
      ============================================ -->
 <script>
 (function() {
+    var inIframe = (window.parent !== window);
+    console.log('[SFX iframe] Smooth scroll script loaded. In iframe:', inIframe);
+    
     var anchors = document.querySelectorAll('a[href^="#"]');
+    console.log('[SFX iframe] Found', anchors.length, 'anchor links');
+    
     for (var i = 0; i < anchors.length; i++) {
         anchors[i].addEventListener('click', function(e) {
             e.preventDefault();
             var targetId = this.getAttribute('href').replace('#', '');
             if (!targetId) return;
             var target = document.getElementById(targetId);
-            if (!target) return;
+            if (!target) {
+                console.log('[SFX iframe] Target not found:', targetId);
+                return;
+            }
             
-            var inIframe = (window.parent !== window);
             var formTop = target.getBoundingClientRect().top + window.pageYOffset;
+            console.log('[SFX iframe] Click target:', targetId, 'at Y:', formTop);
             
             if (inIframe) {
                 var totalHeight = Math.max(
@@ -2795,6 +2803,7 @@
                     document.body.offsetHeight,
                     document.documentElement.offsetHeight
                 );
+                console.log('[SFX iframe] Posting message to parent. Total height:', totalHeight);
                 window.parent.postMessage({
                     sfxScrollToForm: true,
                     formOffsetInIframe: formTop,
