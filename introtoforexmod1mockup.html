@@ -2708,27 +2708,52 @@
         
         var videoItems = gallery.querySelectorAll('.sfx-video-item');
         
+        // Helper: stop a video item by clearing its iframe and showing
+        // the thumb again. Used both for switching to a new video AND
+        // (if needed) for an explicit "stop" external call.
+        function stopVideoItem(item) {
+            if (!item) return;
+            var t = item.querySelector('.sfx-video-logo-thumb');
+            var f = item.querySelector('iframe');
+            if (t) t.classList.remove('hidden');
+            if (f) {
+                // Setting src to about:blank stops audio immediately on
+                // all browsers (more reliably than empty string)
+                f.src = 'about:blank';
+            }
+        }
+        
         for (var j = 0; j < videoItems.length; j++) {
             (function(item) {
                 var thumb = item.querySelector('.sfx-video-logo-thumb');
                 var iframe = item.querySelector('iframe');
                 var index = parseInt(item.getAttribute('data-video-index'), 10);
+                var lastFireAt = 0; // touch/click dedupe timestamp
                 
                 // Play handler - extracted so we can bind to multiple events
                 function playVideo(e) {
                     if (e && e.preventDefault) e.preventDefault();
                     if (e && e.stopPropagation) e.stopPropagation();
                     
-                    // Guard: don't replay if already playing
+                    // Dedupe touch + synthetic click firing within ~400ms
+                    var now = Date.now();
+                    if (now - lastFireAt < 400) return;
+                    lastFireAt = now;
+                    
+                    // If this card is already playing, do nothing - the user
+                    // should use the Cloudinary player's own pause/play controls
+                    // for manual control over the playing video.
                     if (thumb.classList.contains('hidden')) return;
                     
+                    // Stop the previously playing video (if any other card)
                     if (currentPlayingItem && currentPlayingItem !== item) {
-                        var oldThumb = currentPlayingItem.querySelector('.sfx-video-logo-thumb');
-                        var oldIframe = currentPlayingItem.querySelector('iframe');
-                        oldThumb.classList.remove('hidden');
-                        oldIframe.src = '';
+                        stopVideoItem(currentPlayingItem);
                     }
                     
+                    // Start this card's video with autoplay. The src is set
+                    // inside the user's tap gesture, so mobile autoplay
+                    // permissions are satisfied. The Cloudinary player will
+                    // then show its own controls for manual pause/play/scrub.
                     var publicId = VIDEO_SOURCES[index].id;
                     iframe.src = 'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=' + encodeURIComponent(publicId) + '&profile=cld-default&autoplay=true';
                     thumb.classList.add('hidden');
@@ -2769,8 +2794,6 @@
                     
                     // Only treat as tap if finger barely moved and was quick
                     if (dx < 10 && dy < 10 && dt < 500) {
-                        // Don't double-fire if click is also going to fire.
-                        // Set a flag and let click skip if touchend already played.
                         if (!thumb.classList.contains('hidden')) {
                             playVideo(e);
                         }
