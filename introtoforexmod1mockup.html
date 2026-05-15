@@ -4683,6 +4683,189 @@
     }
 }
 
+/* ========== MOBILE TYPOGRAPHY & SPACING POLISH ==========
+   Improves text breathing room throughout the mobile experience.
+   Targets the most cramped areas: card interiors, list spacing,
+   line heights, and inter-section rhythm. Desktop unaffected. */
+@media (max-width: 768px) {
+    /* ----- Hero ----- */
+    /* Benefits list - more breathing between items, looser line */
+    #sfx-lp-root .sfx-hero-benefits {
+        gap: 0.6875rem;
+        margin-bottom: 1.5rem;
+    }
+    #sfx-lp-root .sfx-hero-benefits li {
+        line-height: 1.55;
+        font-size: 0.9375rem;
+    }
+    /* Subheadline more readable on phone */
+    #sfx-lp-root .sfx-hero-subheadline {
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+    /* Hero proof testimonial breathes */
+    #sfx-lp-root .sfx-hero-proof {
+        padding: 1.125rem 1.25rem;
+    }
+    #sfx-lp-root .sfx-hero-proof-quote {
+        line-height: 1.55;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* ----- Section titles ----- */
+    /* Slightly more space above and below section headings */
+    #sfx-lp-root .sfx-section-title,
+    #sfx-lp-root .sfx-why h2,
+    #sfx-lp-root .sfx-curriculum h2,
+    #sfx-lp-root .sfx-mentor h2,
+    #sfx-lp-root .sfx-agenda h2,
+    #sfx-lp-root .sfx-trustpilot h2,
+    #sfx-lp-root .sfx-faq h2 {
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* ----- Why Learning In The Room cards ----- */
+    #sfx-lp-root .sfx-why-grid {
+        gap: 1rem;
+    }
+    #sfx-lp-root .sfx-why-card {
+        padding: 1.25rem 1.125rem;
+    }
+    #sfx-lp-root .sfx-why-card h3 {
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    #sfx-lp-root .sfx-why-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    
+    /* ----- What Module 1 Covers cards ----- */
+    #sfx-lp-root .sfx-modules-grid {
+        gap: 1rem;
+    }
+    #sfx-lp-root .sfx-module-card {
+        padding: 1.25rem 1.125rem;
+    }
+    #sfx-lp-root .sfx-module-card h3 {
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    #sfx-lp-root .sfx-module-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    
+    /* ----- Mentor section ----- */
+    #sfx-lp-root .sfx-mentor-quote {
+        line-height: 1.65;
+        padding: 0.5rem 0;
+    }
+    #sfx-lp-root .sfx-mentor-meta {
+        margin-top: 1rem;
+        gap: 1.25rem;
+    }
+    
+    /* ----- Schedule timeline ----- */
+    #sfx-lp-root .sfx-timeline li {
+        padding-bottom: 1rem;
+        line-height: 1.55;
+    }
+    #sfx-lp-root .sfx-timeline li:last-child {
+        padding-bottom: 0;
+    }
+    
+    /* ----- Who It's For / What You Get boxes ----- */
+    #sfx-lp-root .sfx-who-card {
+        padding: 1.375rem 1.25rem;
+    }
+    #sfx-lp-root .sfx-who-card h3 {
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+    #sfx-lp-root .sfx-who-card li,
+    #sfx-lp-root .sfx-who-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    #sfx-lp-root .sfx-who-card ul {
+        gap: 0.5rem;
+    }
+    
+    /* ----- Testimonial videos grid ----- */
+    #sfx-lp-root .sfx-videos-grid {
+        gap: 1rem;
+    }
+    /* Video card title - line breathing */
+    #sfx-lp-root .sfx-video-title {
+        line-height: 1.4;
+        padding: 0.875rem 1rem 1rem;
+    }
+    
+    /* ----- Trustpilot review screenshots ----- */
+    #sfx-lp-root .sfx-trustpilot-images-grid {
+        gap: 0.875rem;
+    }
+    
+    /* ----- Social proof banner ----- */
+    #sfx-lp-root .sfx-proof-item {
+        line-height: 1.4;
+    }
+    
+    /* ----- Form urgency header ----- */
+    #sfx-lp-root .sfx-form-urgency-title {
+        line-height: 1.25;
+        margin-bottom: 0.625rem;
+    }
+    #sfx-lp-root .sfx-form-urgency-subtitle {
+        line-height: 1.55;
+        margin-bottom: 1rem;
+    }
+    
+    /* ----- Lead section (form area) ----- */
+    #sfx-lp-root .sfx-lead-left h2 {
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+    #sfx-lp-root .sfx-lead-left p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+        margin-bottom: 1.125rem;
+    }
+    #sfx-lp-root .sfx-lead-reassurance li {
+        line-height: 1.5;
+        font-size: 0.9375rem;
+        padding: 0.375rem 0;
+    }
+    
+    /* ----- Checkout box internal ----- */
+    #sfx-lp-root .sfx-checkout-row {
+        padding: 0.625rem 0;
+        line-height: 1.4;
+    }
+    #sfx-lp-root .sfx-input-group label {
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    
+    /* ----- FAQ items ----- */
+    #sfx-lp-root .sfx-faq-question {
+        padding: 1rem 1rem;
+        line-height: 1.4;
+    }
+    #sfx-lp-root .sfx-faq-answer {
+        padding: 0 1rem 1rem;
+        line-height: 1.65;
+    }
+    
+    /* ----- Generic paragraph readability on phones ----- */
+    #sfx-lp-root .sfx-section-intro {
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+}
+
 /* ========== iOS / SAFARI SPECIFIC FIXES ========== */
 @supports (-webkit-touch-callout: none) {
     /* iOS 100vh bug - not used but defensive */
