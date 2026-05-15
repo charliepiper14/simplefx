@@ -1,0 +1,605 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Thank You | Your Seat Is Confirmed | SimpleFX Module 1</title>
+    <meta name="robots" content="noindex, nofollow">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ====================================================
+           SAME ELEMENTOR-PROOF ISOLATION AS MAIN LP
+           ==================================================== */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #FFFFFF;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        #sfx-ty-root {
+            isolation: isolate;
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #FFFFFF;
+            text-align: left;
+            font-weight: 400;
+            display: block;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            min-height: 100vh;
+        }
+        #sfx-ty-root,
+        #sfx-ty-root *,
+        #sfx-ty-root *::before,
+        #sfx-ty-root *::after {
+            box-sizing: border-box;
+        }
+        #sfx-ty-root h1,
+        #sfx-ty-root h2,
+        #sfx-ty-root h3 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        #sfx-ty-root p {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+        #sfx-ty-root a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #sfx-ty-root img,
+        #sfx-ty-root svg {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: 0;
+        }
+        
+        /* ===== BRAND BAR ===== */
+        .sfx-ty-brand-bar {
+            background: #FFFFFF;
+            padding: 1rem 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        .sfx-ty-brand-bar-inner {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 1.5rem;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+        }
+        .sfx-ty-brand-bar-logo img,
+        #sfx-ty-root .sfx-ty-brand-bar-logo img {
+            height: 42px;
+            width: auto;
+            max-width: 220px;
+        }
+        
+        /* ===== HERO CONFIRMATION ===== */
+        .sfx-ty-hero {
+            background: linear-gradient(135deg, #F0F9EC 0%, #FFFFFF 60%);
+            padding: 3rem 1rem 2rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-hero {
+                padding: 5rem 1.5rem 3rem;
+            }
+        }
+        .sfx-ty-hero::before {
+            content: '';
+            position: absolute;
+            top: -100px;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 500px;
+            height: 500px;
+            background: radial-gradient(circle, rgba(108, 194, 74, 0.12) 0%, transparent 70%);
+            pointer-events: none;
+            z-index: 0;
+        }
+        .sfx-ty-hero-inner {
+            max-width: 700px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+        .sfx-ty-success-icon {
+            width: 96px;
+            height: 96px;
+            background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 1.5rem;
+            box-shadow: 0 20px 30px -10px rgba(108, 194, 74, 0.4);
+            animation: sfx-ty-bounce 0.8s ease-out;
+        }
+        @keyframes sfx-ty-bounce {
+            0% { transform: scale(0); opacity: 0; }
+            60% { transform: scale(1.1); opacity: 1; }
+            100% { transform: scale(1); }
+        }
+        .sfx-ty-success-icon svg {
+            width: 50px;
+            height: 50px;
+        }
+        .sfx-ty-hero h1 {
+            font-size: clamp(1.75rem, 4vw, 2.75rem);
+            font-weight: 800;
+            color: #1F2937;
+            margin-bottom: 0.875rem;
+            letter-spacing: -0.02em;
+        }
+        .sfx-ty-hero h1 .sfx-ty-highlight {
+            color: #6CC24A;
+        }
+        .sfx-ty-hero-sub {
+            font-size: clamp(1rem, 2vw, 1.125rem);
+            color: #4B5563;
+            margin-bottom: 1.5rem;
+            line-height: 1.55;
+        }
+        .sfx-ty-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.5rem;
+            background: #FFFFFF;
+            border: 2px solid #6CC24A;
+            color: #2D5016;
+            padding: 0.625rem 1.125rem;
+            border-radius: 2rem;
+            font-size: 0.875rem;
+            font-weight: 700;
+            box-shadow: 0 4px 12px rgba(108, 194, 74, 0.15);
+        }
+        .sfx-ty-badge svg {
+            width: 16px;
+            height: 16px;
+            color: #6CC24A;
+        }
+        
+        /* ===== EVENT DETAILS CARD ===== */
+        .sfx-ty-details {
+            max-width: 700px;
+            margin: 0 auto;
+            padding: 0 1rem 3rem;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-details {
+                padding: 0 1.5rem 4rem;
+            }
+        }
+        .sfx-ty-card {
+            background: #FFFFFF;
+            border: 1px solid #E5E7EB;
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            box-shadow: 0 20px 40px -10px rgba(31, 41, 55, 0.1);
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-card {
+                padding: 2rem;
+            }
+        }
+        .sfx-ty-card-title {
+            font-size: 0.75rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            color: #6B7280;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            display: flex;
+            align-items: center;
+            gap: 0.5rem;
+        }
+        .sfx-ty-card-title svg {
+            width: 14px;
+            height: 14px;
+            color: #6CC24A;
+        }
+        .sfx-ty-event-row {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 0.75rem 0;
+            border-bottom: 1px solid #F3F4F6;
+        }
+        .sfx-ty-event-row:last-child {
+            border-bottom: none;
+        }
+        .sfx-ty-event-label {
+            font-size: 0.875rem;
+            color: #6B7280;
+            font-weight: 500;
+        }
+        .sfx-ty-event-value {
+            font-size: 0.9375rem;
+            color: #1F2937;
+            font-weight: 700;
+            text-align: right;
+        }
+        .sfx-ty-event-value .sfx-ty-price {
+            color: #6CC24A;
+            font-size: 1.125rem;
+        }
+        
+        /* ===== NEXT STEPS ===== */
+        .sfx-ty-next-steps {
+            background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+            color: #FFFFFF;
+            border-radius: 1.25rem;
+            padding: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-next-steps {
+                padding: 2rem;
+            }
+        }
+        .sfx-ty-next-steps h2 {
+            font-size: 1.25rem;
+            color: #FFFFFF;
+            margin-bottom: 1.25rem;
+            font-weight: 700;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-next-steps h2 {
+                font-size: 1.5rem;
+            }
+        }
+        .sfx-ty-step {
+            display: flex;
+            gap: 1rem;
+            padding: 1rem 0;
+            border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+        }
+        .sfx-ty-step:last-child {
+            border-bottom: none;
+            padding-bottom: 0;
+        }
+        .sfx-ty-step:first-child {
+            padding-top: 0;
+        }
+        .sfx-ty-step-number {
+            flex-shrink: 0;
+            width: 32px;
+            height: 32px;
+            background: #6CC24A;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-weight: 800;
+            font-size: 0.875rem;
+            color: #FFFFFF;
+        }
+        .sfx-ty-step-content strong {
+            color: #FFFFFF;
+            display: block;
+            font-size: 1rem;
+            margin-bottom: 0.25rem;
+            font-weight: 700;
+        }
+        .sfx-ty-step-content p {
+            color: rgba(255, 255, 255, 0.75);
+            font-size: 0.875rem;
+            line-height: 1.55;
+        }
+        
+        /* ===== HELP CARD ===== */
+        .sfx-ty-help {
+            background: #F0F9EC;
+            border-left: 4px solid #6CC24A;
+            border-radius: 0 0.75rem 0.75rem 0;
+            padding: 1.25rem 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+        .sfx-ty-help-title {
+            font-size: 0.875rem;
+            color: #2D5016;
+            font-weight: 700;
+            margin-bottom: 0.375rem;
+            text-transform: uppercase;
+            letter-spacing: 0.5px;
+        }
+        .sfx-ty-help p {
+            color: #2D5016;
+            font-size: 0.9375rem;
+            line-height: 1.55;
+        }
+        .sfx-ty-help a {
+            color: #2D5016;
+            font-weight: 700;
+            text-decoration: underline;
+        }
+        
+        /* ===== CTA BUTTONS ===== */
+        .sfx-ty-actions {
+            display: flex;
+            gap: 0.75rem;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+        .sfx-ty-btn,
+        #sfx-ty-root a.sfx-ty-btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 0.5rem;
+            padding: 0.875rem 1.5rem;
+            font-size: 0.9375rem;
+            font-weight: 700;
+            border-radius: 0.75rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            font-family: inherit;
+            cursor: pointer;
+            min-height: 48px;
+            border: 2px solid transparent;
+        }
+        .sfx-ty-btn-primary,
+        #sfx-ty-root a.sfx-ty-btn-primary {
+            background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+            color: #FFFFFF;
+            box-shadow: 0 8px 16px -4px rgba(108, 194, 74, 0.4);
+        }
+        #sfx-ty-root a.sfx-ty-btn-primary:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 12px 20px -4px rgba(108, 194, 74, 0.5);
+            color: #FFFFFF;
+        }
+        .sfx-ty-btn-secondary,
+        #sfx-ty-root a.sfx-ty-btn-secondary {
+            background: #FFFFFF;
+            color: #1F2937;
+            border: 2px solid #E5E7EB;
+        }
+        #sfx-ty-root a.sfx-ty-btn-secondary:hover {
+            border-color: #6CC24A;
+            color: #2D5016;
+        }
+        .sfx-ty-btn svg {
+            width: 16px;
+            height: 16px;
+        }
+        
+        /* ===== FOOTER ===== */
+        .sfx-ty-footer {
+            background: #111827;
+            color: rgba(255, 255, 255, 0.6);
+            padding: 1.5rem 1rem;
+            text-align: center;
+            font-size: 0.75rem;
+            margin-top: auto;
+        }
+        @media (min-width: 768px) {
+            .sfx-ty-footer {
+                padding: 2rem 1.5rem;
+            }
+        }
+        .sfx-ty-footer-inner {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        .sfx-ty-footer p {
+            color: rgba(255, 255, 255, 0.6);
+            margin-bottom: 0.75rem;
+            line-height: 1.5;
+        }
+        .sfx-ty-footer a {
+            color: #6CC24A;
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+<div id="sfx-ty-root">
+
+    <!-- Brand bar -->
+    <div class="sfx-ty-brand-bar">
+        <div class="sfx-ty-brand-bar-inner">
+            <a href="https://simple-fx.net/" class="sfx-ty-brand-bar-logo" aria-label="SimpleFX home">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="SimpleFX">
+            </a>
+        </div>
+    </div>
+
+    <!-- Hero confirmation -->
+    <div class="sfx-ty-hero">
+        <div class="sfx-ty-hero-inner">
+            <div class="sfx-ty-success-icon">
+                <svg viewBox="0 0 24 24" fill="none">
+                    <path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3.5" stroke-linecap="round" stroke-linejoin="round"/>
+                </svg>
+            </div>
+            <h1>Your Seat Is <span class="sfx-ty-highlight">Confirmed</span></h1>
+            <p class="sfx-ty-hero-sub">Thank you for booking Module 1. We are looking forward to having you in the room. A receipt has been emailed to you, and the team will be in touch with full venue details over the next few days.</p>
+            <span class="sfx-ty-badge">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Payment Received
+            </span>
+        </div>
+    </div>
+
+    <!-- Details + Next Steps -->
+    <div class="sfx-ty-details">
+
+        <!-- Event details card -->
+        <div class="sfx-ty-card">
+            <div class="sfx-ty-card-title">
+                <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                Your Workshop Details
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Workshop</span>
+                <span class="sfx-ty-event-value">Module 1 &middot; Intro to Forex</span>
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Date</span>
+                <span class="sfx-ty-event-value">Friday 12 June 2026</span>
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Time</span>
+                <span class="sfx-ty-event-value">09:30 to 17:00</span>
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Location</span>
+                <span class="sfx-ty-event-value">Bromsgrove, West Midlands</span>
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Taught by</span>
+                <span class="sfx-ty-event-value">Richard Williams</span>
+            </div>
+            <div class="sfx-ty-event-row">
+                <span class="sfx-ty-event-label">Total Paid</span>
+                <span class="sfx-ty-event-value"><span class="sfx-ty-price">£249.00</span></span>
+            </div>
+        </div>
+
+        <!-- What happens next -->
+        <div class="sfx-ty-next-steps">
+            <h2>What Happens Next</h2>
+            
+            <div class="sfx-ty-step">
+                <div class="sfx-ty-step-number">1</div>
+                <div class="sfx-ty-step-content">
+                    <strong>Check your inbox</strong>
+                    <p>Your Stripe payment receipt has been emailed. Save it for your records. Check your spam folder if you cannot find it.</p>
+                </div>
+            </div>
+            
+            <div class="sfx-ty-step">
+                <div class="sfx-ty-step-number">2</div>
+                <div class="sfx-ty-step-content">
+                    <strong>Full venue details coming soon</strong>
+                    <p>We will send a separate email and WhatsApp message with the exact venue address, parking instructions, and what to bring on the day. Expect this within the next 3 working days.</p>
+                </div>
+            </div>
+            
+            <div class="sfx-ty-step">
+                <div class="sfx-ty-step-number">3</div>
+                <div class="sfx-ty-step-content">
+                    <strong>Reminder 7 days before</strong>
+                    <p>You will get a reminder email a week before the workshop with everything you need to know, including the latest arrival window and a phone number for anything urgent on the day.</p>
+                </div>
+            </div>
+            
+            <div class="sfx-ty-step">
+                <div class="sfx-ty-step-number">4</div>
+                <div class="sfx-ty-step-content">
+                    <strong>See you on Friday 12 June</strong>
+                    <p>Doors open at 09:30 with coffee and a relaxed start. The teaching runs through to 17:00 with a proper lunch break. Wear what you would wear to any business-casual meeting.</p>
+                </div>
+            </div>
+        </div>
+
+        <!-- Help block -->
+        <div class="sfx-ty-help">
+            <div class="sfx-ty-help-title">Need to change or cancel?</div>
+            <p>Full refund available up to 14 days before the workshop. After that we will do our best to move you to the next available date. Just email <a href="mailto:info@simple-fx.net">info@simple-fx.net</a> as early as you can.</p>
+        </div>
+
+        <!-- Action buttons -->
+        <div class="sfx-ty-actions">
+            <a href="https://simple-fx.net/" class="sfx-ty-btn sfx-ty-btn-secondary">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M3 12L5 10M5 10L12 3L19 10M5 10V20C5 20.5523 5.44772 21 6 21H9M19 10L21 12M19 10V20C19 20.5523 18.5523 21 18 21H15M9 21C9.55228 21 10 20.5523 10 20V16C10 15.4477 10.4477 15 11 15H13C13.5523 15 14 15.4477 14 16V20C14 20.5523 14.4477 21 15 21M9 21H15" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Back to SimpleFX
+            </a>
+            <a href="mailto:info@simple-fx.net" class="sfx-ty-btn sfx-ty-btn-primary">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M4 6C4 4.89543 4.89543 4 6 4H18C19.1046 4 20 4.89543 20 6V18C20 19.1046 19.1046 20 18 20H6C4.89543 20 4 19.1046 4 18V6Z" stroke="currentColor" stroke-width="2"/><path d="M4 7L12 13L20 7" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                Contact The Team
+            </a>
+        </div>
+
+    </div>
+
+    <!-- Footer -->
+    <div class="sfx-ty-footer">
+        <div class="sfx-ty-footer-inner">
+            <p><strong style="color: rgba(255, 255, 255, 0.85);">Important:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex involves substantial risk and may not be suitable for all investors.</p>
+            <p>&copy; 2026 SimpleFX. All rights reserved. Registered in England &amp; Wales.</p>
+        </div>
+    </div>
+
+</div>
+
+<!-- ============================================
+     OPTIONAL: CONVERSION TRACKING
+     If Meta Pixel or Google Ads tag is on this page,
+     fire the purchase event here.
+     ============================================ -->
+<script>
+(function() {
+    // Fire Meta Pixel Purchase event if pixel is installed
+    if (typeof window.fbq === 'function') {
+        try {
+            window.fbq('track', 'Purchase', {
+                value: 249,
+                currency: 'GBP',
+                content_name: 'Module 1 - Intro to Forex Trading',
+                content_ids: ['mod1-jun26'],
+                content_type: 'product'
+            });
+        } catch (e) {}
+    }
+    
+    // Fire Google Ads conversion if gtag is installed
+    if (typeof window.gtag === 'function') {
+        try {
+            window.gtag('event', 'purchase', {
+                value: 249,
+                currency: 'GBP',
+                transaction_id: 'mod1-' + Date.now(),
+                items: [{
+                    id: 'mod1',
+                    name: 'Module 1 - Intro to Forex Trading',
+                    category: 'workshop',
+                    quantity: 1,
+                    price: 249
+                }]
+            });
+        } catch (e) {}
+    }
+    
+    // Optional: retrieve lead details from sessionStorage if stored on LP
+    try {
+        if (window.sessionStorage) {
+            var leadData = sessionStorage.getItem('sfx_lead');
+            if (leadData) {
+                var lead = JSON.parse(leadData);
+                console.log('[SFX Thank You] Lead context:', lead);
+                // Lead data is available if needed for personalisation in future
+            }
+        }
+    } catch (e) {}
+})();
+</script>
+
+</body>
+</html>
