@@ -2488,6 +2488,9 @@
     max-width: 320px;
     margin: 0 auto;
     width: 100%;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
 }
 @media (min-width: 768px) {
     .sfx-video-item {
@@ -2555,6 +2558,7 @@
     z-index: 6;
     cursor: pointer;
     transition: all 0.3s ease;
+    pointer-events: none;
 }
 @media (min-width: 768px) {
     .sfx-video-play-btn {
@@ -2710,9 +2714,13 @@
                 var iframe = item.querySelector('iframe');
                 var index = parseInt(item.getAttribute('data-video-index'), 10);
                 
-                thumb.addEventListener('click', function(e) {
-                    e.preventDefault();
-                    e.stopPropagation();
+                // Play handler - extracted so we can bind to multiple events
+                function playVideo(e) {
+                    if (e && e.preventDefault) e.preventDefault();
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    
+                    // Guard: don't replay if already playing
+                    if (thumb.classList.contains('hidden')) return;
                     
                     if (currentPlayingItem && currentPlayingItem !== item) {
                         var oldThumb = currentPlayingItem.querySelector('.sfx-video-logo-thumb');
@@ -2725,7 +2733,49 @@
                     iframe.src = 'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=' + encodeURIComponent(publicId) + '&profile=cld-default&autoplay=true';
                     thumb.classList.add('hidden');
                     currentPlayingItem = item;
-                });
+                }
+                
+                // Bind click to the entire video item (not just the thumb).
+                // The thumb sits absolutely positioned inside the item, so
+                // any tap on the card hits the thumb visually. But binding
+                // to the item itself sidesteps iOS Safari quirks where
+                // click events on absolutely-positioned child divs can
+                // fail to fire reliably without an interactive parent.
+                item.addEventListener('click', playVideo);
+                
+                // Additional iOS touch fallback: some older iOS versions
+                // (and Android browsers with custom WebViews) suppress
+                // click events on non-interactive elements. Listen for
+                // touchend explicitly. We track touchstart position to
+                // distinguish a tap from a scroll gesture - only fire
+                // play if the finger barely moved.
+                var touchStartX = 0, touchStartY = 0, touchStartTime = 0;
+                
+                item.addEventListener('touchstart', function(e) {
+                    if (e.touches && e.touches[0]) {
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                        touchStartTime = Date.now();
+                    }
+                }, { passive: true });
+                
+                item.addEventListener('touchend', function(e) {
+                    if (!e.changedTouches || !e.changedTouches[0]) return;
+                    var endX = e.changedTouches[0].clientX;
+                    var endY = e.changedTouches[0].clientY;
+                    var dx = Math.abs(endX - touchStartX);
+                    var dy = Math.abs(endY - touchStartY);
+                    var dt = Date.now() - touchStartTime;
+                    
+                    // Only treat as tap if finger barely moved and was quick
+                    if (dx < 10 && dy < 10 && dt < 500) {
+                        // Don't double-fire if click is also going to fire.
+                        // Set a flag and let click skip if touchend already played.
+                        if (!thumb.classList.contains('hidden')) {
+                            playVideo(e);
+                        }
+                    }
+                }, { passive: false });
             })(videoItems[j]);
         }
     }
