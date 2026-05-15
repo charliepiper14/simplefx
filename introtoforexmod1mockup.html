@@ -179,8 +179,13 @@
     background: #FFFFFF;
     position: relative;
     overflow: hidden;
-    padding: 0 0 3rem 0;
+    padding: 0 0 2rem 0;
     border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 968px) {
+    .sfx-hero {
+        padding: 0 0 1.5rem 0;
+    }
 }
 /* Ambient backdrop */
 .sfx-hero::before {
@@ -360,7 +365,7 @@
     font-weight: 700;
     letter-spacing: 0.5px;
     text-transform: uppercase;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
     align-self: flex-start;
 }
 .sfx-hero-eyebrow svg {
@@ -368,12 +373,12 @@
     height: 14px;
 }
 .sfx-hero h1 {
-    font-size: clamp(1.875rem, 4.5vw, 3.25rem);
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
     font-weight: 800;
     line-height: 1.1;
     letter-spacing: -0.02em;
     color: #1F2937;
-    margin-bottom: 1.25rem;
+    margin-bottom: 1rem;
 }
 .sfx-hero h1 .sfx-highlight {
     color: #6CC24A;
@@ -391,17 +396,17 @@
     z-index: -1;
 }
 .sfx-hero-subheadline {
-    font-size: clamp(1rem, 2vw, 1.1875rem);
+    font-size: clamp(1rem, 1.6vw, 1.0625rem);
     color: #4B5563;
-    margin-bottom: 1.5rem;
-    line-height: 1.6;
+    margin-bottom: 1.125rem;
+    line-height: 1.55;
     max-width: 580px;
 }
 .sfx-event-facts {
     display: flex;
     flex-wrap: wrap;
     gap: 0.5rem;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
 }
 .sfx-event-fact {
     display: inline-flex;
@@ -425,18 +430,18 @@
 
 .sfx-hero-benefits {
     list-style: none;
-    margin-bottom: 1.75rem;
+    margin-bottom: 1.25rem;
     display: flex;
     flex-direction: column;
-    gap: 0.75rem;
+    gap: 0.5rem;
 }
 .sfx-hero-benefits li {
     display: flex;
     align-items: flex-start;
     gap: 0.75rem;
-    font-size: 1rem;
+    font-size: 0.9375rem;
     color: #1F2937;
-    line-height: 1.5;
+    line-height: 1.45;
     font-weight: 500;
 }
 .sfx-check-icon {
@@ -460,7 +465,7 @@
     background: linear-gradient(135deg, #F9FAFB 0%, #F0F9EC 100%);
     border: 1px solid #E5E7EB;
     border-radius: 1rem;
-    padding: 1.25rem 1.5rem;
+    padding: 1rem 1.25rem;
     margin-bottom: 0;
     display: grid;
     grid-template-columns: auto 1fr;
@@ -505,7 +510,7 @@
 .sfx-hero-right {
     display: flex;
     flex-direction: column;
-    gap: 1rem;
+    gap: 0.875rem;
 }
 
 .sfx-hero-video-wrap {
@@ -624,7 +629,7 @@
     background: linear-gradient(135deg, #FFFFFF 0%, #F8FBF5 100%);
     border: 2px solid #6CC24A;
     border-radius: 1.25rem;
-    padding: 1.25rem;
+    padding: 1rem 1.125rem;
     box-shadow: 0 20px 40px -10px rgba(45, 80, 22, 0.18), 0 0 0 6px rgba(108, 194, 74, 0.06);
     position: relative;
 }
@@ -655,7 +660,7 @@
     display: flex;
     align-items: center;
     justify-content: space-between;
-    margin-bottom: 1rem;
+    margin-bottom: 0.75rem;
     gap: 0.875rem;
     flex-wrap: wrap;
 }
@@ -712,8 +717,8 @@
 .sfx-countdown {
     background: linear-gradient(135deg, #F0F9EC 0%, #E8F5E3 100%);
     border-radius: 0.75rem;
-    padding: 0.8125rem;
-    margin-bottom: 0.875rem;
+    padding: 0.625rem 0.625rem 0.6875rem;
+    margin-bottom: 0.75rem;
     text-align: center;
     border: 1px solid rgba(108, 194, 74, 0.25);
 }
@@ -723,7 +728,7 @@
     font-weight: 700;
     text-transform: uppercase;
     letter-spacing: 1.5px;
-    margin-bottom: 0.5rem;
+    margin-bottom: 0.375rem;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -741,7 +746,7 @@
 .sfx-countdown-cell {
     background: linear-gradient(135deg, #2D5016 0%, #1F3A0D 100%);
     border-radius: 0.5rem;
-    padding: 0.5625rem 0.25rem;
+    padding: 0.4375rem 0.25rem;
     color: #FFFFFF;
     position: relative;
     overflow: hidden;
@@ -757,10 +762,10 @@
     pointer-events: none;
 }
 .sfx-countdown-value {
-    font-size: 1.5rem;
+    font-size: 1.375rem;
     font-weight: 800;
     line-height: 1;
-    margin-bottom: 0.1875rem;
+    margin-bottom: 0.125rem;
     font-variant-numeric: tabular-nums;
     letter-spacing: -0.02em;
 }
@@ -4085,16 +4090,35 @@
 
 
 <!-- ============================================
-     CTA ANCHOR SCROLL (iframe-aware, layout-shift-resistant)
+     CTA ANCHOR SCROLL (two-phase, layout-shift-immune)
      
-     Uses native scrollIntoView() which tracks the target element
-     through animation, automatically handling layout shifts from
-     lazy-loaded images. No retry logic needed.
+     The fundamental problem with smooth-scroll on a long page
+     with lazy-loaded images: smooth-scroll animations take
+     700-1000ms, and during that animation, lazy-load intersection
+     observers fire on images that come into view, triggering
+     fresh layout shifts that the scroll animation doesn't track.
+     
+     Two-phase strategy:
+     
+     Phase 1: INSTANT jump to approximate target position. This
+     forces all intersection observers below the fold to fire
+     (because the scroll position has passed them), so all lazy
+     images begin loading immediately. No animation, no race.
+     
+     Phase 2: Wait for layout to stabilise (images load, page
+     dimensions finalise), then smooth-scroll the small remaining
+     distance to the precise target. By the time this runs, all
+     images have either loaded or are still loading but with their
+     placeholder dimensions accounted for. No more shifts.
+     
+     The user sees: a quick jump to roughly the right place,
+     then a brief smooth motion to the form. Looks polished and
+     ALWAYS lands correctly, even on first click of fresh page.
      ============================================ -->
 <script>
 (function() {
     var inIframe = (window.parent !== window);
-    var SCROLL_OFFSET = 20; // px above target for breathing room
+    var SCROLL_OFFSET = 20;
     
     function getAbsoluteTop(el) {
         var top = 0;
@@ -4115,12 +4139,20 @@
         );
     }
     
+    // Force all lazy images to start loading immediately. Called
+    // on first user interaction so it doesn't slow initial paint.
+    function eagerLoadImages() {
+        var imgs = document.querySelectorAll('img[loading="lazy"]');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].loading = 'eager';
+        }
+    }
+    
     function scrollToTarget(targetEl) {
         if (!targetEl) return;
         
         if (inIframe) {
-            // Inside an iframe: parent must do the scrolling.
-            // Compute target's absolute offset within the iframe body.
+            // Inside an iframe: parent handles the scroll
             var top = getAbsoluteTop(targetEl);
             try {
                 window.parent.postMessage({
@@ -4132,29 +4164,56 @@
             return;
         }
         
-        // Standalone: use native scrollIntoView - the browser handles
-        // layout shifts during the animation automatically by tracking
-        // the element. This is much more reliable than computed scrollTo.
-        try {
-            // Apply temporary scroll-margin so we land slightly above the target
-            var originalScrollMargin = targetEl.style.scrollMarginTop;
-            targetEl.style.scrollMarginTop = SCROLL_OFFSET + 'px';
-            
-            targetEl.scrollIntoView({
-                behavior: 'smooth',
-                block: 'start',
-                inline: 'nearest'
-            });
-            
-            // Restore after scroll finishes
+        // Standalone: two-phase scroll
+        
+        // Flip all lazy images to eager so they start downloading
+        eagerLoadImages();
+        
+        // Phase 1: INSTANT jump to current measured position.
+        // This forces intersection observers down the page to fire,
+        // triggering all lazy-load image requests. The jump is
+        // instant so there's no animation to race against.
+        var phase1Top = getAbsoluteTop(targetEl) - SCROLL_OFFSET;
+        window.scrollTo(0, Math.max(0, phase1Top));
+        
+        // Phase 2: After a brief settle period for images to finish
+        // sizing themselves, re-measure target position and snap to
+        // the final correct location. Use multiple settle checkpoints
+        // to handle slow-loading images.
+        var settleAndCorrect = function(delay, useSmooth) {
             setTimeout(function() {
-                targetEl.style.scrollMarginTop = originalScrollMargin || '';
-            }, 1500);
-        } catch (e) {
-            // Fallback for very old browsers without scrollIntoView options
-            var top = getAbsoluteTop(targetEl);
-            window.scrollTo(0, Math.max(0, top - SCROLL_OFFSET));
-        }
+                if (!targetEl) return;
+                // Re-measure - target position may have changed if any
+                // images above it changed dimensions since phase 1.
+                var finalTop = getAbsoluteTop(targetEl) - SCROLL_OFFSET;
+                var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                var diff = Math.abs(finalTop - currentScroll);
+                
+                // Only correct if there's a meaningful difference
+                if (diff > 5) {
+                    if (useSmooth && 'scrollBehavior' in document.documentElement.style) {
+                        try {
+                            window.scrollTo({
+                                top: Math.max(0, finalTop),
+                                behavior: 'smooth'
+                            });
+                        } catch (e) {
+                            window.scrollTo(0, Math.max(0, finalTop));
+                        }
+                    } else {
+                        window.scrollTo(0, Math.max(0, finalTop));
+                    }
+                }
+            }, delay);
+        };
+        
+        // Three correction passes:
+        // 100ms: catches fast-loading images (cached or small)
+        // 400ms: catches medium-loading images
+        // 1000ms: final defensive check after most images settle
+        settleAndCorrect(100, false);  // instant snap
+        settleAndCorrect(400, true);   // smooth final adjust
+        settleAndCorrect(1000, false); // defensive snap if still drifting
     }
     
     function handleClick(e) {
@@ -4179,9 +4238,19 @@
     
     function init() {
         bindAnchors();
-        // Rebind for late-rendered anchors
         setTimeout(bindAnchors, 500);
         setTimeout(bindAnchors, 1500);
+        
+        // Proactively eager-load all images shortly after DOMContentLoaded
+        // so they're already loaded before the user clicks the CTA.
+        // This is belt-and-braces - the click handler also flips them.
+        if (document.readyState === 'complete') {
+            setTimeout(eagerLoadImages, 200);
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(eagerLoadImages, 200);
+            });
+        }
     }
     
     if (document.readyState === 'loading') {
@@ -4190,8 +4259,7 @@
         init();
     }
     
-    // Global API - works even if click binding ever fails.
-    // Targets the checkout form box directly.
+    // Global API for the hero CTA
     window.sfxScrollToForm = function() {
         var target = document.getElementById('checkout-form')
                   || document.getElementById('register');
