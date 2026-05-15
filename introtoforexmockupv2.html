@@ -1,0 +1,4930 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=5.0">
+    <title>Introduction to Trading Forex Module 1 | Live In-Person Event | SimpleFX</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+    <style>
+        /* ====================================================
+           ELEMENTOR-PROOF STYLE ISOLATION
+           
+           Goal: block parent (Elementor / WordPress theme) CSS
+           from leaking IN, without stripping styles from the
+           LP's own elements.
+           
+           Strategy: 
+           1. Establish a strong styling context on the root.
+           2. Set explicit values for inherited properties that
+              Elementor commonly overrides via the cascade.
+           3. DO NOT apply a universal `*` reset that would
+              compete with the LP's own section styles.
+           ==================================================== */
+        
+        /* Standalone body baseline */
+        html, body {
+            margin: 0;
+            padding: 0;
+            background: #FFFFFF;
+        }
+        html {
+            scroll-behavior: smooth;
+        }
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            line-height: 1.6;
+            color: #1F2937;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* The LP root - establishes a clean styling context. 
+           Properties set here cascade to descendants only when
+           descendants don't set their own value.
+           
+           IMPORTANT: We deliberately do NOT use `contain: layout`
+           or `overflow: hidden` here because they confuse
+           scrollIntoView and offsetTop measurements, breaking
+           in-page anchor links. */
+        #sfx-lp-root {
+            /* Block parent stacking-context leakage only.
+               (No `contain` - it breaks scroll math.) */
+            isolation: isolate;
+            
+            /* Establish typography baseline */
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+            font-size: 16px;
+            line-height: 1.6;
+            color: #1F2937;
+            background: #FFFFFF;
+            text-align: left;
+            font-weight: 400;
+            font-style: normal;
+            
+            /* Layout baseline */
+            display: block;
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            width: 100%;
+            max-width: 100%;
+            
+            /* Rendering quality */
+            text-rendering: optimizeLegibility;
+            -webkit-font-smoothing: antialiased;
+            -moz-osx-font-smoothing: grayscale;
+        }
+        
+        /* Box-sizing on all descendants - safe and universally desired */
+        #sfx-lp-root,
+        #sfx-lp-root *,
+        #sfx-lp-root *::before,
+        #sfx-lp-root *::after {
+            box-sizing: border-box;
+        }
+        
+        /* Block Elementor's WordPress theme defaults from leaking in
+           to specific elements only. These are minimal targeted resets
+           that match the LP's design assumptions, without disturbing
+           the LP's own styles.
+           
+           IMPORTANT: We DO NOT set `color` on these element-type
+           selectors because they would beat class-level colour
+           overrides via ID specificity. Colour is inherited from
+           #sfx-lp-root for elements that don't set their own colour,
+           and is owned by component classes for everything else. */
+        #sfx-lp-root h1,
+        #sfx-lp-root h2,
+        #sfx-lp-root h3,
+        #sfx-lp-root h4,
+        #sfx-lp-root h5,
+        #sfx-lp-root h6 {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            font-weight: 700;
+            line-height: 1.2;
+        }
+        #sfx-lp-root p {
+            margin: 0;
+            padding: 0;
+            font-family: inherit;
+            line-height: 1.6;
+        }
+        #sfx-lp-root ul,
+        #sfx-lp-root ol {
+            margin: 0;
+            padding: 0;
+            list-style: none;
+        }
+        #sfx-lp-root li {
+            list-style: none;
+            margin: 0;
+            padding: 0;
+        }
+        #sfx-lp-root a {
+            color: inherit;
+            text-decoration: none;
+        }
+        #sfx-lp-root a:hover,
+        #sfx-lp-root a:focus,
+        #sfx-lp-root a:active,
+        #sfx-lp-root a:visited {
+            text-decoration: none;
+        }
+        #sfx-lp-root img,
+        #sfx-lp-root svg,
+        #sfx-lp-root video {
+            display: block;
+            max-width: 100%;
+            height: auto;
+            border: 0;
+        }
+        #sfx-lp-root iframe {
+            display: block;
+            max-width: 100%;
+            border: 0;
+        }
+        
+        /* Form elements - neutralise Elementor theme leakage but
+           don't override component-level visual styling */
+        #sfx-lp-root button {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            cursor: pointer;
+            -webkit-appearance: none;
+            appearance: none;
+        }
+        #sfx-lp-root input,
+        #sfx-lp-root select,
+        #sfx-lp-root textarea {
+            font-family: inherit;
+            font-size: inherit;
+            line-height: inherit;
+            -webkit-appearance: none;
+            appearance: none;
+            margin: 0;
+        }
+    </style>
+</head>
+<body>
+<div id="sfx-lp-root">
+
+<!-- ============================================
+     SECTION 1: HERO - BALANCED TWO-COLUMN LAYOUT
+     Left: Persuasion (headline, social proof, benefits)
+     Right: Conversion stack (video → CTA card → mentor)
+     ============================================ -->
+<style>
+.sfx-hero {
+    background: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+    padding: 0 0 2rem 0;
+    border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 968px) {
+    .sfx-hero {
+        padding: 0 0 1.5rem 0;
+    }
+}
+/* Ambient backdrop */
+.sfx-hero::before {
+    content: '';
+    position: absolute;
+    top: -200px;
+    right: -200px;
+    width: 600px;
+    height: 600px;
+    background: radial-gradient(circle, rgba(108, 194, 74, 0.08) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+.sfx-hero::after {
+    content: '';
+    position: absolute;
+    bottom: -300px;
+    left: -200px;
+    width: 700px;
+    height: 700px;
+    background: radial-gradient(circle, rgba(45, 80, 22, 0.05) 0%, transparent 70%);
+    pointer-events: none;
+    z-index: 0;
+}
+.sfx-hero-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    position: relative;
+    z-index: 1;
+}
+/* ===== BRAND HEADER (above topbar) ===== */
+.sfx-brand-bar {
+    background: #FFFFFF;
+    padding: 0.875rem 0;
+    border-bottom: 1px solid #F3F4F6;
+    position: relative;
+    z-index: 2;
+}
+.sfx-brand-bar-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-brand-bar-inner {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-brand-bar-logo {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+}
+.sfx-brand-bar-logo img,
+#sfx-lp-root .sfx-brand-bar-logo img {
+    height: 36px;
+    width: auto;
+    display: block;
+    max-width: 200px;
+}
+@media (min-width: 768px) {
+    .sfx-brand-bar-logo img,
+    #sfx-lp-root .sfx-brand-bar-logo img {
+        height: 42px;
+        max-width: 220px;
+    }
+}
+.sfx-brand-bar-meta {
+    display: none;
+    align-items: center;
+    gap: 1.25rem;
+    font-size: 0.8125rem;
+    color: #4B5563;
+    font-weight: 500;
+}
+@media (min-width: 640px) {
+    .sfx-brand-bar-meta {
+        display: flex;
+    }
+}
+.sfx-brand-bar-meta-item {
+    display: flex;
+    align-items: center;
+    gap: 0.4375rem;
+}
+.sfx-brand-bar-meta-item svg {
+    width: 14px;
+    height: 14px;
+    color: #6CC24A;
+    flex-shrink: 0;
+}
+.sfx-brand-bar-meta-item strong {
+    color: #1F2937;
+    font-weight: 700;
+}
+.sfx-brand-bar-trust {
+    display: none;
+    align-items: center;
+    gap: 0.4375rem;
+    font-size: 0.75rem;
+    color: #4B5563;
+    font-weight: 600;
+}
+@media (min-width: 480px) {
+    .sfx-brand-bar-trust {
+        display: flex;
+    }
+}
+.sfx-brand-bar-trust-stars {
+    color: #FFB800;
+    letter-spacing: 0.5px;
+    font-size: 0.8125rem;
+}
+
+.sfx-hero-topbar {
+    background: linear-gradient(135deg, #2D5016 0%, #1F3A0D 100%);
+    color: #FFFFFF;
+    padding: 0.75rem 1rem;
+    text-align: center;
+    font-size: 0.875rem;
+    font-weight: 600;
+    margin-bottom: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    flex-wrap: wrap;
+}
+.sfx-hero-topbar-dot {
+    width: 8px;
+    height: 8px;
+    background: #6CC24A;
+    border-radius: 50%;
+    box-shadow: 0 0 0 3px rgba(108, 194, 74, 0.3);
+    animation: pulse-live 2s infinite;
+}
+@keyframes pulse-live {
+    0%, 100% { box-shadow: 0 0 0 3px rgba(108, 194, 74, 0.3); }
+    50% { box-shadow: 0 0 0 6px rgba(108, 194, 74, 0); }
+}
+.sfx-hero-grid {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 968px) {
+    .sfx-hero-grid {
+        grid-template-columns: 1.1fr 0.9fr;
+        gap: 3rem;
+        align-items: stretch;
+    }
+    .sfx-hero-container {
+        padding: 0 1.5rem;
+    }
+}
+
+/* ===== LEFT COLUMN: PERSUASION ===== */
+.sfx-hero-left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+.sfx-hero-eyebrow {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: #F0F9EC;
+    border: 1px solid #C8E6BE;
+    color: #2D5016;
+    padding: 0.4375rem 0.875rem;
+    border-radius: 2rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.5px;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+    align-self: flex-start;
+}
+.sfx-hero-eyebrow svg {
+    width: 14px;
+    height: 14px;
+}
+.sfx-hero h1 {
+    font-size: clamp(1.875rem, 4vw, 2.75rem);
+    font-weight: 800;
+    line-height: 1.1;
+    letter-spacing: -0.02em;
+    color: #1F2937;
+    margin-bottom: 1rem;
+}
+.sfx-hero h1 .sfx-highlight {
+    color: #6CC24A;
+    position: relative;
+    display: inline-block;
+}
+.sfx-hero h1 .sfx-highlight::after {
+    content: '';
+    position: absolute;
+    bottom: 0.05em;
+    left: 0;
+    width: 100%;
+    height: 0.18em;
+    background: rgba(108, 194, 74, 0.18);
+    z-index: -1;
+}
+.sfx-hero-subheadline {
+    font-size: clamp(1rem, 1.6vw, 1.0625rem);
+    color: #4B5563;
+    margin-bottom: 1.125rem;
+    line-height: 1.55;
+    max-width: 580px;
+}
+.sfx-event-facts {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-bottom: 1.25rem;
+}
+.sfx-event-fact {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.5rem;
+    padding: 0.5rem 0.8125rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #374151;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+.sfx-event-fact svg {
+    width: 14px;
+    height: 14px;
+    color: #6CC24A;
+    flex-shrink: 0;
+}
+
+.sfx-hero-benefits {
+    list-style: none;
+    margin-bottom: 1.25rem;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+}
+.sfx-hero-benefits li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.75rem;
+    font-size: 0.9375rem;
+    color: #1F2937;
+    line-height: 1.45;
+    font-weight: 500;
+}
+.sfx-check-icon {
+    width: 22px;
+    height: 22px;
+    min-width: 22px;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-top: 1px;
+    box-shadow: 0 2px 4px rgba(108, 194, 74, 0.3);
+}
+.sfx-check-icon svg {
+    width: 12px;
+    height: 12px;
+}
+
+.sfx-hero-proof {
+    background: linear-gradient(135deg, #F9FAFB 0%, #F0F9EC 100%);
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    padding: 1rem 1.25rem;
+    margin-bottom: 0;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    gap: 1rem;
+    align-items: center;
+}
+.sfx-hero-proof-stars {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.25rem;
+    padding-right: 1rem;
+    border-right: 1px solid rgba(0, 0, 0, 0.08);
+}
+.sfx-hero-proof-stars-row {
+    color: #FFB800;
+    font-size: 1.125rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.sfx-hero-proof-stars-label {
+    font-size: 0.75rem;
+    font-weight: 700;
+    color: #2D5016;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-hero-proof-quote {
+    font-size: 0.9375rem;
+    color: #1F2937;
+    line-height: 1.5;
+    font-style: italic;
+    margin-bottom: 0.375rem;
+}
+.sfx-hero-proof-attribution {
+    font-size: 0.75rem;
+    color: #6B7280;
+    font-weight: 600;
+}
+
+/* ===== RIGHT COLUMN: CONVERSION STACK ===== */
+.sfx-hero-right {
+    display: flex;
+    flex-direction: column;
+    gap: 0.875rem;
+}
+
+.sfx-hero-video-wrap {
+    position: relative;
+    border-radius: 1.25rem;
+    overflow: hidden;
+    background: linear-gradient(135deg, #1F2937 0%, #111827 100%);
+    box-shadow: 0 20px 40px -10px rgba(31, 41, 55, 0.35);
+    aspect-ratio: 16 / 9;
+}
+.sfx-hero-video-poster {
+    position: absolute;
+    inset: 0;
+    cursor: pointer;
+    z-index: 2;
+    transition: opacity 0.3s ease;
+}
+.sfx-hero-video-poster-img,
+#sfx-lp-root .sfx-hero-video-poster-img {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sfx-hero-video-poster-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(180deg, rgba(0, 0, 0, 0.1) 0%, rgba(0, 0, 0, 0.55) 100%);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sfx-hero-video-badge {
+    position: absolute;
+    top: 0.875rem;
+    left: 0.875rem;
+    background: rgba(255, 255, 255, 0.95);
+    color: #1F2937;
+    padding: 0.4375rem 0.75rem;
+    border-radius: 0.5rem;
+    font-size: 0.6875rem;
+    font-weight: 800;
+    z-index: 4;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+}
+.sfx-hero-video-badge-dot {
+    width: 6px;
+    height: 6px;
+    background: #6CC24A;
+    border-radius: 50%;
+}
+.sfx-hero-video-caption {
+    position: absolute;
+    left: 0.875rem;
+    right: 0.875rem;
+    bottom: 0.875rem;
+    z-index: 4;
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.35;
+    max-width: 78%;
+    text-shadow: 0 2px 8px rgba(0, 0, 0, 0.7);
+}
+.sfx-play-button,
+#sfx-lp-root .sfx-play-button,
+#sfx-lp-root button.sfx-play-button {
+    width: 68px;
+    height: 68px;
+    background: rgba(108, 194, 74, 0.95);
+    border: 3px solid rgba(255, 255, 255, 0.95);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 3;
+    transition: all 0.25s ease;
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(108, 194, 74, 0.5);
+    animation: play-pulse 2.4s ease-in-out infinite;
+    position: relative;
+    cursor: pointer;
+}
+@keyframes play-pulse {
+    0%, 100% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 0 rgba(108, 194, 74, 0.5); }
+    50% { box-shadow: 0 10px 30px rgba(0, 0, 0, 0.4), 0 0 0 14px rgba(108, 194, 74, 0); }
+}
+.sfx-hero-video-poster:hover .sfx-play-button {
+    transform: scale(1.08);
+    background: #6CC24A;
+}
+.sfx-play-button svg {
+    width: 26px;
+    height: 26px;
+    margin-left: 4px;
+}
+.sfx-hero-video-wrap.is-playing .sfx-hero-video-poster {
+    opacity: 0;
+    pointer-events: none;
+}
+.sfx-hero-video-wrap video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    background: #000;
+}
+
+.sfx-hero-cta {
+    background: linear-gradient(135deg, #FFFFFF 0%, #F8FBF5 100%);
+    border: 2px solid #6CC24A;
+    border-radius: 1.25rem;
+    padding: 1rem 1.125rem;
+    box-shadow: 0 20px 40px -10px rgba(45, 80, 22, 0.18), 0 0 0 6px rgba(108, 194, 74, 0.06);
+    position: relative;
+}
+.sfx-hero-cta-ribbon {
+    position: absolute;
+    top: -12px;
+    right: 1.25rem;
+    background: #1F2937;
+    color: #FFFFFF;
+    padding: 0.3125rem 0.875rem;
+    border-radius: 0.375rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    letter-spacing: 0.75px;
+    text-transform: uppercase;
+    display: inline-flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.sfx-hero-cta-ribbon-dot {
+    width: 6px;
+    height: 6px;
+    background: #EF4444;
+    border-radius: 50%;
+    animation: pulse-live 1.5s infinite;
+}
+.sfx-price-row {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin-bottom: 0.75rem;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+}
+.sfx-price-stack {
+    display: flex;
+    flex-direction: column;
+    gap: 0.125rem;
+}
+.sfx-price-label {
+    font-size: 0.6875rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    color: #6B7280;
+    font-weight: 700;
+}
+.sfx-price-value {
+    font-size: 2.25rem;
+    font-weight: 800;
+    color: #1F2937;
+    line-height: 1;
+    letter-spacing: -0.02em;
+    display: flex;
+    align-items: baseline;
+    gap: 0.375rem;
+}
+.sfx-price-value-meta {
+    font-size: 0.8125rem;
+    color: #6B7280;
+    font-weight: 600;
+}
+.sfx-seats-pill {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.4375rem;
+    background: #FEF3C7;
+    border: 1px solid #FCD34D;
+    color: #92400E;
+    padding: 0.375rem 0.6875rem;
+    border-radius: 2rem;
+    font-size: 0.6875rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+    white-space: nowrap;
+}
+.sfx-seats-pill-dot {
+    width: 6px;
+    height: 6px;
+    background: #DC2626;
+    border-radius: 50%;
+    animation: pulse-live 1.5s infinite;
+}
+
+.sfx-countdown {
+    background: linear-gradient(135deg, #F0F9EC 0%, #E8F5E3 100%);
+    border-radius: 0.75rem;
+    padding: 0.625rem 0.625rem 0.6875rem;
+    margin-bottom: 0.75rem;
+    text-align: center;
+    border: 1px solid rgba(108, 194, 74, 0.25);
+}
+.sfx-countdown-label {
+    font-size: 0.625rem;
+    color: #2D5016;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1.5px;
+    margin-bottom: 0.375rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.375rem;
+}
+.sfx-countdown-label svg {
+    width: 11px;
+    height: 11px;
+}
+.sfx-countdown-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 0.375rem;
+}
+.sfx-countdown-cell {
+    background: linear-gradient(135deg, #2D5016 0%, #1F3A0D 100%);
+    border-radius: 0.5rem;
+    padding: 0.4375rem 0.25rem;
+    color: #FFFFFF;
+    position: relative;
+    overflow: hidden;
+}
+.sfx-countdown-cell::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    height: 50%;
+    background: linear-gradient(to bottom, rgba(255, 255, 255, 0.08) 0%, transparent 100%);
+    pointer-events: none;
+}
+.sfx-countdown-value {
+    font-size: 1.375rem;
+    font-weight: 800;
+    line-height: 1;
+    margin-bottom: 0.125rem;
+    font-variant-numeric: tabular-nums;
+    letter-spacing: -0.02em;
+}
+.sfx-countdown-unit {
+    font-size: 0.5625rem;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    opacity: 0.85;
+    font-weight: 700;
+}
+.sfx-countdown-live {
+    background: linear-gradient(135deg, #DC2626 0%, #B91C1C 100%);
+    color: #FFFFFF;
+    padding: 0.875rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    animation: pulse 1.5s infinite;
+}
+.sfx-cta-btn,
+#sfx-lp-root .sfx-cta-btn,
+#sfx-lp-root a.sfx-cta-btn {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 100%;
+    min-height: 52px;
+    padding: 0.875rem 1.25rem;
+    font-size: 1rem;
+    font-weight: 700;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    color: #FFFFFF;
+    border: none;
+    border-radius: 0.75rem;
+    cursor: pointer;
+    transition: all 0.25s ease;
+    text-decoration: none;
+    gap: 0.5rem;
+    box-shadow: 0 8px 16px -4px rgba(108, 194, 74, 0.45);
+    position: relative;
+    overflow: hidden;
+}
+#sfx-lp-root .sfx-cta-btn:hover,
+#sfx-lp-root a.sfx-cta-btn:hover,
+#sfx-lp-root .sfx-cta-btn:focus,
+#sfx-lp-root .sfx-cta-btn:visited {
+    color: #FFFFFF;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    text-decoration: none;
+}
+.sfx-cta-btn::after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: -75%;
+    width: 50%;
+    height: 100%;
+    background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.25), transparent);
+    transform: skewX(-25deg);
+    animation: shine 3s infinite;
+}
+@keyframes shine {
+    0% { left: -75%; }
+    40%, 100% { left: 125%; }
+}
+.sfx-cta-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 12px 20px -4px rgba(108, 194, 74, 0.55);
+}
+.sfx-cta-btn svg {
+    width: 16px;
+    height: 16px;
+    position: relative;
+    z-index: 1;
+}
+.sfx-cta-btn-text {
+    position: relative;
+    z-index: 1;
+}
+.sfx-cta-reassure {
+    margin-top: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.875rem;
+    flex-wrap: wrap;
+    font-size: 0.6875rem;
+    color: #6B7280;
+    font-weight: 600;
+}
+.sfx-cta-reassure-item {
+    display: flex;
+    align-items: center;
+    gap: 0.3125rem;
+}
+.sfx-cta-reassure-item svg {
+    width: 12px;
+    height: 12px;
+    color: #6CC24A;
+}
+
+.sfx-hero-mentor-card {
+    background: #FFFFFF;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    padding: 0.875rem 1rem;
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.04);
+}
+.sfx-hero-mentor-photo {
+    width: 48px;
+    height: 48px;
+    border-radius: 50%;
+    overflow: hidden;
+    border: 2px solid #6CC24A;
+    flex-shrink: 0;
+}
+.sfx-hero-mentor-photo img,
+#sfx-lp-root .sfx-hero-mentor-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sfx-hero-mentor-info {
+    flex: 1;
+    min-width: 0;
+}
+.sfx-hero-mentor-label {
+    font-size: 0.625rem;
+    color: #6B7280;
+    text-transform: uppercase;
+    letter-spacing: 0.75px;
+    font-weight: 700;
+    margin-bottom: 0.0625rem;
+}
+.sfx-hero-mentor-name {
+    font-size: 0.9375rem;
+    font-weight: 700;
+    color: #1F2937;
+    line-height: 1.2;
+    margin-bottom: 0.125rem;
+}
+.sfx-hero-mentor-meta {
+    font-size: 0.6875rem;
+    color: #4B5563;
+    line-height: 1.3;
+}
+.sfx-hero-mentor-rating {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    flex-shrink: 0;
+}
+.sfx-hero-mentor-rating-stars {
+    color: #FFB800;
+    font-size: 0.8125rem;
+    letter-spacing: 1px;
+}
+.sfx-hero-mentor-rating-text {
+    font-size: 0.5625rem;
+    color: #6B7280;
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+
+@media (max-width: 967px) {
+    .sfx-hero-right {
+        order: -1;
+    }
+}
+
+.sfx-trust-strip {
+    margin-top: 2.5rem;
+    padding: 1.5rem 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+    background: #FAFAFA;
+}
+.sfx-trust-strip-inner {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-trust-strip-inner {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 0;
+        padding: 0 1.5rem;
+    }
+}
+.sfx-trust-item {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    text-align: left;
+    padding: 0.5rem;
+}
+@media (min-width: 768px) {
+    .sfx-trust-item {
+        padding: 0.5rem 1.25rem;
+        border-right: 1px solid #E5E7EB;
+    }
+    .sfx-trust-item:last-child {
+        border-right: none;
+    }
+}
+.sfx-trust-item-icon {
+    flex-shrink: 0;
+}
+.sfx-trust-item-text {
+    display: flex;
+    flex-direction: column;
+    line-height: 1.2;
+}
+.sfx-trust-item-text strong {
+    font-size: 0.9375rem;
+    color: #1F2937;
+    font-weight: 700;
+}
+.sfx-trust-item-text span {
+    font-size: 0.75rem;
+    color: #6B7280;
+    font-weight: 500;
+}
+.sfx-trust-stars {
+    color: #FFB800;
+    font-size: 1rem;
+    letter-spacing: 1px;
+    line-height: 1;
+}
+.sfx-trust-icon-svg {
+    width: 28px;
+    height: 28px;
+}
+</style>
+
+<div class="sfx-hero">
+    <!-- BRAND BAR with logo + trust micro-signals -->
+    <div class="sfx-brand-bar">
+        <div class="sfx-brand-bar-inner">
+            <a href="https://simple-fx.net/" class="sfx-brand-bar-logo" aria-label="SimpleFX home">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="SimpleFX">
+            </a>
+            <div class="sfx-brand-bar-meta">
+                <span class="sfx-brand-bar-meta-item">
+                    <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    <span>Award-winning forex education since <strong>2010</strong></span>
+                </span>
+            </div>
+            <div class="sfx-brand-bar-trust">
+                <span class="sfx-brand-bar-trust-stars">★★★★★</span>
+                <span>Rated <strong>Excellent</strong></span>
+            </div>
+        </div>
+    </div>
+    
+    <div class="sfx-hero-topbar">
+        <span class="sfx-hero-topbar-dot"></span>
+        <span>Live In-Person Workshop &middot; Friday 12 June 2026 &middot; Bromsgrove, West Midlands</span>
+    </div>
+    
+    <div class="sfx-hero-container">
+        <div class="sfx-hero-grid">
+            
+            <!-- LEFT: Persuasion -->
+            <div class="sfx-hero-left">
+                <span class="sfx-hero-eyebrow">
+                    <svg viewBox="0 0 24 24" fill="none"><path d="M12 2L15.09 8.26L22 9.27L17 14.14L18.18 21.02L12 17.77L5.82 21.02L7 14.14L2 9.27L8.91 8.26L12 2Z" fill="#6CC24A"/></svg>
+                    Module 1 &middot; Award-Winning Education
+                </span>
+                
+                <h1>Introduction To Forex Trading. <span class="sfx-highlight">Your First Real Step.</span></h1>
+                
+                <p class="sfx-hero-subheadline">A structured, in-person workshop designed to give complete beginners the foundation every trader needs. One day. One classroom. Real teaching from a 15 year industry mentor.</p>
+                
+                <div class="sfx-event-facts">
+                    <span class="sfx-event-fact">
+                        <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="4" width="18" height="18" rx="2" stroke="currentColor" stroke-width="2"/><path d="M16 2V6M8 2V6M3 10H21" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        Friday 12 June 2026
+                    </span>
+                    <span class="sfx-event-fact">
+                        <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/><path d="M12 6V12L16 14" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg>
+                        09:30 to 17:00
+                    </span>
+                    <span class="sfx-event-fact">
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="currentColor" stroke-width="2"/><circle cx="12" cy="10" r="3" stroke="currentColor" stroke-width="2"/></svg>
+                        Bromsgrove
+                    </span>
+                </div>
+                
+                <ul class="sfx-hero-benefits">
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>The foundations of forex from the ground up</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>What pips, lots, and currency pairs really mean</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Real charts read live by your mentor in the room</span>
+                    </li>
+                    <li>
+                        <span class="sfx-check-icon"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>A clear next step for your trading journey</span>
+                    </li>
+                </ul>
+                
+                <div class="sfx-hero-proof">
+                    <div class="sfx-hero-proof-stars">
+                        <span class="sfx-hero-proof-stars-row">★★★★★</span>
+                        <span class="sfx-hero-proof-stars-label">Trustpilot</span>
+                    </div>
+                    <div>
+                        <p class="sfx-hero-proof-quote">"Best decision I made. Richard explains everything in plain English. I finally understand how the markets actually work."</p>
+                        <span class="sfx-hero-proof-attribution">Verified Trustpilot review &middot; SimpleFX student</span>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- RIGHT: Conversion stack -->
+            <div class="sfx-hero-right">
+                
+                <div class="sfx-hero-video-wrap" id="sfxHeroVideo">
+                    <video 
+                        id="sfxIntroVideo"
+                        playsinline
+                        preload="metadata">
+                        <source src="https://res.cloudinary.com/dcnabm5nc/video/upload/v1778820190/SFX-Mod1-Homepagevideo_lt4jrs.mp4" type="video/mp4">
+                    </video>
+                    <div class="sfx-hero-video-poster" id="sfxVideoPoster">
+                        <img 
+                            class="sfx-hero-video-poster-img"
+                            src="https://res.cloudinary.com/dcnabm5nc/video/upload/so_3,w_1200,h_675,c_fill,q_auto,f_jpg/SFX-Mod1-Homepagevideo_lt4jrs.jpg"
+                            alt="Module 1 introduction"
+                            onerror="this.style.display='none'">
+                        <div class="sfx-hero-video-poster-overlay">
+                            <button class="sfx-play-button" aria-label="Play intro video" type="button">
+                                <svg viewBox="0 0 24 24" fill="none"><polygon points="7,4 20,12 7,20" fill="white"/></svg>
+                            </button>
+                        </div>
+                        <span class="sfx-hero-video-badge">
+                            <span class="sfx-hero-video-badge-dot"></span>
+                            Watch The Intro
+                        </span>
+                        <div class="sfx-hero-video-caption">
+                            See what Module 1 is really about, in Richard's own words
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sfx-hero-cta">
+                    <span class="sfx-hero-cta-ribbon">
+                        <span class="sfx-hero-cta-ribbon-dot"></span>
+                        Booking Now
+                    </span>
+                    
+                    <div class="sfx-price-row">
+                        <div class="sfx-price-stack">
+                            <span class="sfx-price-label">Workshop Investment</span>
+                            <span class="sfx-price-value">
+                                £249<span class="sfx-price-value-meta">/ seat</span>
+                            </span>
+                        </div>
+                        <span class="sfx-seats-pill">
+                            <span class="sfx-seats-pill-dot"></span>
+                            Limited Seats
+                        </span>
+                    </div>
+                    
+                    <div class="sfx-countdown" id="sfxCountdownHero">
+                        <div class="sfx-countdown-label">
+                            <svg viewBox="0 0 24 24" fill="none">
+                                <circle cx="12" cy="12" r="10" stroke="#2D5016" stroke-width="2"/>
+                                <path d="M12 6V12L16 14" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                            <span>Workshop Begins In</span>
+                        </div>
+                        <div class="sfx-countdown-grid">
+                            <div class="sfx-countdown-cell">
+                                <div class="sfx-countdown-value" data-cd-days>00</div>
+                                <div class="sfx-countdown-unit">Days</div>
+                            </div>
+                            <div class="sfx-countdown-cell">
+                                <div class="sfx-countdown-value" data-cd-hours>00</div>
+                                <div class="sfx-countdown-unit">Hours</div>
+                            </div>
+                            <div class="sfx-countdown-cell">
+                                <div class="sfx-countdown-value" data-cd-mins>00</div>
+                                <div class="sfx-countdown-unit">Mins</div>
+                            </div>
+                            <div class="sfx-countdown-cell">
+                                <div class="sfx-countdown-value" data-cd-secs>00</div>
+                                <div class="sfx-countdown-unit">Secs</div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <a href="#checkout-form" class="sfx-cta-btn sfx-jump-to-form">
+                        <span class="sfx-cta-btn-text">Secure My Seat For £249</span>
+                        <svg viewBox="0 0 24 24" fill="none"><path d="M5 12H19M19 12L12 5M19 12L12 19" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                    </a>
+                    
+                    <div class="sfx-cta-reassure">
+                        <span class="sfx-cta-reassure-item">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11" stroke="currentColor" stroke-width="2"/></svg>
+                            Stripe Checkout
+                        </span>
+                        <span class="sfx-cta-reassure-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            14-Day Cancellation
+                        </span>
+                        <span class="sfx-cta-reassure-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                            Lunch Included
+                        </span>
+                    </div>
+                </div>
+                
+                <div class="sfx-hero-mentor-card">
+                    <div class="sfx-hero-mentor-photo">
+                        <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
+                    </div>
+                    <div class="sfx-hero-mentor-info">
+                        <div class="sfx-hero-mentor-label">Taught by</div>
+                        <div class="sfx-hero-mentor-name">Richard Williams</div>
+                        <div class="sfx-hero-mentor-meta">Founder, SimpleFX &middot; 15+ years</div>
+                    </div>
+                    <div class="sfx-hero-mentor-rating">
+                        <span class="sfx-hero-mentor-rating-stars">★★★★★</span>
+                        <span class="sfx-hero-mentor-rating-text">500+ Mentored</span>
+                    </div>
+                </div>
+                
+            </div>
+            
+        </div>
+    </div>
+    
+    <div class="sfx-trust-strip">
+        <div class="sfx-trust-strip-inner">
+            <div class="sfx-trust-item">
+                <span class="sfx-trust-stars sfx-trust-item-icon">★★★★★</span>
+                <span class="sfx-trust-item-text">
+                    <strong>Excellent</strong>
+                    <span>Trustpilot Rated</span>
+                </span>
+            </div>
+            <div class="sfx-trust-item">
+                <svg class="sfx-trust-item-icon sfx-trust-icon-svg" viewBox="0 0 24 24" fill="none">
+                    <path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" fill="#FFB800"/>
+                    <path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="#FFB800" stroke-width="2"/>
+                </svg>
+                <span class="sfx-trust-item-text">
+                    <strong>5x Winner</strong>
+                    <span>Best Forex Educator</span>
+                </span>
+            </div>
+            <div class="sfx-trust-item">
+                <svg class="sfx-trust-item-icon sfx-trust-icon-svg" viewBox="0 0 24 24" fill="none">
+                    <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                    <circle cx="9" cy="7" r="4" stroke="#2D5016" stroke-width="2"/>
+                    <path d="M23 21V19C23 17.1362 21.7252 15.5701 20 15.126" stroke="#2D5016" stroke-width="2" stroke-linecap="round"/>
+                </svg>
+                <span class="sfx-trust-item-text">
+                    <strong>500+ Traders</strong>
+                    <span>Mentored Since 2010</span>
+                </span>
+            </div>
+            <div class="sfx-trust-item">
+                <svg class="sfx-trust-item-icon sfx-trust-icon-svg" viewBox="0 0 24 24" fill="none">
+                    <path d="M21 10C21 17 12 23 12 23C12 23 3 17 3 10C3 5.02944 7.02944 1 12 1C16.9706 1 21 5.02944 21 10Z" stroke="#2D5016" stroke-width="2"/>
+                    <circle cx="12" cy="10" r="3" stroke="#2D5016" stroke-width="2"/>
+                </svg>
+                <span class="sfx-trust-item-text">
+                    <strong>Bromsgrove HQ</strong>
+                    <span>UK Based &amp; Run</span>
+                </span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+
+<!-- ============================================
+     SECTION 2: WHY IN-PERSON CHANGES THINGS
+     ============================================ -->
+<style>
+.sfx-why {
+    padding: 3rem 0;
+    background: #F9FAFB;
+}
+@media (min-width: 768px) {
+    .sfx-why {
+        padding: 5rem 0;
+    }
+}
+.sfx-why-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-why-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-why-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-why-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-why h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    line-height: 1.2;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-why-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.sfx-why-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+}
+@media (min-width: 640px) {
+    .sfx-why-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-why-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+    }
+}
+.sfx-why-bottom-row {
+    display: none;
+}
+@media (min-width: 1024px) {
+    .sfx-why-bottom-row {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+        max-width: 640px;
+        margin: 1.5rem auto 0;
+    }
+}
+.sfx-value-card {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s ease;
+    border: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-value-card {
+        padding: 2rem;
+    }
+}
+.sfx-value-card:hover {
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+    transform: translateY(-4px);
+    border-color: #6CC24A;
+}
+.sfx-value-icon {
+    width: 48px;
+    height: 48px;
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    border-radius: 0.75rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-value-icon {
+        width: 56px;
+        height: 56px;
+        margin-bottom: 1.25rem;
+    }
+}
+.sfx-value-icon svg {
+    width: 24px;
+    height: 24px;
+}
+@media (min-width: 768px) {
+    .sfx-value-icon svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+.sfx-value-card h3 {
+    font-size: 1.125rem;
+    color: #1F2937;
+    font-weight: 700;
+    margin-bottom: 0.5rem;
+}
+@media (min-width: 768px) {
+    .sfx-value-card h3 {
+        font-size: 1.25rem;
+        margin-bottom: 0.75rem;
+    }
+}
+.sfx-value-card p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+.sfx-hide-desktop {
+    display: block;
+}
+@media (min-width: 1024px) {
+    .sfx-hide-desktop {
+        display: none;
+    }
+}
+</style>
+
+<div class="sfx-why">
+    <div class="sfx-why-container">
+        <div class="sfx-why-header">
+            <h2>Why Learning In The Room Makes A Difference</h2>
+            <p>Module 1 is the foundation everything else is built on. Get it right with a mentor, not a YouTube playlist.</p>
+        </div>
+        
+        <div class="sfx-why-grid">
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <circle cx="9" cy="7" r="4" stroke="white" stroke-width="2"/>
+                        <path d="M23 21V19C23 17.1362 21.7252 15.5701 20 15.126M16 3.12598C17.7252 3.56984 19 5.13616 19 6.99998C19 8.8638 17.7252 10.4301 16 10.874" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Small Group Teaching</h3>
+                <p>A focused classroom setting means you get attention, ask questions freely, and never feel like a passenger.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M14 2H6C5.46957 2 4.96086 2.21071 4.58579 2.58579C4.21071 2.96086 4 3.46957 4 4V20C4 20.5304 4.21071 21.0391 4.58579 21.4142C4.96086 21.7893 5.46957 22 6 22H18C18.5304 22 19.0391 21.7893 19.4142 21.4142C19.7893 21.0391 20 20.5304 20 20V8L14 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <path d="M14 2V8H20M16 13H8M16 17H8M10 9H8" stroke="white" stroke-width="1.5" stroke-linecap="round"/>
+                    </svg>
+                </div>
+                <h3>Structured From Day One</h3>
+                <p>A proper curriculum that builds in the right order. No skipping steps, no gaps to fill in later.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M12 2L3 7V11C3 16.55 6.84 21.74 12 23C17.16 21.74 21 16.55 21 11V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Risk First Mindset</h3>
+                <p>Learn how to protect your money before placing a single trade. No unrealistic promises.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M2 12C2 6.47715 6.47715 2 12 2C17.5228 2 22 6.47715 22 12" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M12 8V12L15 15" stroke="white" stroke-width="2" stroke-linecap="round"/>
+                        <path d="M22 12C22 17.5228 17.5228 22 12 22C6.47715 22 2 17.5228 2 12" stroke="white" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+                    </svg>
+                </div>
+                <h3>Plain English Throughout</h3>
+                <p>We strip away the jargon so you actually understand the markets, not just memorise terms.</p>
+            </div>
+            
+            <div class="sfx-value-card sfx-hide-desktop">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Live Chart Reading</h3>
+                <p>Watch a mentor break down real market charts in front of you. See exactly how a trader thinks.</p>
+            </div>
+            
+            <div class="sfx-value-card sfx-hide-desktop">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>A Clear Path Forward</h3>
+                <p>You leave knowing exactly where you stand and what your next steps look like, with or without us.</p>
+            </div>
+        </div>
+        
+        <div class="sfx-why-bottom-row">
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M22 12H18L15 21L9 3L6 12H2" stroke="white" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/>
+                    </svg>
+                </div>
+                <h3>Live Chart Reading</h3>
+                <p>Watch a mentor break down real market charts in front of you. See exactly how a trader thinks.</p>
+            </div>
+            
+            <div class="sfx-value-card">
+                <div class="sfx-value-icon">
+                    <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                        <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        <circle cx="12" cy="12" r="10" stroke="white" stroke-width="2"/>
+                    </svg>
+                </div>
+                <h3>A Clear Path Forward</h3>
+                <p>You leave knowing exactly where you stand and what your next steps look like, with or without us.</p>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 3: WHAT MODULE 1 COVERS
+     ============================================ -->
+<style>
+.sfx-curriculum {
+    padding: 3rem 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-curriculum {
+        padding: 5rem 0;
+    }
+}
+.sfx-curriculum-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-curriculum-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-curriculum-header {
+    text-align: center;
+    margin-bottom: 2.5rem;
+}
+.sfx-curriculum h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-curriculum-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+    max-width: 700px;
+    margin: 0 auto;
+}
+.sfx-modules-grid {
+    display: grid;
+    gap: 1.25rem;
+    max-width: 1100px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .sfx-modules-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1.5rem;
+    }
+}
+.sfx-module-card {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    transition: all 0.3s ease;
+    position: relative;
+    overflow: hidden;
+}
+@media (min-width: 768px) {
+    .sfx-module-card {
+        padding: 1.75rem;
+    }
+}
+.sfx-module-card::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 4px;
+    height: 100%;
+    background: #6CC24A;
+    opacity: 0.6;
+    transition: opacity 0.3s ease;
+}
+.sfx-module-card:hover {
+    border-color: #6CC24A;
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1);
+}
+.sfx-module-card:hover::before {
+    opacity: 1;
+}
+.sfx-module-number {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 36px;
+    height: 36px;
+    background: #6CC24A;
+    color: #FFFFFF;
+    border-radius: 50%;
+    font-weight: 800;
+    font-size: 0.9375rem;
+    margin-bottom: 1rem;
+}
+.sfx-module-card h3 {
+    font-size: 1.125rem;
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.625rem;
+}
+@media (min-width: 768px) {
+    .sfx-module-card h3 {
+        font-size: 1.25rem;
+    }
+}
+.sfx-module-card p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+.sfx-curriculum-note {
+    max-width: 700px;
+    margin: 2.5rem auto 0;
+    text-align: center;
+    padding: 1.25rem 1.5rem;
+    background: #F0F9EC;
+    border-left: 4px solid #6CC24A;
+    border-radius: 0 0.5rem 0.5rem 0;
+    color: #2D5016;
+    font-size: 0.9375rem;
+    font-weight: 500;
+    line-height: 1.6;
+}
+</style>
+
+<div class="sfx-curriculum">
+    <div class="sfx-curriculum-container">
+        <div class="sfx-curriculum-header">
+            <h2>What Module 1 Covers</h2>
+            <p>A full day designed to take you from zero understanding to a clear, working knowledge of how forex actually operates.</p>
+        </div>
+        
+        <div class="sfx-modules-grid">
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">1</div>
+                <h3>The Language Of The Market</h3>
+                <p>Pips, lots, spreads, leverage, and currency pairs explained properly. The vocabulary every trader needs before anything else makes sense.</p>
+            </div>
+            
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">2</div>
+                <h3>Reading A Chart Like A Trader</h3>
+                <p>Candlesticks, timeframes, and what price action is actually telling you. Watch real charts read live by your mentor.</p>
+            </div>
+            
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">3</div>
+                <h3>Risk Management First</h3>
+                <p>Why protecting your capital matters more than predicting the market. The single most important habit a new trader can build.</p>
+            </div>
+            
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">4</div>
+                <h3>The Anatomy Of A Trade</h3>
+                <p>Entry, stop loss, take profit, position sizing. A simple example walked through end to end so you see how a real trade is structured.</p>
+            </div>
+            
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">5</div>
+                <h3>Trading Platforms In Practice</h3>
+                <p>A guided look at the tools real traders use day to day. Demystified, not overwhelming.</p>
+            </div>
+            
+            <div class="sfx-module-card">
+                <div class="sfx-module-number">6</div>
+                <h3>Building A Trading Routine</h3>
+                <p>What a sustainable daily routine actually looks like, and how to fit trading around a job or business.</p>
+            </div>
+        </div>
+        
+        <div class="sfx-curriculum-note">
+            Module 1 is the first step in our structured education path. By the end of the day, you will know more about how forex really works than 90% of people who have ever considered it.
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 4: MEET YOUR MENTOR
+     ============================================ -->
+<style>
+.sfx-mentor {
+    background: #F9FAFB;
+    padding: 3rem 0;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-mentor {
+        padding: 5rem 0;
+    }
+}
+.sfx-mentor-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-mentor-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-mentor h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.5rem;
+}
+.sfx-mentor-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-mentor-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: center;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 3rem;
+    }
+}
+.sfx-mentor-image {
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.sfx-mentor-quote {
+    background: #FFFFFF;
+    border-left: 4px solid #6CC24A;
+    padding: 1rem 1.25rem;
+    border-radius: 0 0.5rem 0.5rem 0;
+    margin-bottom: 1.5rem;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.sfx-mentor-quote p {
+    margin: 0;
+    font-style: italic;
+    color: #2D5016;
+    font-weight: 500;
+    line-height: 1.7;
+    font-size: 0.9375rem;
+}
+.sfx-mentor-badge {
+    display: inline-block;
+    background: #6CC24A;
+    color: #FFFFFF;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-mentor-name {
+    font-size: clamp(1.5rem, 3vw, 2rem);
+    margin-bottom: 0.25rem;
+    color: #1F2937;
+    font-weight: 700;
+}
+.sfx-mentor-title {
+    font-size: 1rem;
+    color: #6CC24A;
+    font-weight: 600;
+    margin-bottom: 1rem;
+}
+.sfx-mentor-bio {
+    color: #374151;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+.sfx-mentor-stats {
+    display: flex;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+}
+.sfx-mentor-stat {
+    text-align: center;
+}
+.sfx-mentor-stat-value {
+    font-size: 1.5rem;
+    font-weight: 800;
+    color: #6CC24A;
+    display: block;
+}
+@media (min-width: 768px) {
+    .sfx-mentor-stat-value {
+        font-size: 2rem;
+    }
+}
+.sfx-mentor-stat-label {
+    font-size: 0.75rem;
+    color: #6B7280;
+}
+</style>
+
+<div class="sfx-mentor">
+    <div class="sfx-mentor-container">
+        <div class="sfx-mentor-header">
+            <h2>Meet Your Mentor</h2>
+            <p>You will spend the day learning from one of the UK's most experienced forex educators</p>
+        </div>
+        
+        <div class="sfx-mentor-grid">
+            <div class="sfx-mentor-image">
+                <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207072/Screenshot-2022-09-19-at-23.18.11_sdexfh.png" alt="Richard Williams">
+            </div>
+            <div>
+                <span class="sfx-mentor-badge">Founder & Lead Mentor</span>
+                <h3 class="sfx-mentor-name">Richard Williams</h3>
+                <p class="sfx-mentor-title">Professional Trader Since 2010 | Specialist Educator</p>
+                
+                <div class="sfx-mentor-quote">
+                    <p>"Module 1 is the day I wish someone had given me when I started out. It is everything I learned the hard way, taught properly, in the right order. No fluff, no hype. Just the foundation that everything else depends on."</p>
+                </div>
+                
+                <p class="sfx-mentor-bio">
+                    Founder of SimpleFX in 2010, based in Bromsgrove, Worcestershire. Recognised as Best Forex Education Provider for five consecutive years.
+                </p>
+                
+                <div class="sfx-mentor-stats">
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">15+</span>
+                        <span class="sfx-mentor-stat-label">Years Trading</span>
+                    </div>
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">500+</span>
+                        <span class="sfx-mentor-stat-label">Traders Mentored</span>
+                    </div>
+                    <div class="sfx-mentor-stat">
+                        <span class="sfx-mentor-stat-value">5x</span>
+                        <span class="sfx-mentor-stat-label">Award Winner</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 5: INSIDE OUR LIVE EVENTS (CAROUSEL)
+     ============================================ -->
+<style>
+.sfx-carousel-section {
+    padding: 3rem 0;
+    background: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-section {
+        padding: 5rem 0;
+    }
+}
+.sfx-carousel-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-carousel-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-carousel-section h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-carousel-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-live-events-carousel {
+    position: relative;
+    overflow: hidden;
+    width: 100%;
+    mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+    -webkit-mask-image: linear-gradient(to right, transparent, black 5%, black 95%, transparent);
+}
+.sfx-carousel-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+}
+@media (min-width: 768px) {
+    .sfx-carousel-track {
+        gap: 1.5rem;
+    }
+}
+.sfx-carousel-item {
+    flex: 0 0 280px;
+    aspect-ratio: 4/3;
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+@media (min-width: 768px) {
+    .sfx-carousel-item {
+        flex: 0 0 400px;
+        border-radius: 1rem;
+    }
+}
+.sfx-carousel-item img,
+#sfx-lp-root .sfx-carousel-item img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    max-width: none;
+}
+</style>
+
+<div class="sfx-carousel-section">
+    <div class="sfx-carousel-container">
+        <div class="sfx-carousel-header">
+            <h2>Inside Our Classroom</h2>
+            <p>A glimpse of real teaching sessions at our Bromsgrove training base</p>
+        </div>
+        
+        <div class="sfx-live-events-carousel" id="carouselWrapper">
+            <div class="sfx-carousel-track" id="eventsCarousel"></div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var CAROUSEL_IMAGES = [
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777523138/Inside_our_live_events__stjsql.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777523138/Inside_our_live_events_2_pfgclu.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777523138/Inside_our_live_events_1_fk0lys.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777523139/Inside_our_live_events_3_xj2syc.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777523138/Inside_our_live_events_4_vi5jyd.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777524658/Inside_our_live_events_5_vtbfkw.jpg',
+        'https://res.cloudinary.com/dcnabm5nc/image/upload/v1777524660/Inside_our_live_events_6_jztbbn.jpg'
+    ];
+    
+    function initCarousel() {
+        var track = document.getElementById('eventsCarousel');
+        if (!track) return;
+        
+        var imageHTML = '';
+        for (var i = 0; i < CAROUSEL_IMAGES.length; i++) {
+            imageHTML += '<div class="sfx-carousel-item"><img src="' + CAROUSEL_IMAGES[i] + '" alt="Inside Our Classroom ' + (i + 1) + '" loading="lazy"></div>';
+        }
+        
+        track.innerHTML = imageHTML + imageHTML + imageHTML;
+        
+        var position = 0;
+        var speed = 0.5;
+        var itemWidth = window.innerWidth < 768 ? 280 + 16 : 400 + 24;
+        var totalWidth = CAROUSEL_IMAGES.length * itemWidth;
+        
+        function animate() {
+            position -= speed;
+            if (Math.abs(position) >= totalWidth) {
+                position = 0;
+            }
+            track.style.transform = 'translateX(' + position + 'px)';
+            requestAnimationFrame(animate);
+        }
+        
+        animate();
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCarousel);
+    } else {
+        initCarousel();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 6: DAY AGENDA + WHO IT IS FOR
+     ============================================ -->
+<style>
+.sfx-agenda {
+    padding: 3rem 0;
+    background: #F9FAFB;
+}
+@media (min-width: 768px) {
+    .sfx-agenda {
+        padding: 5rem 0;
+    }
+}
+.sfx-agenda-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-agenda-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-agenda h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.75rem;
+}
+.sfx-agenda-header p {
+    font-size: clamp(0.9375rem, 2vw, 1.125rem);
+    color: #4B5563;
+}
+.sfx-agenda-grid {
+    display: grid;
+    gap: 2rem;
+}
+@media (min-width: 968px) {
+    .sfx-agenda-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+.sfx-agenda h3 {
+    font-size: 1.25rem;
+    color: #1F2937;
+    font-weight: 700;
+    margin-bottom: 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-agenda h3 {
+        font-size: 1.5rem;
+        margin-bottom: 1.5rem;
+    }
+}
+.sfx-timeline {
+    list-style: none;
+    position: relative;
+    padding-left: 0;
+}
+.sfx-timeline li {
+    display: flex;
+    align-items: flex-start;
+    gap: 1rem;
+    margin-bottom: 1.25rem;
+    color: #374151;
+    line-height: 1.5;
+    font-size: 0.9375rem;
+}
+.sfx-time-badge {
+    flex-shrink: 0;
+    background: #FFFFFF;
+    border: 1px solid #6CC24A;
+    color: #2D5016;
+    padding: 0.375rem 0.625rem;
+    border-radius: 0.5rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    min-width: 70px;
+    text-align: center;
+    box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+}
+.sfx-timeline-content strong {
+    color: #1F2937;
+    display: block;
+    margin-bottom: 0.125rem;
+}
+.sfx-who-section {
+    background: #FFFFFF;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    border: 2px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-who-section {
+        padding: 2rem;
+    }
+}
+.sfx-who-grid {
+    display: grid;
+    gap: 1.5rem;
+}
+@media (min-width: 640px) {
+    .sfx-who-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 2rem;
+    }
+}
+.sfx-who-list {
+    list-style: none;
+}
+.sfx-who-list li {
+    display: flex;
+    align-items: flex-start;
+    gap: 0.5rem;
+    margin-bottom: 0.625rem;
+    color: #374151;
+    line-height: 1.5;
+    font-size: 0.875rem;
+}
+.sfx-who-icon-yes {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    color: #10B981;
+    margin-top: 2px;
+}
+.sfx-who-icon-no {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    color: #EF4444;
+    margin-top: 2px;
+}
+.sfx-who-title-yes {
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+    color: #10B981;
+    font-weight: 600;
+}
+.sfx-who-title-no {
+    font-size: 0.9375rem;
+    margin-bottom: 0.75rem;
+    color: #EF4444;
+    font-weight: 600;
+}
+.sfx-whats-included {
+    margin-top: 1.5rem;
+    padding: 1rem 1.25rem;
+    background: #F0F9EC;
+    border-radius: 0.5rem;
+    border-left: 4px solid #6CC24A;
+}
+.sfx-whats-included-title {
+    font-weight: 700;
+    color: #2D5016;
+    font-size: 0.875rem;
+    margin-bottom: 0.5rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-whats-included-list {
+    list-style: none;
+    font-size: 0.875rem;
+    color: #2D5016;
+}
+.sfx-whats-included-list li {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    margin-bottom: 0.375rem;
+}
+.sfx-whats-included-list li svg {
+    width: 14px;
+    height: 14px;
+    flex-shrink: 0;
+}
+.sfx-whats-included-list li:last-child {
+    margin-bottom: 0;
+}
+</style>
+
+<div class="sfx-agenda" id="agenda">
+    <div class="sfx-agenda-container">
+        <div class="sfx-agenda-header">
+            <h2>Your Day, Hour By Hour</h2>
+            <p>A structured full day at our Bromsgrove training base. Friday 12 June 2026.</p>
+        </div>
+        
+        <div class="sfx-agenda-grid">
+            <div>
+                <h3>Workshop Schedule</h3>
+                <ul class="sfx-timeline">
+                    <li>
+                        <span class="sfx-time-badge">09:30</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Arrival & Welcome</strong>
+                            <span>Coffee, name badges, and a relaxed start. Meet your mentor and fellow students.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">10:00</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Session 1: The Foundations</strong>
+                            <span>What forex is, how the market actually works, and the language every trader needs.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">11:30</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Session 2: Reading The Charts</strong>
+                            <span>Candlesticks, timeframes, and what price action is telling you. Live demonstration.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">13:00</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Lunch Break</strong>
+                            <span>Lunch is provided. Use the time to chat with the team and other attendees.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">14:00</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Session 3: Risk Management</strong>
+                            <span>The most important habit you can build as a new trader. We cover it in full.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">15:30</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Session 4: The Anatomy Of A Trade</strong>
+                            <span>A real trade structured live in front of you, from entry to exit.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">16:30</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Open Q&A & Next Steps</strong>
+                            <span>Ask the team anything. We finish with a clear view of where you go from here.</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="sfx-time-badge">17:00</span>
+                        <div class="sfx-timeline-content">
+                            <strong>Close</strong>
+                            <span>You leave with notes, materials, and a real sense of direction.</span>
+                        </div>
+                    </li>
+                </ul>
+            </div>
+            
+            <div>
+                <div class="sfx-who-section">
+                    <h3 style="font-size: 1.125rem; color: #1F2937; font-weight: 700; margin-bottom: 1.25rem;">Who This Is For (And Who It Is Not)</h3>
+                    
+                    <div class="sfx-who-grid">
+                        <div>
+                            <h4 class="sfx-who-title-yes">This is for you if:</h4>
+                            <ul class="sfx-who-list">
+                                <li>
+                                    <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span>You want a proper introduction, not bits and pieces from YouTube</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span>You learn better in a room with a real mentor</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span>You value honesty and structure over hype</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-yes" viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                    <span>You can travel to Bromsgrove for the day</span>
+                                </li>
+                            </ul>
+                        </div>
+                        
+                        <div>
+                            <h4 class="sfx-who-title-no">This is not for you if:</h4>
+                            <ul class="sfx-who-list">
+                                <li>
+                                    <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                    <span>You want a get rich quick scheme</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                    <span>You expect guaranteed returns</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                    <span>You want signals or copy trading</span>
+                                </li>
+                                <li>
+                                    <svg class="sfx-who-icon-no" viewBox="0 0 24 24" fill="none"><path d="M18 6L6 18M6 6L18 18" stroke="currentColor" stroke-width="2.5" stroke-linecap="round"/></svg>
+                                    <span>You are not willing to put in the time to learn</span>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="sfx-whats-included">
+                        <div class="sfx-whats-included-title">What Your £249 Includes</div>
+                        <ul class="sfx-whats-included-list">
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="#2D5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Full day in-person workshop (09:30 to 17:00)</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="#2D5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Printed workbook and learning materials</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="#2D5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Lunch, refreshments, and parking</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="#2D5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Live Q&A with Richard Williams and team</span>
+                            </li>
+                            <li>
+                                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 7" stroke="#2D5016" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                                <span>Take home notes and reference resources</span>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 7: HEAR FROM STUDENTS (VIDEOS + REVIEWS)
+     ============================================ -->
+<style>
+.sfx-trustpilot {
+    background: #FFF;
+    padding: 3rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot {
+        padding: 5rem 0;
+    }
+}
+.sfx-trustpilot-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-trustpilot-header-centered {
+    text-align: center;
+    margin-bottom: 2rem;
+    max-width: 900px;
+    margin-left: auto;
+    margin-right: auto;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-header-centered {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-trustpilot-logo-small,
+#sfx-lp-root .sfx-trustpilot-logo-small {
+    height: 24px;
+    width: auto;
+    max-width: 120px;
+    margin: 0 auto 0.75rem;
+    display: block;
+    object-fit: contain;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-logo-small,
+    #sfx-lp-root .sfx-trustpilot-logo-small {
+        height: 28px;
+        max-width: 140px;
+        margin-bottom: 1rem;
+    }
+}
+.sfx-trustpilot-stars-large {
+    font-size: 1.5rem;
+    color: #00B67A;
+    margin-bottom: 0.375rem;
+    letter-spacing: 0.25rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-stars-large {
+        font-size: 2rem;
+        margin-bottom: 0.5rem;
+    }
+}
+.sfx-trustpilot-rating-large {
+    font-size: 1rem;
+    color: #1F2937;
+    font-weight: 600;
+    margin-bottom: 1.5rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-rating-large {
+        font-size: 1.125rem;
+        margin-bottom: 2rem;
+    }
+}
+.sfx-trustpilot h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+    margin-bottom: 0.375rem;
+}
+.sfx-trustpilot-header-centered > p {
+    color: #4B5563;
+    margin-bottom: 1.5rem;
+    font-size: 0.9375rem;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-header-centered > p {
+        margin-bottom: 2rem;
+        font-size: 1rem;
+    }
+}
+.sfx-videos-section {
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-videos-section {
+        margin-bottom: 4rem;
+    }
+}
+.sfx-videos-grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (min-width: 480px) {
+    .sfx-videos-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 1rem;
+    }
+}
+@media (min-width: 768px) {
+    .sfx-videos-grid {
+        grid-template-columns: repeat(4, 1fr);
+        gap: 1.5rem;
+        max-width: 1100px;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-videos-grid {
+        gap: 1.5rem;
+    }
+}
+.sfx-video-item {
+    border-radius: 0.75rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: #000;
+    aspect-ratio: 9/16;
+    position: relative;
+    max-width: 320px;
+    margin: 0 auto;
+    width: 100%;
+    cursor: pointer;
+    touch-action: manipulation;
+    -webkit-tap-highlight-color: transparent;
+}
+@media (min-width: 768px) {
+    .sfx-video-item {
+        border-radius: 1rem;
+    }
+}
+.sfx-video-item:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+.sfx-video-logo-thumb {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000;
+    cursor: pointer;
+    z-index: 5;
+}
+.sfx-video-logo-thumb img {
+    width: 50%;
+    max-width: 180px;
+    height: auto;
+    object-fit: contain;
+    opacity: 0.9;
+}
+.sfx-video-title {
+    position: absolute;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    padding: 0.875rem 1rem 1rem;
+    background: linear-gradient(180deg, transparent 0%, rgba(0, 0, 0, 0.85) 100%);
+    color: #FFFFFF;
+    font-size: 0.875rem;
+    font-weight: 600;
+    line-height: 1.3;
+    text-align: left;
+    z-index: 5;
+}
+@media (min-width: 768px) {
+    .sfx-video-title {
+        font-size: 1rem;
+        padding: 1rem 1.25rem 1.25rem;
+    }
+}
+.sfx-video-play-btn,
+#sfx-lp-root .sfx-video-play-btn,
+#sfx-lp-root .sfx-video-play-btn {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 60px;
+    height: 60px;
+    background: rgba(108, 194, 74, 0.9);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    z-index: 6;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    pointer-events: none;
+}
+@media (min-width: 768px) {
+    .sfx-video-play-btn {
+        width: 70px;
+        height: 70px;
+    }
+}
+.sfx-video-play-btn:hover {
+    background: #6CC24A;
+    transform: translate(-50%, -50%) scale(1.1);
+}
+.sfx-video-play-btn svg {
+    width: 24px;
+    height: 24px;
+    margin-left: 3px;
+}
+@media (min-width: 768px) {
+    .sfx-video-play-btn svg {
+        width: 28px;
+        height: 28px;
+    }
+}
+.sfx-video-logo-thumb.hidden {
+    display: none;
+}
+.sfx-video-item iframe {
+    width: 100%;
+    height: 100%;
+    border: none;
+    display: block;
+}
+.sfx-trustpilot-images-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+@media (min-width: 640px) {
+    .sfx-trustpilot-images-grid {
+        grid-template-columns: repeat(3, 1fr);
+        gap: 1rem;
+    }
+}
+@media (min-width: 1024px) {
+    .sfx-trustpilot-images-grid {
+        gap: 1.5rem;
+    }
+}
+.sfx-trustpilot-image-item {
+    border-radius: 0.5rem;
+    overflow: hidden;
+    box-shadow: 0 4px 6px -1px rgba(0,0,0,0.1);
+    transition: all 0.3s ease;
+    background: #FFF;
+}
+@media (min-width: 768px) {
+    .sfx-trustpilot-image-item {
+        border-radius: 1rem;
+    }
+}
+.sfx-trustpilot-image-item:hover {
+    box-shadow: 0 20px 25px -5px rgba(0,0,0,0.1);
+    transform: translateY(-4px);
+}
+.sfx-trustpilot-image-item img {
+    width: 100%;
+    height: auto;
+}
+</style>
+
+<div class="sfx-trustpilot">
+    <div class="sfx-trustpilot-container">
+        <div class="sfx-trustpilot-header-centered">
+            <img src="https://cdn.trustpilot.net/brand-assets/4.1.0/logo-black.svg" alt="Trustpilot" class="sfx-trustpilot-logo-small">
+            <div class="sfx-trustpilot-stars-large">★★★★★</div>
+            <div class="sfx-trustpilot-rating-large">Rated Excellent | 4.9 out of 5</div>
+            <h2>What Our Students Say</h2>
+            <p>Real feedback from people who took that first proper step into trading</p>
+        </div>
+        
+        <div class="sfx-videos-section">
+            <div class="sfx-videos-grid" id="videoGallery">
+                <!-- Videos will be populated by JS -->
+            </div>
+        </div>
+        
+        <div>
+            <div class="sfx-trustpilot-images-grid">
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207623/Screenshot_2025-11-15_at_18.53.23_zznfdy.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.53.09_ux7swp.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.25_jncism.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207624/Screenshot_2025-11-15_at_18.52.36_goqee2.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.16_uly4z5.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.01_rhgsfy.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207625/Screenshot_2025-11-15_at_18.52.47_emmcas.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763207626/Screenshot_2025-11-15_at_18.53.00_wlzq5n.png" alt="Review" loading="lazy"></div>
+                <div class="sfx-trustpilot-image-item"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763398015/Screenshot_2025-11-17_at_23.46.37_papraz.png" alt="Review" loading="lazy"></div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    var VIDEO_SOURCES = [
+        {
+            id: 'Chantelle_testimonial__mn8ied',
+            title: 'Chantelle: Building A Future For Me And My Sister'
+        },
+        {
+            id: 'Will_testimonial__rjfa5u',
+            title: 'Will: A Second Income I Can Take Travelling'
+        },
+        {
+            id: 'Michael_testimonial__eql6cw',
+            title: "Michael: Trading For My Children's Future"
+        },
+        {
+            id: 'Matty_testimonial_m0tzhc',
+            title: 'Matty: Success Leaves Clues, Follow The Right Ones'
+        }
+    ];
+    
+    var LOGO_URL = 'https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png';
+    
+    var currentPlayingItem = null;
+    
+    function initVideoGallery() {
+        var gallery = document.getElementById('videoGallery');
+        if (!gallery) return;
+        
+        var html = '';
+        for (var i = 0; i < VIDEO_SOURCES.length; i++) {
+            html += '<div class="sfx-video-item" data-video-index="' + i + '">' +
+                '<div class="sfx-video-logo-thumb">' +
+                    '<img src="' + LOGO_URL + '" alt="SimpleFX">' +
+                    '<div class="sfx-video-title">' + VIDEO_SOURCES[i].title + '</div>' +
+                    '<div class="sfx-video-play-btn">' +
+                        '<svg viewBox="0 0 24 24" fill="none"><polygon points="5,3 19,12 5,21" fill="white"/></svg>' +
+                    '</div>' +
+                '</div>' +
+                '<iframe src="" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen frameborder="0"></iframe>' +
+            '</div>';
+        }
+        gallery.innerHTML = html;
+        
+        var videoItems = gallery.querySelectorAll('.sfx-video-item');
+        
+        // Helper: stop a video item by clearing its iframe and showing
+        // the thumb again. Used both for switching to a new video AND
+        // (if needed) for an explicit "stop" external call.
+        function stopVideoItem(item) {
+            if (!item) return;
+            var t = item.querySelector('.sfx-video-logo-thumb');
+            var f = item.querySelector('iframe');
+            if (t) t.classList.remove('hidden');
+            if (f) {
+                // Setting src to about:blank stops audio immediately on
+                // all browsers (more reliably than empty string)
+                f.src = 'about:blank';
+            }
+        }
+        
+        for (var j = 0; j < videoItems.length; j++) {
+            (function(item) {
+                var thumb = item.querySelector('.sfx-video-logo-thumb');
+                var iframe = item.querySelector('iframe');
+                var index = parseInt(item.getAttribute('data-video-index'), 10);
+                var lastFireAt = 0; // touch/click dedupe timestamp
+                
+                // Play handler - extracted so we can bind to multiple events
+                function playVideo(e) {
+                    if (e && e.preventDefault) e.preventDefault();
+                    if (e && e.stopPropagation) e.stopPropagation();
+                    
+                    // Dedupe touch + synthetic click firing within ~400ms
+                    var now = Date.now();
+                    if (now - lastFireAt < 400) return;
+                    lastFireAt = now;
+                    
+                    // If this card is already playing, do nothing - the user
+                    // should use the Cloudinary player's own pause/play controls
+                    // for manual control over the playing video.
+                    if (thumb.classList.contains('hidden')) return;
+                    
+                    // Stop the previously playing video (if any other card)
+                    if (currentPlayingItem && currentPlayingItem !== item) {
+                        stopVideoItem(currentPlayingItem);
+                    }
+                    
+                    // Start this card's video with autoplay. The src is set
+                    // inside the user's tap gesture, so mobile autoplay
+                    // permissions are satisfied. The Cloudinary player will
+                    // then show its own controls for manual pause/play/scrub.
+                    var publicId = VIDEO_SOURCES[index].id;
+                    iframe.src = 'https://player.cloudinary.com/embed/?cloud_name=dcnabm5nc&public_id=' + encodeURIComponent(publicId) + '&profile=cld-default&autoplay=true';
+                    thumb.classList.add('hidden');
+                    currentPlayingItem = item;
+                }
+                
+                // Bind click to the entire video item (not just the thumb).
+                // The thumb sits absolutely positioned inside the item, so
+                // any tap on the card hits the thumb visually. But binding
+                // to the item itself sidesteps iOS Safari quirks where
+                // click events on absolutely-positioned child divs can
+                // fail to fire reliably without an interactive parent.
+                item.addEventListener('click', playVideo);
+                
+                // Additional iOS touch fallback: some older iOS versions
+                // (and Android browsers with custom WebViews) suppress
+                // click events on non-interactive elements. Listen for
+                // touchend explicitly. We track touchstart position to
+                // distinguish a tap from a scroll gesture - only fire
+                // play if the finger barely moved.
+                var touchStartX = 0, touchStartY = 0, touchStartTime = 0;
+                
+                item.addEventListener('touchstart', function(e) {
+                    if (e.touches && e.touches[0]) {
+                        touchStartX = e.touches[0].clientX;
+                        touchStartY = e.touches[0].clientY;
+                        touchStartTime = Date.now();
+                    }
+                }, { passive: true });
+                
+                item.addEventListener('touchend', function(e) {
+                    if (!e.changedTouches || !e.changedTouches[0]) return;
+                    var endX = e.changedTouches[0].clientX;
+                    var endY = e.changedTouches[0].clientY;
+                    var dx = Math.abs(endX - touchStartX);
+                    var dy = Math.abs(endY - touchStartY);
+                    var dt = Date.now() - touchStartTime;
+                    
+                    // Only treat as tap if finger barely moved and was quick
+                    if (dx < 10 && dy < 10 && dt < 500) {
+                        if (!thumb.classList.contains('hidden')) {
+                            playVideo(e);
+                        }
+                    }
+                }, { passive: false });
+            })(videoItems[j]);
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initVideoGallery);
+    } else {
+        initVideoGallery();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 8: SOCIAL PROOF BANNER
+     ============================================ -->
+<style>
+.sfx-proof {
+    background: linear-gradient(135deg, #2D5016 0%, #1F3A0D 100%);
+    color: #FFFFFF;
+    padding: 1.25rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-proof {
+        padding: 2rem 0;
+    }
+}
+.sfx-proof-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-proof-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-proof-grid {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    .sfx-proof-grid {
+        gap: 3rem;
+    }
+}
+.sfx-proof-item {
+    display: flex;
+    align-items: center;
+    gap: 0.5rem;
+    color: #FFFFFF;
+}
+.sfx-proof-icon {
+    width: 20px;
+    height: 20px;
+}
+@media (min-width: 768px) {
+    .sfx-proof-icon {
+        width: 24px;
+        height: 24px;
+    }
+}
+.sfx-proof-text {
+    font-size: 0.8125rem;
+    font-weight: 600;
+}
+@media (min-width: 768px) {
+    .sfx-proof-text {
+        font-size: 1rem;
+    }
+}
+.sfx-proof-stars {
+    color: #FFB800;
+    font-size: 1rem;
+    letter-spacing: 2px;
+}
+@media (min-width: 768px) {
+    .sfx-proof-stars {
+        font-size: 1.25rem;
+    }
+}
+</style>
+
+<div class="sfx-proof">
+    <div class="sfx-proof-container">
+        <div class="sfx-proof-grid">
+            <div class="sfx-proof-item">
+                <span class="sfx-proof-stars">★★★★★</span>
+                <span class="sfx-proof-text">Trustpilot</span>
+            </div>
+            <div class="sfx-proof-item">
+                <svg class="sfx-proof-icon" viewBox="0 0 24 24" fill="none"><path d="M12 15C15.866 15 19 11.866 19 8C19 4.13401 15.866 1 12 1C8.13401 1 5 4.13401 5 8C5 11.866 8.13401 15 12 15Z" fill="#FFB800"/><path d="M8.21 13.89L7 23L12 20L17 23L15.79 13.88" stroke="#FFB800" stroke-width="2"/></svg>
+                <span class="sfx-proof-text">5x Award Winner</span>
+            </div>
+            <div class="sfx-proof-item">
+                <svg class="sfx-proof-icon" viewBox="0 0 24 24" fill="none"><path d="M17 21V19C17 16.7909 15.2091 15 13 15H5C2.79086 15 1 16.7909 1 19V21" stroke="#FFFFFF" stroke-width="2" stroke-linecap="round"/><circle cx="9" cy="7" r="4" stroke="#FFFFFF" stroke-width="2"/></svg>
+                <span class="sfx-proof-text">500+ Traders Mentored</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<style>
+.sfx-form-urgency-header {
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    color: #FFFFFF;
+    padding: 1.5rem 1rem;
+    text-align: center;
+    margin-bottom: 0;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-header {
+        padding: 2rem 1.5rem;
+    }
+}
+.sfx-form-urgency-container {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sfx-form-urgency-badge {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    background: rgba(255, 255, 255, 0.2);
+    padding: 0.5rem 1rem;
+    border-radius: 2rem;
+    font-size: 0.8125rem;
+    font-weight: 600;
+    color: #FFFFFF;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-badge {
+        font-size: 0.875rem;
+        margin-bottom: 1rem;
+    }
+}
+.sfx-form-urgency-badge svg {
+    width: 16px;
+    height: 16px;
+    animation: pulse 2s infinite;
+}
+@keyframes pulse {
+    0%, 100% { opacity: 1; }
+    50% { opacity: 0.5; }
+}
+.sfx-form-urgency-title {
+    font-size: clamp(1.5rem, 4vw, 2.25rem);
+    font-weight: 800;
+    color: #FFFFFF;
+    margin-bottom: 0.5rem;
+    line-height: 1.2;
+}
+.sfx-form-urgency-subtitle {
+    font-size: clamp(1rem, 2.5vw, 1.25rem);
+    color: rgba(255, 255, 255, 0.95);
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-subtitle {
+        margin-bottom: 1.25rem;
+    }
+}
+.sfx-form-urgency-points {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 0.75rem 1.5rem;
+    font-size: 0.875rem;
+    color: #FFFFFF;
+}
+@media (min-width: 768px) {
+    .sfx-form-urgency-points {
+        gap: 1rem 2rem;
+        font-size: 1rem;
+    }
+}
+.sfx-form-urgency-point {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.sfx-form-urgency-point svg {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+#sfx-lp-root .sfx-countdown-form .sfx-countdown-label {
+    color: #6CC24A;
+}
+#sfx-lp-root .sfx-countdown-form .sfx-countdown-label svg {
+    stroke: #6CC24A;
+}
+.sfx-lead-section {
+    background: #1F2937;
+    color: #FFFFFF;
+    padding: 3rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-lead-section {
+        padding: 5rem 0;
+    }
+}
+.sfx-lead-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-lead-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-lead-grid {
+    display: grid;
+    gap: 2rem;
+    align-items: start;
+}
+@media (min-width: 768px) {
+    .sfx-lead-grid {
+        grid-template-columns: 1fr 1fr;
+        gap: 3rem;
+    }
+}
+.sfx-lead-left h2,
+#sfx-lp-root .sfx-lead-left h2,
+#sfx-lp-root .sfx-lead-section .sfx-lead-left h2 {
+    color: #FFFFFF !important;
+    text-align: center;
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    line-height: 1.2;
+}
+.sfx-lead-left > p,
+#sfx-lp-root .sfx-lead-left > p,
+#sfx-lp-root .sfx-lead-left p,
+#sfx-lp-root .sfx-lead-section .sfx-lead-left p {
+    color: #D1D5DB !important;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+    margin-bottom: 2rem;
+    text-align: center;
+}
+.sfx-lead-image {
+    margin-top: 2rem;
+    margin-bottom: 1.5rem;
+    border-radius: 1rem;
+    overflow: hidden;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1);
+}
+.sfx-lead-reassurance {
+    list-style: none;
+    margin-bottom: 1.5rem;
+}
+.sfx-lead-reassurance li {
+    display: flex;
+    align-items: center;
+    gap: 0.625rem;
+    margin-bottom: 0.625rem;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+}
+.sfx-lead-check {
+    width: 18px;
+    height: 18px;
+    min-width: 18px;
+    background: rgba(108, 194, 74, 0.2);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+.sfx-lead-check svg {
+    width: 10px;
+    height: 10px;
+}
+.sfx-lead-privacy {
+    font-size: 0.8125rem;
+    opacity: 0.6;
+    text-align: center;
+    color: #D1D5DB;
+}
+.sfx-checkout-box {
+    background: #374151;
+    border-radius: 1rem;
+    padding: 1.5rem;
+    box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.3);
+}
+@media (min-width: 768px) {
+    .sfx-checkout-box {
+        padding: 2rem;
+    }
+}
+.sfx-form-badge {
+    display: inline-block;
+    padding: 0.375rem 0.75rem;
+    border-radius: 0.375rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    margin-bottom: 0.75rem;
+    text-transform: uppercase;
+    color: #1F2937;
+    text-align: center;
+    background: #FFB800;
+}
+.sfx-host-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1.5rem;
+    padding-bottom: 1.5rem;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+}
+@media (min-width: 768px) {
+    .sfx-host-header {
+        gap: 1rem;
+        margin-bottom: 2rem;
+        padding-bottom: 2rem;
+    }
+}
+.sfx-host-photo {
+    width: 60px;
+    height: 60px;
+    border-radius: 0.5rem;
+    overflow: hidden;
+    border: 3px solid #6CC24A;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .sfx-host-photo {
+        width: 80px;
+        height: 80px;
+    }
+}
+.sfx-host-photo img,
+#sfx-lp-root .sfx-host-photo img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+.sfx-host-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.7);
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    margin-bottom: 0.125rem;
+}
+.sfx-host-name {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #FFFFFF;
+    line-height: 1.2;
+}
+@media (min-width: 768px) {
+    .sfx-host-name {
+        font-size: 1.75rem;
+    }
+}
+.sfx-checkout-summary {
+    background: rgba(108, 194, 74, 0.08);
+    border: 1px solid rgba(108, 194, 74, 0.3);
+    border-radius: 0.75rem;
+    padding: 1.25rem;
+    margin-bottom: 1.25rem;
+}
+.sfx-checkout-row {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 0.5rem 0;
+    color: #FFFFFF;
+    font-size: 0.9375rem;
+}
+.sfx-checkout-row + .sfx-checkout-row {
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+}
+.sfx-checkout-row strong {
+    font-weight: 600;
+}
+.sfx-checkout-total {
+    margin-top: 0.5rem;
+    padding-top: 1rem;
+    border-top: 2px solid rgba(108, 194, 74, 0.4);
+    font-size: 1.125rem;
+}
+.sfx-checkout-total-value {
+    color: #6CC24A;
+    font-size: 1.5rem;
+    font-weight: 800;
+}
+.sfx-stripe-form {
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+.sfx-input-group {
+    display: flex;
+    flex-direction: column;
+    gap: 0.375rem;
+}
+.sfx-input-row {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.75rem;
+}
+.sfx-input-label {
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.85);
+    font-weight: 600;
+    text-transform: uppercase;
+    letter-spacing: 0.5px;
+}
+.sfx-input {
+    background: #FFFFFF;
+    border: 2px solid transparent;
+    color: #1F2937;
+    padding: 0.75rem 0.875rem;
+    border-radius: 0.5rem;
+    font-size: 0.9375rem;
+    font-family: inherit;
+    transition: border-color 0.2s ease;
+    min-height: 44px;
+}
+.sfx-input:focus {
+    outline: none;
+    border-color: #6CC24A;
+}
+.sfx-input::placeholder {
+    color: #9CA3AF;
+}
+.sfx-checkout-btn,
+#sfx-lp-root .sfx-checkout-btn,
+#sfx-lp-root button.sfx-checkout-btn {
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    color: #FFFFFF;
+    border: none;
+    padding: 1rem 1.5rem;
+    border-radius: 0.75rem;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.625rem;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+    min-height: 56px;
+    margin-top: 0.5rem;
+    font-family: inherit;
+    width: 100%;
+}
+#sfx-lp-root .sfx-checkout-btn:hover,
+#sfx-lp-root button.sfx-checkout-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.2);
+    background: linear-gradient(135deg, #6CC24A 0%, #5CB85C 100%);
+    color: #FFFFFF;
+}
+#sfx-lp-root .sfx-checkout-btn:disabled {
+    opacity: 0.7;
+    cursor: not-allowed;
+    transform: none;
+}
+.sfx-checkout-btn svg {
+    width: 20px;
+    height: 20px;
+}
+.sfx-checkout-error {
+    background: rgba(220, 38, 38, 0.12);
+    border: 1px solid rgba(220, 38, 38, 0.4);
+    color: #FCA5A5;
+    padding: 0.75rem 1rem;
+    border-radius: 0.5rem;
+    font-size: 0.875rem;
+    display: none;
+}
+.sfx-checkout-error.is-visible {
+    display: block;
+}
+.sfx-stripe-badges {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 1rem;
+    margin-top: 1rem;
+    flex-wrap: wrap;
+    color: rgba(255, 255, 255, 0.6);
+    font-size: 0.75rem;
+}
+.sfx-stripe-badges-item {
+    display: flex;
+    align-items: center;
+    gap: 0.375rem;
+}
+.sfx-stripe-badges-item svg {
+    width: 14px;
+    height: 14px;
+}
+.sfx-form-disclaimer {
+    font-size: 0.6875rem;
+    color: rgba(255, 255, 255, 0.5);
+    text-align: center;
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    line-height: 1.5;
+}
+</style>
+
+<!-- ============================================
+     SECTION 9: URGENCY HEADER + CHECKOUT (STRIPE)
+     ============================================ -->
+
+<div class="sfx-form-urgency-header">
+    <div class="sfx-form-urgency-container">
+        <div class="sfx-form-urgency-badge">
+            <svg viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="10" fill="#FFFFFF"/><circle cx="12" cy="12" r="4" fill="#6CC24A"/></svg>
+            <span>Friday 12 June 2026</span>
+        </div>
+        <h2 class="sfx-form-urgency-title">Limited Seats. Secure Yours Today.</h2>
+        <p class="sfx-form-urgency-subtitle">A small classroom means each seat matters. Pay securely below and we will send your confirmation within minutes.</p>
+        <div class="sfx-form-urgency-points">
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Secure Stripe Checkout</span>
+            </div>
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Instant Email Confirmation</span>
+            </div>
+            <div class="sfx-form-urgency-point">
+                <svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#FFFFFF" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
+                <span>Cancellation Up To 14 Days</span>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div id="register" class="sfx-lead-section">
+    <div class="sfx-lead-container">
+        <div class="sfx-lead-grid">
+            <div class="sfx-lead-left">
+                <div style="text-align: center; margin-bottom: 0.75rem;">
+                    <span class="sfx-form-badge">IN-PERSON | MODULE 1</span>
+                </div>
+                <div style="color: #FFFFFF; text-align: center; font-size: 2rem; font-weight: 700; line-height: 1.2; margin-bottom: 0.75rem; padding: 0;">Introduction To Forex Trading<br>Module 1 | £249</div>
+                <div style="color: #D1D5DB; line-height: 1.6; font-size: 0.9375rem; margin-bottom: 2rem; text-align: center; padding: 0;">Module 1 is the proper foundation. One full day in a real classroom with a real mentor, designed to give you everything every trader needs before placing a single trade. If you have been piecing things together from YouTube clips, this is the day that puts it all in order.</div>
+                
+                <div class="sfx-lead-image">
+                    <img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1777524529/Random_4_iss7hj.jpg" alt="Module 1 Workshop">
+                </div>
+                
+                <ul class="sfx-lead-reassurance">
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Lunch, refreshments, and parking included</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Printed workbook to take home</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Bromsgrove location, easily reached from Birmingham</span>
+                    </li>
+                    <li>
+                        <span class="sfx-lead-check"><svg viewBox="0 0 24 24" fill="none"><path d="M5 12L10 17L19 8" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg></span>
+                        <span>Full venue details sent on confirmation</span>
+                    </li>
+                </ul>
+                
+                <p class="sfx-lead-privacy">We respect your privacy. No spam. Unsubscribe anytime.</p>
+            </div>
+            
+            <div id="checkout-form" class="sfx-checkout-box">
+                <div class="sfx-host-header">
+                    <div class="sfx-host-photo">
+                        <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
+                    </div>
+                    <div>
+                        <div class="sfx-host-label">Taught by</div>
+                        <div class="sfx-host-name">Richard Williams</div>
+                    </div>
+                </div>
+                
+                <div class="sfx-countdown-form" id="sfxCountdownForm">
+                    <div class="sfx-countdown-label">
+                        <svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+                            <circle cx="12" cy="12" r="10" stroke="#6CC24A" stroke-width="2"/>
+                            <path d="M12 6V12L16 14" stroke="#6CC24A" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                        <span>Workshop Begins In</span>
+                    </div>
+                    <div class="sfx-countdown-grid">
+                        <div class="sfx-countdown-cell">
+                            <div class="sfx-countdown-value" data-cd-days>00</div>
+                            <div class="sfx-countdown-unit">Days</div>
+                        </div>
+                        <div class="sfx-countdown-cell">
+                            <div class="sfx-countdown-value" data-cd-hours>00</div>
+                            <div class="sfx-countdown-unit">Hours</div>
+                        </div>
+                        <div class="sfx-countdown-cell">
+                            <div class="sfx-countdown-value" data-cd-mins>00</div>
+                            <div class="sfx-countdown-unit">Mins</div>
+                        </div>
+                        <div class="sfx-countdown-cell">
+                            <div class="sfx-countdown-value" data-cd-secs>00</div>
+                            <div class="sfx-countdown-unit">Secs</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sfx-checkout-summary">
+                    <div class="sfx-checkout-row">
+                        <span>Introduction to Forex Trading</span>
+                        <strong>Module 1</strong>
+                    </div>
+                    <div class="sfx-checkout-row">
+                        <span>Date</span>
+                        <strong>Friday 12 June 2026</strong>
+                    </div>
+                    <div class="sfx-checkout-row">
+                        <span>Location</span>
+                        <strong>Bromsgrove</strong>
+                    </div>
+                    <div class="sfx-checkout-row sfx-checkout-total">
+                        <span>Total Due Today</span>
+                        <span class="sfx-checkout-total-value">£249.00</span>
+                    </div>
+                </div>
+                
+                <form class="sfx-stripe-form" id="sfxCheckoutForm" novalidate>
+                    <div class="sfx-input-row">
+                        <div class="sfx-input-group">
+                            <label class="sfx-input-label" for="sfxFirstName">First Name</label>
+                            <input class="sfx-input" type="text" id="sfxFirstName" name="firstName" placeholder="Jane" required autocomplete="given-name">
+                        </div>
+                        <div class="sfx-input-group">
+                            <label class="sfx-input-label" for="sfxLastName">Last Name</label>
+                            <input class="sfx-input" type="text" id="sfxLastName" name="lastName" placeholder="Smith" required autocomplete="family-name">
+                        </div>
+                    </div>
+                    <div class="sfx-input-group">
+                        <label class="sfx-input-label" for="sfxEmail">Email Address</label>
+                        <input class="sfx-input" type="email" id="sfxEmail" name="email" placeholder="you@example.com" required autocomplete="email">
+                    </div>
+                    <div class="sfx-input-group">
+                        <label class="sfx-input-label" for="sfxPhone">Phone Number</label>
+                        <input class="sfx-input" type="tel" id="sfxPhone" name="phone" placeholder="07000 000000" required autocomplete="tel">
+                    </div>
+                    
+                    <div class="sfx-checkout-error" id="sfxCheckoutError"></div>
+                    
+                    <button type="submit" class="sfx-checkout-btn" id="sfxCheckoutBtn">
+                        <svg viewBox="0 0 24 24" fill="none">
+                            <path d="M12 2L3 7V12C3 16.97 6.84 21.51 12 23C17.16 21.51 21 16.97 21 12V7L12 2Z" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                            <path d="M9 12L11 14L15 10" stroke="white" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+                        </svg>
+                        <span>Pay £249 & Secure My Seat</span>
+                    </button>
+                    
+                    <div class="sfx-stripe-badges">
+                        <div class="sfx-stripe-badges-item">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="3" y="11" width="18" height="11" rx="2" stroke="currentColor" stroke-width="2"/><path d="M7 11V7C7 4.23858 9.23858 2 12 2C14.7614 2 17 4.23858 17 7V11" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>Secure SSL</span>
+                        </div>
+                        <div class="sfx-stripe-badges-item">
+                            <svg viewBox="0 0 24 24" fill="none"><rect x="2" y="5" width="20" height="14" rx="2" stroke="currentColor" stroke-width="2"/><path d="M2 10H22" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>Powered by Stripe</span>
+                        </div>
+                        <div class="sfx-stripe-badges-item">
+                            <svg viewBox="0 0 24 24" fill="none"><path d="M9 12L11 14L15 10" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/><circle cx="12" cy="12" r="10" stroke="currentColor" stroke-width="2"/></svg>
+                            <span>Money Back Guarantee</span>
+                        </div>
+                    </div>
+                </form>
+                
+                <div class="sfx-form-disclaimer">
+                    <strong>Important Disclosure:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex involves substantial risk and may not be suitable for all investors.
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     SECTION 10: FAQ
+     ============================================ -->
+<style>
+.sfx-faq {
+    padding: 3rem 0;
+    background: #FFFFFF;
+    border-top: 1px solid #E5E7EB;
+    border-bottom: 1px solid #E5E7EB;
+}
+@media (min-width: 768px) {
+    .sfx-faq {
+        padding: 5rem 0;
+    }
+}
+.sfx-faq-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-faq-header {
+    text-align: center;
+    margin-bottom: 2rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-header {
+        margin-bottom: 3rem;
+    }
+}
+.sfx-faq h2 {
+    font-size: clamp(1.5rem, 4vw, 2.5rem);
+    font-weight: 700;
+    color: #1F2937;
+}
+.sfx-faq-list {
+    max-width: 900px;
+    margin: 0 auto;
+}
+.sfx-faq-item {
+    background: #F9FAFB;
+    border: 1px solid #E5E7EB;
+    border-radius: 0.75rem;
+    margin-bottom: 0.75rem;
+    overflow: hidden;
+    transition: all 0.3s ease;
+}
+.sfx-faq-item:hover {
+    border-color: #6CC24A;
+}
+.sfx-faq-question,
+#sfx-lp-root .sfx-faq-question,
+#sfx-lp-root button.sfx-faq-question {
+    width: 100%;
+    background: transparent;
+    border: none;
+    padding: 1rem 1.25rem;
+    text-align: left;
+    font-size: 0.9375rem;
+    font-weight: 600;
+    color: #1F2937;
+    cursor: pointer;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    gap: 0.75rem;
+    font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    transition: background 0.2s ease;
+}
+@media (min-width: 768px) {
+    .sfx-faq-question {
+        padding: 1.25rem 1.5rem;
+        font-size: 1.0625rem;
+    }
+}
+.sfx-faq-question:hover {
+    background: rgba(108, 194, 74, 0.05);
+}
+.sfx-faq-icon {
+    font-size: 1rem;
+    color: #6CC24A;
+    transition: transform 0.3s ease;
+    flex-shrink: 0;
+}
+@media (min-width: 768px) {
+    .sfx-faq-icon {
+        font-size: 1.25rem;
+    }
+}
+.sfx-faq-item.active .sfx-faq-icon {
+    transform: rotate(180deg);
+}
+.sfx-faq-item.active {
+    background: #FFFFFF;
+    border-color: #6CC24A;
+    box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+}
+.sfx-faq-answer {
+    display: grid;
+    grid-template-rows: 0fr;
+    transition: grid-template-rows 0.4s ease;
+}
+.sfx-faq-item.active .sfx-faq-answer {
+    grid-template-rows: 1fr;
+}
+.sfx-faq-answer-inner {
+    overflow: hidden;
+}
+.sfx-faq-answer-content {
+    padding: 0 1.25rem 1.25rem;
+}
+@media (min-width: 768px) {
+    .sfx-faq-answer-content {
+        padding: 0 1.5rem 1.5rem;
+    }
+}
+.sfx-faq-answer p {
+    color: #4B5563;
+    line-height: 1.6;
+    font-size: 0.9375rem;
+}
+</style>
+
+<div class="sfx-faq">
+    <div class="sfx-faq-container">
+        <div class="sfx-faq-header">
+            <h2>Frequently Asked Questions</h2>
+        </div>
+        
+        <div class="sfx-faq-list">
+            <div class="sfx-faq-item active">
+                <button class="sfx-faq-question">
+                    <span>Do I need any prior experience to attend?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>No. Module 1 is built specifically for complete beginners. If you have already done some research or had a go before, that is fine too, but the day is pitched to take you from the ground up so everyone leaves with a solid foundation.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>Where exactly is the venue?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>The workshop is held at our training base in Bromsgrove, West Midlands. Easily reached from Birmingham, Worcester, and the M5/M42. Full venue address, parking details, and arrival instructions are sent in your confirmation email.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What is included in the £249 price?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Your full day of teaching from 09:30 to 17:00, a printed workbook to take home, lunch, refreshments throughout, parking, and the live Q&A with Richard Williams and the team. Everything you need on the day is covered.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>Will I be pushed to buy something on the day?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>No hard sell. We will share what comes next in our wider programme so you know your options, but the focus of the day is teaching. Many attendees go on to join our full apprenticeship programme, but only when they are ready and only if it suits them.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What if I cannot make it on the day?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Full refund available up to 14 days before the workshop. After that we will do our best to move you onto the next available date free of charge. Just contact us as early as you can on info@simple-fx.net.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>How is payment handled?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Payment is handled securely by Stripe, one of the world's most trusted payment providers. We never see or store your card details. You will be redirected to a Stripe-hosted checkout page and returned here once your booking is confirmed.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What should I bring on the day?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>Just yourself, a notepad if you like making your own notes, and a willingness to ask questions. A laptop or tablet is welcome but not required. We provide everything else you need.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>Do you guarantee profits?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>No. We are an education provider, not an investment advisor. Trading involves significant risk and may not be suitable for everyone. What we offer is structured education and risk management principles to help you make informed decisions. No guarantees are given.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="sfx-faq-item">
+                <button class="sfx-faq-question">
+                    <span>What happens after Module 1?</span>
+                    <span class="sfx-faq-icon">▼</span>
+                </button>
+                <div class="sfx-faq-answer">
+                    <div class="sfx-faq-answer-inner">
+                        <div class="sfx-faq-answer-content">
+                            <p>You will leave with a real foundation and a clear view of your options. Some students choose to continue with our wider apprenticeship programme. Others take what they have learned and continue at their own pace. Either is genuinely fine. The day is designed to give you clarity, not pressure.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+(function() {
+    function initFAQ() {
+        var buttons = document.querySelectorAll('.sfx-faq-question');
+        
+        for (var i = 0; i < buttons.length; i++) {
+            buttons[i].addEventListener('click', function() {
+                var item = this.parentElement;
+                var isActive = item.classList.contains('active');
+                
+                var allItems = document.querySelectorAll('.sfx-faq-item');
+                for (var j = 0; j < allItems.length; j++) {
+                    allItems[j].classList.remove('active');
+                }
+                
+                if (!isActive) {
+                    item.classList.add('active');
+                }
+            });
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initFAQ);
+    } else {
+        initFAQ();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     SECTION 11: FOOTER DISCLAIMER
+     ============================================ -->
+<style>
+.sfx-risk {
+    background: #111827;
+    color: #FFFFFF;
+    padding: 2rem 0;
+}
+@media (min-width: 768px) {
+    .sfx-risk {
+        padding: 3rem 0;
+    }
+}
+.sfx-risk-container {
+    max-width: 1280px;
+    margin: 0 auto;
+    padding: 0 1rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-container {
+        padding: 0 1.5rem;
+    }
+}
+.sfx-risk-content {
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+}
+.sfx-risk-content p {
+    color: rgba(255, 255, 255, 0.8);
+    margin-bottom: 1rem;
+    line-height: 1.6;
+    font-size: 0.8125rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-content p {
+        margin-bottom: 1.5rem;
+        font-size: 0.875rem;
+    }
+}
+.sfx-risk-links {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+@media (min-width: 768px) {
+    .sfx-risk-links {
+        gap: 1.5rem;
+    }
+}
+.sfx-risk-links a {
+    color: #6CC24A;
+    text-decoration: underline;
+    font-size: 0.8125rem;
+}
+@media (min-width: 768px) {
+    .sfx-risk-links a {
+        font-size: 0.875rem;
+    }
+}
+.sfx-risk-links a:hover {
+    color: #5CB85C;
+}
+.sfx-risk-copyright {
+    margin-top: 1.5rem;
+    padding-top: 1.5rem;
+    border-top: 1px solid rgba(255, 255, 255, 0.1);
+    font-size: 0.75rem;
+    color: rgba(255, 255, 255, 0.5);
+}
+@media (min-width: 768px) {
+    .sfx-risk-copyright {
+        margin-top: 2rem;
+        padding-top: 2rem;
+    }
+}
+</style>
+
+<div class="sfx-risk">
+    <div class="sfx-risk-container">
+        <div class="sfx-risk-content">
+            <p><strong>Important Disclosure:</strong> SimpleFX is an education provider. We do not provide investment advice or manage client funds. Trading forex and other financial instruments involves substantial risk and may not be suitable for all investors. Past performance is not indicative of future results. You should carefully consider your investment objectives, level of experience, and risk appetite before trading.</p>
+            <div class="sfx-risk-links">
+                <a href="https://simple-fx.net/terms/">Terms of Service</a>
+                <a href="https://simple-fx.net/privacy/">Privacy Policy</a>
+                <a href="https://simple-fx.net/risk-disclosure/">Risk Disclosure</a>
+            </div>
+            <div class="sfx-risk-copyright">
+                &copy; 2026 SimpleFX. All rights reserved. Registered in England & Wales.
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<!-- ============================================
+     COUNTDOWN TIMER - Friday 12 June 2026 09:30 UK time
+     ============================================ -->
+<script>
+(function() {
+    // Hard-coded target: Friday 12 June 2026, 09:30 UK time
+    // UK is BST in June (UTC+1), so 09:30 UK = 08:30 UTC
+    var WORKSHOP_TARGET_UTC = new Date(Date.UTC(2026, 5, 12, 8, 30, 0));
+    
+    function pad(n) {
+        return n < 10 ? '0' + n : '' + n;
+    }
+    
+    function renderCountdown() {
+        var containers = document.querySelectorAll('#sfxCountdownHero, #sfxCountdownForm');
+        if (!containers.length) return;
+        var now = new Date();
+        var diff = WORKSHOP_TARGET_UTC.getTime() - now.getTime();
+        var sessionLengthMs = 8 * 60 * 60 * 1000; // 8 hour workshop
+        
+        if (diff <= 0 && Math.abs(diff) < sessionLengthMs) {
+            for (var i = 0; i < containers.length; i++) {
+                containers[i].innerHTML = '<div class="sfx-countdown-live">' +
+                    '🔴 Workshop Live Now' +
+                '</div>';
+            }
+            return;
+        }
+        
+        if (diff <= 0) {
+            for (var k = 0; k < containers.length; k++) {
+                containers[k].innerHTML = '<div class="sfx-countdown-live" style="background: linear-gradient(135deg, #6B7280 0%, #4B5563 100%);">' +
+                    'This Module Has Now Run - Contact Us For Next Date' +
+                '</div>';
+            }
+            return;
+        }
+        
+        var days = Math.floor(diff / (1000 * 60 * 60 * 24));
+        var hours = Math.floor((diff % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+        var mins = Math.floor((diff % (1000 * 60 * 60)) / (1000 * 60));
+        var secs = Math.floor((diff % (1000 * 60)) / 1000);
+        
+        for (var j = 0; j < containers.length; j++) {
+            var cont = containers[j];
+            var d = cont.querySelector('[data-cd-days]');
+            var h = cont.querySelector('[data-cd-hours]');
+            var m = cont.querySelector('[data-cd-mins]');
+            var s = cont.querySelector('[data-cd-secs]');
+            if (d) d.textContent = pad(days);
+            if (h) h.textContent = pad(hours);
+            if (m) m.textContent = pad(mins);
+            if (s) s.textContent = pad(secs);
+        }
+    }
+    
+    function startCountdown() {
+        renderCountdown();
+        setInterval(renderCountdown, 1000);
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', startCountdown);
+    } else {
+        startCountdown();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     HERO VIDEO PLAY HANDLER
+     ============================================ -->
+<script>
+(function() {
+    function initHeroVideo() {
+        var container = document.getElementById('sfxHeroVideo');
+        var video = document.getElementById('sfxIntroVideo');
+        var poster = document.getElementById('sfxVideoPoster');
+        if (!container || !video || !poster) return;
+        
+        function playVideo(e) {
+            if (e) { e.preventDefault(); e.stopPropagation(); }
+            video.controls = true;
+            container.classList.add('is-playing');
+            var p = video.play();
+            if (p && typeof p.catch === 'function') {
+                p.catch(function() {
+                    // Autoplay blocked - controls are now visible, user can press play
+                });
+            }
+        }
+        
+        poster.addEventListener('click', playVideo);
+        
+        video.addEventListener('ended', function() {
+            container.classList.remove('is-playing');
+            video.controls = false;
+            video.currentTime = 0;
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initHeroVideo);
+    } else {
+        initHeroVideo();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     STRIPE CHECKOUT INTEGRATION
+     ============================================
+     SETUP INSTRUCTIONS FOR CHARLES / BOYD:
+     
+     There are two ways to wire this up. Pick one.
+     
+     ============================================
+     OPTION A (RECOMMENDED): Stripe Payment Link
+     ============================================
+     The simplest, most robust option for a static HTML page.
+     No backend or webhook server needed.
+     
+     1. Log into Stripe Dashboard
+     2. Go to Payment Links and create a new payment link
+        - Product: Introduction to Forex Trading - Module 1
+        - Price: £249.00 GBP (one-off)
+        - Collect customer info: Name, Email, Phone (set required)
+        - Success URL: https://simple-fx.net/lp/module1-thank-you.html
+        - Custom field: Add the date as metadata
+     3. Copy the resulting Payment Link URL (looks like https://buy.stripe.com/xxxxx)
+     4. Paste it into STRIPE_PAYMENT_LINK below
+     5. Stripe will collect name/email/phone on its own page,
+        so the form fields above are optional - they prefill into the link.
+     
+     ============================================
+     OPTION B: Stripe Checkout Session via Backend
+     ============================================
+     If you want to capture leads in Zoho BEFORE Stripe redirect
+     (so you can follow up on abandoned checkouts):
+     
+     1. Build a small endpoint (e.g. a Cloudflare Worker or
+        Zapier Webhooks-by-Zapier "Catch Hook") that:
+        a. Receives the form POST (name/email/phone)
+        b. Creates a lead in Zoho via the existing Find+Update pattern
+        c. Creates a Stripe Checkout Session server-side using the
+           Stripe Node/PHP SDK with success_url and cancel_url
+        d. Returns the Checkout Session URL as JSON
+     2. Replace STRIPE_ENDPOINT below with that endpoint URL
+     3. Set STRIPE_MODE = 'endpoint'
+     
+     ============================================
+     CURRENT MODE: paymentLink (Option A)
+     ============================================
+-->
+<script>
+(function() {
+    // ==========================================
+    // CONFIGURATION - EDIT THESE TWO LINES
+    // ==========================================
+    var STRIPE_MODE = 'paymentLink'; // 'paymentLink' or 'endpoint'
+    var STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/REPLACE_WITH_YOUR_STRIPE_PAYMENT_LINK';
+    var STRIPE_ENDPOINT = 'https://hooks.zapier.com/REPLACE_WITH_YOUR_WEBHOOK_URL';
+    // ==========================================
+    
+    function showError(msg) {
+        var errBox = document.getElementById('sfxCheckoutError');
+        if (!errBox) return;
+        errBox.textContent = msg;
+        errBox.classList.add('is-visible');
+        setTimeout(function() {
+            errBox.classList.remove('is-visible');
+        }, 6000);
+    }
+    
+    function validateEmail(email) {
+        return /^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(email);
+    }
+    
+    function initCheckout() {
+        var form = document.getElementById('sfxCheckoutForm');
+        var btn = document.getElementById('sfxCheckoutBtn');
+        if (!form || !btn) return;
+        
+        form.addEventListener('submit', function(e) {
+            e.preventDefault();
+            
+            var firstName = document.getElementById('sfxFirstName').value.trim();
+            var lastName = document.getElementById('sfxLastName').value.trim();
+            var email = document.getElementById('sfxEmail').value.trim();
+            var phone = document.getElementById('sfxPhone').value.trim();
+            
+            if (!firstName || !lastName) {
+                showError('Please enter your first and last name.');
+                return;
+            }
+            if (!validateEmail(email)) {
+                showError('Please enter a valid email address.');
+                return;
+            }
+            if (!phone || phone.replace(/\D/g, '').length < 7) {
+                showError('Please enter a valid phone number.');
+                return;
+            }
+            
+            btn.disabled = true;
+            var originalLabel = btn.innerHTML;
+            btn.innerHTML = '<span>Redirecting to secure checkout...</span>';
+            
+            if (STRIPE_MODE === 'paymentLink') {
+                // Build Stripe Payment Link URL with prefilled customer fields
+                // Stripe Payment Links accept prefilled_email and client_reference_id query params
+                var params = [];
+                params.push('prefilled_email=' + encodeURIComponent(email));
+                params.push('client_reference_id=' + encodeURIComponent('mod1-jun26-' + email));
+                var separator = STRIPE_PAYMENT_LINK.indexOf('?') === -1 ? '?' : '&';
+                var redirectUrl = STRIPE_PAYMENT_LINK + separator + params.join('&');
+                
+                // Store details in sessionStorage for thank-you page pickup (optional)
+                try {
+                    if (window.sessionStorage) {
+                        sessionStorage.setItem('sfx_lead', JSON.stringify({
+                            firstName: firstName,
+                            lastName: lastName,
+                            email: email,
+                            phone: phone,
+                            product: 'Module 1',
+                            date: '2026-06-12',
+                            timestamp: new Date().toISOString()
+                        }));
+                    }
+                } catch (storageErr) { /* non-blocking */ }
+                
+                // Fire a fake conversion event for ads tracking (Meta, Google)
+                // Comment out if not yet configured
+                if (typeof window.fbq === 'function') {
+                    try { window.fbq('track', 'InitiateCheckout', { value: 249, currency: 'GBP' }); } catch (e) {}
+                }
+                if (typeof window.gtag === 'function') {
+                    try { window.gtag('event', 'begin_checkout', { value: 249, currency: 'GBP', items: [{ id: 'mod1', name: 'Module 1' }] }); } catch (e) {}
+                }
+                
+                // Redirect to Stripe
+                window.location.href = redirectUrl;
+                
+            } else if (STRIPE_MODE === 'endpoint') {
+                // POST to backend endpoint, which returns { url: "https://checkout.stripe.com/..." }
+                fetch(STRIPE_ENDPOINT, {
+                    method: 'POST',
+                    headers: { 'Content-Type': 'application/json' },
+                    body: JSON.stringify({
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        phone: phone,
+                        product: 'mod1',
+                        date: '2026-06-12',
+                        priceGBP: 249
+                    })
+                })
+                .then(function(res) {
+                    if (!res.ok) throw new Error('Network response was not ok');
+                    return res.json();
+                })
+                .then(function(data) {
+                    if (data && data.url) {
+                        window.location.href = data.url;
+                    } else {
+                        throw new Error('No checkout URL returned');
+                    }
+                })
+                .catch(function(err) {
+                    btn.disabled = false;
+                    btn.innerHTML = originalLabel;
+                    showError('Something went wrong. Please try again, or email info@simple-fx.net.');
+                    console.error('[SFX Checkout]', err);
+                });
+            }
+        });
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', initCheckout);
+    } else {
+        initCheckout();
+    }
+})();
+</script>
+
+
+<!-- ============================================
+     CTA ANCHOR SCROLL (two-phase, layout-shift-immune)
+     
+     The fundamental problem with smooth-scroll on a long page
+     with lazy-loaded images: smooth-scroll animations take
+     700-1000ms, and during that animation, lazy-load intersection
+     observers fire on images that come into view, triggering
+     fresh layout shifts that the scroll animation doesn't track.
+     
+     Two-phase strategy:
+     
+     Phase 1: INSTANT jump to approximate target position. This
+     forces all intersection observers below the fold to fire
+     (because the scroll position has passed them), so all lazy
+     images begin loading immediately. No animation, no race.
+     
+     Phase 2: Wait for layout to stabilise (images load, page
+     dimensions finalise), then smooth-scroll the small remaining
+     distance to the precise target. By the time this runs, all
+     images have either loaded or are still loading but with their
+     placeholder dimensions accounted for. No more shifts.
+     
+     The user sees: a quick jump to roughly the right place,
+     then a brief smooth motion to the form. Looks polished and
+     ALWAYS lands correctly, even on first click of fresh page.
+     ============================================ -->
+<script>
+(function() {
+    var inIframe = (window.parent !== window);
+    var SCROLL_OFFSET = 20;
+    
+    function getAbsoluteTop(el) {
+        var top = 0;
+        var node = el;
+        while (node) {
+            top += node.offsetTop || 0;
+            node = node.offsetParent;
+        }
+        return top;
+    }
+    
+    function getDocHeight() {
+        return Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+        );
+    }
+    
+    // Force all lazy images to start loading immediately. Called
+    // on first user interaction so it doesn't slow initial paint.
+    function eagerLoadImages() {
+        var imgs = document.querySelectorAll('img[loading="lazy"]');
+        for (var i = 0; i < imgs.length; i++) {
+            imgs[i].loading = 'eager';
+        }
+    }
+    
+    function scrollToTarget(targetEl) {
+        if (!targetEl) return;
+        
+        if (inIframe) {
+            // Inside an iframe: parent handles the scroll
+            var top = getAbsoluteTop(targetEl);
+            try {
+                window.parent.postMessage({
+                    sfxScrollToForm: true,
+                    formOffsetInIframe: top,
+                    iframeContentHeight: getDocHeight()
+                }, '*');
+            } catch (e) {}
+            return;
+        }
+        
+        // Standalone: two-phase scroll
+        
+        // Flip all lazy images to eager so they start downloading
+        eagerLoadImages();
+        
+        // Phase 1: INSTANT jump to current measured position.
+        // This forces intersection observers down the page to fire,
+        // triggering all lazy-load image requests. The jump is
+        // instant so there's no animation to race against.
+        var phase1Top = getAbsoluteTop(targetEl) - SCROLL_OFFSET;
+        window.scrollTo(0, Math.max(0, phase1Top));
+        
+        // Phase 2: After a brief settle period for images to finish
+        // sizing themselves, re-measure target position and snap to
+        // the final correct location. Use multiple settle checkpoints
+        // to handle slow-loading images.
+        var settleAndCorrect = function(delay, useSmooth) {
+            setTimeout(function() {
+                if (!targetEl) return;
+                // Re-measure - target position may have changed if any
+                // images above it changed dimensions since phase 1.
+                var finalTop = getAbsoluteTop(targetEl) - SCROLL_OFFSET;
+                var currentScroll = window.pageYOffset || document.documentElement.scrollTop;
+                var diff = Math.abs(finalTop - currentScroll);
+                
+                // Only correct if there's a meaningful difference
+                if (diff > 5) {
+                    if (useSmooth && 'scrollBehavior' in document.documentElement.style) {
+                        try {
+                            window.scrollTo({
+                                top: Math.max(0, finalTop),
+                                behavior: 'smooth'
+                            });
+                        } catch (e) {
+                            window.scrollTo(0, Math.max(0, finalTop));
+                        }
+                    } else {
+                        window.scrollTo(0, Math.max(0, finalTop));
+                    }
+                }
+            }, delay);
+        };
+        
+        // Three correction passes:
+        // 100ms: catches fast-loading images (cached or small)
+        // 400ms: catches medium-loading images
+        // 1000ms: final defensive check after most images settle
+        settleAndCorrect(100, false);  // instant snap
+        settleAndCorrect(400, true);   // smooth final adjust
+        settleAndCorrect(1000, false); // defensive snap if still drifting
+    }
+    
+    function handleClick(e) {
+        var href = this.getAttribute('href');
+        if (!href || href.charAt(0) !== '#' || href.length < 2) return;
+        var targetId = href.slice(1);
+        var target = document.getElementById(targetId);
+        if (!target) return;
+        
+        e.preventDefault();
+        scrollToTarget(target);
+    }
+    
+    function bindAnchors() {
+        var anchors = document.querySelectorAll('a[href^="#"]');
+        for (var i = 0; i < anchors.length; i++) {
+            if (anchors[i].__sfxBound) continue;
+            anchors[i].__sfxBound = true;
+            anchors[i].addEventListener('click', handleClick);
+        }
+    }
+    
+    function init() {
+        bindAnchors();
+        setTimeout(bindAnchors, 500);
+        setTimeout(bindAnchors, 1500);
+        
+        // Proactively eager-load all images shortly after DOMContentLoaded
+        // so they're already loaded before the user clicks the CTA.
+        // This is belt-and-braces - the click handler also flips them.
+        if (document.readyState === 'complete') {
+            setTimeout(eagerLoadImages, 200);
+        } else {
+            window.addEventListener('load', function() {
+                setTimeout(eagerLoadImages, 200);
+            });
+        }
+    }
+    
+    if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', init);
+    } else {
+        init();
+    }
+    
+    // Global API for the hero CTA
+    window.sfxScrollToForm = function() {
+        var target = document.getElementById('checkout-form')
+                  || document.getElementById('register');
+        scrollToTarget(target);
+    };
+})();
+</script>
+
+
+<!-- ============================================
+     HEIGHT REPORTER (iframe auto-size)
+     ============================================ -->
+<script>
+(function() {
+    if (window.parent === window) return;
+    
+    function reportHeight() {
+        var h = Math.max(
+            document.body.scrollHeight,
+            document.documentElement.scrollHeight,
+            document.body.offsetHeight,
+            document.documentElement.offsetHeight
+        );
+        window.parent.postMessage({ sfxFrameHeight: h }, '*');
+    }
+    
+    if (document.readyState === 'complete') {
+        reportHeight();
+    } else {
+        window.addEventListener('load', reportHeight);
+    }
+    
+    var attempts = 0;
+    var interval = setInterval(function() {
+        reportHeight();
+        if (attempts++ > 20) clearInterval(interval);
+    }, 500);
+    
+    window.addEventListener('resize', reportHeight);
+    if (window.ResizeObserver) {
+        try {
+            new ResizeObserver(reportHeight).observe(document.body);
+        } catch (e) {}
+    }
+})();
+</script>
+
+<!-- ============================================
+     COMPREHENSIVE MOBILE RESPONSIVENESS PASS
+     
+     This block sits AFTER all section styles to override 
+     anything that didn't account for tiny viewports. Targets:
+     - 320-380px: iPhone SE 1st gen, small Androids
+     - 380-480px: Modern phone portrait
+     - 480-640px: Phablets, landscape phones
+     ============================================ -->
+<style>
+/* ========== TINY SCREENS: 320-380px (iPhone SE etc) ========== */
+@media (max-width: 380px) {
+    #sfx-lp-root .sfx-hero-container,
+    #sfx-lp-root .sfx-trust-strip-inner {
+        padding-left: 0.75rem;
+        padding-right: 0.75rem;
+    }
+    /* Hero topbar - keep short */
+    #sfx-lp-root .sfx-hero-topbar {
+        font-size: 0.75rem;
+        padding: 0.625rem 0.75rem;
+        line-height: 1.4;
+    }
+    /* Headline - prevent overflow */
+    #sfx-lp-root .sfx-hero h1 {
+        font-size: 1.625rem;
+        line-height: 1.15;
+    }
+    #sfx-lp-root .sfx-hero-subheadline {
+        font-size: 0.9375rem;
+    }
+    /* Event facts - smaller, tighter */
+    #sfx-lp-root .sfx-event-fact {
+        padding: 0.4375rem 0.6875rem;
+        font-size: 0.75rem;
+        gap: 0.375rem;
+    }
+    #sfx-lp-root .sfx-event-fact svg {
+        width: 12px;
+        height: 12px;
+    }
+    /* Benefits - tighter spacing */
+    #sfx-lp-root .sfx-hero-benefits li {
+        font-size: 0.9375rem;
+        gap: 0.625rem;
+    }
+    /* Testimonial proof - stack vertically at narrowest */
+    #sfx-lp-root .sfx-hero-proof {
+        grid-template-columns: 1fr;
+        gap: 0.625rem;
+        padding: 1rem 1.125rem;
+    }
+    #sfx-lp-root .sfx-hero-proof-stars {
+        flex-direction: row;
+        padding-right: 0;
+        border-right: none;
+        border-bottom: 1px solid rgba(0, 0, 0, 0.08);
+        padding-bottom: 0.5rem;
+        justify-content: flex-start;
+        gap: 0.5rem;
+    }
+    #sfx-lp-root .sfx-hero-proof-quote {
+        font-size: 0.875rem;
+    }
+    /* CTA card */
+    #sfx-lp-root .sfx-hero-cta {
+        padding: 1.125rem 1rem;
+    }
+    #sfx-lp-root .sfx-hero-cta-ribbon {
+        right: 1rem;
+        font-size: 0.625rem;
+        padding: 0.25rem 0.625rem;
+    }
+    #sfx-lp-root .sfx-price-row {
+        gap: 0.625rem;
+    }
+    #sfx-lp-root .sfx-price-value {
+        font-size: 1.875rem;
+    }
+    #sfx-lp-root .sfx-price-value-meta {
+        font-size: 0.75rem;
+    }
+    #sfx-lp-root .sfx-seats-pill {
+        font-size: 0.625rem;
+        padding: 0.3125rem 0.5625rem;
+    }
+    /* Countdown - critical at narrow widths */
+    #sfx-lp-root .sfx-countdown {
+        padding: 0.6875rem 0.5rem;
+    }
+    #sfx-lp-root .sfx-countdown-grid {
+        gap: 0.25rem;
+    }
+    #sfx-lp-root .sfx-countdown-cell {
+        padding: 0.5rem 0.125rem;
+    }
+    #sfx-lp-root .sfx-countdown-value {
+        font-size: 1.1875rem;
+    }
+    #sfx-lp-root .sfx-countdown-unit {
+        font-size: 0.5rem;
+        letter-spacing: 0.5px;
+    }
+    /* CTA button - still big enough to tap */
+    #sfx-lp-root .sfx-cta-btn {
+        font-size: 0.9375rem;
+        padding: 0.875rem 0.875rem;
+        gap: 0.375rem;
+    }
+    #sfx-lp-root .sfx-cta-reassure {
+        gap: 0.625rem;
+        font-size: 0.625rem;
+    }
+    /* Mentor card - tighter */
+    #sfx-lp-root .sfx-hero-mentor-card {
+        padding: 0.75rem 0.875rem;
+        gap: 0.625rem;
+    }
+    #sfx-lp-root .sfx-hero-mentor-photo {
+        width: 42px;
+        height: 42px;
+    }
+    #sfx-lp-root .sfx-hero-mentor-name {
+        font-size: 0.875rem;
+    }
+    #sfx-lp-root .sfx-hero-mentor-meta {
+        font-size: 0.625rem;
+    }
+    #sfx-lp-root .sfx-hero-mentor-rating-stars {
+        font-size: 0.75rem;
+    }
+    #sfx-lp-root .sfx-hero-mentor-rating-text {
+        font-size: 0.5rem;
+    }
+    /* Trust strip items at narrowest */
+    #sfx-lp-root .sfx-trust-item {
+        padding: 0.5rem 0.375rem;
+        gap: 0.5rem;
+    }
+    #sfx-lp-root .sfx-trust-item-text strong {
+        font-size: 0.8125rem;
+    }
+    #sfx-lp-root .sfx-trust-item-text span {
+        font-size: 0.6875rem;
+    }
+    #sfx-lp-root .sfx-trust-icon-svg {
+        width: 22px;
+        height: 22px;
+    }
+}
+
+/* ========== SMALL PHONES: 381-480px ========== */
+@media (max-width: 480px) {
+    /* Ensure hero benefits use single column */
+    #sfx-lp-root .sfx-hero-benefits {
+        grid-template-columns: 1fr;
+    }
+    /* Ensure mentor card layout doesn't break */
+    #sfx-lp-root .sfx-hero-mentor-card {
+        flex-wrap: nowrap;
+    }
+    /* Section padding tightening */
+    #sfx-lp-root .sfx-hero {
+        padding-bottom: 2rem;
+    }
+    /* Section 2-onwards mobile spacing */
+    #sfx-lp-root .sfx-why,
+    #sfx-lp-root .sfx-curriculum,
+    #sfx-lp-root .sfx-mentor,
+    #sfx-lp-root .sfx-carousel-section,
+    #sfx-lp-root .sfx-agenda,
+    #sfx-lp-root .sfx-trustpilot,
+    #sfx-lp-root .sfx-faq {
+        padding-top: 2.5rem;
+        padding-bottom: 2.5rem;
+    }
+    /* Lead section mobile */
+    #sfx-lp-root .sfx-lead-section {
+        padding-top: 2rem;
+        padding-bottom: 2rem;
+    }
+    #sfx-lp-root .sfx-lead-container,
+    #sfx-lp-root .sfx-hero-container {
+        padding-left: 1rem;
+        padding-right: 1rem;
+    }
+    /* Form urgency header mobile */
+    #sfx-lp-root .sfx-form-urgency-title {
+        font-size: 1.375rem;
+    }
+    /* Checkout box padding */
+    #sfx-lp-root .sfx-checkout-box {
+        padding: 1.25rem 1rem;
+    }
+    /* Input row stacking when very narrow */
+    #sfx-lp-root .sfx-input-row {
+        grid-template-columns: 1fr;
+        gap: 0.875rem;
+    }
+    /* Video maintain aspect */
+    #sfx-lp-root .sfx-hero-video-wrap {
+        aspect-ratio: 16 / 9;
+        border-radius: 0.875rem;
+    }
+    /* Play button slightly smaller */
+    #sfx-lp-root .sfx-play-button {
+        width: 58px;
+        height: 58px;
+    }
+    #sfx-lp-root .sfx-play-button svg {
+        width: 22px;
+        height: 22px;
+    }
+    #sfx-lp-root .sfx-hero-video-caption {
+        font-size: 0.8125rem;
+        max-width: 100%;
+        bottom: 0.75rem;
+        left: 0.75rem;
+        right: 0.75rem;
+    }
+    /* Carousel cards smaller */
+    #sfx-lp-root .sfx-carousel-item {
+        flex: 0 0 240px;
+    }
+    /* Module curriculum cards */
+    #sfx-lp-root .sfx-module-card {
+        padding: 1.125rem;
+    }
+    /* Agenda timeline tighter */
+    #sfx-lp-root .sfx-timeline li {
+        gap: 0.75rem;
+        font-size: 0.875rem;
+    }
+    #sfx-lp-root .sfx-time-badge {
+        font-size: 0.6875rem;
+        min-width: 58px;
+        padding: 0.3125rem 0.5rem;
+    }
+    /* Who section grid stack */
+    #sfx-lp-root .sfx-who-grid {
+        grid-template-columns: 1fr;
+        gap: 1.25rem;
+    }
+    /* FAQ item padding */
+    #sfx-lp-root .sfx-faq-question {
+        padding: 0.875rem 1rem;
+        font-size: 0.875rem;
+    }
+    /* Trust strip dividers off on mobile to avoid orphans */
+    #sfx-lp-root .sfx-trust-item {
+        border-right: none !important;
+    }
+}
+
+/* ========== MID PHONES & TIGHTER LANDSCAPE: 481-640px ========== */
+@media (max-width: 640px) {
+    /* Hero column gap on stack */
+    #sfx-lp-root .sfx-hero-grid {
+        gap: 1.5rem;
+    }
+    /* Reduce hero top spacing */
+    #sfx-lp-root .sfx-hero-topbar {
+        margin-bottom: 1.5rem;
+    }
+    /* Right column gap tighter on mobile */
+    #sfx-lp-root .sfx-hero-right {
+        gap: 0.875rem;
+    }
+    /* Section 7 testimonial videos grid */
+    #sfx-lp-root .sfx-videos-grid {
+        grid-template-columns: 1fr 1fr;
+    }
+    /* Form urgency tightening */
+    #sfx-lp-root .sfx-form-urgency-header {
+        padding: 1.25rem 1rem;
+    }
+    /* Lead grid stack on mobile (sec 9) */
+    #sfx-lp-root .sfx-lead-grid {
+        gap: 1.5rem;
+    }
+}
+
+/* ========== TOUCH TARGET COMPLIANCE ========== */
+/* Apple HIG / Material: minimum 44x44px tappable area */
+@media (max-width: 768px) {
+    #sfx-lp-root .sfx-cta-btn,
+    #sfx-lp-root .sfx-checkout-btn,
+    #sfx-lp-root .sfx-btn-primary {
+        min-height: 48px;
+    }
+    #sfx-lp-root .sfx-input {
+        min-height: 46px;
+        font-size: 16px; /* Prevents iOS zoom-on-focus */
+    }
+    #sfx-lp-root .sfx-faq-question {
+        min-height: 48px;
+    }
+    /* Video poster fully tappable */
+    #sfx-lp-root .sfx-hero-video-poster {
+        min-height: 44px;
+    }
+}
+
+/* ========== MOBILE TYPOGRAPHY & SPACING POLISH ==========
+   Improves text breathing room throughout the mobile experience.
+   Targets the most cramped areas: card interiors, list spacing,
+   line heights, and inter-section rhythm. Desktop unaffected. */
+@media (max-width: 768px) {
+    /* ----- Hero ----- */
+    /* Benefits list - more breathing between items, looser line */
+    #sfx-lp-root .sfx-hero-benefits {
+        gap: 0.6875rem;
+        margin-bottom: 1.5rem;
+    }
+    #sfx-lp-root .sfx-hero-benefits li {
+        line-height: 1.55;
+        font-size: 0.9375rem;
+    }
+    /* Subheadline more readable on phone */
+    #sfx-lp-root .sfx-hero-subheadline {
+        line-height: 1.6;
+        margin-bottom: 1.25rem;
+    }
+    /* Hero proof testimonial breathes */
+    #sfx-lp-root .sfx-hero-proof {
+        padding: 1.125rem 1.25rem;
+    }
+    #sfx-lp-root .sfx-hero-proof-quote {
+        line-height: 1.55;
+        margin-bottom: 0.5rem;
+    }
+    
+    /* ----- Section titles ----- */
+    /* Slightly more space above and below section headings */
+    #sfx-lp-root .sfx-section-title,
+    #sfx-lp-root .sfx-why h2,
+    #sfx-lp-root .sfx-curriculum h2,
+    #sfx-lp-root .sfx-mentor h2,
+    #sfx-lp-root .sfx-agenda h2,
+    #sfx-lp-root .sfx-trustpilot h2,
+    #sfx-lp-root .sfx-faq h2 {
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+    
+    /* ----- Why Learning In The Room cards ----- */
+    #sfx-lp-root .sfx-why-grid {
+        gap: 1rem;
+    }
+    #sfx-lp-root .sfx-why-card {
+        padding: 1.25rem 1.125rem;
+    }
+    #sfx-lp-root .sfx-why-card h3 {
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    #sfx-lp-root .sfx-why-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    
+    /* ----- What Module 1 Covers cards ----- */
+    #sfx-lp-root .sfx-modules-grid {
+        gap: 1rem;
+    }
+    #sfx-lp-root .sfx-module-card {
+        padding: 1.25rem 1.125rem;
+    }
+    #sfx-lp-root .sfx-module-card h3 {
+        line-height: 1.3;
+        margin-bottom: 0.5rem;
+    }
+    #sfx-lp-root .sfx-module-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    
+    /* ----- Mentor section ----- */
+    #sfx-lp-root .sfx-mentor-quote {
+        line-height: 1.65;
+        padding: 0.5rem 0;
+    }
+    #sfx-lp-root .sfx-mentor-meta {
+        margin-top: 1rem;
+        gap: 1.25rem;
+    }
+    
+    /* ----- Schedule timeline ----- */
+    #sfx-lp-root .sfx-timeline li {
+        padding-bottom: 1rem;
+        line-height: 1.55;
+    }
+    #sfx-lp-root .sfx-timeline li:last-child {
+        padding-bottom: 0;
+    }
+    
+    /* ----- Who It's For / What You Get boxes ----- */
+    #sfx-lp-root .sfx-who-card {
+        padding: 1.375rem 1.25rem;
+    }
+    #sfx-lp-root .sfx-who-card h3 {
+        margin-bottom: 0.75rem;
+        line-height: 1.3;
+    }
+    #sfx-lp-root .sfx-who-card li,
+    #sfx-lp-root .sfx-who-card p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+    }
+    #sfx-lp-root .sfx-who-card ul {
+        gap: 0.5rem;
+    }
+    
+    /* ----- Testimonial videos grid ----- */
+    #sfx-lp-root .sfx-videos-grid {
+        gap: 1rem;
+    }
+    /* Video card title - line breathing */
+    #sfx-lp-root .sfx-video-title {
+        line-height: 1.4;
+        padding: 0.875rem 1rem 1rem;
+    }
+    
+    /* ----- Trustpilot review screenshots ----- */
+    #sfx-lp-root .sfx-trustpilot-images-grid {
+        gap: 0.875rem;
+    }
+    
+    /* ----- Social proof banner ----- */
+    #sfx-lp-root .sfx-proof-item {
+        line-height: 1.4;
+    }
+    
+    /* ----- Form urgency header ----- */
+    #sfx-lp-root .sfx-form-urgency-title {
+        line-height: 1.25;
+        margin-bottom: 0.625rem;
+    }
+    #sfx-lp-root .sfx-form-urgency-subtitle {
+        line-height: 1.55;
+        margin-bottom: 1rem;
+    }
+    
+    /* ----- Lead section (form area) ----- */
+    #sfx-lp-root .sfx-lead-left h2 {
+        line-height: 1.25;
+        margin-bottom: 0.75rem;
+    }
+    #sfx-lp-root .sfx-lead-left p {
+        line-height: 1.6;
+        font-size: 0.9375rem;
+        margin-bottom: 1.125rem;
+    }
+    #sfx-lp-root .sfx-lead-reassurance li {
+        line-height: 1.5;
+        font-size: 0.9375rem;
+        padding: 0.375rem 0;
+    }
+    
+    /* ----- Checkout box internal ----- */
+    #sfx-lp-root .sfx-checkout-row {
+        padding: 0.625rem 0;
+        line-height: 1.4;
+    }
+    #sfx-lp-root .sfx-input-group label {
+        margin-bottom: 0.5rem;
+        line-height: 1.4;
+    }
+    
+    /* ----- FAQ items ----- */
+    #sfx-lp-root .sfx-faq-question {
+        padding: 1rem 1rem;
+        line-height: 1.4;
+    }
+    #sfx-lp-root .sfx-faq-answer {
+        padding: 0 1rem 1rem;
+        line-height: 1.65;
+    }
+    
+    /* ----- Generic paragraph readability on phones ----- */
+    #sfx-lp-root .sfx-section-intro {
+        line-height: 1.6;
+        margin-bottom: 1.5rem;
+    }
+}
+
+/* ========== iOS / SAFARI SPECIFIC FIXES ========== */
+@supports (-webkit-touch-callout: none) {
+    /* iOS 100vh bug - not used but defensive */
+    #sfx-lp-root .sfx-hero {
+        min-height: -webkit-fill-available;
+        min-height: auto;
+    }
+    /* Prevent iOS input zoom */
+    #sfx-lp-root input,
+    #sfx-lp-root textarea,
+    #sfx-lp-root select {
+        font-size: 16px !important;
+    }
+}
+
+/* ========== REDUCED MOTION ACCESSIBILITY ========== */
+@media (prefers-reduced-motion: reduce) {
+    #sfx-lp-root *,
+    #sfx-lp-root *::before,
+    #sfx-lp-root *::after {
+        animation-duration: 0.01ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: 0.01ms !important;
+        scroll-behavior: auto !important;
+    }
+}
+
+/* ========== LANDSCAPE PHONE ORIENTATION ========== */
+@media (max-height: 480px) and (orientation: landscape) {
+    #sfx-lp-root .sfx-hero {
+        padding-bottom: 1.5rem;
+    }
+    #sfx-lp-root .sfx-hero-grid {
+        gap: 1.25rem;
+    }
+}
+</style>
+
+
+</div>
+<!-- /#sfx-lp-root -->
+</body>
+</html>
