@@ -42,11 +42,16 @@
         
         /* The LP root - establishes a clean styling context. 
            Properties set here cascade to descendants only when
-           descendants don't set their own value. */
+           descendants don't set their own value.
+           
+           IMPORTANT: We deliberately do NOT use `contain: layout`
+           or `overflow: hidden` here because they confuse
+           scrollIntoView and offsetTop measurements, breaking
+           in-page anchor links. */
         #sfx-lp-root {
-            /* Block parent cascade leakage */
+            /* Block parent stacking-context leakage only.
+               (No `contain` - it breaks scroll math.) */
             isolation: isolate;
-            contain: layout style;
             
             /* Establish typography baseline */
             font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
@@ -65,7 +70,6 @@
             padding: 0;
             width: 100%;
             max-width: 100%;
-            overflow-x: hidden;
             
             /* Rendering quality */
             text-rendering: optimizeLegibility;
