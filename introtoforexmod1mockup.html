@@ -4100,6 +4100,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     var STRIPE_MODE = 'paymentLink'; // 'paymentLink' or 'endpoint'
     var STRIPE_PAYMENT_LINK = 'https://buy.stripe.com/28EbJ3ar931uawH6Mg83C00';
     var STRIPE_ENDPOINT = 'https://hooks.zapier.com/REPLACE_WITH_YOUR_WEBHOOK_URL';
+    var ZAPIER_LEAD_WEBHOOK = 'https://hooks.zapier.com/hooks/catch/22218998/4o8pn4z/';
     // ==========================================
     
     function showError(msg) {
@@ -4206,6 +4207,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
                         });
                     } catch (e) {}
                 }
+                
+                // Send lead data to Zapier (fire-and-forget; does not block Stripe redirect)
+                try {
+                    var leadPayload = {
+                        firstName: firstName,
+                        lastName: lastName,
+                        email: email,
+                        phone: phone,
+                        product: 'Module 1',
+                        product_id: 'mod1-jun26',
+                        event_date: '2026-06-12',
+                        price_gbp: 249,
+                        source: 'module1_landing_page',
+                        page_url: window.location.href,
+                        submitted_at: new Date().toISOString()
+                    };
+                    // Use no-cors mode so we never block on response; payload still arrives at Zapier
+                    fetch(ZAPIER_LEAD_WEBHOOK, {
+                        method: 'POST',
+                        mode: 'no-cors',
+                        headers: { 'Content-Type': 'application/json' },
+                        body: JSON.stringify(leadPayload),
+                        keepalive: true
+                    }).catch(function() { /* silent fail; do not block user */ });
+                } catch (zapErr) { /* non-blocking */ }
                 
                 // Redirect to Stripe
                 window.location.href = redirectUrl;
