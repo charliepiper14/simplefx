@@ -32,7 +32,7 @@
   .topbar{background:linear-gradient(135deg,var(--dark),#1F3A0D);color:#fff;}
   .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
   .brand{display:flex;align-items:center;gap:10px;font-weight:800;}
-  .brand-logo{height:30px;width:auto;display:block;}
+  .brand-logo{height:48px;width:auto;display:block;}
   .secure{font-size:12px;color:#cfe3c2;display:flex;align-items:center;gap:7px;}
   .secure .d{width:8px;height:8px;border-radius:50%;background:var(--green);}
 
@@ -58,8 +58,8 @@
   /* countdown overlay */
   .cd{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px;color:#eaf5e2;
       background:radial-gradient(120% 120% at 50% 25%,#294012 0%,#0b1207 72%);}
-  .cd .logo{margin-bottom:2px;}
-  .cd .logo img{height:34px;width:auto;display:block;}
+  .cd .logo{margin-bottom:4px;}
+  .cd .logo img{height:60px;width:auto;display:block;}
   .cd .kicker{display:inline-flex;align-items:center;gap:8px;font-size:12px;letter-spacing:1.5px;text-transform:uppercase;color:var(--green);font-weight:700;}
   .cd .kicker .d{width:8px;height:8px;border-radius:50%;background:var(--green);animation:pulse 1.6s infinite;}
   .cd .time{font-size:clamp(2.6rem,9vw,4.4rem);font-weight:800;line-height:1;font-variant-numeric:tabular-nums;color:#fff;letter-spacing:1px;}
@@ -133,7 +133,7 @@
   <!-- top bar -->
   <header class="topbar"><div class="wrap">
     <div class="brand"><img class="brand-logo" id="brandLogo" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="Simple FX"></div>
-    <div class="secure"><span class="d"></span>Secure private session</div>
+    <div class="secure"><svg viewBox="0 0 24 24" width="14" height="14" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" stroke="#6CC24A" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#6CC24A" stroke-width="2" stroke-linecap="round"/></svg>Secure private session</div>
   </div></header>
 
   <!-- title -->
@@ -201,7 +201,7 @@
 
   <!-- proof strip -->
   <section class="proof"><div class="wrap"><div class="row">
-    <div class="tp"><span class="stars">★★★★★</span><span>Rated <b>Excellent</b> on Trustpilot</span></div>
+    <div class="tp"><span class="stars">★★★★★</span><span>Rated <b>Excellent</b>, 4.9 out of 5 on Trustpilot</span></div>
     <div class="awards">
       <div class="aw"><div class="t">Best Forex Education</div><div class="y">UK 2021</div></div>
       <div class="aw"><div class="t">Best Forex Education</div><div class="y">UK 2022</div></div>
@@ -317,7 +317,7 @@ function addMessage(text,who,label){
   el.innerHTML='<div class="who">'+(label||(who==='me'?'You':'Simple FX'))+'</div><div class="bubble"></div>';
   el.querySelector('.bubble').textContent=text; stream.appendChild(el); stream.scrollTop=stream.scrollHeight;
 }
-addMessage("Welcome in. We are about to begin. Ask anything as you watch and we will answer here.", 'them', 'Simple FX');
+addMessage("Welcome to your private forex session. We are about to begin. Ask anything as you watch and we will answer here.", 'them', 'Simple FX');
 function handleSend(){ var t=input.value.trim(); if(!t) return; addMessage(t,'me'); input.value=''; routeToAssistant(t); }
 sendBtn.addEventListener('click', handleSend);
 input.addEventListener('keydown', function(e){ if(e.key==='Enter') handleSend(); });
