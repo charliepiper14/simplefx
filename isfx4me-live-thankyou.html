@@ -1,0 +1,168 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="robots" content="noindex, nofollow">
+<title>Simple FX — You're Registered</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GTM container goes here. Fires: sfx_registration_complete (on load), sfx_join_session (on button click). -->
+<!-- META PIXEL: place your pixel here so the registration counts as a conversion on this thank-you page. -->
+
+<style>
+  :root{
+    --dark:#2D5016; --green:#6CC24A; --green-d:#5CB85C; --ink:#1F2937;
+    --muted:#4B5563; --line:#E5E7EB; --wash:#F9FAFB; --pale:#F0F9EC;
+    --radius:14px; --maxw:1160px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--wash);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:var(--green-d);}
+  :focus-visible{outline:3px solid var(--green);outline-offset:2px;}
+  h1,h2,h3{text-wrap:balance;} p,li{text-wrap:pretty;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1rem;}
+  @media(min-width:768px){.wrap{padding:0 1.5rem;}}
+
+  /* top bar */
+  .topbar{background:linear-gradient(135deg,var(--dark),#1F3A0D);color:#fff;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:center;height:60px;}
+  .brand-logo{height:48px;width:auto;display:block;}
+
+  /* hero */
+  .hero{background:linear-gradient(135deg,var(--dark) 0%,#26480f 55%,#3a6a1d 100%);color:#fff;padding:56px 0 60px;text-align:center;}
+  .tick{width:82px;height:82px;border-radius:50%;background:rgba(255,255,255,.12);border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;margin:0 auto 22px;animation:pop .5s ease;}
+  @keyframes pop{0%{transform:scale(.6);opacity:0;}100%{transform:scale(1);opacity:1;}}
+  @media(prefers-reduced-motion:reduce){.tick{animation:none;}}
+  .hero h1{font-size:clamp(28px,4.4vw,42px);font-weight:800;line-height:1.14;letter-spacing:-.5px;}
+  .hero .sub{font-size:clamp(15px,2vw,18px);color:#e4f2da;margin:14px auto 0;max-width:40ch;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:58px;padding:16px 34px;margin-top:28px;font-size:17px;font-weight:800;border:0;border-radius:14px;cursor:pointer;font-family:inherit;transition:all .25s ease;background:#fff;color:var(--dark);box-shadow:0 14px 30px -8px rgba(0,0,0,.45);}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 18px 34px -8px rgba(0,0,0,.5);}
+  .btn svg{flex-shrink:0;}
+  .also{margin-top:18px;font-size:13.5px;color:#cfe3c2;display:flex;align-items:center;justify-content:center;gap:8px;flex-wrap:wrap;}
+  .also svg{flex-shrink:0;}
+
+  /* next steps */
+  .next{padding:52px 0;}
+  .next h2{text-align:center;font-size:clamp(20px,3vw,26px);font-weight:800;color:var(--ink);}
+  .steps{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;max-width:920px;margin:30px auto 0;}
+  @media(max-width:760px){.steps{grid-template-columns:1fr;}}
+  .step{background:#fff;border:1px solid var(--line);border-radius:var(--radius);padding:24px;text-align:center;}
+  .step .num{width:36px;height:36px;border-radius:50%;background:var(--pale);color:var(--dark);font-weight:800;font-size:16px;display:flex;align-items:center;justify-content:center;margin:0 auto 12px;}
+  .step h3{font-size:16px;font-weight:800;color:var(--ink);margin-bottom:5px;}
+  .step p{font-size:14px;color:var(--muted);}
+
+  /* host reassurance */
+  .host{background:var(--pale);border-top:1px solid #e0efd6;border-bottom:1px solid #e0efd6;padding:34px 0;}
+  .host .row{display:flex;align-items:center;gap:18px;max-width:720px;margin:0 auto;flex-wrap:wrap;justify-content:center;text-align:center;}
+  .host img{width:76px;height:76px;border-radius:14px;object-fit:cover;border:3px solid var(--green);}
+  .host .t{max-width:420px;text-align:left;}
+  @media(max-width:560px){.host .t{text-align:center;}}
+  .host .t .n{font-weight:800;color:var(--ink);font-size:17px;}
+  .host .t p{font-size:14px;color:var(--muted);margin-top:2px;}
+
+  /* footer */
+  .foot{background:#111827;color:#cfe3c2;padding:26px 0;font-size:12.5px;}
+  .foot .risk{border-left:3px solid var(--green);padding-left:12px;line-height:1.55;color:#c3d8b4;max-width:840px;}
+  .foot .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #2a3a1e;padding-top:12px;margin-top:14px;color:#9dbb8c;}
+</style>
+</head>
+<body>
+
+  <!-- top bar -->
+  <header class="topbar"><div class="wrap">
+    <img class="brand-logo" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="Simple FX">
+  </div></header>
+
+  <!-- hero -->
+  <section class="hero"><div class="wrap">
+    <div class="tick">
+      <svg width="42" height="42" viewBox="0 0 24 24" fill="none"><path d="M5 12.5l4.2 4.2L19 7" stroke="#6CC24A" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg>
+    </div>
+    <h1>You're registered. Your session is ready&nbsp;now.</h1>
+    <p class="sub">Click below to start watching the on-demand session whenever&nbsp;suits&nbsp;you.</p>
+
+    <a class="btn" id="joinBtn" href="#" target="_blank" rel="noopener">
+      <svg width="20" height="20" viewBox="0 0 24 24" fill="none"><path d="M8 5v14l11-7z" fill="#2D5016"/></svg>
+      Join the on-demand session
+    </a>
+
+    <div class="also">
+      <svg width="16" height="16" viewBox="0 0 24 24" fill="none"><path d="M4 5h16v14H4z" stroke="#cfe3c2" stroke-width="2"/><path d="M4 6l8 6 8-6" stroke="#cfe3c2" stroke-width="2"/></svg>
+      We have also sent your access link to your WhatsApp and&nbsp;email.
+    </div>
+  </div></section>
+
+  <!-- what happens next -->
+  <section class="next"><div class="wrap">
+    <h2>What happens next</h2>
+    <div class="steps">
+      <div class="step">
+        <div class="num">1</div>
+        <h3>Watch the session</h3>
+        <p>Start now with the button above, or open the link we sent to your WhatsApp and email.</p>
+      </div>
+      <div class="step">
+        <div class="num">2</div>
+        <h3>Ask as you go</h3>
+        <p>The live chat stays open beside the session, so you can ask anything while you watch.</p>
+      </div>
+      <div class="step">
+        <div class="num">3</div>
+        <h3>Book a call, if you want</h3>
+        <p>When you are ready, book a relaxed one to one with Richard. No pressure at all.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- host reassurance -->
+  <section class="host"><div class="wrap">
+    <div class="row">
+      <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
+      <div class="t">
+        <div class="n">Hosted by Richard Williams</div>
+        <p>Founder and mentor at Simple FX, teaching honest, structured trading education for over&nbsp;fifteen&nbsp;years.</p>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- footer -->
+  <footer class="foot"><div class="wrap">
+    <div class="risk">Trading involves risk. Forex and leveraged products can result in losses that exceed your deposits. The training and materials are for education only and are not financial advice. Only trade with money you can afford to lose.</div>
+    <div class="base"><span>Simple FX. Registered in England &amp; Wales.</span><span>Powered by Leads Guys</span></div>
+  </div></footer>
+
+<script>
+/* ============================================================
+   EDIT THIS ONE LINE once the on-demand session page is live.
+   Paste the final on-demand session URL between the quotes.
+   ============================================================ */
+var ON_DEMAND_URL = "PASTE-THE-ON-DEMAND-SESSION-LINK-HERE";
+
+/* ---- wiring (no need to change below) ---- */
+(function(){
+  function params(){ return window.location.search; }
+  function withParams(u){
+    if(!u || u.indexOf("PASTE-THE-ON-DEMAND")>-1) return u || "#";
+    var p=params(); if(!p || p==="?") return u;
+    return u + (u.indexOf("?")>-1 ? "&" : "") + p.replace(/^\?/, (u.indexOf("?")>-1?"&":"?"));
+  }
+  function track(ev,d){ window.dataLayer=window.dataLayer||[]; window.dataLayer.push(Object.assign({event:ev},d||{})); }
+
+  var btn=document.getElementById("joinBtn");
+  btn.href=withParams(ON_DEMAND_URL);
+  btn.addEventListener("click",function(e){
+    if(btn.getAttribute("href").indexOf("PASTE-THE-ON-DEMAND")>-1){ e.preventDefault(); return; }
+    track("sfx_join_session",{source:"thankyou"});
+  });
+
+  // registration conversion event for GTM / Meta
+  track("sfx_registration_complete",{});
+})();
+</script>
+</body>
+</html>
