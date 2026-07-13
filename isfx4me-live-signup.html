@@ -1,0 +1,300 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Simple FX — Is Forex For Me? Free Session</title>
+<meta name="description" content="A free, beginner friendly forex session with Richard Williams. Register for instant access and watch whenever suits you.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<!-- GTM container goes here. Meta Pixel fires on the Zoho thank-you redirect. -->
+
+<style>
+  :root{
+    --dark:#2D5016; --green:#6CC24A; --green-d:#5CB85C; --ink:#1F2937;
+    --muted:#4B5563; --line:#E5E7EB; --wash:#F9FAFB; --pale:#F0F9EC;
+    --gold:#FFB800; --tp:#00B67A;
+    --radius:14px; --maxw:1160px;
+  }
+  *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
+  html{scroll-behavior:smooth;}
+  body{font-family:'Inter',-apple-system,BlinkMacSystemFont,'Segoe UI',Roboto,sans-serif;color:var(--ink);background:var(--wash);line-height:1.6;-webkit-font-smoothing:antialiased;}
+  img{max-width:100%;display:block;}
+  a{text-decoration:none;color:var(--green-d);}
+  :focus-visible{outline:3px solid var(--green);outline-offset:2px;}
+  /* no single word left alone on a line */
+  h1,h2,h3,h4,.eyebrow,.sub{text-wrap:balance;}
+  p,li{text-wrap:pretty;}
+  .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1rem;}
+  @media(min-width:768px){.wrap{padding:0 1.5rem;}}
+
+  /* top bar */
+  .topbar{background:linear-gradient(135deg,var(--dark),#1F3A0D);color:#fff;position:sticky;top:0;z-index:30;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:60px;}
+  .brand-logo{height:48px;width:auto;display:block;}
+  .top-cta{display:inline-flex;align-items:center;min-height:40px;padding:9px 18px;border-radius:10px;font-weight:700;font-size:14px;background:linear-gradient(135deg,var(--green),var(--green-d));color:#14210c;}
+  .top-cta:hover{filter:brightness(1.05);}
+
+  /* hero */
+  .hero{background:linear-gradient(135deg,var(--dark) 0%,#26480f 55%,#3a6a1d 100%);color:#fff;padding:44px 0 52px;}
+  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:28px;}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#d8f0c9;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px;margin-bottom:16px;}
+  .eyebrow .d{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(108,194,74,.6);animation:pulse 2s infinite;}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(108,194,74,.55);}70%{box-shadow:0 0 0 9px rgba(108,194,74,0);}100%{box-shadow:0 0 0 0 rgba(108,194,74,0);}}
+  @media(prefers-reduced-motion:reduce){.eyebrow .d{animation:none;}}
+  .hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;line-height:1.12;letter-spacing:-.5px;}
+  .hero .sub{font-size:clamp(15px,2vw,18px);color:#e4f2da;margin-top:14px;max-width:36ch;}
+  .benefits{list-style:none;margin:22px 0 0;display:grid;gap:11px;}
+  .benefits li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#eef7e7;}
+  .benefits li svg{flex-shrink:0;margin-top:2px;}
+  .hero-trust{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:#cfe3c2;}
+  .hero-trust .stars{color:#fff;letter-spacing:2px;font-size:16px;}
+
+  /* form card */
+  .form-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 24px 50px -12px rgba(0,0,0,.4);color:var(--ink);}
+  .form-host{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--line);}
+  .form-host img{width:52px;height:52px;border-radius:10px;object-fit:cover;border:2px solid var(--green);}
+  .form-host .l{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700;}
+  .form-host .n{font-size:16px;font-weight:800;color:var(--ink);line-height:1.1;}
+  .form-card h2{font-size:20px;font-weight:800;margin-bottom:4px;}
+  .form-card .lead{font-size:13.5px;color:var(--muted);margin-bottom:14px;}
+  .zoho-embed-wrap{width:100%;min-height:520px;}
+  .zoho-embed-wrap iframe{width:100%;border:0;display:block;background:transparent;overflow:hidden;}
+  .form-note{font-size:12.5px;color:var(--ink);text-align:center;margin-top:14px;line-height:1.5;}
+  .form-note strong{color:var(--dark);}
+  .privacy-note{font-size:11.5px;color:#9aa4b2;text-align:center;margin-top:5px;}
+  .secure-row{display:flex;align-items:center;justify-content:center;gap:7px;font-size:11.5px;color:var(--muted);margin-top:10px;}
+
+  /* section shell */
+  .section{padding:52px 0;}
+  .section.alt{background:#fff;border-top:1px solid var(--line);border-bottom:1px solid var(--line);}
+  .section h2{font-size:clamp(22px,3vw,30px);font-weight:800;text-align:center;color:var(--ink);}
+  .section .sub{text-align:center;color:var(--muted);max-width:52ch;margin:10px auto 0;font-size:15px;}
+
+  /* mentor */
+  .mentor{display:grid;grid-template-columns:280px 1fr;gap:34px;align-items:center;max-width:900px;margin:34px auto 0;}
+  @media(max-width:720px){.mentor{grid-template-columns:1fr;text-align:center;}}
+  .mentor .photo{border-radius:16px;overflow:hidden;box-shadow:0 16px 30px -10px rgba(0,0,0,.25);border:4px solid var(--green);}
+  .mentor .photo img{width:100%;height:100%;object-fit:cover;}
+  .mentor .badge{display:inline-block;background:var(--green);color:#fff;font-size:11px;font-weight:700;text-transform:uppercase;letter-spacing:.5px;padding:4px 10px;border-radius:6px;margin-bottom:10px;}
+  .mentor h3{font-size:24px;font-weight:800;line-height:1.1;}
+  .mentor .role{color:var(--green-d);font-weight:600;font-size:14px;margin:2px 0 12px;}
+  .mentor p{color:var(--muted);font-size:15px;}
+  .mentor .stats{display:flex;gap:30px;margin-top:18px;flex-wrap:wrap;}
+  @media(max-width:720px){.mentor .stats{justify-content:center;}}
+  .mentor .stat .v{font-size:24px;font-weight:800;color:var(--green-d);line-height:1;}
+  .mentor .stat .l{font-size:12px;color:var(--muted);margin-top:3px;}
+
+  /* discover */
+  .cards{display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin:34px auto 0;}
+  @media(max-width:900px){.cards{grid-template-columns:repeat(2,1fr);}}
+  @media(max-width:540px){.cards{grid-template-columns:1fr;}}
+  .card{background:var(--wash);border:1px solid var(--line);border-radius:var(--radius);padding:22px;}
+  .card .ic{width:42px;height:42px;border-radius:10px;background:var(--pale);display:flex;align-items:center;justify-content:center;margin-bottom:12px;}
+  .card h4{font-size:16px;font-weight:800;margin-bottom:6px;color:var(--ink);}
+  .card p{font-size:14px;color:var(--muted);}
+
+  /* proof */
+  .proof-row{display:flex;align-items:center;justify-content:center;gap:26px;flex-wrap:wrap;margin-top:26px;}
+  .proof-tp{display:flex;align-items:center;gap:9px;font-size:14px;color:var(--muted);}
+  .proof-tp .stars{color:var(--tp);font-size:20px;letter-spacing:2px;}
+  .proof-tp b{color:var(--ink);}
+  .proof-awards img{max-height:70px;width:auto;}
+
+  /* faq */
+  .faq{max-width:760px;margin:30px auto 0;}
+  .q{background:#fff;border:1px solid var(--line);border-radius:12px;margin-bottom:12px;overflow:hidden;}
+  .q summary{list-style:none;cursor:pointer;padding:16px 18px;font-weight:700;font-size:15px;color:var(--ink);display:flex;justify-content:space-between;align-items:center;gap:12px;}
+  .q summary::-webkit-details-marker{display:none;}
+  .q summary::after{content:"+";color:var(--green-d);font-size:22px;font-weight:700;line-height:1;}
+  .q[open] summary::after{content:"\2212";}
+  .q .a{padding:0 18px 16px;color:var(--muted);font-size:14.5px;}
+
+  /* final cta */
+  .final{background:linear-gradient(135deg,var(--dark),#3a6a1d);color:#fff;text-align:center;padding:52px 0;}
+  .final h2{font-size:clamp(22px,3vw,30px);font-weight:800;}
+  .final p{color:#cfe3c2;margin:10px auto 22px;max-width:46ch;}
+  .btn{display:inline-flex;align-items:center;justify-content:center;min-height:54px;padding:15px 32px;font-size:16px;font-weight:700;border:0;border-radius:12px;cursor:pointer;font-family:inherit;transition:all .25s ease;background:linear-gradient(135deg,var(--green),var(--green-d));color:#14210c;}
+  .btn:hover{transform:translateY(-2px);box-shadow:0 12px 22px -6px rgba(108,194,74,.55);}
+
+  /* footer */
+  .foot{background:#111827;color:#cfe3c2;padding:26px 0;font-size:12.5px;}
+  .foot .risk{border-left:3px solid var(--green);padding-left:12px;line-height:1.55;color:#c3d8b4;max-width:840px;}
+  .foot .base{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;border-top:1px solid #2a3a1e;padding-top:12px;margin-top:14px;color:#9dbb8c;}
+</style>
+</head>
+<body>
+
+  <!-- top bar -->
+  <header class="topbar"><div class="wrap">
+    <img class="brand-logo" src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png" alt="Simple FX">
+    <a class="top-cta" href="#register">Register free</a>
+  </div></header>
+
+  <!-- hero + form -->
+  <section class="hero"><div class="wrap">
+    <div class="hero-grid">
+      <div>
+        <span class="eyebrow"><span class="d"></span>Free online session</span>
+        <h1>Is forex for you? Find out in one honest&nbsp;session.</h1>
+        <p class="sub">A free, beginner friendly session with Richard Williams. Register now and get instant access to watch whenever&nbsp;suits&nbsp;you.</p>
+        <ul class="benefits">
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Watch on demand, start the moment you register</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Beginner friendly, taught from the ground up with no jargon</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A clear, honest look at whether trading fits your&nbsp;goals</li>
+          <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Your access link sent by WhatsApp and&nbsp;email</li>
+        </ul>
+        <div class="hero-trust">
+          <span class="stars">★★★★★</span>
+          <span>Rated Excellent, 4.9 out of 5 on Trustpilot</span>
+        </div>
+      </div>
+
+      <!-- REGISTRATION FORM -->
+      <div class="form-card" id="register">
+        <div class="form-host">
+          <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
+          <div>
+            <div class="l">Hosted by</div>
+            <div class="n">Richard Williams</div>
+          </div>
+        </div>
+        <h2>Register for your free session</h2>
+        <p class="lead">Get instant access. It takes less than a minute.</p>
+
+        <!-- ZOHO FORMS (EU) auto-resize embed: iframe grows to fit the whole form, no vertical scroll -->
+        <div id="zf_isfx4me_form" class="zoho-embed-wrap"></div>
+        <script type="text/javascript">
+        (function(){
+          try{
+            var f=document.createElement("iframe");
+            f.src="https://forms.zohopublic.eu/helensimp1/form/JoinIsForexForMeOnDemand/formperma/Uo4V6dITxeR2fqKK0ZlmP7cga7Gb7ypAAJ7ITTtgf8I?zf_rszfm=1";
+            f.style.border="none"; f.style.height="521px"; f.style.width="100%"; f.style.transition="all 0.5s ease";
+            f.setAttribute("aria-label","Join Is Forex For Me On Demand");
+            f.setAttribute("scrolling","no");
+            document.getElementById("zf_isfx4me_form").appendChild(f);
+            window.addEventListener("message",function(event){
+              var data=event.data;
+              if(data && typeof data==="string"){
+                var parts=data.split("|");
+                if(parts.length===2 || parts.length===3){
+                  var perma=parts[0];
+                  var newH=(parseInt(parts[1],10)+15)+"px";
+                  var ifr=document.getElementById("zf_isfx4me_form").getElementsByTagName("iframe")[0];
+                  if(ifr && ifr.src.indexOf("formperma")>0 && ifr.src.indexOf(perma)>0){
+                    if(parts.length===3){ ifr.scrollIntoView(); }
+                    if(ifr.style.height!==newH){ ifr.style.height=newH; }
+                  }
+                }
+              }
+            },false);
+          }catch(e){}
+        })();
+        </script>
+
+        <p class="form-note"><strong>Free to watch.</strong> We will also send your access link by WhatsApp and&nbsp;email.</p>
+        <p class="privacy-note">We respect your privacy. Unsubscribe&nbsp;anytime.</p>
+        <div class="secure-row">
+          <svg viewBox="0 0 24 24" width="13" height="13" fill="none" aria-hidden="true"><rect x="4" y="10" width="16" height="11" rx="2" stroke="#4B5563" stroke-width="2"/><path d="M8 10V7a4 4 0 0 1 8 0v3" stroke="#4B5563" stroke-width="2" stroke-linecap="round"/></svg>
+          Secure registration
+        </div>
+      </div>
+    </div>
+  </div></section>
+
+  <!-- meet your mentor -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Meet your mentor</h2>
+      <div class="mentor">
+        <div class="photo"><img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams"></div>
+        <div>
+          <span class="badge">Your host</span>
+          <h3>Richard Williams</h3>
+          <div class="role">Founder &amp; Mentor at Simple FX</div>
+          <p>Richard founded Simple FX in 2010 to help everyday people understand the markets without the smoke and mirrors. He has traded for over fifteen years and mentored hundreds of people into a clear, structured way of learning. Honest education, proper structure, and no&nbsp;hype.</p>
+          <div class="stats">
+            <div class="stat"><div class="v">15+</div><div class="l">Years Trading</div></div>
+            <div class="stat"><div class="v">500+</div><div class="l">Traders Mentored</div></div>
+            <div class="stat"><div class="v">5x</div><div class="l">Award Winner</div></div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- what you'll discover -->
+  <section class="section">
+    <div class="wrap">
+      <h2>What you will take from it</h2>
+      <p class="sub">No hype and no pressure. Just a clear, honest look at trading and how Simple FX teaches it.</p>
+      <div class="cards">
+        <div class="card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 3l2.5 5 5.5.8-4 3.9.9 5.5L12 15.6 7.1 18.2l.9-5.5-4-3.9L9.5 8z" fill="#6CC24A"/></svg></div>
+          <h4>Is it right for you?</h4>
+          <p>A straight look at whether forex genuinely suits your goals and the time you have.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M4 18V6m0 12h16M8 14l3-3 2 2 4-5" stroke="#6CC24A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>The beginner traps</h4>
+          <p>The common mistakes that trip people up early, and how to sidestep them.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M5 5h14M5 12h14M5 19h9" stroke="#6CC24A" stroke-width="2.2" stroke-linecap="round"/></svg></div>
+          <h4>A clear structure</h4>
+          <p>How Simple FX breaks learning down, step by step, so it actually sticks.</p>
+        </div>
+        <div class="card">
+          <div class="ic"><svg width="22" height="22" viewBox="0 0 24 24" fill="none"><path d="M12 2a10 10 0 100 20 10 10 0 000-20zm0 5v5l3 3" stroke="#6CC24A" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></div>
+          <h4>A realistic path</h4>
+          <p>What a sensible next step looks like, at your pace, with support along the way.</p>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- proof -->
+  <section class="section alt">
+    <div class="wrap">
+      <h2>Trusted by traders across the UK</h2>
+      <div class="proof-row">
+        <div class="proof-tp"><span class="stars">★★★★★</span><span>Rated <b>Excellent</b>, 4.9 out of 5 on Trustpilot</span></div>
+        <div class="proof-awards"><img src="https://res.cloudinary.com/dcnabm5nc/image/upload/v1763209437/Finance-Awards-logo_dukykj.png" alt="Award winning forex education"></div>
+      </div>
+    </div>
+  </section>
+
+  <!-- faq -->
+  <section class="section">
+    <div class="wrap">
+      <h2>Common questions</h2>
+      <div class="faq">
+        <details class="q"><summary>Is it really free?</summary><div class="a">Yes. The session is free to watch, there is no cost and no card needed to register.</div></details>
+        <details class="q"><summary>How do I get access?</summary><div class="a">As soon as you register we send your private access link by WhatsApp and email, so you can watch whenever suits you.</div></details>
+        <details class="q"><summary>Do I need any experience?</summary><div class="a">None at all. The session is built for beginners and for anyone coming back to trading after a break.</div></details>
+        <details class="q"><summary>Is this financial advice?</summary><div class="a">No. Simple FX provides education and training only, not investment advice, and does not manage funds. Trading carries risk.</div></details>
+        <details class="q"><summary>What happens after the session?</summary><div class="a">If you would like, you can book a relaxed one to one with Richard to talk through a next step. There is no pressure at all.</div></details>
+      </div>
+    </div>
+  </section>
+
+  <!-- final cta -->
+  <section class="final">
+    <div class="wrap">
+      <h2>Ready to see if forex is for you?</h2>
+      <p>Register now and your access link lands in your WhatsApp and inbox within moments.</p>
+      <a class="btn" href="#register">Register for your free session</a>
+    </div>
+  </section>
+
+  <!-- footer -->
+  <footer class="foot"><div class="wrap">
+    <div class="risk">Trading involves risk. Forex and leveraged products can result in losses that exceed your deposits. The training and materials are for education only and are not financial advice. Only trade with money you can afford to lose.</div>
+    <div class="base"><span>Simple FX. Registered in England &amp; Wales.</span><span>Powered by Leads Guys</span></div>
+  </div></footer>
+
+</body>
+</html>
