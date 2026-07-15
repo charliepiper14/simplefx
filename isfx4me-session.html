@@ -56,6 +56,10 @@
   .video-card{background:#000;border-radius:var(--radius);overflow:hidden;box-shadow:0 20px 25px -5px rgba(0,0,0,.15);}
   .video-ratio{position:relative;width:100%;aspect-ratio:16/9;background:#0b1207;}
   .video-ratio iframe{position:absolute;inset:0;width:100%;height:100%;border:0;}
+  .video-ratio .unmute{position:absolute;left:50%;bottom:18px;transform:translateX(-50%);z-index:6;display:inline-flex;align-items:center;gap:8px;background:rgba(20,33,12,.88);color:#fff;border:1px solid var(--green);border-radius:40px;padding:11px 20px;font-size:14px;font-weight:700;font-family:inherit;cursor:pointer;box-shadow:0 8px 20px rgba(0,0,0,.4);animation:sfxpulse 2s infinite;}
+  .video-ratio .unmute:hover{background:rgba(20,33,12,.96);}
+  .video-ratio .unmute .ic{font-size:16px;line-height:1;}
+  @keyframes sfxpulse{0%{box-shadow:0 0 0 0 rgba(108,194,74,.5)}70%{box-shadow:0 0 0 12px rgba(108,194,74,0)}100%{box-shadow:0 0 0 0 rgba(108,194,74,0)}}
 
   /* countdown overlay */
   .cd{position:absolute;inset:0;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;text-align:center;padding:20px;color:#eaf5e2;
@@ -259,7 +263,9 @@ var CONFIG = {
   countdownSeconds: 60,
 
   // VIDEO: Vimeo/Bunny embed src. Loads automatically when the countdown ends. (Pending from client.)
-  video: { embedUrl: "" },
+  // VIDEO: main session recording. YouTube handled with muted autoplay + tap-for-sound.
+  // controls:false keeps the player clean (no scrub/skip); set true to give pause and volume.
+  video: { youtubeId: "ERN3p7vXeEQ", controls: false },
 
   // MANYCHAT: when ready, set widgetScript (Option A) or endpoint (Option B).
   // While both are empty, the built-in knowledge base below powers the chat so it fully works for the demo.
@@ -317,10 +323,16 @@ function track(ev,d){ window.dataLayer=window.dataLayer||[]; window.dataLayer.pu
   }
   function loadSession(){
     var box = document.getElementById('sessionVideo');
-    if(CONFIG.video.embedUrl){
-      box.innerHTML = '<iframe src="'+CONFIG.video.embedUrl+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>';
+    var v = CONFIG.video || {};
+    if(v.youtubeId){
+      var base='https://www.youtube.com/embed/'+v.youtubeId+'?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&controls='+(v.controls?1:0);
+      function frame(muted){ return '<iframe src="'+base+'&autoplay=1&mute='+(muted?1:0)+'" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>'; }
+      box.innerHTML = frame(true) + '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap to turn on sound</button>';
+      var btn=document.getElementById('sfxUnmute');
+      btn.addEventListener('click',function(){ box.innerHTML=frame(false); track('sfx_sound_on',{}); });
+    } else if(v.embedUrl){
+      box.innerHTML = '<iframe src="'+v.embedUrl+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>';
     } else {
-      // clean branded holding state while the recording is pending
       box.innerHTML = '<div class="cd"><div class="logo"><img src="'+CONFIG.logo+'" alt="Simple FX"></div>'+
         '<div class="kicker"><span class="d"></span>We are live</div>'+
         '<div style="font-size:14px;color:#a9c79b;max-width:340px;">Your recorded session plays here. Keep the chat open for your questions.</div></div>';
