@@ -17,6 +17,7 @@
     --muted:#4B5563; --line:#E5E7EB; --wash:#F9FAFB; --pale:#F0F9EC;
     --gold:#FFB800; --tp:#00B67A;
     --radius:14px; --maxw:1160px;
+    --hero-img:url("https://res.cloudinary.com/dcnabm5nc/image/upload/v1779252889/IMG_2960_lxbqo1.jpg");
   }
   *,*::before,*::after{box-sizing:border-box;margin:0;padding:0;}
   html{scroll-behavior:smooth;}
@@ -38,29 +39,45 @@
   .top-cta:hover{filter:brightness(1.05);}
 
   /* hero */
-  .hero{background:linear-gradient(135deg,var(--dark) 0%,#26480f 55%,#3a6a1d 100%);color:#fff;padding:44px 0 52px;}
-  .hero-grid{display:grid;grid-template-columns:1.05fr .95fr;gap:40px;align-items:center;}
-  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:28px;}}
-  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:700;letter-spacing:1px;text-transform:uppercase;color:#d8f0c9;background:rgba(255,255,255,.1);border:1px solid rgba(255,255,255,.18);padding:6px 12px;border-radius:20px;margin-bottom:16px;}
+  .hero{position:relative;overflow:hidden;isolation:isolate;color:#fff;padding:92px 0 78px;}
+  .hero::before{content:"";position:absolute;inset:0;z-index:-2;background-image:var(--hero-img);background-size:cover;background-position:center 22%;background-repeat:no-repeat;transform:scale(1.03);animation:kenburns 26s ease-in-out infinite alternate;will-change:transform;}
+  .hero::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(102deg,rgba(18,34,8,.97) 0%,rgba(26,48,12,.93) 38%,rgba(37,66,15,.8) 62%,rgba(60,106,29,.5) 100%),radial-gradient(120% 90% at 12% 18%,rgba(108,194,74,.2),transparent 60%);}
+  @keyframes kenburns{from{transform:scale(1.03) translate3d(0,0,0);}to{transform:scale(1.13) translate3d(-1.5%,-1.5%,0);}}
+  @media(prefers-reduced-motion:reduce){.hero::before{animation:none;}}
+  .hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:44px;align-items:center;min-height:min(78vh,650px);}
+  @media(max-width:920px){.hero-grid{grid-template-columns:1fr;gap:26px;min-height:0;}}
+  @keyframes fadeUp{from{opacity:0;transform:translateY(20px);}to{opacity:1;transform:translateY(0);}}
+  .hero .col-left>*{opacity:0;animation:fadeUp .7s cubic-bezier(.2,.7,.2,1) forwards;}
+  .hero .col-left>*:nth-child(1){animation-delay:.05s;} .hero .col-left>*:nth-child(2){animation-delay:.14s;}
+  .hero .col-left>*:nth-child(3){animation-delay:.23s;} .hero .col-left>*:nth-child(4){animation-delay:.32s;}
+  .hero .col-left>*:nth-child(5){animation-delay:.4s;}
+  @media(prefers-reduced-motion:reduce){.hero .col-left>*{opacity:1;animation:none;}}
+  .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12.5px;font-weight:800;letter-spacing:1.2px;text-transform:uppercase;color:#eaf7e1;background:rgba(108,194,74,.16);border:1px solid rgba(108,194,74,.45);padding:7px 14px;border-radius:30px;margin-bottom:18px;backdrop-filter:blur(4px);}
   .eyebrow .d{width:8px;height:8px;border-radius:50%;background:var(--green);box-shadow:0 0 0 0 rgba(108,194,74,.6);animation:pulse 2s infinite;}
-  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(108,194,74,.55);}70%{box-shadow:0 0 0 9px rgba(108,194,74,0);}100%{box-shadow:0 0 0 0 rgba(108,194,74,0);}}
+  @keyframes pulse{0%{box-shadow:0 0 0 0 rgba(108,194,74,.55);}70%{box-shadow:0 0 0 10px rgba(108,194,74,0);}100%{box-shadow:0 0 0 0 rgba(108,194,74,0);}}
   @media(prefers-reduced-motion:reduce){.eyebrow .d{animation:none;}}
-  .hero h1{font-size:clamp(28px,4.4vw,44px);font-weight:800;line-height:1.12;letter-spacing:-.5px;}
-  .hero .sub{font-size:clamp(15px,2vw,18px);color:#e4f2da;margin-top:14px;max-width:36ch;}
-  .benefits{list-style:none;margin:22px 0 0;display:grid;gap:11px;}
-  .benefits li{display:flex;gap:11px;align-items:flex-start;font-size:15px;color:#eef7e7;}
-  .benefits li svg{flex-shrink:0;margin-top:2px;}
-  .hero-trust{margin-top:24px;display:flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13px;color:#cfe3c2;}
+  .hero h1{font-size:clamp(32px,5vw,52px);font-weight:800;line-height:1.08;letter-spacing:-.8px;text-shadow:0 2px 26px rgba(0,0,0,.4);}
+  .hero h1 .hl{color:var(--green);}
+  .hero .sub{font-size:clamp(15.5px,2vw,19px);color:#e9f4df;margin-top:16px;max-width:40ch;text-shadow:0 1px 14px rgba(0,0,0,.35);}
+  .benefits{list-style:none;margin:24px 0 0;display:grid;gap:12px;}
+  .benefits li{display:flex;gap:11px;align-items:flex-start;font-size:15.5px;font-weight:500;color:#f1f8ec;text-shadow:0 1px 12px rgba(0,0,0,.35);}
+  .benefits li svg{flex-shrink:0;margin-top:2px;filter:drop-shadow(0 2px 6px rgba(0,0,0,.4));}
+  .hero-trust{margin-top:26px;display:inline-flex;align-items:center;gap:12px;flex-wrap:wrap;font-size:13.5px;color:#eaf5e2;background:rgba(0,0,0,.24);border:1px solid rgba(255,255,255,.14);padding:9px 15px;border-radius:30px;backdrop-filter:blur(4px);}
   .hero-trust .stars{color:#fff;letter-spacing:2px;font-size:16px;}
 
   /* form card */
-  .form-card{background:#fff;border-radius:16px;padding:24px;box-shadow:0 24px 50px -12px rgba(0,0,0,.4);color:var(--ink);}
-  .form-host{display:flex;align-items:center;gap:12px;padding-bottom:16px;margin-bottom:16px;border-bottom:1px solid var(--line);}
-  .form-host img{width:52px;height:52px;border-radius:10px;object-fit:cover;border:2px solid var(--green);}
+  .form-card{position:relative;background:#fff;border-radius:18px;padding:26px;box-shadow:0 30px 60px -18px rgba(0,0,0,.55), 0 0 0 1px rgba(108,194,74,.25);color:var(--ink);opacity:0;animation:fadeUp .8s .2s cubic-bezier(.2,.7,.2,1) forwards;}
+  @media(prefers-reduced-motion:reduce){.form-card{opacity:1;animation:none;}}
+  .form-badge{position:absolute;top:-13px;left:50%;transform:translateX(-50%);background:linear-gradient(135deg,var(--green),var(--green-d));color:#0e2109;font-size:11.5px;font-weight:800;letter-spacing:.5px;text-transform:uppercase;padding:6px 16px;border-radius:30px;box-shadow:0 8px 18px -6px rgba(108,194,74,.7);white-space:nowrap;}
+  .form-host{display:flex;align-items:center;gap:12px;padding:6px 0 16px;margin-bottom:14px;border-bottom:1px solid var(--line);}
+  .form-host img{width:52px;height:52px;border-radius:12px;object-fit:cover;border:2px solid var(--green);}
   .form-host .l{font-size:11px;text-transform:uppercase;letter-spacing:.6px;color:var(--muted);font-weight:700;}
   .form-host .n{font-size:16px;font-weight:800;color:var(--ink);line-height:1.1;}
-  .form-card h2{font-size:20px;font-weight:800;margin-bottom:4px;}
-  .form-card .lead{font-size:13.5px;color:var(--muted);margin-bottom:14px;}
+  .form-card h2{font-size:21px;font-weight:800;margin-bottom:4px;}
+  .form-card .lead{font-size:13.5px;color:var(--muted);margin-bottom:10px;}
+  .form-reassure{display:flex;gap:16px;flex-wrap:wrap;margin-bottom:12px;font-size:12px;font-weight:700;color:var(--dark);}
+  .form-reassure span{display:inline-flex;align-items:center;}
+  .form-reassure span::before{content:"";width:6px;height:6px;border-radius:50%;background:var(--green);display:inline-block;margin-right:6px;}
   .zoho-embed-wrap{width:100%;min-height:520px;}
   .zoho-embed-wrap iframe{width:100%;border:0;display:block;background:transparent;overflow:hidden;}
   .form-note{font-size:12.5px;color:var(--ink);text-align:center;margin-top:14px;line-height:1.5;}
@@ -137,9 +154,9 @@
   <!-- hero + form -->
   <section class="hero"><div class="wrap">
     <div class="hero-grid">
-      <div>
+      <div class="col-left">
         <span class="eyebrow"><span class="d"></span>Free online session</span>
-        <h1>Is forex for you? Find out in one honest&nbsp;session.</h1>
+        <h1>Is forex for you? <span class="hl">Find&nbsp;out</span> in one honest&nbsp;session.</h1>
         <p class="sub">A free, beginner friendly session with Richard Williams. Register now and get instant access to watch whenever&nbsp;suits&nbsp;you.</p>
         <ul class="benefits">
           <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Watch on demand, start the moment you register</li>
@@ -155,6 +172,7 @@
 
       <!-- REGISTRATION FORM -->
       <div class="form-card" id="register">
+        <span class="form-badge">Instant access</span>
         <div class="form-host">
           <img src="https://simple-fx.net/wp-content/uploads/2025/03/434724359_4480115575547494_2393460037025707880_n.jpg" alt="Richard Williams">
           <div>
@@ -163,7 +181,8 @@
           </div>
         </div>
         <h2>Register for your free session</h2>
-        <p class="lead">Get instant access. It takes less than a minute.</p>
+        <p class="lead">Watch it in the next few minutes. It takes under a minute to&nbsp;join.</p>
+        <div class="form-reassure"><span>Instant access</span><span>No spam</span><span>Free to watch</span></div>
 
         <!-- ZOHO FORMS (EU) auto-resize embed: iframe grows to fit the whole form, no vertical scroll -->
         <div id="zf_isfx4me_form" class="zoho-embed-wrap"></div>
