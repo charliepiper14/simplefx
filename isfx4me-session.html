@@ -274,8 +274,8 @@ var CONFIG = {
   // Richard's booking link (NOT the agency link)
   booking: { url: "https://calendly.com/simple-fx/call-with-richard" },
 
-  priceLow: "£1,000",
-  priceHigh: "£5,000"
+  priceLow: "£2,000",
+  priceHigh: "£7,000"
 };
 
 /* ---------- apply config ---------- */
@@ -385,38 +385,53 @@ var KB = [
   { p:/\b(hi|hey|hello|good (morning|afternoon|evening)|yo|hiya)\b/,
     r:"Hi, welcome to your private forex session. Ask me anything as you watch and I will give you a straight answer. I can talk you through how it works, the programmes, or Richard's story, and help you book a call with him whenever you are ready." },
 
-  { p:/(make money|making money|profit|profits|earn|earnings|returns?|income|get rich|\brich\b|how much.*make|will i make|can i make)/,
+  { p:/(make money|making money|profit|profits|\bearn\b|\bearnings?\b|returns?|income|get rich|\brich\b|how much.*make|will i make|can i make)/,
     r:"I cannot promise you any returns, and honestly you should be wary of anyone who does. Richard lost around \u00A3200,000 in his first year of trading before he turned it around, so he is the first to say trading is a skill that takes learning, discipline and managing risk. What Simple FX gives you is proper education, not promises. The best next step is a quick call with Richard.", book:true },
 
-  { p:/(guarantee|guaranteed|promise|risk ?free|certain|for sure|definitely make)/,
+  { p:/(guarantee|guaranteed|risk ?free|for sure|definitely make|promise i)/,
     r:"There are no guarantees in trading and we would never pretend otherwise. It carries real risk and you can lose money. What we give you is honest education, structure and support so you learn to do it properly." },
 
   { p:/(financial advice|is this advice|regulated|\bfca\b|tell me what to (buy|trade)|what should i (buy|trade)|managed account|manage my money)/,
     r:"Simple FX is education and mentoring only. We do not give personal financial advice or manage anyone's money, and trading carries risk. For anything specific to your own situation it is best to speak to an independent adviser." },
 
-  { p:/(how.*(get|got|come|started|began).*(into|to|in).*(trad|it)|your story|about richard|who is richard|richard.*(story|background|journey|start|lost|history)|how did (he|you) (start|begin)|his background|richard.?s experience)/,
+  { p:/(how.*(get|got|come|started|began).*(into|to|in).*(trad|it)|your story|about richard|who is richard|richard.*(story|background|journey|start|lost|history)|how did (he|you) (start|begin)|his background|richard.?s experience|how did richard|richard.*(end up|doing this|do this|came to|got into))/,
     r:"Richard came to trading the hard way. He is an entrepreneur who has run businesses across several industries, and in his first year of trading he lost around \u00A3200,000 before rebuilding from scratch. He says teaching has actually made him a better trader, and that is exactly why Simple FX exists, to give people the honest education and support he wishes he had when he started. No hype, no smoke and mirrors." },
 
-  { p:/(what do you teach|how does it work|what.*method|your approach|how do you trade|\bstrategy\b|\bsystem\b|supply.*demand|what.*learn|what will i learn)/,
+  { p:/(what do you teach|how does it work|what.*method|your approach|how do you trade|\bstrategy\b|\bsystem\b|supply.*demand|what will i learn|what do i learn)/,
     r:"Richard keeps it simple, that is the whole point. No hype, no jargon. The focus is on trading as a skill: discipline, patience and putting risk management first. And he teaches you to understand it and trade independently, rather than blindly following signals." },
 
   { p:/(how.*(call|works?)|what happens on|next step|after the session|what.*after|what.*the call|whats the call)/,
     r:"The call is a relaxed one to one with Richard. He looks at where you are now and a realistic next step for you. It is a conversation, not a hard sell, and there is no pressure at all.", book:true },
 
-  { p:/(too expensive|can.?t afford|cannot afford|out of my (budget|range|price)|too much money|bit steep|pricey|afford it|too dear|is it expensive)/,
+  { p:/(worth it|worth the|value for money|justify the|good value|really worth|actually worth|worth paying|worth doing|worth the money)/,
+    r:"Honest answer: it comes down to what you put into it. The people who get the most are the ones who show up and do the work. Richard's own view is that proper education and support is exactly what saved him after he lost \u00A3200,000 going it alone. It is an investment in a real skill, not a quick fix. The best way to judge if it is right for you is a straight, no-pressure chat with Richard.", book:true },
+
+  { p:/(why (should|would) i|what makes (you|it|simple ?fx) (better|different|special|stand)|why choose|why simple ?fx|how are you different|whats the difference|why pick you|why you over|what.*different)/,
+    r:"Fair question. A lot of trading education is hype and empty promises. Simple FX is the opposite: honest teaching, proper structure and real support, from someone who lost \u00A3200,000 himself before he learned to do it right. It is award-winning and rated Excellent on Trustpilot. The best way to feel whether it fits you is a quick chat with Richard.", book:true },
+
+  { p:/(does (it|this) work|how do i know.*work|proof it works|success (stories|rate)|\bresults\b|has it worked|do people (succeed|make it)|track record|actually work|any evidence)/,
+    r:"There are no shortcuts or guarantees in trading, so the honest answer is it works for people who commit to learning and applying it. Simple FX is award-winning, rated Excellent on Trustpilot, and has a real community of members who started where you are. Richard can talk you through what is realistic for you on a call.", book:true },
+
+  { p:/(too expensive|can.?t afford|cannot afford|out of my (budget|range|price)|too much money|bit steep|pricey|afford it|too dear|is it expensive|money.?s tight)/,
     r:"I understand, it is a real investment. Richard's honest view is that proper education is what saved him after he lost \u00A3200,000 trying to figure it out on his own. On a call he can talk through the options, including payment plans, and be straight with you about whether it is the right fit. No pressure either way.", book:true },
 
-  { p:/(elite|mentorship|top (tier|programme|package)|one to one.*richard|1 ?to ?1|1-2-1|highest)/,
+  { p:/(elite|mentorship|top (tier|programme|package)|one to one.*richard|1 ?to ?1|1-2-1|highest tier)/,
     r:"Elite Mentorship is the top tier, from \u00A34,999. It includes everything in Pro Trader plus direct one to one mentoring with Richard, a personalised strategy and reviews, and priority support. It is application only, so Richard can tell you on a call whether it is the right fit.", book:true },
 
   { p:/(pro trader|pro programme|pro package|middle (tier|programme|option))/,
     r:"Pro Trader is from \u00A32,999. It includes all the live trading, the full Academy of over 80 hours, weekly group mentoring, weekly masterclasses, the daily SFXpresso sessions, Lunch Money, full community access and The PiT. A really complete package.", book:true },
 
-  { p:/(academy|guided|entry (level|programme)|starter|cheapest|basic programme|lowest)/,
+  { p:/(academy|guided|entry (level|programme)|starter|cheapest|basic programme|lowest|most affordable)/,
     r:"Academy, the Guided programme, is the structured starting point, from \u00A31,999. You get over 80 hours of training, the full education platform, the daily SFXpresso, community access, and twelve months to work through it at your own pace.", book:true },
 
   { p:/(price|cost|how much|programme|program|fees?|package|tiers?|\boptions\b|what.*pay|invest|prices|packages)/,
     r:"Simple FX has three programmes. Academy from \u00A31,999, Pro Trader from \u00A32,999, and Elite Mentorship from \u00A34,999. Which one suits you depends on where you are now and where you want to get to, and Richard will point you the right way on a quick call, with no pressure.", book:true },
+
+  { p:/(how do i (join|sign up|get started|enrol|enroll|get in|become a member)|how to join|where do i (sign|enrol)|how do i become|ready to (join|start)|how do i sign up|want to join)/,
+    r:"The best first step is a quick call with Richard. He will look at where you are and point you to the right programme, with no pressure at all. You can book it here.", book:true },
+
+  { p:/(free trial|\btrial\b|\bdemo\b|try before|taster|test it out|dip my toe|money back guarantee)/,
+    r:"The session you are watching is the free taster. From there the next step is a chat with Richard about the right programme for you, and he will be straight with you about whether it fits. No pressure.", book:true },
 
   { p:/(what.*(included|get|comes with)|whats in|sfxpresso|lunch money|the pit|masterclass|live trading|group mentoring|member portal)/,
     r:"Depending on the programme, you get things like the daily SFXpresso sessions, Lunch Money market breakdowns, live trading, weekly masterclasses, group mentoring, the member portal and community, and on Elite, one to one time with Richard. He can walk you through exactly what is right for you on a call.", book:true },
@@ -424,22 +439,28 @@ var KB = [
   { p:/(beginner|new to|no experience|never traded|newbie|just starting|starting out|total beginner|from scratch|complete novice|know nothing)/,
     r:"You are exactly who Simple FX is built for. Richard teaches from the ground up in plain English, and he respects every beginner question. He came from knowing nothing himself, so no question is a silly one here.", book:true },
 
+  { p:/(is it hard|too hard|is it difficult|is it easy|complicated|over my head|can anyone (do|learn)|is it complex|steep learning|can i really learn)/,
+    r:"It takes learning, like any real skill, but Richard deliberately keeps it simple and teaches in plain English with no jargon. He started from knowing nothing himself, so it is built for everyday people, not experts.", book:true },
+
+  { p:/(too old|my age|am i too old|too young|retired|pension|in my (50|60|70|fifties|sixties|seventies)|elderly|at my age)/,
+    r:"You are never too old to learn. Simple FX has members of all ages, and Richard teaches at a pace that suits you. Plenty of people start later in life and do really well with it.", book:true },
+
   { p:/(what is simple ?fx|who are you|what do you do|tell me about simple|about the company|what.*simplefx)/,
     r:"Simple FX is award-winning forex education and mentoring. Richard built it to give everyday people the education, coaching, accountability and community he wishes he had when he started out. It is all about honest teaching, not hype." },
 
   { p:/(review|trustpilot|proof|awards?|legit|is it real|scam|can i trust|credible|genuine|real thing|is this a con)/,
     r:"Simple FX is award-winning and rated Excellent on Trustpilot, with a real community of members who started exactly where you are. Richard's whole approach is honesty and no hype, which is why people trust it." },
 
-  { p:/(how long|how much time|commitment|hours a|too busy|schedule|when can i|part time|full time|around work|spare time|9 to 5)/,
+  { p:/(how long|how much time|commitment|hours a|too busy|schedule|when can i|part time|full time|around work|spare time|9 to 5|got a job)/,
     r:"You can watch the session whenever suits you and learn at your own pace, so it fits around work and life. Plenty of Simple FX members started while working full time. The call with Richard is short and at a time you pick.", book:true },
 
-  { p:/(nervous|scared|worried|not sure i can|can i do it|out of my depth|intimidat|anxious|unsure if|doubt myself|too hard)/,
+  { p:/(nervous|scared|worried|not sure i can|out of my depth|intimidat|anxious|unsure if|doubt myself|frightened|apprehensive)/,
     r:"That is completely normal, and Richard understands it, he has been there himself. He teaches patiently and there is no such thing as a silly question. Watching the session and having a relaxed chat with him is a no-pressure way to see if it is for you.", book:true },
 
-  { p:/(tried before|didn.?t work|youtube|free content|self taught|watched videos|courses before|been burned|lost money before|wasted money)/,
+  { p:/(tried before|didn.?t work|youtube|free content|self taught|watched videos|courses before|been burned|lost money before|wasted money|got burned)/,
     r:"A lot of people come to Richard after trying to piece it together from YouTube and free videos. The difference here is real structure, honest teaching and proper support, rather than scattered bits and pieces. And Richard is open that he lost a lot himself before he learned to do it properly.", book:true },
 
-  { p:/(signals?|copy trad|do it for me|tell me when to (buy|trade)|auto trad|\bbot\b|robot|passive)/,
+  { p:/(signals?|copy trad|do it for me|tell me when to (buy|trade)|auto trad|\bbot\b|robot|passive income)/,
     r:"Simple FX is not about following signals or having someone trade for you. Richard teaches you to understand it and trade independently, because that is what actually lasts. If you want to genuinely learn, this is the right place." },
 
   { p:/(how do i watch|access|the video|play the|start the session|where.*session|session link|cant see|no sound|cannot hear|turn on sound)/,
@@ -448,16 +469,16 @@ var KB = [
   { p:/(refund|cancel|money back|change my mind)/,
     r:"All the details, including how things work if you change your mind, are covered on your call with Richard, so you have the full picture before you decide anything.", book:true },
 
-  { p:/(book|booking|arrange|set up a call|speak to richard|talk to richard|call with richard|get on a call|schedule|i.?m ready)/,
+  { p:/(book|booking|arrange|set up a call|speak to richard|talk to richard|call with richard|get on a call|schedule|i.?m ready|lets do it|sign me up)/,
     r:"Great. You can book your one to one with Richard here and pick any time that suits you. It is relaxed and there is no pressure.", book:true },
 
-  { p:/(thank|thanks|cheers|appreciate|awesome|perfect|brilliant|helpful|great stuff)/,
+  { p:/(thank|thanks|cheers|appreciate|awesome|perfect|brilliant|helpful|great stuff|cool)/,
     r:"You are very welcome. Enjoy the session, and I am right here if anything else comes up." },
 
   { p:/(crypto|bitcoin|\bcoin\b|ethereum|\bbtc\b)/,
     r:"Simple FX focuses on forex education specifically. The best way to see if it fits what you are after is to watch the session and have a quick chat with Richard." }
 ];
-var FALLBACK = { r:"Good question. Richard is the best person to give you a proper answer on that, and the quickest way is a short, no-pressure call where he can go through it with you.", book:true };
+var FALLBACK = { r:"Good question. Richard is the best person to give you a straight answer specific to you, and honestly he enjoys these conversations. Simple FX is about real education and support, no hype and no promises. The easiest next step is a short, no-pressure call with him, or tap one of the buttons below for the common questions.", book:true };
 
 function answer(text){
   var q=(text||'').toLowerCase();
