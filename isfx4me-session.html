@@ -216,7 +216,7 @@
       <div class="l">
         <h2>Ready for the next step?</h2>
         <p>Book a free, no pressure call with Richard to find the path that is right for you.</p>
-        <div class="range" id="ctaRange">Programmes from <b>£1,000</b> to <b>£5,000</b></div>
+        <div class="range" id="ctaRange">Programmes from <b>£2,000</b> to <b>£7,000</b></div>
       </div>
       <a class="btn book-cta" id="bookBtn" href="#" data-src="portal">Book your call with Richard</a>
     </div>
@@ -263,9 +263,9 @@ var CONFIG = {
   countdownSeconds: 60,
 
   // VIDEO: Vimeo/Bunny embed src. Loads automatically when the countdown ends. (Pending from client.)
-  // VIDEO: set ONE source. fileUrl (self-hosted mp4, cleanest, no branding) takes priority,
-  // then youtubeId, then embedUrl (Vimeo/Bunny). controls:false hides player controls.
-  video: { fileUrl: "", youtubeId: "ERN3p7vXeEQ", controls: false },
+  // VIDEO: set ONE source. Priority: fileUrl (self-hosted) > embedUrl (Bunny/Vimeo) > youtubeId.
+  // Bunny Stream is active below; YouTube stays as a dormant fallback. controls:false is for YT/native only.
+  video: { fileUrl: "", embedUrl: "https://iframe.mediadelivery.net/embed/705720/c496a895-706d-4144-9d31-645485aa1177?autoplay=true&loop=false&muted=true&preload=true&responsive=true", youtubeId: "ERN3p7vXeEQ", controls: false },
 
   // MANYCHAT: when ready, set widgetScript (Option A) or endpoint (Option B).
   // While both are empty, the built-in knowledge base below powers the chat so it fully works for the demo.
@@ -329,14 +329,17 @@ function track(ev,d){ window.dataLayer=window.dataLayer||[]; window.dataLayer.pu
         '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap to turn on sound</button>';
       var vv=document.getElementById('sfxVid'), b2=document.getElementById('sfxUnmute');
       b2.addEventListener('click',function(){ vv.muted=false; vv.play(); this.remove(); track('sfx_sound_on',{}); });
+    } else if(v.embedUrl){
+      function bframe(muted){ var u = muted ? v.embedUrl : v.embedUrl.replace('muted=true','muted=false'); return '<iframe src="'+u+'" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'; }
+      box.innerHTML = bframe(true) + '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap to turn on sound</button>';
+      var b3=document.getElementById('sfxUnmute');
+      b3.addEventListener('click',function(){ box.innerHTML=bframe(false); track('sfx_sound_on',{}); });
     } else if(v.youtubeId){
       var base='https://www.youtube.com/embed/'+v.youtubeId+'?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&controls='+(v.controls?1:0);
       function frame(muted){ return '<iframe src="'+base+'&autoplay=1&mute='+(muted?1:0)+'" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>'; }
       box.innerHTML = frame(true) + '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap to turn on sound</button>';
       var btn=document.getElementById('sfxUnmute');
       btn.addEventListener('click',function(){ box.innerHTML=frame(false); track('sfx_sound_on',{}); });
-    } else if(v.embedUrl){
-      box.innerHTML = '<iframe src="'+v.embedUrl+'" allow="autoplay; fullscreen; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>';
     } else {
       box.innerHTML = '<div class="cd"><div class="logo"><img src="'+CONFIG.logo+'" alt="Simple FX"></div>'+
         '<div class="kicker"><span class="d"></span>We are live</div>'+
