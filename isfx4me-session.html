@@ -330,10 +330,16 @@ function track(ev,d){ window.dataLayer=window.dataLayer||[]; window.dataLayer.pu
       var vv=document.getElementById('sfxVid'), b2=document.getElementById('sfxUnmute');
       b2.addEventListener('click',function(){ vv.muted=false; vv.play(); this.remove(); track('sfx_sound_on',{}); });
     } else if(v.embedUrl){
-      function bframe(muted){ var u = muted ? v.embedUrl : v.embedUrl.replace('muted=true','muted=false'); return '<iframe src="'+u+'" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'; }
-      box.innerHTML = bframe(true) + '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap to turn on sound</button>';
-      var b3=document.getElementById('sfxUnmute');
-      b3.addEventListener('click',function(){ box.innerHTML=bframe(false); track('sfx_sound_on',{}); });
+      box.innerHTML = '<iframe id="sfxFrame" src="'+v.embedUrl+'" allow="accelerometer;gyroscope;autoplay;encrypted-media;picture-in-picture;fullscreen;" allowfullscreen="true" style="position:absolute;inset:0;width:100%;height:100%;border:0"></iframe>'+
+        '<button id="sfxUnmute" class="unmute" type="button"><span class="ic">\uD83D\uDD08</span> Tap for sound</button>';
+      var ifr=document.getElementById('sfxFrame'), btn=document.getElementById('sfxUnmute'), sfxPlayer=null;
+      btn.addEventListener('click', function(){
+        try{ if(sfxPlayer){ sfxPlayer.setVolume(100); sfxPlayer.unmute(); sfxPlayer.play(); } }catch(e){}
+        this.remove(); track('sfx_sound_on',{});
+      });
+      function initSfxPlayer(){ try{ sfxPlayer=new playerjs.Player(ifr); sfxPlayer.on('ready',function(){ try{ sfxPlayer.play(); }catch(e){} }); }catch(e){} }
+      if(window.playerjs){ initSfxPlayer(); }
+      else { var sc=document.createElement('script'); sc.src='https://assets.mediadelivery.net/playerjs/player-0.1.0.min.js'; sc.onload=initSfxPlayer; document.head.appendChild(sc); }
     } else if(v.youtubeId){
       var base='https://www.youtube.com/embed/'+v.youtubeId+'?rel=0&modestbranding=1&playsinline=1&iv_load_policy=3&controls='+(v.controls?1:0);
       function frame(muted){ return '<iframe src="'+base+'&autoplay=1&mute='+(muted?1:0)+'" allow="autoplay; fullscreen; encrypted-media; picture-in-picture" allowfullscreen title="Simple FX session"></iframe>'; }
