@@ -155,7 +155,7 @@
   <!-- title -->
   <div class="titlebar"><div class="wrap">
     <h1 id="sessionTitle">Is Forex For Me?</h1>
-    <div class="live"><span class="d"></span><span id="liveLabel">Live session</span></div>
+    <div class="live"><span class="d"></span><span id="liveLabel">On demand</span></div>
   </div></div>
 
   <!-- room -->
@@ -244,7 +244,7 @@
    ============================================================ */
 var CONFIG = {
   sessionTitle: "Is Forex For Me?",
-  liveLabel: "Live session",
+  liveLabel: "On demand",
   logo: "https://res.cloudinary.com/dcnabm5nc/image/upload/v1759235146/simplefx_logo_qpzgez.png",
 
   host: {
@@ -348,7 +348,7 @@ function track(ev,d){ window.dataLayer=window.dataLayer||[]; window.dataLayer.pu
       btn.addEventListener('click',function(){ box.innerHTML=frame(false); track('sfx_sound_on',{}); });
     } else {
       box.innerHTML = '<div class="cd"><div class="logo"><img src="'+CONFIG.logo+'" alt="Simple FX"></div>'+
-        '<div class="kicker"><span class="d"></span>We are live</div>'+
+        '<div class="kicker"><span class="d"></span>Session ready</div>'+
         '<div style="font-size:14px;color:#a9c79b;max-width:340px;">Your recorded session plays here. Keep the chat open for your questions.</div></div>';
     }
     track('sfx_watch_start', { session: CONFIG.sessionTitle });
