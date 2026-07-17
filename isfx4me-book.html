@@ -125,9 +125,8 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </aside>
 
     <div class="booking">
-      <div id="cal-embed" class="calendly-inline-widget">
-        <div class="fallback">Loading the calendar&hellip; if it does not appear, <a href="https://calendly.com/simple-fx/call-with-richard" target="_blank" rel="noopener">open the booking page in a new tab</a>.</div>
-      </div>
+      <div id="cal-embed" class="calendly-inline-widget" data-url="https://calendly.com/simple-fx/call-with-richard?hide_gdpr_banner=1&primary_color=3fae28" style="min-width:320px;height:760px;"></div>
+      <div class="fallback">Calendar not showing? <a href="https://calendly.com/simple-fx/call-with-richard" target="_blank" rel="noopener">Open the booking page in a new tab</a>.</div>
     </div>
   </div>
 </main>
@@ -139,57 +138,31 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
   <div class="wrap"><span>Simple FX. Registered in England &amp; Wales.</span><span>Powered by Leads Guys</span></div>
 </div>
 
-<!-- Calendly inline embed + tracking bridge -->
-<script src="https://assets.calendly.com/assets/external/widget.js" async></script>
+<!-- Tracking add-on: appends UTM + Meta click id to the booking link, and bridges Calendly events to the dataLayer. Runs safely and never blocks the calendar. -->
 <script>
 (function(){
-  var BASE = "https://calendly.com/simple-fx/call-with-richard";
-
-  function cookie(name){
-    var m = document.cookie.match('(^|;)\\s*' + name + '\\s*=\\s*([^;]+)');
-    return m ? decodeURIComponent(m.pop()) : '';
-  }
-  var qs = new URLSearchParams(location.search);
-  var fbc = cookie('_fbc'), fbp = cookie('_fbp');
-  var passUuid = fbc || fbp || (qs.get('utm_content') || '');
-
-  function buildUrl(){
-    var p = new URLSearchParams();
-    p.set('hide_gdpr_banner','1');
-    p.set('primary_color','3fae28');
-    return BASE + '?' + p.toString();
-  }
-
-  function initWidget(){
-    if(!window.Calendly || !Calendly.initInlineWidget){ return setTimeout(initWidget,150); }
-    var box = document.getElementById('cal-embed');
-    box.innerHTML = '';
-    Calendly.initInlineWidget({
-      url: buildUrl(),
-      parentElement: box,
-      prefill: {},
-      utm: {
-        utmSource:   qs.get('utm_source')   || '',
-        utmMedium:   qs.get('utm_medium')   || '',
-        utmCampaign: qs.get('utm_campaign') || '',
-        utmContent:  qs.get('utm_content')  || '',
-        utmTerm:     qs.get('utm_term')     || '',
-        salesforceUuid: passUuid
-      }
+  try{
+    function cookie(n){ var m=document.cookie.match('(^|;)\\s*'+n+'\\s*=\\s*([^;]+)'); return m?decodeURIComponent(m.pop()):''; }
+    var div = document.getElementById('cal-embed');
+    var qs = new URLSearchParams(location.search);
+    var uuid = cookie('_fbc') || cookie('_fbp') || '';
+    var url = new URL(div.getAttribute('data-url'));
+    ['utm_source','utm_medium','utm_campaign','utm_content','utm_term'].forEach(function(k){
+      var v = qs.get(k); if(v) url.searchParams.set(k, v);
     });
-  }
-  initWidget();
+    if(uuid) url.searchParams.set('salesforce_uuid', uuid);
+    div.setAttribute('data-url', url.toString());
+  }catch(e){ /* if anything here fails, the plain data-url above still loads the calendar */ }
 
   window.addEventListener('message', function(e){
-    if(!e.data || typeof e.data.event !== 'string') return;
-    if(e.data.event.indexOf('calendly.') !== 0) return;
+    if(!e.data || typeof e.data.event !== 'string' || e.data.event.indexOf('calendly.') !== 0) return;
     window.dataLayer = window.dataLayer || [];
-    window.dataLayer.push({
-      event: e.data.event.replace('calendly.','calendly_'),
-      calendlyPayload: e.data.payload || {}
-    });
+    window.dataLayer.push({ event: e.data.event.replace('calendly.','calendly_'), calendlyPayload: e.data.payload || {} });
   });
 })();
 </script>
+<!-- Calendly inline embed (same method as the working test) -->
+<script type="text/javascript" src="https://assets.calendly.com/assets/external/widget.js" async></script>
+
 </body>
 </html>
