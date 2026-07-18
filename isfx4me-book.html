@@ -31,20 +31,30 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
   img{max-width:100%;display:block;}
   .wrap{max-width:var(--maxw);margin:0 auto;padding:0 1.25rem;}
 
-  .topbar{background:linear-gradient(135deg,var(--dark),#1F3A0D);color:#fff;}
-  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:64px;}
-  .topbar img{height:44px;width:auto;}
+  .topbar{background:linear-gradient(135deg,#14280c,#1F3A0D);color:#fff;}
+  .topbar .wrap{display:flex;align-items:center;justify-content:space-between;height:78px;}
+  .topbar img{height:60px;width:auto;border-radius:9px;box-shadow:0 6px 16px rgba(0,0,0,.3);}
   .secure{display:flex;align-items:center;gap:7px;font-size:13px;color:#cfe3c2;font-weight:600;}
 
-  .head{background:linear-gradient(135deg,var(--dark) 0%,#26480f 55%,#37631b 100%);color:#fff;
-    padding:40px 0 44px;text-align:center;}
+  .head{position:relative;overflow:hidden;isolation:isolate;color:#fff;padding:56px 0 60px;text-align:center;
+    background:
+      radial-gradient(70% 90% at 82% 15%, rgba(63,174,41,.34), transparent 60%),
+      radial-gradient(60% 80% at 8% 95%, rgba(8,26,5,.55), transparent 65%),
+      linear-gradient(120deg,#0f3a09 0%, #1c5410 46%, #2a6e18 100%);}
+  .head::after{content:"";position:absolute;inset:0;z-index:-1;pointer-events:none;
+    background:url("https://res.cloudinary.com/dcnabm5nc/image/upload/v1779252889/IMG_2960_lxbqo1.jpg") center/cover no-repeat;opacity:.10;mix-blend-mode:luminosity;}
+  .head svg.line{position:absolute;inset:0;width:100%;height:100%;z-index:-1;opacity:.7;}
+  .head .node{position:absolute;left:92.19%;top:13.75%;transform:translate(-50%,-50%);width:12px;height:12px;border-radius:50%;background:#8FE06A;
+    box-shadow:0 0 0 7px rgba(108,194,74,.2),0 0 26px 5px rgba(108,194,74,.55);z-index:-1;}
   .head .eyebrow{display:inline-flex;align-items:center;gap:8px;font-size:12px;font-weight:800;
-    letter-spacing:1.4px;text-transform:uppercase;color:#dff5d3;background:rgba(108,194,74,.16);
-    border:1px solid rgba(108,194,74,.4);padding:7px 15px;border-radius:30px;margin-bottom:16px;}
+    letter-spacing:1.4px;text-transform:uppercase;color:#eafbe2;background:rgba(108,194,74,.18);
+    border:1px solid rgba(143,224,106,.45);padding:8px 16px;border-radius:30px;margin-bottom:18px;backdrop-filter:blur(3px);}
   .head .eyebrow .d{width:8px;height:8px;border-radius:50%;background:var(--green-l);}
-  .head h1{font-size:clamp(27px,4vw,42px);font-weight:800;letter-spacing:-.6px;line-height:1.1;}
-  .head p{font-size:clamp(15px,2vw,18px);color:#e8f4de;margin-top:12px;max-width:52ch;
-    margin-left:auto;margin-right:auto;}
+  .head h1{font-size:clamp(29px,4.4vw,46px);font-weight:800;letter-spacing:-.8px;line-height:1.08;
+    text-shadow:0 3px 24px rgba(0,0,0,.4);}
+  .head h1 .hl{color:#8FE06A;}
+  .head p{font-size:clamp(15px,2vw,18px);color:#eaf6df;margin-top:14px;max-width:52ch;
+    margin-left:auto;margin-right:auto;text-shadow:0 1px 12px rgba(0,0,0,.3);}
 
   main{padding:36px 0 56px;}
   .grid{display:grid;grid-template-columns:340px 1fr;gap:28px;align-items:start;}
@@ -67,10 +77,10 @@ j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
     display:flex;align-items:center;gap:9px;font-size:13px;color:var(--muted);}
   .trust .stars{color:#00b67a;letter-spacing:1px;font-size:15px;}
 
-  .booking{background:#fff;border:1px solid var(--line);border-radius:var(--radius);overflow:hidden;
-    box-shadow:0 10px 30px -18px rgba(0,0,0,.25);min-height:720px;}
-  .calendly-inline-widget{min-width:320px;height:760px;}
-  @media(max-width:640px){.calendly-inline-widget{height:1020px;}}
+  .booking{background:#fff;border:1px solid var(--line);border-radius:var(--radius);
+    box-shadow:0 10px 30px -18px rgba(0,0,0,.25);min-height:720px;padding:6px;}
+  .calendly-inline-widget{min-width:320px;height:1050px;}
+  @media(max-width:640px){.calendly-inline-widget{height:1500px;}}
   .fallback{padding:28px;text-align:center;font-size:15px;color:var(--muted);}
   .fallback a{color:var(--green);font-weight:700;text-decoration:none;}
 
@@ -97,9 +107,18 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 </header>
 
 <section class="head">
+  <svg class="line" viewBox="0 0 1280 320" preserveAspectRatio="none" xmlns="http://www.w3.org/2000/svg">
+    <defs><linearGradient id="hl" x1="0" y1="1" x2="1" y2="0">
+      <stop offset="0" stop-color="#3FAE28" stop-opacity="0"/>
+      <stop offset=".4" stop-color="#6CC24A" stop-opacity=".45"/>
+      <stop offset="1" stop-color="#8FE06A" stop-opacity=".9"/>
+    </linearGradient></defs>
+    <path d="M -40 300 C 260 286, 520 250, 760 170 S 1080 80, 1180 44" fill="none" stroke="url(#hl)" stroke-width="3" stroke-linecap="round"/>
+  </svg>
+  <span class="node"></span>
   <div class="wrap">
     <span class="eyebrow"><span class="d"></span>Free, no pressure call</span>
-    <h1>Book your call with Richard</h1>
+    <h1>Book your call with <span class="hl">Richard</span></h1>
     <p>A relaxed one to one to look at where you are and the right next step for you. Pick a time below that suits you.</p>
   </div>
 </section>
@@ -116,7 +135,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
       </div>
       <h2>What to expect</h2>
       <ul class="expect">
-        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A relaxed one to one with Richard, around 30 minutes</li>
+        <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A relaxed one to one with Richard, around 15 minutes</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>An honest look at whether trading fits your goals</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>A realistic next step at your pace, no pressure at all</li>
         <li><svg width="20" height="20" viewBox="0 0 24 24" fill="none"><circle cx="12" cy="12" r="11" fill="#6CC24A"/><path d="M7 12.5l3.2 3.2L17 9" stroke="#14210c" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg>Held on Zoom, link sent when you book</li>
@@ -125,7 +144,7 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     </aside>
 
     <div class="booking">
-      <div id="cal-embed" class="calendly-inline-widget" data-url="https://calendly.com/simple-fx/call-with-richard?hide_gdpr_banner=1&primary_color=3fae28" style="min-width:320px;height:760px;"></div>
+      <div id="cal-embed" class="calendly-inline-widget" data-url="https://calendly.com/simple-fx/call-with-richard?hide_gdpr_banner=1&primary_color=3fae28" style="min-width:320px;"></div>
       <div class="fallback">Calendar not showing? <a href="https://calendly.com/simple-fx/call-with-richard" target="_blank" rel="noopener">Open the booking page in a new tab</a>.</div>
     </div>
   </div>
@@ -156,6 +175,12 @@ height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
 
   window.addEventListener('message', function(e){
     if(!e.data || typeof e.data.event !== 'string' || e.data.event.indexOf('calendly.') !== 0) return;
+    // auto-resize the widget to fit the current step's content (fixes mobile form cut-off)
+    if(e.data.event === 'calendly.page_height' && e.data.payload && e.data.payload.height){
+      var box = document.getElementById('cal-embed');
+      if(box) box.style.height = e.data.payload.height;
+      return;
+    }
     window.dataLayer = window.dataLayer || [];
     window.dataLayer.push({ event: e.data.event.replace('calendly.','calendly_'), calendlyPayload: e.data.payload || {} });
   });
